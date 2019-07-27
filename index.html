@@ -282,7 +282,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/07/27/summer return/" itemprop="url">post</a></h1>
+                <a class="post-title-link" href="/2019/07/27/summer return/" itemprop="url">暑假回归+hexo:command no found解决</a></h1>
         
 
         <div class="post-meta">
@@ -335,16 +335,7 @@
         
           
             <p>暑假闲着无聊，突然想到自己还有个博客2333<br>就回来了，这次打算把印象笔记上的那一大坨笔记都搬上来，以后开始日常更新了，这可是项技术活啊，哈哈<br>然而打开博客目录就发现在根目录下git bash 输入hexo相关指令竟然跟我说  </p>
-<p><code>`</code>hexo:Command not found</p>
-<pre><code>这怎么可能，在检查了npm和node的安装情况后  
-  (方法来自https://blog.csdn.net/kittowang/article/details/56011794    author:
-kittowang )  
-```$ node -v
-</code></pre><p><code>`</code>$ npm -v</p>
-<pre><code>检查版本号，然后再检查hexo的文件是否安装，都没发现有问题
-最后找到问题根源，是环境变量中的Path未设置，只要在环境变量中设置Path添加一个变量设置为  
-```根目录/node_modules/.bin  
-</code></pre><p>即可<br>不过以前好像也没有配置环境变量，那以前是怎么行得通的，真是玄学</p>
+<p><code>hexo:Command not found</code><br>这怎么可能，在检查了npm和node的安装情况后<br>  (方法来自<a href="https://blog.csdn.net/kittowang/article/details/56011794" target="_blank" rel="noopener">https://blog.csdn.net/kittowang/article/details/56011794</a>    author:<br>kittowang )<br><code>$ node -v</code><br><code>$ npm -v</code><br>检查版本号，然后再检查hexo的文件是否安装，都没发现有问题<br>最后找到问题根源，是环境变量中的Path未设置，只要在环境变量中设置Path添加一个变量设置为<br><code>根目录/node_modules/.bin</code><br>即可<br>不过以前好像也没有配置环境变量，那以前是怎么行得通的，真是玄学</p>
 
           
         
