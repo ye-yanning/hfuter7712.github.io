@@ -273,135 +273,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/28/engine/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="leaf rock quiet">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="superQ">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/28/engine/" itemprop="url">未命名</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-28T21:13:41+08:00">
-                2019-07-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <hr>
-<p>title: 工程车笔记<br>date: 2019-07-28 21:22:01<br>categories:</p>
-<ul>
-<li>硬件<br>tags:</li>
-<li>arduino</li>
-<li>工程车比赛</li>
-</ul>
-<h2 id="工程车笔记"><a href="#工程车笔记" class="headerlink" title="工程车笔记:"></a>工程车笔记:</h2><p>1、Arduino诞生于意大利<br>2、数字口有0~13，模拟口有0~5<br>3、UNO通过两种方式供电：USB供电与外界DC电源<br>4、DF中定义：绿色为数字口，蓝色为模拟口<br>红色为电源VCC，黑色为GND，白色可以随意搭配<br>5、setup和loop函数一段代码中只能使用一次<br>6、digitalRead(pin)是用来读取数字引脚状<br>态，HIGH还是LOW<br>7、HIGH还有一种表达就是“1”，LOW是<br>“0”，只是HIGH/LOW更直观<br>8、&amp;&amp; —— 逻辑与（两者同时满足）<br>      || —— 逻辑或（两者其中一个满足）<br>      ！—— 逻辑非（取反，相反的情况）<br>9、什么是下拉电阻？<br>下拉电阻这个名词可能比较抽象，从字的含义着手，“下拉”我们就理解为把电压往下拉，降低电压<br>10、analogWrite()函数用于给PWM口写入一个0~255的模拟值。特别注意的是，analogWrite()函数只能写入具有PWM功能的数字引脚<br>（3、5、6、9、10、11）<br>11、PWM是一项通过数字方法来获得模拟量的技术<br>12、PWM比较多的用于调节LED灯的亮度。或者是电机的转动速度<br>13、constrain(x，a，b）<br>x是一个被约束的数，a是最小值，b是最大值，值小于a，则返回a，大于b，则返回b<br>     random(min，max)；<br>用于生成一个随机数，min为随机数的最小值，max为随机数的最大值<br>14、共阳RGB与共阴RGB的区别<br>（1）接线中的改变，共阳的话，共用端需要接5V，而不是GND，否则LED不能被点亮。<br>（2）第二点就是，在颜色的调配上，与共阴是完全相反的<br>15、红+绿=黄     绿+蓝=蓝绿    红+蓝=紫红<br>红+绿+蓝=白<br>16、有源蜂鸣器和无源蜂鸣器区别<br>从外观上看，有源无源的区别在于，有源蜂鸣器有长短脚，也就是所谓正负极，长脚为正极，短脚为负极。而无源蜂鸣器则没有正负极，两个引脚长度相同<br>17、Serial.begin(9600);<br>这个函数用于初始化串口波特率，也就是数据传输的速率，是使用串口必不可少的函数<br>18、所以如果要用到串口通信的，数字0和1不能用于输入输出功能<br>19、当下载程序的时候，USB将占用了数字引脚<br>0(RX)和数字引脚1(TX)。此时，在下载程序的过程中，RX和TX引脚不能接任何东西,否则会<br>产生冲突。<br>20、大多数板子都有两个外部中断引脚：<br>数字引脚2（中断0）和数字引脚3（中断1）<br>21、上拉电阻与下拉电阻<br>上拉就是将不确定的信号通过一个电阻钳位在高电平，电阻同时起限流作用。下拉同理，也是将不确定的信号通过一个电阻钳位在低电平<br>22、map(value, fromLow, fromHigh,toLow, toHigh)；<br>map函数的作用是将一个数从一个范围映射到另外一个范围。也就是说，会将 fromLow 到 fromHigh 之间的值映射到 toLow 在 toHigh 之间的值<br>23、PWM口：脉冲宽度调制,即Pulse Width Modulation的缩写,用于输出控制信号<br>24、pinMode（）；的两个参数：引脚号和模式<br>25、灰度传感器又名黑标或者白标传感器，是一种 TTL 型传感器，适用 TTL 型传感器通用<br>实验<br>26、如果要实现循迹，你最少需要两个灰度传感器<br>27.灰度传感器有效距离3cm<br>28.<br>比例控制<br>比例控制是一种最简单的控制方式。其控制器的输出与输入误差信号成比例关系。当仅<br>有比例控制时系统输出存在稳态误差（Steady-state error）。<br>在积分控制中，控制器的输出与输入误差信号的积分成正比关系。<br>在微分控制中，控制器的输出与输入误差信号的微分（即误差的变化率）成正比关系。<br>比例+积分（PI）控制器，可以使系统在进入稳态后无稳态误差。<br>比例+微分（PD）控制器能改善系统在调节过程中的动态特性。<br>闪动传感器可以检测到环境光线的突然变化，从而使机器人做出相应的指令动作。<br>30 LUX 照度以上变暗触发，30LUX 照度以下变亮触发。<br>日光灯是有闪烁的，频率在 50HZ 左右，这种闪烁会被闪动传感器识别，因此要<br>避免在日光灯下使用。<br>声控传感器可以检测到周围环境的声音信号，声控元件是对震动敏感的物质，有声音时就触发。有效<br>检测范围在 50 分贝以上（参考正常人说话时的声音）。<br>触碰传感器可以检测物体对开关的有效触碰，通过触碰开关触发相应动作。触碰开关行程距离 2mm。<br>触须传感器可以检测到物体对弹簧触须的有效触动。安装时通常是将弹簧与地面平行。<br>有效触动角度 45 度。<br>触须感应器需要安装在机器人前端容易被触碰到的位置，需要弹簧触须被物体折弯至接触金属卡桥才会被触发。</p>
-<p>HC-05 蓝牙串口通讯模块具有两种工作模式：命令响应工作模式和自动连接工作模式，在自动连接工作模式下模块又可分为主（Master）、从（Slave）和回环（Loopback）三种工作角色。</p>
-<p>使用环境<br>硬件：Basra 控制板、Bigfish 扩展板。依赖库：MsTimer2、LedControl</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/27/summer return/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1297,7 +1168,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1425,7 +1296,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">there are 3.4k words in the whole site</span>
+  <span class="post-count">there are 2k words in the whole site</span>
 </div>
         
 
