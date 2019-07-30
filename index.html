@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/29/port/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/29/HTMLReview2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="leaf rock quiet">
@@ -282,7 +282,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/07/29/port/" itemprop="url">port</a></h1>
+                <a class="post-title-link" href="/2019/07/29/HTMLReview2/" itemprop="url">HTML基础复习（二）</a></h1>
         
 
         <div class="post-meta">
@@ -304,6 +304,28 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/coding/" itemprop="url" rel="index">
+                    <span itemprop="name">coding</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -334,7 +356,21 @@
       
         
           
-            
+            <p>marign:外边距<br>如果一个元素的margin为负值，元素将会变大  </p>
+<p>border:边框<br>padding:内边距<br>可以根据padding-top,padding-right,padding-left,padding-bottom四个属性来控制上下左右四个内边距的属性<br>margin同理<br>如果按照如下格式<br><code>padding: 10px 20px 10px 20px</code><br>按照顺时针方式排列依次是<strong>顶部，右侧，底部，左侧（上右下左）</strong>  </p>
+<ul>
+<li>关于class的优先权问题  </li>
+</ul>
+<p>在HTML中，class=”类A 类B 类C”  排序是无所谓的<br>但是在style元素中，class的声明顺序却非常重要，<strong>第二个声明总是比第一个具有优先权</strong><br><strong>但是有一点很重要：id属性总是具有更高的优先权</strong><br>更重要的一点：行内样式可以覆盖id（优先权更大）<br>example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">  body &#123;</span><br><span class="line">    background-color: black;</span><br><span class="line">    font-family: Monospace;</span><br><span class="line">    color: green;</span><br><span class="line">  &#125;</span><br><span class="line">  #orange-text &#123;</span><br><span class="line">    color: orange;</span><br><span class="line">  &#125;</span><br><span class="line">  .pink-text &#123;</span><br><span class="line">    color: pink;</span><br><span class="line">  &#125;</span><br><span class="line">  .blue-text &#123;</span><br><span class="line">    color: blue;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;h1 id=&quot;orange-text&quot; class=&quot;pink-text blue-text&quot; style=&quot;color:white&quot;&gt;Hello World!&lt;/h1&gt;</span><br></pre></td></tr></table></figure></p>
+<p>最终文本显示为白色  </p>
+<p>by the way,还有最强大的一种方法，在某些元素的属性后面加上<br><code>!important</code><br>可以使得该属性覆盖其他任何相同的属性  </p>
+<ul>
+<li><p>用十六进制表示颜色<br>说到颜色，颜色在CSS中还可以用十六进制表示，格式是#XXXXXX<br>例如#000000是黑色<br>0是hex code中最小的一个，F是hex code中最大的一个<br>#000000白色<br>#FFFFFF黑色<br>#111111 深灰色<br>不过也可以用三位数来表示，比如<br><code>#F00</code><br>它等同于<br><code>#FF0000</code>  </p>
+</li>
+<li><p>用rgb值表示<br><code>rgb(0,0,0)</code><br>取值范围从0~255</p>
+</li>
+</ul>
+
           
         
       
@@ -1834,7 +1870,7 @@ SET alexa=&#39;5000&#39;, country=&#39;USA&#39;</code><br>执行以上代码会�
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1944,7 +1980,7 @@ SET alexa=&#39;5000&#39;, country=&#39;USA&#39;</code><br>执行以上代码会�
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">there are 5.4k words in the whole site</span>
+  <span class="post-count">there are 5.8k words in the whole site</span>
 </div>
         
 
