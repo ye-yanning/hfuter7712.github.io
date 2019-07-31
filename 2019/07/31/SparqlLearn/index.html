@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="superQ">
 <meta property="og:description" content="全程官方文档英文阅读理解。。  （有部分谷歌翻译辅助，不过大部分还是阅读理解，因为谷歌翻译的虽然很好，但是有些也会脱离本意）标题写着 “SPARQL Query Language for RDF”想必也是针对RDF设计的一种查询语言了   大多数形式的SPARQL查询包含一族成为基本图形模式的三重模式(triple patterns   编写一条简单的查询语言Data:&amp;lt;http://exa">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-31T08:13:46.433Z">
+<meta property="og:updated_time" content="2019-07-31T08:24:33.227Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Sparql查询语言基础学习（一）">
 <meta name="twitter:description" content="全程官方文档英文阅读理解。。  （有部分谷歌翻译辅助，不过大部分还是阅读理解，因为谷歌翻译的虽然很好，但是有些也会脱离本意）标题写着 “SPARQL Query Language for RDF”想必也是针对RDF设计的一种查询语言了   大多数形式的SPARQL查询包含一族成为基本图形模式的三重模式(triple patterns   编写一条简单的查询语言Data:&amp;lt;http://exa">
@@ -356,11 +356,54 @@
         <p>全程官方文档英文阅读理解。。  （有部分谷歌翻译辅助，不过大部分还是阅读理解，因为谷歌翻译的虽然很好，但是有些也会脱离本意）<br>标题写着 “SPARQL Query Language for RDF”<br>想必也是针对RDF设计的一种查询语言了  </p>
 <p>大多数形式的SPARQL查询包含一族成为基本图形模式的三重模式(triple patterns  </p>
 <p><strong>编写一条简单的查询语言</strong><br>Data:<br><code>&lt;http://example.org/book/book1&gt; &lt;http://purl.org/dc/elements/1.1/title&gt; &quot;SPARQL Tutorial&quot; .</code>  </p>
-<p>查询语句:  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">SELECT ?title</span><br><span class="line">WHERE</span><br><span class="line">&#123;</span><br><span class="line">  &lt;http://example.org/book/book1&gt; &lt;http://purl.org/dc/elements/1.1/title&gt; ?title .</span><br><span class="line">&#125;  </span><br><span class="line"></span><br><span class="line">```    </span><br><span class="line"></span><br><span class="line">语句由两部分组成，一个是`SELECT` 部分，标识要在查询结果中进行显示的变量(在查询结果中将以第一行的形式出现),也就是说 `?title`是一个变量  </span><br><span class="line">另外一个是`WHERE`部分，提供与数据图表匹配的基本图形模式(basic grapg pattern)  </span><br><span class="line"></span><br><span class="line">**多个匹配**  </span><br><span class="line">根据`WHERE`部分的基本图形部分，匹配的结果可能是0个，1个或者多个  </span><br><span class="line"></span><br><span class="line">**匹配RDF文本(literals)**  </span><br><span class="line">在Turtle中  </span><br><span class="line">以下RDF文本  </span><br><span class="line">`&quot;cat&quot;@en`  </span><br><span class="line">意味着有着 词汇形式(lexical form):&quot;cat&quot;  </span><br><span class="line">以及语言(language):&quot;en&quot;   </span><br><span class="line"></span><br><span class="line">以下RDF文本  </span><br><span class="line">`&quot;42&quot;^^xsd:integer&quot;`  </span><br><span class="line">是一个`http://www.w3.org/2001/XMLSchema#integer; `类型的文本 </span><br><span class="line"> </span><br><span class="line">以下RDF文本  </span><br><span class="line">`&quot;abc&quot;^^dt:specialDatatype&quot;`  </span><br><span class="line">是一个`http://example.org/datatype#specialDatatype.`类型的文本  </span><br><span class="line"></span><br><span class="line">* 根据语言标签匹配文本    </span><br><span class="line">若要匹配`&quot;cat&quot;@en`,执行下列查询语句将没有结果  </span><br><span class="line">`SELECT ?v WHERE &#123;?v ?p &quot;cat&quot;&#125; ` </span><br><span class="line">因为&quot;cat&quot;和&quot;cat&quot;@en在RDF文本层面并不相同，因此无法匹配  </span><br><span class="line">为此有另外一种解决方案  </span><br><span class="line">`SELECT ?v WHERE &#123;?v ?p &quot;cat&quot;@en&#125;  </span><br><span class="line">也就是将语言标签也添加上去进行匹配，即可获得结果  </span><br><span class="line"></span><br><span class="line">* 使用数字类型来匹配文本  </span><br><span class="line">匹配`&quot;42&quot;^^xsd:integer&quot;`可使用以下查询语句  </span><br><span class="line">`SELECT ?v WHERE &#123;?v ?p 42&#125;`  </span><br><span class="line"></span><br><span class="line">* 匹配具有任意数字类型的文本  </span><br><span class="line">`SELECT ?v WHERE&#123;?v ?p &quot;abc&quot;^^&lt;http://example.org/datatype#specialDatatype&gt;&#125;`  </span><br><span class="line">词法形式和数据类型都匹配，不管数据类型是什么（任意数据类型），都可以匹配成功  </span><br><span class="line"></span><br><span class="line">查询结果中可包含空白节点， 空白节点标签的范围限定为结果集  </span><br><span class="line"></span><br><span class="line">SPARQL具有多种查询形式  </span><br><span class="line">有`SELECT`查询形式,返回变量绑定  </span><br><span class="line">也有`CONSTRUUCT`查询形式,返回RDF图  </span><br><span class="line"></span><br><span class="line">**----CONSTRUCT查询形式----**  </span><br><span class="line"></span><br><span class="line">data:  </span><br><span class="line"></span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">@prefix org:    &lt;http://example.com/ns#&gt; .</span><br><span class="line"></span><br><span class="line">_:a  org:employeeName   &quot;Alice&quot; .</span><br><span class="line">_:a  org:employeeId     12345 .</span><br><span class="line"></span><br><span class="line">_:b  org:employeeName   &quot;Bob&quot; .</span><br><span class="line">_:b  org:employeeId     67890 . </span><br><span class="line"></span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line">查询语句:  </span><br><span class="line"></span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">PREFIX foaf:   &lt;http://xmlns.com/foaf/0.1/&gt;</span><br><span class="line">PREFIX org:    &lt;http://example.com/ns#&gt;</span><br><span class="line"></span><br><span class="line">CONSTRUCT &#123; ?x foaf:name ?name &#125;</span><br><span class="line">WHERE  &#123; ?x org:employeeName ?name &#125;</span><br></pre></td></tr></table></figure>
-<p>result:  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">@prefix org: &lt;http://example.com/ns#&gt; .</span><br><span class="line">      </span><br><span class="line">_:x foaf:name &quot;Alice&quot; .</span><br><span class="line">_:y foaf:name &quot;Bob&quot; .</span><br></pre></td></tr></table></figure>
+<p>查询语句: </p>
+<pre><code>
+SELECT ?title
+WHERE
+{
+  &lt;http://example.org/book/book1&gt; &lt;http://purl.org/dc/elements/1.1/title&gt; ?title .
+}  
 
+</code></pre><p>语句由两部分组成，一个是<code>SELECT</code> 部分，标识要在查询结果中进行显示的变量(在查询结果中将以第一行的形式出现),也就是说 <code>?title</code>是一个变量<br>另外一个是<code>WHERE</code>部分，提供与数据图表匹配的基本图形模式(basic grapg pattern)  </p>
+<p><strong>多个匹配</strong><br>根据<code>WHERE</code>部分的基本图形部分，匹配的结果可能是0个，1个或者多个  </p>
+<p><strong>匹配RDF文本(literals)</strong><br>在Turtle中<br>以下RDF文本<br><code>&quot;cat&quot;@en</code><br>意味着有着 词汇形式(lexical form):”cat”<br>以及语言(language):”en”   </p>
+<p>以下RDF文本<br><code>&quot;42&quot;^^xsd:integer&quot;</code><br>是一个<code>http://www.w3.org/2001/XMLSchema#integer;</code>类型的文本 </p>
+<p>以下RDF文本<br><code>&quot;abc&quot;^^dt:specialDatatype&quot;</code><br>是一个<code>http://example.org/datatype#specialDatatype.</code>类型的文本  </p>
+<ul>
+<li><p>根据语言标签匹配文本<br>若要匹配<code>&quot;cat&quot;@en</code>,执行下列查询语句将没有结果<br><code>SELECT ?v WHERE {?v ?p &quot;cat&quot;}</code><br>因为”cat”和”cat”@en在RDF文本层面并不相同，因此无法匹配<br>为此有另外一种解决方案<br>`SELECT ?v WHERE {?v ?p “cat”@en}<br>也就是将语言标签也添加上去进行匹配，即可获得结果  </p>
+</li>
+<li><p>使用数字类型来匹配文本<br>匹配<code>&quot;42&quot;^^xsd:integer&quot;</code>可使用以下查询语句<br><code>SELECT ?v WHERE {?v ?p 42}</code>  </p>
+</li>
+<li><p>匹配具有任意数字类型的文本<br><code>SELECT ?v WHERE{?v ?p &quot;abc&quot;^^&lt;http://example.org/datatype#specialDatatype&gt;}</code><br>词法形式和数据类型都匹配，不管数据类型是什么（任意数据类型），都可以匹配成功  </p>
+</li>
+</ul>
+<p>查询结果中可包含空白节点， 空白节点标签的范围限定为结果集  </p>
+<p>SPARQL具有多种查询形式<br>有<code>SELECT</code>查询形式,返回变量绑定<br>也有<code>CONSTRUUCT</code>查询形式,返回RDF图  </p>
+<p><strong>—-CONSTRUCT查询形式—-</strong>  </p>
+<p>data:  </p>
+<pre><code>
+@prefix org:    &lt;http://example.com/ns#&gt; .
+
+_:a  org:employeeName   &quot;Alice&quot; .
+_:a  org:employeeId     12345 .
+
+_:b  org:employeeName   &quot;Bob&quot; .
+_:b  org:employeeId     67890 . 
+
+</code></pre><p>查询语句:  </p>
+<pre><code>PREFIX foaf:   &lt;http://xmlns.com/foaf/0.1/&gt;
+PREFIX org:    &lt;http://example.com/ns#&gt;
+
+CONSTRUCT { ?x foaf:name ?name }
+WHERE  { ?x org:employeeName ?name }
+
+</code></pre><p>result:  </p>
+<pre><code>@prefix org: &lt;http://example.com/ns#&gt; .
+
+_:x foaf:name &quot;Alice&quot; .
+_:y foaf:name &quot;Bob&quot; .
+
+</code></pre>
       
     </div>
     
