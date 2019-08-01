@@ -263,6 +263,179 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/29/HTMLReview/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="leaf rock quiet">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="superQ">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/07/29/HTMLReview/" itemprop="url">HTML基础复习(一）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-29T16:43:46+08:00">
+                2019-07-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/coding/" itemprop="url" rel="index">
+                    <span itemprop="name">coding</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>标题分6个等级，从&lt;h1&gt;到&lt;h6&gt;<br><code>&lt;h1&gt;这是一个一级标题&lt;h1&gt;</code><br>如何让你的标题变红<br><code>&lt;h1 style=&quot;color:red&quot;&gt;title&lt;/h1&gt;</code><br>即使用style属性中的color，这是style的内联样式<br>如果需要配置的属性过多，可以使用&lt;style&gt;结合css</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;  </span><br><span class="line">选择器&#123;属性名称:属性值;&#125;</span><br><span class="line">example: h2&#123;color:red;&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<p>注：一定要在属性值的后面加上分号  </p>
+<p><strong>类选择器</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">   .类名&#123;</span><br><span class="line">     &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;h2 class=&quot;类名&quot;&gt;title2&lt;/h2&gt;</span><br></pre></td></tr></table></figure></p>
+<p>class=”类A 类B 类C…”<br>可以应用多个类，但是必须用空格隔开</p>
+<p>改变文章的字体大小可以用<em>font-size</em>属性<br>改变文章的字体可以用<em>font-family</em>属性<br>当某种字体不可用时，可以让它自动降级到另一种字体<br>example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p&#123;</span><br><span class="line">   font-family: Helvetica,Sans-Serif;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当Helvetica字体不可用时，字体会自动降级到San-Serif  </p>
+<ul>
+<li><p>img元素<br><strong>img是自关闭元素，不需要结束标记</strong><br><code>&lt;img src=图片的具体地址&gt;</code><br>若要设置图片宽度，可用CSS中的<em>width</em>属性<br>给图片添加边框，可以用border-width,border-tstyle与border-color三个属性<br>若想要添加圆角边框，则可以用属性border-radius,参数可以是像素，也可以是百分比<br>alt属性：当图片因为各种原因无法加载时显示的替代文本  </p>
+</li>
+<li><p>a元素<br>anchor元素，可以用来连接到外部地址实现页面跳转功能,也可连接到当前页面的某部分实现内部导航功能<br><code>&lt;a href=&quot;URL&quot;&gt;anchor text&lt;/a&gt;</code><br>但是如果你暂时不知道要跳转到哪里的时候，可以用#代替，别名哈希符号<br><code>href=&quot;#&quot;</code><br>想把一张图片作为一个连接，直接将图片嵌套进a元素即可<br><code>&lt;a&gt;&lt;img&gt;&lt;/img&gt;&lt;/a&gt;</code>  </p>
+</li>
+<li><p>ul元素<br>创意一个无序列表,包含多个li元素</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt; </span><br><span class="line">  &lt;li&gt;&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>ol元素<br>与无序表用法类似，在ol中嵌套多个li元素  </p>
+</li>
+<li><p>input元素<br><strong>input元素是自关闭的</strong><br>其中初始化方框的文本为属性placeholder<br><code>&lt;input type=&quot;text&quot; placeholder=&quot;预定义文本&quot;&gt;</code><br>如果要设置必填，则添加上required属性即可<br><code>&lt;imput type=&quot;text&quot; required&gt;</code>  </p>
+</li>
+<li><p>button元素<br>定义一个按钮   </p>
+</li>
+</ul>
+<p><strong>单选按钮(type=”radio”)</strong><br>用来定义单选按钮，在多个选项中只能选一个，嵌套在自己的label元素中,<strong>所有关联的单选按钮要使用相同的name属性</strong><br>example:  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;indoor/outdoor&quot;&gt;indoor&lt;/label&gt;</span><br><span class="line">&lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;indoor/outdoor&quot;&gt;outdoor&lt;/label&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>多选按钮(type=”checkbox”)</strong><br>可以被多选  </p>
+<p>多选按钮和单选按钮都可以用checked属性来表明默认被选中  </p>
+<p>背景颜色可以用background-color属性来设置  </p>
+<p><strong>设置id会对以后的jQuery有好处（小本本记下来）</strong><br><code>&lt;div id=&quot;id号&quot;&gt;</code><br>在style元素中的表示方法为  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#&#123;</span><br><span class="line">属性;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/29/xmlNamespace/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1627,126 +1800,6 @@ SET alexa=&#39;5000&#39;, country=&#39;USA&#39;</code><br>执行以上代码会�
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/22/aaa-hexo/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="leaf rock quiet">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="superQ">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/22/aaa-hexo/" itemprop="url">aaa.hexo </a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-22T20:08:58+08:00">
-                2019-02-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>bug</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1799,7 +1852,7 @@ SET alexa=&#39;5000&#39;, country=&#39;USA&#39;</code><br>执行以上代码会�
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1935,7 +1988,7 @@ SET alexa=&#39;5000&#39;, country=&#39;USA&#39;</code><br>执行以上代码会�
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">there are 9.3k words in the whole site</span>
+  <span class="post-count">there are 10.1k words in the whole site</span>
 </div>
         
 

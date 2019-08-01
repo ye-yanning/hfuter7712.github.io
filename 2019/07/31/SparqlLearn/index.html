@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="superQ">
 <meta property="og:description" content="全程官方文档英文阅读理解。。  （有部分谷歌翻译辅助，不过大部分还是阅读理解，因为谷歌翻译的虽然很好，但是有些也会脱离本意）标题写着 “SPARQL Query Language for RDF”想必也是针对RDF设计的一种查询语言了   大多数形式的SPARQL查询包含一族成为基本图形模式的三重模式(triple patterns   编写一条简单的查询语言Data:&amp;lt;http://exa">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-31T08:24:33.227Z">
+<meta property="og:updated_time" content="2019-07-31T14:40:23.052Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Sparql查询语言基础学习（一）">
 <meta name="twitter:description" content="全程官方文档英文阅读理解。。  （有部分谷歌翻译辅助，不过大部分还是阅读理解，因为谷歌翻译的虽然很好，但是有些也会脱离本意）标题写着 “SPARQL Query Language for RDF”想必也是针对RDF设计的一种查询语言了   大多数形式的SPARQL查询包含一族成为基本图形模式的三重模式(triple patterns   编写一条简单的查询语言Data:&amp;lt;http://exa">
@@ -366,7 +366,7 @@ WHERE
 
 </code></pre><p>语句由两部分组成，一个是<code>SELECT</code> 部分，标识要在查询结果中进行显示的变量(在查询结果中将以第一行的形式出现),也就是说 <code>?title</code>是一个变量<br>另外一个是<code>WHERE</code>部分，提供与数据图表匹配的基本图形模式(basic grapg pattern)  </p>
 <p><strong>多个匹配</strong><br>根据<code>WHERE</code>部分的基本图形部分，匹配的结果可能是0个，1个或者多个  </p>
-<p><strong>匹配RDF文本(literals)</strong><br>在Turtle中<br>以下RDF文本<br><code>&quot;cat&quot;@en</code><br>意味着有着 词汇形式(lexical form):”cat”<br>以及语言(language):”en”   </p>
+<p><strong>匹配RDF文本(literals)</strong><br>在Turtle中<br>以下RDF文本<br><code>&quot;cat&quot;@en</code><br>意味着有着 词汇形式(lexical form):”cat”<br>以及语言(language):”en” (语言标签language tags)  </p>
 <p>以下RDF文本<br><code>&quot;42&quot;^^xsd:integer&quot;</code><br>是一个<code>http://www.w3.org/2001/XMLSchema#integer;</code>类型的文本 </p>
 <p>以下RDF文本<br><code>&quot;abc&quot;^^dt:specialDatatype&quot;</code><br>是一个<code>http://example.org/datatype#specialDatatype.</code>类型的文本  </p>
 <ul>
@@ -532,7 +532,7 @@ _:y foaf:name &quot;Bob&quot; .
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -668,7 +668,7 @@ _:y foaf:name &quot;Bob&quot; .
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">there are 9.3k words in the whole site</span>
+  <span class="post-count">there are 10.1k words in the whole site</span>
 </div>
         
 
