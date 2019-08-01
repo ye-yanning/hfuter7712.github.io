@@ -556,6 +556,21 @@ for(var i=0;i&lt;contacts.length;i++)
         
           
             <p>JSON(JavaScript Object Notation)  使用Javascript对象的格式来存储数据<br>允许数据结构是字符串，数字，布尔值和对象的任意组合<br>(string、number、boolean与Object的任意组合)<br>JSON对象可以嵌套对象和数组,用中括号操作符同样可以访问嵌套数组  </p>
+<p><strong>产生指定范围内的随机整数(方法来自freecodecamp)</strong><br><code>Math.random()</code> 产生随机小数<br><code>Math.floor()</code> 在目前的小数向下取证<br>产生0~19内的整数<br><code>Math.floor(Math.random()*20)</code><br>产生a~b内的整数<br><code>Math.floor(Math.random() * (b - a + 1)) + a</code>  </p>
+<p><strong>正则表达式</strong><br>是一种根据某种匹配方式来寻找strings中的某些单词<br>在字符串中寻找单词<code>the</code>，可使用下列正则表达式  </p>
+<ul>
+<li>文本</li>
+</ul>
+<p><code>/the/gi</code><br><code>/</code>是正则表达式的头部<br>第二个<code>/</code>时候正则表达式的尾部<br><code>g</code>代表着global,意味着返回所有的匹配而不仅仅是第一个<br><code>i</code>代表忽略大小写  </p>
+<ul>
+<li>数字  </li>
+</ul>
+<p>数字选择器<code>\d</code><br>用法:<code>/\d/g</code><br>在选择器后加上一个加号<br><code>/\d+/g</code><br>允许这个正则表达式匹配一个或更多的数字  </p>
+<ul>
+<li>空白 </li>
+</ul>
+<p>空白字符有<code>&quot; &quot;</code>（空格符）,<code>\r</code>（回车符）,<code>\n</code>（换行符）,<code>\t</code>（制表符）,<code>\f</code>（换页符）<br>空白选择器<code>\s</code><br>空白正则表达式类似于<br><code>/\s+/g</code>  </p>
+<p>有趣的是，以上两个选择器将小写转化为大写的话，就会匹配与原来相反的字符<br>比如<code>\S</code>是匹配任何非空白字符       </p>
 
           
         
@@ -2141,7 +2156,7 @@ xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;&gt;</code>  </
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">there are 10.8k words in the whole site</span>
+  <span class="post-count">there are 11.1k words in the whole site</span>
 </div>
         
 
