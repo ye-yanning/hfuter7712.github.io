@@ -372,7 +372,7 @@
     ?x foaf:mbox ?mbox .
   }
 </code></pre><p>在上述基础上添加了<code>FILTER</code>   </p>
-<p><strong>包含可选(OPTIONAL关键字)</strong><br>语法如下:<br><code>{OPTIONAL{pattern}}</code><br>个人理解:由于不是所有的RDF图中都具有完整的结构，有些RDF会缺乏部分属性，因此<code>OPTONAL</code>的作用就是在<code>OPTIONAL</code>的括号内的属性如果匹配，即选上，如果可选部分不匹配，但是其他基础属性都匹配的话，也会认定为是匹配的<br>就比方说上大学，有很多人是有加分项的，有加分项的人可以被录取并标明，但是没有加分项的人也可以被录取，这就是<code>OPTIONAL</code>的功能  </p>
+<p><strong>包含可选(OPTIONAL关键字)</strong><br>语法如下:<br><code>{OPTIONAL{pattern}}</code><br>个人理解:由于不是所有的RDF图中都具有完整的结构，有些RDF会缺乏部分属性，因此<code>OPTIONAL</code>的作用就是在<code>OPTIONAL</code>的括号内的属性如果匹配，即选上，如果可选部分不匹配，但是其他基础属性都匹配的话，也会认定为是匹配的<br>就比方说上大学，有很多人是有加分项的，有加分项的人可以被录取并标明，但是没有加分项的人也可以被录取，这就是<code>OPTIONAL</code>的功能  </p>
 <p>example:<br>数据:</p>
 <pre><code>@prefix foaf:       &lt;http://xmlns.com/foaf/0.1/&gt; .
 @prefix rdf:        &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
@@ -451,7 +451,8 @@ WHERE
 </code></pre><p>最终src匹配到的都是类似<code>&lt;http://example.org/foaf/aliceFoaf&gt;</code>的IRI<br>同时<code>GRAPH</code>还可以限制应用于特定图谱的匹配  </p>
 <p><strong>重复的解决方案</strong><br>如果在查询语句中没有<code>DISTINCT</code>或者<code>REDUCED</code>关键字，重复的解决方案将会被保留，也就是说不同的匹配可能会相同<br><strong>DISTINCT</strong><br>该关键字用法如下<br><code>SELECT DISTINCT ?name WHERE{ ?x foaf:name ?name }</code><br>该方法将会消除所有重复的解决方案<br><strong>REDUCED</strong><br>该关键字用法如下<br><code>SELECT REDUCED ?name WHERE { ?x foaf:name ?name }</code><br>顾名思义，该方法将会减少重复的次数，范围从1~未使用上述两个关键字之间不等<br>也就是说仍然可能不变，比如重复的匹配有4个，那么使用<code>REDUCED</code>后可能就剩1个，2个，3个甚至仍然还是四个  </p>
 <p><strong>OFFSET关键字</strong><br>该关键字定义在特定的偏移数量后的方法，顾名思义，<code>OFFSET</code>即偏移，<code>OFFSET 0</code>没有实际作用  </p>
-<p><strong>LIMIT关键字</strong><br>这个关键字想必也不难理解，就是限制结果显示匹配的数量，假设有10个满足条件匹配成功，使用<code>LIMIT 5</code>使得最终结果只显示5个匹配</p>
+<p><strong>LIMIT关键字</strong><br>这个关键字想必也不难理解，就是限制结果显示匹配的数量，假设有10个满足条件匹配成功，使用<code>LIMIT 5</code>使得最终结果只显示5个匹配  </p>
+<p>SPARQL官方教程（英文）：<a href="https://www.w3.org/TR/rdf-sparql-query/" target="_blank" rel="noopener">https://www.w3.org/TR/rdf-sparql-query/</a></p>
 
           
         
