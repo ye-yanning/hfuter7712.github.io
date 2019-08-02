@@ -263,6 +263,187 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/02/Javascript3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="leaf rock quiet">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="superQ">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/02/Javascript3/" itemprop="url">Javascript基础学习（三）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-02T21:04:33+08:00">
+                2019-08-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/coding/" itemprop="url" rel="index">
+                    <span itemprop="name">coding</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>用构造函数创建对象<br><strong>构造函数通常采用大写字母开头，以便把自己和其他普通函数区分开</strong><br>example:  </p>
+<pre><code>var Animal = function(){
+  this.legs = 4;  
+  this.heart = 1;
+};  
+
+</code></pre><p><code>this</code>指向被该构造函数创造出来的对象  </p>
+<p><strong>new  关键字</strong>  </p>
+<p>掉用构造函数构造一个实例的方法<br><code>var myCar = new Car()</code>  </p>
+<p>构造函数可添加参数<br>example:  </p>
+<pre><code>var Car = function(wheels,seats,engines){
+   this.wheels=wheels;
+   this.seats=seats;
+   this.engines=engines;
+ };
+</code></pre><p>在调用时传入参数即可<br><code>var myCar = new Car(4,2,5);</code>  </p>
+<p>在设置构造函数时，在函数体中用<code>var</code>代替<code>this</code>声明变量即可声明私有变量与私有方法  </p>
+<p><strong>map方法</strong><br>map方法可以方便的迭代数组<br>会迭代数组中的每一个元素，并根据回调函数来处理每一个元素，最后返回一个新数组（不会改变原始数组）<br>example:<br>让数组ArrayA每一项+3,并存储到newArray中  </p>
+<pre><code>var newArray = ArrayA.map(function(val){
+     return val+3;
+};
+
+</code></pre><p><strong>reduce方法</strong><br>数组方法<code>reduce</code>用来迭代一个数组，并将其累积到一个值中<br>第一个参数是一个累加器回调函数<br>第二个参数是一个可选的参数，比用来设置累加器的初始值<br>example:<br>让ArrayA数组中所有元素都累加:  </p>
+<pre><code>var sum;
+
+sum = ArrayA.reduce(function(pre,cur){
+    return pre + cur;
+},sum);
+</code></pre><p><strong>filter函数</strong><br>话说在学sparql的时候也有这玩意呢，果真过滤器嘛<br>该函数传入一个回调函数，该回调函数会携带一个参数，参数为当前迭代的项<br>所返回表达式中若数组元素使该表达式为真时加入新数组，为假时则不添加<br>example:  </p>
+<pre><code>var newArray = ArrayA.filter(function(val){
+    return val&lt;6;
+});
+</code></pre><p>上述代码将ArrayA数组中小于6的元素传入newArray数组中  </p>
+<p><strong>reverse方法</strong><br>reverse方法是对一个数组进行翻转，传入一个新的数组中<br><code>var newArray = ArrayA.reverse()</code>  </p>
+<p><strong>concat方法</strong><br>该方法可以用来把两个数组的内容合并到一个数组中<br>example:<br>连接secondArray到firstArray后面<br><code>var newArray = firstArray.concat(secondArray);</code>  </p>
+<p><strong>split方法</strong><br>可以按照指定分隔符将字符串分为数组<br>example:<br>将一个字符串按照字符s分割成数组<br><code>var newArray=ArrayA.split(&quot;s&quot;);</code>    </p>
+<p><strong>join方法</strong><br>可以使用该方法把数组转换成字符串，里面的每一个元素用指定的连接符连接<br>example: </p>
+<pre><code>ArrayA=[&quot;I&quot;,&quot;Jerry&quot;,&quot;Tom&quot;];
+var stringA = ArrayA.split(&quot; and &quot;);
+//结果stringA=“I and Jerry and Tom&quot;  
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/02/SparqlLearn3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1873,166 +2054,6 @@ xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;&gt;</code>  </
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/30/HTML combine with jQuery/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="leaf rock quiet">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="superQ">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/30/HTML combine with jQuery/" itemprop="url">HTML基础复习(三)+结合jQuery</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-30T17:02:59+08:00">
-                2019-07-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/coding/" itemprop="url" rel="index">
-                    <span itemprop="name">coding</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ul>
-<li>script元素  </li>
-<li>内含JavaScript语句，浏览器会执行script里面的所有语句，包括jQuery  </li>
-</ul>
-<p><strong>jQuery</strong><br>所有jQuery方法都是由$开始的,通常称为美元符号或者简称为bling  </p>
-<ul>
-<li>使用jQuery的 <code>.address()</code> 方法，就可以给元素添加class了  </li>
-<li>使用jQuery的<code>.removeClass()</code>方法去掉元素上的class了  </li>
-<li>使用<code>.css()</code>可以改变元素的CSS样式<br>example: <code>$(&quot;#target&quot;).css(&quot;color&quot;,&quot;blue&quot;);</code>  </li>
-<li>使用<code>.prop()</code>来调整元素的属性<br>example: <code>$(&quot;button&quot;).prop(&quot;disabled&quot;,true);</code>  </li>
-<li>使用<code>.remove()</code> 来移除HTML元素  </li>
-<li>使用<code>appendTo()</code> 方法可以把选中的元素加到其他元素中<br>example:<br>假设id为one的元素在id为first的区块中，有另外一个区块id为second<br>要想把该元素移动到区块second中,可以这么操作<br><code>$(&quot;#one&quot;).appendTo(&quot;#second&quot;);</code>  </li>
-<li>使用clone()可以拷贝元素<br>假设id为one的元素在id为first的区块中，有另外一个区块id为second<br>要想把该元素复制到区块second中，可以这么操作<br><code>$(&quot;#one&quot;).clone().appendTo(&quot;#second&quot;);</code><br><strong>可以这么理解,移动元素就是剪切，拷贝元素就是复制</strong>   </li>
-<li>使用<code>parent()</code>可以访问当前元素的父元素<br>example:一个id为first的h2元素的父元素是div，可以通过以下代码让div区块的背景颜色变蓝<br><code>$(&quot;first&quot;).parent().css(&quot;background-color&quot;,&quot;blue&quot;);</code></li>
-<li>使用<code>children()</code>可以访问当前元素的子元素     </li>
-<li>使用<code>$(&quot;button&quot;)</code>来选中按钮,使用<code>$(&quot;.well&quot;)</code>来获取所有class为well的对象，使用<code>$(&quot;#fist&quot;)</code>来获取所有id为first的对象</li>
-</ul>
-<p>部分class<br>animated bounce 所应用部分有弹跳效果<br>animated shake 所应用部分有摇摆效果  </p>
-<p><strong>在线编辑器:CodePen</strong><br><strong>程序员的Read-Search-Ask大法，加油!</strong></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2085,7 +2106,7 @@ xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;&gt;</code>  </
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2221,7 +2242,7 @@ xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;&gt;</code>  </
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">there are 12.3k words in the whole site</span>
+  <span class="post-count">there are 13k words in the whole site</span>
 </div>
         
 
