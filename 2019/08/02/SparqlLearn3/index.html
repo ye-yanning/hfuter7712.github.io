@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Javascript,JSON,">
+  <meta name="keywords" content="Sparql,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="JSON(JavaScript Object Notation)  使用Javascript对象的格式来存储数据允许数据结构是字符串，数字，布尔值和对象的任意组合(string、number、boolean与Object的任意组合)JSON对象可以嵌套对象和数组,用中括号操作符同样可以访问嵌套数组   产生指定范围内的随机整数(方法来自freecodecamp)Math.random() 产生随机">
-<meta name="keywords" content="Javascript,JSON">
+<meta name="description" content="Filters的作用域FILETER是对其出现的整个组的限制，因此只要大括号内有FILTER，解决方案都是相同的   Basic Garph Patterns  Basic Graph Patterns,where a set of triple patterns must match    example:   {     ?x foaf:name ?name .     ?x foaf:mbo">
+<meta name="keywords" content="Sparql">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Javascript基础学习+JSON">
-<meta property="og:url" content="http://yoursite.com/2019/08/01/Javascript2/index.html">
+<meta property="og:title" content="Sparql基础学习(三)">
+<meta property="og:url" content="http://yoursite.com/2019/08/02/SparqlLearn3/index.html">
 <meta property="og:site_name" content="superQ">
-<meta property="og:description" content="JSON(JavaScript Object Notation)  使用Javascript对象的格式来存储数据允许数据结构是字符串，数字，布尔值和对象的任意组合(string、number、boolean与Object的任意组合)JSON对象可以嵌套对象和数组,用中括号操作符同样可以访问嵌套数组   产生指定范围内的随机整数(方法来自freecodecamp)Math.random() 产生随机">
+<meta property="og:description" content="Filters的作用域FILETER是对其出现的整个组的限制，因此只要大括号内有FILTER，解决方案都是相同的   Basic Garph Patterns  Basic Graph Patterns,where a set of triple patterns must match    example:   {     ?x foaf:name ?name .     ?x foaf:mbo">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-01T08:38:36.618Z">
+<meta property="og:updated_time" content="2019-08-02T07:30:17.169Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Javascript基础学习+JSON">
-<meta name="twitter:description" content="JSON(JavaScript Object Notation)  使用Javascript对象的格式来存储数据允许数据结构是字符串，数字，布尔值和对象的任意组合(string、number、boolean与Object的任意组合)JSON对象可以嵌套对象和数组,用中括号操作符同样可以访问嵌套数组   产生指定范围内的随机整数(方法来自freecodecamp)Math.random() 产生随机">
+<meta name="twitter:title" content="Sparql基础学习(三)">
+<meta name="twitter:description" content="Filters的作用域FILETER是对其出现的整个组的限制，因此只要大括号内有FILTER，解决方案都是相同的   Basic Garph Patterns  Basic Graph Patterns,where a set of triple patterns must match    example:   {     ?x foaf:name ?name .     ?x foaf:mbo">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/08/01/Javascript2/">
+  <link rel="canonical" href="http://yoursite.com/2019/08/02/SparqlLearn3/">
 
 
 
 
 
-  <title>Javascript基础学习+JSON | superQ</title>
+  <title>Sparql基础学习(三) | superQ</title>
   
 
 
@@ -264,7 +264,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/01/Javascript2/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/02/SparqlLearn3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="leaf rock quiet">
@@ -281,7 +281,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Javascript基础学习+JSON</h1>
+          <h1 class="post-title" itemprop="name headline">Sparql基础学习(三)</h1>
         
 
         <div class="post-meta">
@@ -293,8 +293,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-01T11:43:12+08:00">
-                2019-08-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-02T10:12:43+08:00">
+                2019-08-02
               </time>
             
 
@@ -353,22 +353,102 @@
       
 
       
-        <p>JSON(JavaScript Object Notation)  使用Javascript对象的格式来存储数据<br>允许数据结构是字符串，数字，布尔值和对象的任意组合<br>(string、number、boolean与Object的任意组合)<br>JSON对象可以嵌套对象和数组,用中括号操作符同样可以访问嵌套数组  </p>
-<p><strong>产生指定范围内的随机整数(方法来自freecodecamp)</strong><br><code>Math.random()</code> 产生随机小数<br><code>Math.floor()</code> 在目前的小数向下取证<br>产生0~19内的整数<br><code>Math.floor(Math.random()*20)</code><br>产生a~b内的整数<br><code>Math.floor(Math.random() * (b - a + 1)) + a</code>  </p>
-<p><strong>正则表达式</strong><br>是一种根据某种匹配方式来寻找strings中的某些单词<br>在字符串中寻找单词<code>the</code>，可使用下列正则表达式  </p>
+        <p><strong>Filters的作用域</strong><br><code>FILETER</code>是对其出现的整个组的限制，因此只要大括号内有<code>FILTER</code>，解决方案都是相同的  </p>
+<p><strong>Basic Garph Patterns</strong></p>
 <ul>
-<li>文本</li>
+<li>Basic Graph Patterns,where a set of triple patterns must match  </li>
 </ul>
-<p><code>/the/gi</code><br><code>/</code>是正则表达式的头部<br>第二个<code>/</code>时候正则表达式的尾部<br><code>g</code>代表着global,意味着返回所有的匹配而不仅仅是第一个<br><code>i</code>代表忽略大小写  </p>
+<p>example:  </p>
+<pre><code>{
+    ?x foaf:name ?name .
+    ?x foaf:mbox ?mbox .
+  }  
+</code></pre><p>是一组基本图形模式，由两个三重模式组成  </p>
+<pre><code>{
+    ?x foaf:name ?name . FILTER regex(?name, &quot;Smith&quot;)
+    ?x foaf:mbox ?mbox .
+  }
+</code></pre><p>在上述基础上添加了<code>FILTER</code>   </p>
+<p><strong>包含可选(OPTIONAL关键字)</strong><br>语法如下:<br><code>{OPTIONAL{pattern}}</code><br>个人理解:由于不是所有的RDF图中都具有完整的结构，有些RDF会缺乏部分属性，因此<code>OPTONAL</code>的作用就是在<code>OPTIONAL</code>的括号内的属性如果匹配，即选上，如果可选部分不匹配，但是其他基础属性都匹配的话，也会认定为是匹配的<br>就比方说上大学，有很多人是有加分项的，有加分项的人可以被录取并标明，但是没有加分项的人也可以被录取，这就是<code>OPTIONAL</code>的功能  </p>
+<p>example:<br>数据:</p>
+<pre><code>@prefix foaf:       &lt;http://xmlns.com/foaf/0.1/&gt; .
+@prefix rdf:        &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+
+_:a  rdf:type        foaf:Person .
+_:a  foaf:name       &quot;Alice&quot; .
+_:a  foaf:mbox       &lt;mailto:alice@example.com&gt; .
+_:a  foaf:mbox       &lt;mailto:alice@work.example&gt; .
+
+_:b  rdf:type        foaf:Person .
+_:b  foaf:name       &quot;Bob&quot; .  
+
+</code></pre><p>查询语句:  </p>
+<pre><code>PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt;
+SELECT ?name ?mbox
+WHERE  { ?x foaf:name  ?name .
+         OPTIONAL { ?x  foaf:mbox  ?mbox }
+       }
+</code></pre><p>结果:  </p>
+<pre><code>name    mbox
+&quot;Alice&quot;    &lt;mailto:alice@example.com&gt;
+&quot;Alice&quot;    &lt;mailto:alice@work.example&gt;
+&quot;Bob&quot;    
+
+</code></pre><p>可见name为Bob的这项匹配即使mbox为空白（即在mbox方面不匹配)也可以在最终被认定为匹配</p>
+<p><strong>UNION关键字</strong><br>个人理解：用UNION链接的模式中满足任意一个即可匹配<br>example:<br>数据:  </p>
+<pre><code>@prefix dc10:  &lt;http://purl.org/dc/elements/1.0/&gt; .
+@prefix dc11:  &lt;http://purl.org/dc/elements/1.1/&gt; .
+
+_:a  dc10:title     &quot;SPARQL Query Language Tutorial&quot; .
+_:a  dc10:creator   &quot;Alice&quot; .
+
+_:b  dc11:title     &quot;SPARQL Protocol Tutorial&quot; .
+_:b  dc11:creator   &quot;Bob&quot; .
+
+_:c  dc10:title     &quot;SPARQL&quot; .
+_:c  dc11:title     &quot;SPARQL (updated)&quot; .  
+
+</code></pre><p>查询语句  </p>
+<pre><code>PREFIX dc10:  &lt;http://purl.org/dc/elements/1.0/&gt;
+PREFIX dc11:  &lt;http://purl.org/dc/elements/1.1/&gt;
+
+SELECT ?title
+WHERE  { { ?book dc10:title  ?title } UNION { ?book dc11:title  ?title } }  
+</code></pre><p>结果  </p>
+<pre><code>          title
+&quot;SPARQL Protocol Tutorial&quot;
+&quot;SPARQL&quot;
+&quot;SPARQL (updated)&quot;
+&quot;SPARQL Query Language Tutorial&quot;  
+
+</code></pre><p>可以看出，凡是满足三重模式第三项中为”title”的都成功匹配了<br>二而第二项可以为<code>dc10</code>或者<code>dc11</code>，这两个也是<code>UNION</code>连接的两个条件   </p>
+<p><strong>FROM关键字</strong><br>SPARQL查询可以使用<code>FROM</code>和<code>FROM NAMED</code>字句来指定要用于匹配的数据集，以描述RDF数据集 </p>
+<p>由许多<code>FROM</code>和<code>FROM NAMED</code> 自己产生的数据集是:  </p>
 <ul>
-<li>数字  </li>
+<li>一个默认图谱(graph)，由<code>FROM</code>字句中引用的图谱的RDF合并形成  </li>
+<li>一组(IRI,图谱)对，每个<code>FROM NAMED</code>字句一个  </li>
 </ul>
-<p>数字选择器<code>\d</code><br>用法:<code>/\d/g</code><br>在选择器后加上一个加号<br><code>/\d+/g</code><br>允许这个正则表达式匹配一个或更多的数字  </p>
-<ul>
-<li>空白 </li>
-</ul>
-<p>空白字符有<code>&quot; &quot;</code>（空格符）,<code>\r</code>（回车符）,<code>\n</code>（换行符）,<code>\t</code>（制表符）,<code>\f</code>（换页符）<br>空白选择器<code>\s</code><br>空白正则表达式类似于<br><code>/\s+/g</code>  </p>
-<p>有趣的是，以上两个选择器将小写转化为大写的话，就会匹配与原来相反的字符<br>比如<code>\S</code>是匹配任何非空白字符       </p>
+<p>每个<code>FROM</code>语句都包含一个IRI<br>example:  </p>
+<pre><code>PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt;
+SELECT  ?name
+FROM    &lt;http://example.org/foaf/aliceFoaf&gt;
+WHERE   { ?x foaf:name ?name }  
+</code></pre><p>如果一个查询包含多个<code>FROM</code>，那么最终的默认图谱是这些<code>FROM</code>所引用所有图谱的合并  </p>
+<p>使用<code>FROM NAMED</code>来匹配RDF数据集中的命名图    </p>
+<p><strong>GRAPH关键字</strong><br><code>GRAPH</code>关键字用于将图形模式与数据集中的每个命名图形相匹配，并形成解决方案<br>可将其后面的变量绑定到匹配的图谱的IRI<br>example:  </p>
+<pre><code>
+WHERE 
+  { 
+    GRAPH？src 
+    {？x foaf：mbox &lt;mailto：bob@work.example&gt;。
+      ？x foaf：nick？bobNick 
+    } 
+  }  
+
+</code></pre><p>最终src匹配到的都是类似<code>&lt;http://example.org/foaf/aliceFoaf&gt;</code>的IRI<br>同时<code>GRAPH</code>还可以限制应用于特定图谱的匹配  </p>
+<p><strong>重复的解决方案</strong><br>如果在查询语句中没有<code>DISTINCT</code>或者<code>REDUCED</code>关键字，重复的解决方案将会被保留，也就是说不同的匹配可能会相同<br><strong>DISTINCT</strong><br>该关键字用法如下<br><code>SELECT DISTINCT ?name WHERE{ ?x foaf:name ?name }</code><br>该方法将会消除所有重复的解决方案<br><strong>REDUCED</strong><br>该关键字用法如下<br><code>SELECT REDUCED ?name WHERE { ?x foaf:name ?name }</code><br>顾名思义，该方法将会减少重复的次数，范围从1~未使用上述两个关键字之间不等<br>也就是说仍然可能不变，比如重复的匹配有4个，那么使用<code>REDUCED</code>后可能就剩1个，2个，3个甚至仍然还是四个  </p>
+<p><strong>OFFSET关键字</strong><br>该关键字定义在特定的偏移数量后的方法，顾名思义，<code>OFFSET</code>即偏移，<code>OFFSET 0</code>没有实际作用  </p>
+<p><strong>LIMIT关键字</strong><br>这个关键字想必也不难理解，就是限制结果显示匹配的数量，假设有10个满足条件匹配成功，使用<code>LIMIT 5</code>使得最终结果只显示5个匹配</p>
 
       
     </div>
@@ -386,9 +466,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Javascript/" rel="tag"># Javascript</a>
-          
-            <a href="/tags/JSON/" rel="tag"># JSON</a>
+            <a href="/tags/Sparql/" rel="tag"># Sparql</a>
           
         </div>
       
@@ -416,8 +494,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/01/Javascript1/" rel="next" title="Javascript基础复习+学习（一）">
-                <i class="fa fa-chevron-left"></i> Javascript基础复习+学习（一）
+              <a href="/2019/08/01/JSwrong1/" rel="next" title="JS对象数组操作属性小雷区">
+                <i class="fa fa-chevron-left"></i> JS对象数组操作属性小雷区
               </a>
             
           </div>
@@ -425,10 +503,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/08/01/JSwrong1/" rel="prev" title="JS对象数组操作属性小雷区">
-                JS对象数组操作属性小雷区 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>

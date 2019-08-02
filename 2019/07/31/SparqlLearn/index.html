@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="superQ">
 <meta property="og:description" content="全程官方文档英文阅读理解。。  （有部分谷歌翻译辅助，不过大部分还是阅读理解，因为谷歌翻译的虽然很好，但是有些也会脱离本意）标题写着 “SPARQL Query Language for RDF”想必也是针对RDF设计的一种查询语言了   大多数形式的SPARQL查询包含一族成为基本图形模式的三重模式(triple patterns   编写一条简单的查询语言Data:&amp;lt;http://exa">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-31T14:40:23.052Z">
+<meta property="og:updated_time" content="2019-08-02T04:05:32.767Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Sparql查询语言基础学习（一）">
 <meta name="twitter:description" content="全程官方文档英文阅读理解。。  （有部分谷歌翻译辅助，不过大部分还是阅读理解，因为谷歌翻译的虽然很好，但是有些也会脱离本意）标题写着 “SPARQL Query Language for RDF”想必也是针对RDF设计的一种查询语言了   大多数形式的SPARQL查询包含一族成为基本图形模式的三重模式(triple patterns   编写一条简单的查询语言Data:&amp;lt;http://exa">
@@ -403,6 +403,14 @@ WHERE  { ?x org:employeeName ?name }
 _:x foaf:name &quot;Alice&quot; .
 _:y foaf:name &quot;Bob&quot; .
 
+</code></pre><p><strong> ORDER BY 关键字</strong><br>该<code>ORDER BY</code>字句之后是一系列顺序比较器，有表达式和可选的顺序修饰符组成，每个排序比较器是升序(<code>由ASC()</code>修饰),降序(<code>由DESC()</code>修饰)  </p>
+<p><strong>SPARQL未定义所有可能的RDF术语的总排序</strong><br>example:  </p>
+<pre><code>PREFIX foaf:    &lt;http://xmlns.com/foaf/0.1/&gt;
+
+SELECT ?name
+WHERE { ?x foaf:name ?name }
+ORDER BY ?name  
+
 </code></pre>
       
     </div>
@@ -532,7 +540,7 @@ _:y foaf:name &quot;Bob&quot; .
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -668,7 +676,7 @@ _:y foaf:name &quot;Bob&quot; .
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">there are 11.1k words in the whole site</span>
+  <span class="post-count">there are 12.3k words in the whole site</span>
 </div>
         
 

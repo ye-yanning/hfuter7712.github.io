@@ -263,6 +263,243 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/02/SparqlLearn3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="leaf rock quiet">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="superQ">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/02/SparqlLearn3/" itemprop="url">Sparql基础学习(三)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-02T10:12:43+08:00">
+                2019-08-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/coding/" itemprop="url" rel="index">
+                    <span itemprop="name">coding</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>Filters的作用域</strong><br><code>FILETER</code>是对其出现的整个组的限制，因此只要大括号内有<code>FILTER</code>，解决方案都是相同的  </p>
+<p><strong>Basic Garph Patterns</strong></p>
+<ul>
+<li>Basic Graph Patterns,where a set of triple patterns must match  </li>
+</ul>
+<p>example:  </p>
+<pre><code>{
+    ?x foaf:name ?name .
+    ?x foaf:mbox ?mbox .
+  }  
+</code></pre><p>是一组基本图形模式，由两个三重模式组成  </p>
+<pre><code>{
+    ?x foaf:name ?name . FILTER regex(?name, &quot;Smith&quot;)
+    ?x foaf:mbox ?mbox .
+  }
+</code></pre><p>在上述基础上添加了<code>FILTER</code>   </p>
+<p><strong>包含可选(OPTIONAL关键字)</strong><br>语法如下:<br><code>{OPTIONAL{pattern}}</code><br>个人理解:由于不是所有的RDF图中都具有完整的结构，有些RDF会缺乏部分属性，因此<code>OPTONAL</code>的作用就是在<code>OPTIONAL</code>的括号内的属性如果匹配，即选上，如果可选部分不匹配，但是其他基础属性都匹配的话，也会认定为是匹配的<br>就比方说上大学，有很多人是有加分项的，有加分项的人可以被录取并标明，但是没有加分项的人也可以被录取，这就是<code>OPTIONAL</code>的功能  </p>
+<p>example:<br>数据:</p>
+<pre><code>@prefix foaf:       &lt;http://xmlns.com/foaf/0.1/&gt; .
+@prefix rdf:        &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+
+_:a  rdf:type        foaf:Person .
+_:a  foaf:name       &quot;Alice&quot; .
+_:a  foaf:mbox       &lt;mailto:alice@example.com&gt; .
+_:a  foaf:mbox       &lt;mailto:alice@work.example&gt; .
+
+_:b  rdf:type        foaf:Person .
+_:b  foaf:name       &quot;Bob&quot; .  
+
+</code></pre><p>查询语句:  </p>
+<pre><code>PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt;
+SELECT ?name ?mbox
+WHERE  { ?x foaf:name  ?name .
+         OPTIONAL { ?x  foaf:mbox  ?mbox }
+       }
+</code></pre><p>结果:  </p>
+<pre><code>name    mbox
+&quot;Alice&quot;    &lt;mailto:alice@example.com&gt;
+&quot;Alice&quot;    &lt;mailto:alice@work.example&gt;
+&quot;Bob&quot;    
+
+</code></pre><p>可见name为Bob的这项匹配即使mbox为空白（即在mbox方面不匹配)也可以在最终被认定为匹配</p>
+<p><strong>UNION关键字</strong><br>个人理解：用UNION链接的模式中满足任意一个即可匹配<br>example:<br>数据:  </p>
+<pre><code>@prefix dc10:  &lt;http://purl.org/dc/elements/1.0/&gt; .
+@prefix dc11:  &lt;http://purl.org/dc/elements/1.1/&gt; .
+
+_:a  dc10:title     &quot;SPARQL Query Language Tutorial&quot; .
+_:a  dc10:creator   &quot;Alice&quot; .
+
+_:b  dc11:title     &quot;SPARQL Protocol Tutorial&quot; .
+_:b  dc11:creator   &quot;Bob&quot; .
+
+_:c  dc10:title     &quot;SPARQL&quot; .
+_:c  dc11:title     &quot;SPARQL (updated)&quot; .  
+
+</code></pre><p>查询语句  </p>
+<pre><code>PREFIX dc10:  &lt;http://purl.org/dc/elements/1.0/&gt;
+PREFIX dc11:  &lt;http://purl.org/dc/elements/1.1/&gt;
+
+SELECT ?title
+WHERE  { { ?book dc10:title  ?title } UNION { ?book dc11:title  ?title } }  
+</code></pre><p>结果  </p>
+<pre><code>          title
+&quot;SPARQL Protocol Tutorial&quot;
+&quot;SPARQL&quot;
+&quot;SPARQL (updated)&quot;
+&quot;SPARQL Query Language Tutorial&quot;  
+
+</code></pre><p>可以看出，凡是满足三重模式第三项中为”title”的都成功匹配了<br>二而第二项可以为<code>dc10</code>或者<code>dc11</code>，这两个也是<code>UNION</code>连接的两个条件   </p>
+<p><strong>FROM关键字</strong><br>SPARQL查询可以使用<code>FROM</code>和<code>FROM NAMED</code>字句来指定要用于匹配的数据集，以描述RDF数据集 </p>
+<p>由许多<code>FROM</code>和<code>FROM NAMED</code> 自己产生的数据集是:  </p>
+<ul>
+<li>一个默认图谱(graph)，由<code>FROM</code>字句中引用的图谱的RDF合并形成  </li>
+<li>一组(IRI,图谱)对，每个<code>FROM NAMED</code>字句一个  </li>
+</ul>
+<p>每个<code>FROM</code>语句都包含一个IRI<br>example:  </p>
+<pre><code>PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt;
+SELECT  ?name
+FROM    &lt;http://example.org/foaf/aliceFoaf&gt;
+WHERE   { ?x foaf:name ?name }  
+</code></pre><p>如果一个查询包含多个<code>FROM</code>，那么最终的默认图谱是这些<code>FROM</code>所引用所有图谱的合并  </p>
+<p>使用<code>FROM NAMED</code>来匹配RDF数据集中的命名图    </p>
+<p><strong>GRAPH关键字</strong><br><code>GRAPH</code>关键字用于将图形模式与数据集中的每个命名图形相匹配，并形成解决方案<br>可将其后面的变量绑定到匹配的图谱的IRI<br>example:  </p>
+<pre><code>
+WHERE 
+  { 
+    GRAPH？src 
+    {？x foaf：mbox &lt;mailto：bob@work.example&gt;。
+      ？x foaf：nick？bobNick 
+    } 
+  }  
+
+</code></pre><p>最终src匹配到的都是类似<code>&lt;http://example.org/foaf/aliceFoaf&gt;</code>的IRI<br>同时<code>GRAPH</code>还可以限制应用于特定图谱的匹配  </p>
+<p><strong>重复的解决方案</strong><br>如果在查询语句中没有<code>DISTINCT</code>或者<code>REDUCED</code>关键字，重复的解决方案将会被保留，也就是说不同的匹配可能会相同<br><strong>DISTINCT</strong><br>该关键字用法如下<br><code>SELECT DISTINCT ?name WHERE{ ?x foaf:name ?name }</code><br>该方法将会消除所有重复的解决方案<br><strong>REDUCED</strong><br>该关键字用法如下<br><code>SELECT REDUCED ?name WHERE { ?x foaf:name ?name }</code><br>顾名思义，该方法将会减少重复的次数，范围从1~未使用上述两个关键字之间不等<br>也就是说仍然可能不变，比如重复的匹配有4个，那么使用<code>REDUCED</code>后可能就剩1个，2个，3个甚至仍然还是四个  </p>
+<p><strong>OFFSET关键字</strong><br>该关键字定义在特定的偏移数量后的方法，顾名思义，<code>OFFSET</code>即偏移，<code>OFFSET 0</code>没有实际作用  </p>
+<p><strong>LIMIT关键字</strong><br>这个关键字想必也不难理解，就是限制结果显示匹配的数量，假设有10个满足条件匹配成功，使用<code>LIMIT 5</code>使得最终结果只显示5个匹配</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/01/JSwrong1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1264,6 +1501,14 @@ WHERE  { ?x org:employeeName ?name }
 _:x foaf:name &quot;Alice&quot; .
 _:y foaf:name &quot;Bob&quot; .
 
+</code></pre><p><strong> ORDER BY 关键字</strong><br>该<code>ORDER BY</code>字句之后是一系列顺序比较器，有表达式和可选的顺序修饰符组成，每个排序比较器是升序(<code>由ASC()</code>修饰),降序(<code>由DESC()</code>修饰)  </p>
+<p><strong>SPARQL未定义所有可能的RDF术语的总排序</strong><br>example:  </p>
+<pre><code>PREFIX foaf:    &lt;http://xmlns.com/foaf/0.1/&gt;
+
+SELECT ?name
+WHERE { ?x foaf:name ?name }
+ORDER BY ?name  
+
 </code></pre>
           
         
@@ -1787,187 +2032,6 @@ xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;&gt;</code>  </
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/30/HTMLReview+bootstrap/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="leaf rock quiet">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="superQ">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/30/HTMLReview+bootstrap/" itemprop="url">HTML基础复习+Bootstrap+Font Awesome图标库</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-30T09:34:16+08:00">
-                2019-07-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/coding/" itemprop="url" rel="index">
-                    <span itemprop="name">coding</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Bootstrap将会根据你的屏幕大小来调整HTML元素的大小–<strong>强调响应式概念</strong><br>使用Bootstrap需要添加下列代码 </p>
-<pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;//cdn.bootcss.com/bootstrap/3.3.1/css/bootstrap.min.css&quot;/&gt;
-
-</code></pre><ul>
-<li>img-responsive类  </li>
-</ul>
-<p>当导入一张图片时，给图片添加该类，这样图片的宽度就能完美的适配页面宽度了<br><code>&lt;img src=&quot;&quot; class=&quot;img-responsive&quot;&gt;</code>  </p>
-<ul>
-<li>text-center类  </li>
-</ul>
-<p>运用于文本，可以将文本居中<br><code>&lt;h2 class=&quot;text-center&quot;&gt;title&lt;/h2&gt;</code>  </p>
-<ul>
-<li>btn类  </li>
-</ul>
-<p>是Bootstrap的按钮风格<br><code>&lt;button class=&quot;btn&quot;&gt;press&lt;/button&gt;</code>  </p>
-<ul>
-<li>btn-block类  </li>
-</ul>
-<p>使按钮成为块级元素，按钮将会伸展并填满页面整个水平空间，任何在它之下的元素都会跟着浮动到该区块的下一行<br><strong>（注:该属性仍需要有 btn 属性)</strong>  </p>
-<ul>
-<li>btn-primary类  </li>
-</ul>
-<p>使按钮呈现深蓝色，更加美观，是主要操作按钮的颜色<br><strong>（注:该属性仍需要有 btn 与btn-block属性)</strong>    </p>
-<ul>
-<li>btn-info类  </li>
-</ul>
-<p>使按钮呈现浅蓝色，更加美观，是用户可能采取操作按钮的颜色  </p>
-<ul>
-<li>btn-danger类  </li>
-</ul>
-<p>使按钮呈现红色，通常用于一些“破坏性”的操作，比如删除图片  </p>
-<ul>
-<li>well类  </li>
-<li>它的作用视为设定的列创造出一种<strong>视觉上的深度感</strong></li>
-</ul>
-<p><strong>Font Awesome图标库</strong> </p>
-<p>是一个非常方便的图标库，这些图标都是矢量图形，被保存在.svg的文件格式中<br>可以添加如下代码来使用该库  </p>
-<pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;//cdn.bootcss.com/font-awesome/4.2.0/css/font-awesome.min.css&quot;/&gt; 
-
-</code></pre><p>i元素起初一般是让它的元素变成斜体，现在一般用来指代图标,用它来实现图标库的使用<br><code>&lt;i class=&quot;fa fa-info-circle&gt;&lt;/i&gt;</code><br>fa-thumbs-up 一个大拇指形状的图标<br>fa-info-circle 一个圆圈里面带一个字母i，代表information<br>fa-trash 一个垃圾桶的标志<br>fa-paper-plane 一个纸飞机的标志</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2020,7 +2084,7 @@ xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;&gt;</code>  </
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2156,7 +2220,7 @@ xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;&gt;</code>  </
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">there are 11.1k words in the whole site</span>
+  <span class="post-count">there are 12.3k words in the whole site</span>
 </div>
         
 
