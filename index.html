@@ -443,7 +443,7 @@ WHERE   { ?x foaf:name ?name }
 WHERE 
   { 
     GRAPH？src 
-    {？x foaf：mbox &lt;mailto：bob@work.example&gt;。
+    {？x foaf：mbox &lt;mailto：bob@work.example&gt;.
       ？x foaf：nick？bobNick 
     } 
   }  
@@ -451,7 +451,7 @@ WHERE
 </code></pre><p>最终src匹配到的都是类似<code>&lt;http://example.org/foaf/aliceFoaf&gt;</code>的IRI<br>同时<code>GRAPH</code>还可以限制应用于特定图谱的匹配  </p>
 <p><strong>重复的解决方案</strong><br>如果在查询语句中没有<code>DISTINCT</code>或者<code>REDUCED</code>关键字，重复的解决方案将会被保留，也就是说不同的匹配可能会相同<br><strong>DISTINCT</strong><br>该关键字用法如下<br><code>SELECT DISTINCT ?name WHERE{ ?x foaf:name ?name }</code><br>该方法将会消除所有重复的解决方案<br><strong>REDUCED</strong><br>该关键字用法如下<br><code>SELECT REDUCED ?name WHERE { ?x foaf:name ?name }</code><br>顾名思义，该方法将会减少重复的次数，范围从1~未使用上述两个关键字之间不等<br>也就是说仍然可能不变，比如重复的匹配有4个，那么使用<code>REDUCED</code>后可能就剩1个，2个，3个甚至仍然还是四个  </p>
 <p><strong>OFFSET关键字</strong><br>该关键字定义在特定的偏移数量后的方法，顾名思义，<code>OFFSET</code>即偏移，<code>OFFSET 0</code>没有实际作用  </p>
-<p><strong>LIMIT关键字</strong><br>这个关键字想必也不难理解，就是限制结果显示匹配的数量，假设有10个满足条件匹配成功，使用<code>LIMIT 5</code>使得最终结果只显示5个匹配  </p>
+<p><strong>LIMIT关键字</strong><br>这个关键字想必也不难理解，就是限制结果显示匹配的数量，假设有10个满足条件匹配成功，使用<code>LIMIT 5</code>使得最终结果只显示5个匹配    </p>
 <p>SPARQL官方教程（英文）：<a href="https://www.w3.org/TR/rdf-sparql-query/" target="_blank" rel="noopener">https://www.w3.org/TR/rdf-sparql-query/</a></p>
 
           
