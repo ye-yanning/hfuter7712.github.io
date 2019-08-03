@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="RDF,Jena,Java,">
 
 
 
@@ -79,16 +79,18 @@
 
 
 
-<meta name="description" content="ambitious and modest">
-<meta property="og:type" content="website">
-<meta property="og:title" content="superQ">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+<meta name="description" content="资源具有属性Jena是一个Java API，可用于创建和操作RDF图，Jena有对象类表示图形，资源，属性和文字表示资源的接口: Resource表示属性的接口: Property表示文字的接口: Literal在Jnea中，图形称为模型，由接口  Model  表示    Model model = ModelFactory.createDefaultModel();使用该方法创建基于内存的模型">
+<meta name="keywords" content="RDF,Jena,Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RDF结合Jena初步基础学习（一)">
+<meta property="og:url" content="http://yoursite.com/2019/08/03/RDF+Jena/index.html">
 <meta property="og:site_name" content="superQ">
-<meta property="og:description" content="ambitious and modest">
+<meta property="og:description" content="资源具有属性Jena是一个Java API，可用于创建和操作RDF图，Jena有对象类表示图形，资源，属性和文字表示资源的接口: Resource表示属性的接口: Property表示文字的接口: Literal在Jnea中，图形称为模型，由接口  Model  表示    Model model = ModelFactory.createDefaultModel();使用该方法创建基于内存的模型">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-08-03T08:20:08.706Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="superQ">
-<meta name="twitter:description" content="ambitious and modest">
+<meta name="twitter:title" content="RDF结合Jena初步基础学习（一)">
+<meta name="twitter:description" content="资源具有属性Jena是一个Java API，可用于创建和操作RDF图，Jena有对象类表示图形，资源，属性和文字表示资源的接口: Resource表示属性的接口: Property表示文字的接口: Literal在Jnea中，图形称为模型，由接口  Model  表示    Model model = ModelFactory.createDefaultModel();使用该方法创建基于内存的模型">
 
 
 
@@ -118,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/">
+  <link rel="canonical" href="http://yoursite.com/2019/08/03/RDF+Jena/">
 
 
 
 
 
-  <title>归档 | superQ</title>
+  <title>RDF结合Jena初步基础学习（一) | superQ</title>
   
 
 
@@ -144,7 +146,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -248,391 +250,269 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/03/RDF+Jena/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="leaf rock quiet">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="superQ">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">RDF结合Jena初步基础学习（一)</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-03T14:15:21+08:00">
+                2019-08-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 28 篇日志。 继续努力。
-      </span>
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/coding/" itemprop="url" rel="index">
+                    <span itemprop="name">coding</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
+      
 
+      
+        <p>资源具有属性<br>Jena是一个Java API，可用于创建和操作RDF图，Jena有对象类表示图形，资源，属性和文字<br>表示资源的接口: <code>Resource</code><br>表示属性的接口: <code>Property</code><br>表示文字的接口: <code>Literal</code><br>在Jnea中，图形称为模型，由接口  <code>Model</code>  表示   </p>
+<p><code>Model model = ModelFactory.createDefaultModel();</code><br>使用该方法创建基于内存的模型<br><code>Resource joinSmith = model.createResource(personURI);</code><br>使用该方法创建资源</p>
+<p>“常量”类:VCARD，该类保存表示VCARD模式中所有定义的对象  </p>
+<p><code>joinSmith.addProperty(VCARD.FN, fullName);</code><br>给资源添加属性  </p>
+<p>创建资源和添加属性还可以更紧凑的以<strong>级联样式</strong>编写:  </p>
+<pre><code>Resource joinSmith = 
+    model.createResource(personURI)
+          .addProperty(VCARD.FN , fullName);  
+</code></pre><p>可定义空节点<br><code>model.createResource()</code><br>括号内不含参数即可定义一个空节点  </p>
+<p>RDF模型中一般一个语句包含三个部分<br>subject:箭头出发点<br>predicate:箭头<br>object: 箭头目的地<br>可称为主语，谓语和宾语<br>主语——谓语——&gt;宾语</p>
+<p>example:  </p>
+<pre><code>// list the statements in the Model
+StmtIterator iter = model.listStatements();
+
+// print out the predicate, subject and object of each statement
+while (iter.hasNext()) {
+    Statement stmt      = iter.nextStatement();  // get next statement
+    Resource  subject   = stmt.getSubject();     // get the subject
+    Property  predicate = stmt.getPredicate();   // get the predicate
+    RDFNode   object    = stmt.getObject();      // get the object
+
+    System.out.print(subject.toString());
+    System.out.print(&quot; &quot; + predicate.toString() + &quot; &quot;);
+    if (object instanceof Resource) {
+       System.out.print(object.toString());
+    } else {
+        // object is a literal
+        System.out.print(&quot; \&quot;&quot; + object.toString() + &quot;\&quot;&quot;);
+    }
+
+    System.out.println(&quot; .&quot;);
+} 
+</code></pre><p><strong>listStatements() 方法</strong><br>该方法返回一个<code>StmIterator</code>,    一种可以遍历模型中所有语句的迭代器(这里的谷歌翻译真是醉了，还好切回英文读懂了，不然简直了)</p>
+<p><strong>nextStatement() 方法</strong><br>该方法从迭代器中返回当前的下一个语句<br>使用<br><code>Statement</code> 进行一个语句的初始化<br><code>Statement stmt = iter.nextStatement();</code><br>在此基础上分别通过<br><code>.getSubject()</code>获取该语句的主语subject<br><code>.getPredicate()</code> 获取该语句的谓语Predicate<br><code>.getObject()</code>获取该语句的宾语Object  </p>
+<p><code>iter.hasNext()</code><br>个人理解: iter即当前迭代器，`hasNext（）是一个布尔型函数，如果迭代器当前位置之后没有语句了，就返回false,否则返回true  </p>
+<p><strong>.write(System.out)方法</strong>  </p>
+<p>将一个模型以RDF的形式写出来<br><code>model.write(System.out);</code>  </p>
+<p><strong>要写入大文件并保留空白节点，请以N-TRUPLES格式写入</strong><br><code>model.write(System.out,&quot;N-TRIPLES&quot;);</code>  </p>
+<p><strong>===从文件中读取RDF===</strong><br>example:  </p>
+<pre><code>
+ // create an empty model
+ Model model = ModelFactory.createDefaultModel();
+
+ // use the FileManager to find the input file
+ InputStream in = FileManager.get().open( inputFileName );
+if (in == null) {
+    throw new IllegalArgumentException(
+                                 &quot;File: &quot; + inputFileName + &quot; not found&quot;);
+}
+
+// read the RDF/XML file
+model.read(in, null);
+
+// write it to standard out
+model.write(System.out); 
+
+</code></pre><p>使用<code>.read()</code>函数来对文件进行读取<br><code>model.read(in,null);</code><br>in为创建的输入流  </p>
+<p><strong>setNsPrefix(String prefix,String URI)</strong><br>声明命名空间URI可以缩写成prefix(为了方便，因为有些命名空间真的太长了，每次写非常麻烦)，<strong>Jena要求prefix是一个合法的XML命名空间名称，并URI以非名称字符结尾</strong>  </p>
+<p>给定资源的URI，可以用下列方法从模型中检索资源对象<br><code>Resource name = model.getResource(johnSmithURI);</code><br>访问资源的属性如下<br><code>Resource.getProperty(Property p);</code>  </p>
+<p><strong>—查询模型—</strong><br><code>Model.listStatements()</code> 列出模型中所有语句，但是不适用于数据量大的模型  </p>
+<p><code>Model.listStatementWithProperty(Property p,RDFNode o)</code><br>将会返回一个迭代器，包含所有含有属性p，并且value是o的资源  </p>
+<p><strong>选择器</strong><br><code>Selector selector = new SimpleSelector(subject, predicate, object);</code><br>如果三个参数中任意一个为<code>null</code>,将相当于Sparql中的<code>SELECT *</code><br>如果三个参数都为<code>null</code>,则选择模型中的所有语句<br><code>Selector selector = new SimpleSelector(null,VCARD.FN,null);</code><br>将选择<br>谓语是VCARD.FN的所有语句   </p>
+<p><strong>容器</strong>  </p>
+<ul>
+<li>Bag是无序集合  </li>
+<li>ALT是一种旨在代表替代品的无序集合  </li>
+<li>SEQ是有序集合  </li>
+</ul>
+<p>创建一个Bag容器<br><code>Bag smiths = model.createBag();</code><br>容器接口提供一个迭代器来列出容器的内容<br><code>NodeIterator iter2 = smiths.iterator();</code><br>可以像上述那样用迭代器遍历  </p>
+<pre><code>if (iter2.hasNext()) {
+    System.out.println(&quot;The bag contains:&quot;);
+    while (iter2.hasNext()) {
+        System.out.println(&quot;  &quot; +
+            ((Resource) iter2.next())
+                            .getProperty(VCARD.FN)
+                            .getString());
+    }
+} else {
+    System.out.println(&quot;The bag is empty&quot;);
+}
+
+</code></pre><p>官方教程之一:   <a href="http://jena.apache.org/tutorials/rdf_api.html" target="_blank" rel="noopener">http://jena.apache.org/tutorials/rdf_api.html</a><br>如何在Eclipse中配置Jena : <a href="http://jena.apache.org/tutorials/using_jena_with_eclipse.html" target="_blank" rel="noopener">http://jena.apache.org/tutorials/using_jena_with_eclipse.html</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/RDF/" rel="tag"># RDF</a>
+          
+            <a href="/tags/Jena/" rel="tag"># Jena</a>
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
         
-        
+
         
 
         
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
           </div>
         
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/08/03/RDF+Jena/" itemprop="url">
-              
-                <span itemprop="name">RDF结合Jena初步基础学习（一)</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-08-03T14:15:21+08:00" content="2019-08-03">
-          08-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
+        </div>
+      
       
 
-        
-        
-        
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/03/SparqlLearn4/" rel="next" title="Sparql基础学习（四）">
+                <i class="fa fa-chevron-left"></i> Sparql基础学习（四）
+              </a>
+            
+          </div>
 
-        
-        
+          <span class="post-nav-divider"></span>
 
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/08/03/SparqlLearn4/" itemprop="url">
-              
-                <span itemprop="name">Sparql基础学习（四）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-08-03T09:06:52+08:00" content="2019-08-03">
-          08-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/08/02/Javascript3/" itemprop="url">
-              
-                <span itemprop="name">Javascript基础学习（三）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-08-02T21:04:33+08:00" content="2019-08-02">
-          08-02
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/08/02/SparqlLearn3/" itemprop="url">
-              
-                <span itemprop="name">Sparql基础学习(三)</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-08-02T10:12:43+08:00" content="2019-08-02">
-          08-02
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/08/01/JSwrong1/" itemprop="url">
-              
-                <span itemprop="name">JS对象数组操作属性小雷区</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-08-01T15:19:07+08:00" content="2019-08-01">
-          08-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/08/01/Javascript2/" itemprop="url">
-              
-                <span itemprop="name">Javascript基础学习+JSON</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-08-01T11:43:12+08:00" content="2019-08-01">
-          08-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/08/01/Javascript1/" itemprop="url">
-              
-                <span itemprop="name">Javascript基础复习+学习（一）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-08-01T09:07:55+08:00" content="2019-08-01">
-          08-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/07/31/SyntacticSuger/" itemprop="url">
-              
-                <span itemprop="name">语法糖(Syntactic-Suger)</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-31T22:03:20+08:00" content="2019-07-31">
-          07-31
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/07/31/SparqlLearn2/" itemprop="url">
-              
-                <span itemprop="name">Sparql查询语言学习（二）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-31T16:32:39+08:00" content="2019-07-31">
-          07-31
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/07/31/SparqlLearn/" itemprop="url">
-              
-                <span itemprop="name">Sparql查询语言基础学习（一）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-31T09:37:37+08:00" content="2019-07-31">
-          07-31
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-    </div>
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -640,6 +520,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -919,6 +803,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
