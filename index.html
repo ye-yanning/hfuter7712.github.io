@@ -356,48 +356,22 @@
       
         
           
-            <p>用构造函数创建对象<br><strong>构造函数通常采用大写字母开头，以便把自己和其他普通函数区分开</strong><br>example:  </p>
-<pre><code>var Animal = function(){
+          用构造函数创建对象构造函数通常采用大写字母开头，以便把自己和其他普通函数区分开example:  
+var Animal = function(){
   this.legs = 4;  
   this.heart = 1;
 };  
 
-</code></pre><p><code>this</code>指向被该构造函数创造出来的对象  </p>
-<p><strong>new  关键字</strong>  </p>
-<p>掉用构造函数构造一个实例的方法<br><code>var myCar = new Car()</code>  </p>
-<p>构造函数可添加参数<br>example:  </p>
-<pre><code>var Car = function(wheels,seats,engines){
-   this.wheels=wheels;
-   this.seats=seats;
-   this.engines=engines;
- };
-</code></pre><p>在调用时传入参数即可<br><code>var myCar = new Car(4,2,5);</code>  </p>
-<p>在设置构造函数时，在函数体中用<code>var</code>代替<code>this</code>声明变量即可声明私有变量与私有方法  </p>
-<p><strong>map方法</strong><br>map方法可以方便的迭代数组<br>会迭代数组中的每一个元素，并根据回调函数来处理每一个元素，最后返回一个新数组（不会改变原始数组）<br>example:<br>让数组ArrayA每一项+3,并存储到newArray中  </p>
-<pre><code>var newArray = ArrayA.map(function(val){
-     return val+3;
-};
-
-</code></pre><p><strong>reduce方法</strong><br>数组方法<code>reduce</code>用来迭代一个数组，并将其累积到一个值中<br>第一个参数是一个累加器回调函数<br>第二个参数是一个可选的参数，比用来设置累加器的初始值<br>example:<br>让ArrayA数组中所有元素都累加:  </p>
-<pre><code>var sum;
-
-sum = ArrayA.reduce(function(pre,cur){
-    return pre + cur;
-},sum);
-</code></pre><p><strong>filter函数</strong><br>话说在学sparql的时候也有这玩意呢，果真过滤器嘛<br>该函数传入一个回调函数，该回调函数会携带一个参数，参数为当前迭代的项<br>所返回表达式中若数组元素使该表达式为真时加入新数组，为假时则不添加<br>example:  </p>
-<pre><code>var newArray = ArrayA.filter(function(val){
-    return val&lt;6;
-});
-</code></pre><p>上述代码将ArrayA数组中小于6的元素传入newArray数组中  </p>
-<p><strong>reverse方法</strong><br>reverse方法是对一个数组进行翻转，传入一个新的数组中<br><code>var newArray = ArrayA.reverse()</code>  </p>
-<p><strong>concat方法</strong><br>该方法可以用来把两个数组的内容合并到一个数组中<br>example:<br>连接secondArray到firstArray后面<br><code>var newArray = firstArray.concat(secondArray);</code>  </p>
-<p><strong>split方法</strong><br>可以按照指定分隔符将字符串分为数组<br>example:<br>将一个字符串按照字符s分割成数组<br><code>var newArray=ArrayA.split(&quot;s&quot;);</code>    </p>
-<p><strong>join方法</strong><br>可以使用该方法把数组转换成字符串，里面的每一个元素用指定的连接符连接<br>example: </p>
-<pre><code>ArrayA=[&quot;I&quot;,&quot;Jerry&quot;,&quot;Tom&quot;];
-var stringA = ArrayA.split(&quot; and &quot;);
-//结果stringA=“I and Jerry and Tom&quot;  
-</code></pre>
-          
+this指向被该构造函数创造出来的对象  
+new  关键字  
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/02/Javascript3/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -537,105 +511,20 @@ var stringA = ArrayA.split(&quot; and &quot;);
       
         
           
-            <p><strong>Filters的作用域</strong><br><code>FILETER</code>是对其出现的整个组的限制，因此只要大括号内有<code>FILTER</code>，解决方案都是相同的  </p>
-<p><strong>Basic Garph Patterns</strong></p>
-<ul>
-<li>Basic Graph Patterns,where a set of triple patterns must match  </li>
-</ul>
-<p>example:  </p>
-<pre><code>{
-    ?x foaf:name ?name .
-    ?x foaf:mbox ?mbox .
-  }  
-</code></pre><p>是一组基本图形模式，由两个三重模式组成  </p>
-<pre><code>{
-    ?x foaf:name ?name . FILTER regex(?name, &quot;Smith&quot;)
-    ?x foaf:mbox ?mbox .
-  }
-</code></pre><p>在上述基础上添加了<code>FILTER</code>   </p>
-<p><strong>包含可选(OPTIONAL关键字)</strong><br>语法如下:<br><code>{OPTIONAL{pattern}}</code><br>个人理解:由于不是所有的RDF图中都具有完整的结构，有些RDF会缺乏部分属性，因此<code>OPTIONAL</code>的作用就是在<code>OPTIONAL</code>的括号内的属性如果匹配，即选上，如果可选部分不匹配，但是其他基础属性都匹配的话，也会认定为是匹配的<br>就比方说上大学，有很多人是有加分项的，有加分项的人可以被录取并标明，但是没有加分项的人也可以被录取，这就是<code>OPTIONAL</code>的功能  </p>
-<p>example:<br>数据:</p>
-<pre><code>@prefix foaf:       &lt;http://xmlns.com/foaf/0.1/&gt; .
-@prefix rdf:        &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+          Filters的作用域FILETER是对其出现的整个组的限制，因此只要大括号内有FILTER，解决方案都是相同的  
+Basic Garph Patterns
 
-_:a  rdf:type        foaf:Person .
-_:a  foaf:name       &quot;Alice&quot; .
-_:a  foaf:mbox       &lt;mailto:alice@example.com&gt; .
-_:a  foaf:mbox       &lt;mailto:alice@work.example&gt; .
+Basic Graph Patterns,where a set of triple patterns must match  
 
-_:b  rdf:type        foaf:Person .
-_:b  foaf:name       &quot;Bob&quot; .  
-
-</code></pre><p>查询语句:  </p>
-<pre><code>PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt;
-SELECT ?name ?mbox
-WHERE  { ?x foaf:name  ?name .
-         OPTIONAL { ?x  foaf:mbox  ?mbox }
-       }
-</code></pre><p>结果:  </p>
-<pre><code>name    mbox
-&quot;Alice&quot;    &lt;mailto:alice@example.com&gt;
-&quot;Alice&quot;    &lt;mailto:alice@work.example&gt;
-&quot;Bob&quot;    
-
-</code></pre><p>可见name为Bob的这项匹配即使mbox为空白（即在mbox方面不匹配)也可以在最终被认定为匹配</p>
-<p><strong>UNION关键字</strong><br>个人理解：用UNION链接的模式中满足任意一个即可匹配<br>example:<br>数据:  </p>
-<pre><code>@prefix dc10:  &lt;http://purl.org/dc/elements/1.0/&gt; .
-@prefix dc11:  &lt;http://purl.org/dc/elements/1.1/&gt; .
-
-_:a  dc10:title     &quot;SPARQL Query Language Tutorial&quot; .
-_:a  dc10:creator   &quot;Alice&quot; .
-
-_:b  dc11:title     &quot;SPARQL Protocol Tutorial&quot; .
-_:b  dc11:creator   &quot;Bob&quot; .
-
-_:c  dc10:title     &quot;SPARQL&quot; .
-_:c  dc11:title     &quot;SPARQL (updated)&quot; .  
-
-</code></pre><p>查询语句  </p>
-<pre><code>PREFIX dc10:  &lt;http://purl.org/dc/elements/1.0/&gt;
-PREFIX dc11:  &lt;http://purl.org/dc/elements/1.1/&gt;
-
-SELECT ?title
-WHERE  { { ?book dc10:title  ?title } UNION { ?book dc11:title  ?title } }  
-</code></pre><p>结果  </p>
-<pre><code>          title
-&quot;SPARQL Protocol Tutorial&quot;
-&quot;SPARQL&quot;
-&quot;SPARQL (updated)&quot;
-&quot;SPARQL Query Language Tutorial&quot;  
-
-</code></pre><p>可以看出，凡是满足三重模式第三项中为”title”的都成功匹配了<br>二而第二项可以为<code>dc10</code>或者<code>dc11</code>，这两个也是<code>UNION</code>连接的两个条件   </p>
-<p><strong>FROM关键字</strong><br>SPARQL查询可以使用<code>FROM</code>和<code>FROM NAMED</code>字句来指定要用于匹配的数据集，以描述RDF数据集 </p>
-<p>由许多<code>FROM</code>和<code>FROM NAMED</code> 自己产生的数据集是:  </p>
-<ul>
-<li>一个默认图谱(graph)，由<code>FROM</code>字句中引用的图谱的RDF合并形成  </li>
-<li>一组(IRI,图谱)对，每个<code>FROM NAMED</code>字句一个  </li>
-</ul>
-<p>每个<code>FROM</code>语句都包含一个IRI<br>example:  </p>
-<pre><code>PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt;
-SELECT  ?name
-FROM    &lt;http://example.org/foaf/aliceFoaf&gt;
-WHERE   { ?x foaf:name ?name }  
-</code></pre><p>如果一个查询包含多个<code>FROM</code>，那么最终的默认图谱是这些<code>FROM</code>所引用所有图谱的合并  </p>
-<p>使用<code>FROM NAMED</code>来匹配RDF数据集中的命名图    </p>
-<p><strong>GRAPH关键字</strong><br><code>GRAPH</code>关键字用于将图形模式与数据集中的每个命名图形相匹配，并形成解决方案<br>可将其后面的变量绑定到匹配的图谱的IRI<br>example:  </p>
-<pre><code>
-WHERE 
-  { 
-    GRAPH?src 
-    {?x foaf：mbox &lt;mailto：bob@work.example&gt;.
-      ?x foaf：nick?bobNick 
-    } 
-  }  
-
-</code></pre><p>最终src匹配到的都是类似<code>&lt;http://example.org/foaf/aliceFoaf&gt;</code>的IRI<br>同时<code>GRAPH</code>还可以限制应用于特定图谱的匹配  </p>
-<p><strong>重复的解决方案</strong><br>如果在查询语句中没有<code>DISTINCT</code>或者<code>REDUCED</code>关键字，重复的解决方案将会被保留，也就是说不同的匹配可能会相同<br><strong>DISTINCT</strong><br>该关键字用法如下<br><code>SELECT DISTINCT ?name WHERE{ ?x foaf:name ?name }</code><br>该方法将会消除所有重复的解决方案<br><strong>REDUCED</strong><br>该关键字用法如下<br><code>SELECT REDUCED ?name WHERE { ?x foaf:name ?name }</code><br>顾名思义，该方法将会减少重复的次数，范围从1~未使用上述两个关键字之间不等<br>也就是说仍然可能不变，比如重复的匹配有4个，那么使用<code>REDUCED</code>后可能就剩1个，2个，3个甚至仍然还是四个  </p>
-<p><strong>OFFSET关键字</strong><br>该关键字定义在特定的偏移数量后的方法，顾名思义，<code>OFFSET</code>即偏移，<code>OFFSET 0</code>没有实际作用  </p>
-<p><strong>LIMIT关键字</strong><br>这个关键字想必也不难理解，就是限制结果显示匹配的数量，假设有10个满足条件匹配成功，使用<code>LIMIT 5</code>使得最终结果只显示5个匹配    </p>
-<p>SPARQL官方教程（英文）：<a href="https://www.w3.org/TR/rdf-sparql-query/" target="_blank" rel="noopener">https://www.w3.org/TR/rdf-sparql-query/</a></p>
-
-          
+exa
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/02/SparqlLearn3/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -775,66 +664,20 @@ WHERE
       
         
           
-            <p>在网上学习实践的时候遇到了一个bug，de了好长时间，后来终于de出来了<br>内容是这样的，首先有个存储着通讯录的对象数组如下  </p>
-<pre><code>
+          在网上学习实践的时候遇到了一个bug，de了好长时间，后来终于de出来了内容是这样的，首先有个存储着通讯录的对象数组如下  
+
 var contacts = [
     {
         &quot;firstName&quot;: &quot;Akira&quot;,
-        &quot;lastName&quot;: &quot;Laine&quot;,
-        &quot;number&quot;: &quot;0543236543&quot;,
-        &quot;likes&quot;: [&quot;Pizza&quot;, &quot;Coding&quot;, &quot;Brownie Points&quot;]
-    },
-    {
-        &quot;firstName&quot;: &quot;Harry&quot;,
-        &quot;lastName&quot;: &quot;Potter&quot;,
-        &quot;number&quot;: &quot;0994372684&quot;,
-        &quot;likes&quot;: [&quot;Hogwarts&quot;, &quot;Magic&quot;, &quot;Hagrid&quot;]
-    },
-    {
-        &quot;firstName&quot;: &quot;Sherlock&quot;,
-        &quot;lastName&quot;: &quot;Holmes&quot;,
-        &quot;number&quot;: &quot;0487345643&quot;,
-        &quot;likes&quot;: [&quot;Intriguing Cases&quot;, &quot;Violin&quot;]
-    },
-    {
-        &quot;firstName&quot;: &quot;Kristian&quot;,
-        &quot;lastName&quot;: &quot;Vos&quot;,
-        &quot;number&quot;: &quot;unknown&quot;,
-        &quot;likes&quot;: [&quot;Javascript&quot;, &quot;Gaming&quot;, &quot;Foxes&quot;]
-    }
-];
-
-</code></pre><p>在函数中定义了一个函数用于操作，如下 </p>
-<pre><code>
-function lookUp(firstName, prop){
-// 请把你的代码写在这条注释以下
-  var firstE=0;
-  var propE=0;
-  var index=0;
-for(var i=0;i&lt;contacts.length;i++)
-  {
-    if(contacts[i].firstName==firstName){
-      firstE=1;
-      index=i;
-      break;
-    }
-
-  }
-   if(contacts[index].hasOwnProperty(prop))
-     propE=1;
-  if(propE&amp;&amp;firstE)
-    return contacts[index][prop];
-    else if(!firstE)
-      return &quot;No such contact&quot;;
-  else if(!propE)
-    return &quot;No such property&quot;;
-// 请把你的代码写在这条注释以上
-}
-
-</code></pre><p>具体功能就是先查询对象数组中有没有firstName属性为firstName(参数)的成员<br>找到之后再查询这个对象里面有没有一个叫做prop(参数)的属性<br>如果两者同时满足，返回该对应成员对应属性的内容，否则进行相关说明  </p>
-<p>注意这条语句<br><code>return contacts[index][prop];</code><br>一开始我不是这么写的，一开始我是这样写的<br><code>return contacts[index].prop;</code><br>导致符合两个条件但是最终输出却为空白<br>在检查了前面一系列节点发现都没有问题，检查到这条语句的时候，我尝试把<code>.prop</code>换成<code>.firstName</code>，是有正常输出的，因此本人断定一定是在这条语句上出了问题<br>后来决定换一种表达形式，由<code>.</code>换到<code>[]</code>形式，输出果然正常了<br>在这里要说明一下，引入的两个参数都是字符串类型，比如”adobe” ,本人觉得应该是<code>.prop</code>的时候相当于是<code>.&quot;属性名称&quot;</code>,而不是<code>.属性名称</code>,多了一对双引号导致了这次bug的产生，因此本人建议，以后属性的类型是字符串的，最好用中括号对对象属性进行操作，避免不必要的bug  </p>
-
-          
+        &quot
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/01/JSwrong1/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -974,24 +817,15 @@ for(var i=0;i&lt;contacts.length;i++)
       
         
           
-            <p>JSON(JavaScript Object Notation)  使用Javascript对象的格式来存储数据<br>允许数据结构是字符串，数字，布尔值和对象的任意组合<br>(string、number、boolean与Object的任意组合)<br>JSON对象可以嵌套对象和数组,用中括号操作符同样可以访问嵌套数组  </p>
-<p><strong>产生指定范围内的随机整数(方法来自freecodecamp)</strong><br><code>Math.random()</code> 产生随机小数<br><code>Math.floor()</code> 在目前的小数向下取证<br>产生0~19内的整数<br><code>Math.floor(Math.random()*20)</code><br>产生a~b内的整数<br><code>Math.floor(Math.random() * (b - a + 1)) + a</code>  </p>
-<p><strong>正则表达式</strong><br>是一种根据某种匹配方式来寻找strings中的某些单词<br>在字符串中寻找单词<code>the</code>，可使用下列正则表达式  </p>
-<ul>
-<li>文本</li>
-</ul>
-<p><code>/the/gi</code><br><code>/</code>是正则表达式的头部<br>第二个<code>/</code>时候正则表达式的尾部<br><code>g</code>代表着global,意味着返回所有的匹配而不仅仅是第一个<br><code>i</code>代表忽略大小写  </p>
-<ul>
-<li>数字  </li>
-</ul>
-<p>数字选择器<code>\d</code><br>用法:<code>/\d/g</code><br>在选择器后加上一个加号<br><code>/\d+/g</code><br>允许这个正则表达式匹配一个或更多的数字  </p>
-<ul>
-<li>空白 </li>
-</ul>
-<p>空白字符有<code>&quot; &quot;</code>（空格符）,<code>\r</code>（回车符）,<code>\n</code>（换行符）,<code>\t</code>（制表符）,<code>\f</code>（换页符）<br>空白选择器<code>\s</code><br>空白正则表达式类似于<br><code>/\s+/g</code>  </p>
-<p>有趣的是，以上两个选择器将小写转化为大写的话，就会匹配与原来相反的字符<br>比如<code>\S</code>是匹配任何非空白字符       </p>
-
-          
+          JSON(JavaScript Object Notation)  使用Javascript对象的格式来存储数据允许数据结构是字符串，数字，布尔值和对象的任意组合(string、number、boolean与Object的任意组合)JSON对象可以嵌套对象和数组,用中括号操作符同样可以访问嵌套数组 
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/01/Javascript2/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1131,54 +965,26 @@ for(var i=0;i&lt;contacts.length;i++)
       
         
           
-            <p>终于开始复习JS了，哈哈，最早开始的时候JS学到一半没学完，这次一定要肝完  </p>
-<p><strong>注释</strong>  </p>
-<p>javascript的注释和C语言的注释相同<br><code>//这是一个注释</code></p>
-<pre><code>/*这是一段注释
+          终于开始复习JS了，哈哈，最早开始的时候JS学到一半没学完，这次一定要肝完  
+注释  
+javascript的注释和C语言的注释相同//这是一个注释
+/*这是一段注释
     没错，就是一段*/  
 
-</code></pre><p><strong>数据类型</strong>  </p>
-<p>JS提供七种不同的数据类型  </p>
-<ul>
-<li>undefined  </li>
-<li>null  </li>
-<li>boolean</li>
-<li>string</li>
-<li>symbol</li>
-<li>number</li>
-<li>object  </li>
-</ul>
-<p>当你对一个值为<code>undefined</code>的变量进行运算操作时，算出的结果将会是<code>NaN</code><br>当用一个没有定义的变量来做字符串连接操作时，他会如实的输出<code>undefined</code>  </p>
-<p><strong>驼峰命名法</strong><br>变量名的第一个单词的首写字母小写，后面的单词的第一个字母大写  </p>
-<p><strong>取余符号%</strong><br>使用<code>%</code>运算符来对一个数进行取余<br>example: <code>5 % 2 = 1</code>  </p>
-<p><strong>在字符串中使用单引号和双引号</strong><br>可以使用转义字符串<br>如要使用单引号，在前面加上反斜杠<code>\&#39;</code><br>双引号同理 <code>\&quot;</code><br>但是如果字符串内容中的符号与字符串起始终止所修饰的符号不同，可以不用<br>比如字符串用双引号表示，内容包含单引号，可以不用转义  </p>
-<p><strong>在JS中，字符串的值是不可变的，这意味着一旦字符串被创建就不能被改变</strong><br>但是可以通过重新赋值的形式来整体改变字符串  </p>
-<pre><code>var Str1=&quot;3erf&quot;;  
-Str1=&quot;34tc&quot;;  
-</code></pre><p>仍然是可以的  </p>
-<p><strong>JS中的数组用法</strong><br>可以用<code>数组名.push()</code>来往数组中添加内容<br>可以使用<code>数组名.pop()</code>来移除数组中的最后一条<br>使用<code>数组名.shift()</code>来移除数组中的第一项<br>同时也可以使用<code>数组名.unshift()</code>来在数组头部添加元素  </p>
-<p>使用函数<code>console.log()</code>来往开发控制台上打印内容  </p>
-<p>一个程序中可能有相同名称的局部变量和全局变量，在这种情况下<br><strong>局部变量将会优先于全局变量</strong>  </p>
-<p><strong>严格相等运算符  ===</strong><br>与==不同的是，它会同时比较元素的值和<strong>数据类型</strong><br>因此如果比较的两个对象类型不同，那就直接返回false了  </p>
-<p><strong>严格不相等运算符  !==</strong><br>与严格相等运算符类似，不仅比较元素的值，还要看他们的数据类型 </p>
-<p><strong>JS Objects</strong><br>对象和数组相似，数组是通过索引来访问和修改数据，对象是通过属性来访问和修改数据的<br>example:  </p>
-<pre><code>var Person{
- &quot;first name&quot;: &quot;Ken&quot;,
- &quot;last name&quot;: &quot;Smith&quot;,
- &quot;weight&quot;: 170;
-&quot;pets&quot;:[&quot;cats&quot;,&quot;dogs&quot;]
-};  
-</code></pre><p>可以用 <code>.</code> 即点操作符来操作对象属性<br>也可以用中括号<code>[]</code><br>example(以上面的Person为例子):<br><code>Person[&quot;first name&quot;]</code><br>中括号的另外一个作用是用变量来访问一个属性<br>example(来自freecodecamp):  </p>
-<pre><code>var someProp = &quot;propName&quot;;
-var myObj = {
-  propName: &quot;Some Value&quot;
-}
-myObj[someProp]; // &quot;Some Value&quot; 
-</code></pre><p>最终<code>myObj[someProp]</code>返回的值是”Some value”  </p>
-<p>可以使用<code>delete</code>关键字来删除一个Object中特定的属性<br>example: <code>delete ourDog.bark</code>  </p>
-<p>使用<code>hasOwnProperty(propname)</code>函数来检查对象是否有该属性      </p>
+数据类型  
+JS提供七种不同的数据类型  
 
-          
+undefined  
+null  
+boole
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/01/Javascript1/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1318,9 +1124,15 @@ myObj[someProp]; // &quot;Some Value&quot;
       
         
           
-            <p>今天在学习某查询语言的时候在官方文档里面发现有一个词组重复出现，叫做 Syntactic suger,点击谷歌翻译后，翻译成语法糖。。。一开始我肯定是不相信的，以为是谷歌翻译出的问题，还在想怎么谷歌翻译也会出现机翻，后来多次出现我实在忍不住就去网上进行了查询<br>发现百科的词条大标题写的就是“语法糖”<br>看来是自己的无知冤枉了谷歌，233<br>在浏览了相关词条后，大致了解了这是什么玩意<br>语法糖，也称为糖衣语法，到这边我大概明白了，什么叫做语法糖，糖衣很多人小时候都可能吃过，表面上尝起来可能是酸甜可口的，但实际上是药。有些程序的语法过于复杂，如果按照原来那样写的话，语法上是没有什么错误，但是会使得程序可读性大大降低，别说普通人，甚至部分程序员也很难理解，需要很长时间来理解，这时，糖衣语法就出现了<br>baidu:通常来说使用语法糖能够增加程序的可读性，从而减少代码出错的机会<br>这个术语由英国计算机科学家彼得·约翰·兰达（Peter J. Landin）发明，感谢前辈<br>example:<br>C语言中<br>用 <code>a[i]</code>表示 <code>*(a+i)</code> ,用<code>a[i][j]</code> 表示 <code>*(*(a+i)+j)</code><br>个人总结:糖衣语法让繁杂的程序语法变得浅显易懂</p>
-
-          
+          今天在学习某查询语言的时候在官方文档里面发现有一个词组重复出现，叫做 Syntactic suger,点击谷歌翻译后，翻译成语法糖。。。一开始我肯定是不相信的，以为是谷歌翻译出的问题，还在想怎么谷歌翻译也会出现机翻，后来多次出现我实在忍不住就去网上进行了查询发现百科的词条大标题写的就是“语法糖”看来
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/07/31/SyntacticSuger/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1460,40 +1272,17 @@ myObj[someProp]; // &quot;Some Value&quot;
       
         
           
-            <p><strong>FILTER函数</strong><br>个人理解：当FILTER括号中的表达式为true时匹配，否则不匹配(相当于只有满足FILTER括号中的内容才能匹配)<br><em>regex</em></p>
-<ul>
-<li><p>用来测试RDF文字，仅匹配没有语言标签（见上一篇博文中的language tag)的普通文字，regex可以使用str函数来匹配其他文字的词法形式<br>example:<br><code>FILTER regex(&quot;title,&quot;^SPARQL&quot;)</code><br>正则表达式匹配可以使用”i”标志（不区分大小写）<br>example:<br><code>FILTER regex(?title,&quot;web&quot;,&quot;i&quot;)</code></p>
-</li>
-<li><p>用来匹配数值相关的表达式<br>example:<br>如果要匹配的内容的类型是数字,可以有以下表达式<br><code>FILTER(?price &lt; 23.4)</code><br>结果只会匹配那些价格低于23.4的内容  </p>
-</li>
-</ul>
-<p>除了数字类型(numeric types)，SPARQL还支持<code>xsd:string</code>,<code>xsd:boolean</code>,<code>xsd:dateTime</code>类型  </p>
-<p><strong>Sparql语法</strong>  </p>
-<ul>
-<li>变量</li>
-</ul>
-<p>查询语句中的变量以<code>$</code>或者<code>?</code>开头，这两个符号并不是变量的一部分，而是用来表示这是一个变量,在查询中，<code>$abc</code>和<code>?abc</code>标识相同的变量  </p>
-<ul>
-<li>空节点  </li>
-</ul>
-<p>空白节点由标签形式表示，例如<code>_:abc</code>与缩写形式<code>[]</code><br>在查询语法中，仅在唯一一个位置使用的可以被视作<code>[]</code><br>相同的空白节点标签不能在同一查询中的两个不同的基本图形模式中使用<br>example:<br>两种形式 <code>[: p&quot;v&quot;].</code> 与 <code>[]: p&quot;v&quot;.</code>  分配了唯一一个空白节点标签<br>假设分配的节点标签是<code>b57</code>,那就相当于这样:<br><code>_: b57: p&quot;v&quot;.</code><br>该分配的空白节点可以作为其他三重模式的主体或对象,作为主题<br><code>[: p&quot;v&quot;]: q&quot;w&quot;.</code><br>相当于两个三元组  <code>_: b57: p&quot;v&quot;.</code> 与 <code>_: b57: q&quot;w&quot;.</code><br>作为对象<br><code>: x: q [: p&quot;v&quot;].</code><br>相当于两个三元组<code>: x: q_: b57.</code>与 <code>_: b57: p&quot;v&quot;</code>    </p>
-<p><strong>三重模式的写法</strong>  </p>
-<p>可以编写具有共同主题的三重模式，使得目标变量只用声明一次可以运用到多个三重模式,使用<code>;</code>来分隔<br>example:  </p>
-<pre><code>?x foaf:name ?name ;
-   foaf:mbox ?mbox.
+          FILTER函数个人理解：当FILTER括号中的表达式为true时匹配，否则不匹配(相当于只有满足FILTER括号中的内容才能匹配)regex
 
-</code></pre><p>等同于  </p>
-<pre><code>?x foaf:name ?name .
-?x foaf:mbox ?mbox .
-
-</code></pre><p>如果三重模式享有多个项目变量或谓语，之间<code>,</code>分隔<br>example:<br><code>?x foaf:name ?name ; foaf:nick &quot;Alice&quot;, &quot;Alice_&quot; .</code><br>等同于  </p>
-<pre><code>?x  foaf:name  ?name .
-?x  foaf:nick  &quot;Alice&quot; .
-?x  foaf:nick  &quot;Alice_&quot; .  
-
-</code></pre><p>End at 5 Graph Patterns,to be continued…  </p>
-
-          
+用来测试RDF文字，仅匹配没有语言标签（见上一篇博文中的language tag)的普通文字，regex可以使用str函数来匹配其他文字的词法形式exam
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/07/31/SparqlLearn2/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1633,66 +1422,16 @@ myObj[someProp]; // &quot;Some Value&quot;
       
         
           
-            <p>全程官方文档英文阅读理解。。  （有部分谷歌翻译辅助，不过大部分还是阅读理解，因为谷歌翻译的虽然很好，但是有些也会脱离本意）<br>标题写着 “SPARQL Query Language for RDF”<br>想必也是针对RDF设计的一种查询语言了  </p>
-<p>大多数形式的SPARQL查询包含一族成为基本图形模式的三重模式(triple patterns  </p>
-<p><strong>编写一条简单的查询语言</strong><br>Data:<br><code>&lt;http://example.org/book/book1&gt; &lt;http://purl.org/dc/elements/1.1/title&gt; &quot;SPARQL Tutorial&quot; .</code>  </p>
-<p>查询语句: </p>
-<pre><code>
-SELECT ?title
-WHERE
-{
-  &lt;http://example.org/book/book1&gt; &lt;http://purl.org/dc/elements/1.1/title&gt; ?title .
-}  
-
-</code></pre><p>语句由两部分组成，一个是<code>SELECT</code> 部分，标识要在查询结果中进行显示的变量(在查询结果中将以第一行的形式出现),也就是说 <code>?title</code>是一个变量<br>另外一个是<code>WHERE</code>部分，提供与数据图表匹配的基本图形模式(basic grapg pattern)  </p>
-<p><strong>多个匹配</strong><br>根据<code>WHERE</code>部分的基本图形部分，匹配的结果可能是0个，1个或者多个  </p>
-<p><strong>匹配RDF文本(literals)</strong><br>在Turtle中<br>以下RDF文本<br><code>&quot;cat&quot;@en</code><br>意味着有着 词汇形式(lexical form):”cat”<br>以及语言(language):”en” (语言标签language tags)  </p>
-<p>以下RDF文本<br><code>&quot;42&quot;^^xsd:integer&quot;</code><br>是一个<code>http://www.w3.org/2001/XMLSchema#integer;</code>类型的文本 </p>
-<p>以下RDF文本<br><code>&quot;abc&quot;^^dt:specialDatatype&quot;</code><br>是一个<code>http://example.org/datatype#specialDatatype.</code>类型的文本  </p>
-<ul>
-<li><p>根据语言标签匹配文本<br>若要匹配<code>&quot;cat&quot;@en</code>,执行下列查询语句将没有结果<br><code>SELECT ?v WHERE {?v ?p &quot;cat&quot;}</code><br>因为”cat”和”cat”@en在RDF文本层面并不相同，因此无法匹配<br>为此有另外一种解决方案<br>`SELECT ?v WHERE {?v ?p “cat”@en}<br>也就是将语言标签也添加上去进行匹配，即可获得结果  </p>
-</li>
-<li><p>使用数字类型来匹配文本<br>匹配<code>&quot;42&quot;^^xsd:integer&quot;</code>可使用以下查询语句<br><code>SELECT ?v WHERE {?v ?p 42}</code>  </p>
-</li>
-<li><p>匹配具有任意数字类型的文本<br><code>SELECT ?v WHERE{?v ?p &quot;abc&quot;^^&lt;http://example.org/datatype#specialDatatype&gt;}</code><br>词法形式和数据类型都匹配，不管数据类型是什么（任意数据类型），都可以匹配成功  </p>
-</li>
-</ul>
-<p>查询结果中可包含空白节点， 空白节点标签的范围限定为结果集  </p>
-<p>SPARQL具有多种查询形式<br>有<code>SELECT</code>查询形式,返回变量绑定<br>也有<code>CONSTRUUCT</code>查询形式,返回RDF图  </p>
-<p><strong>—-CONSTRUCT查询形式—-</strong>  </p>
-<p>data:  </p>
-<pre><code>
-@prefix org:    &lt;http://example.com/ns#&gt; .
-
-_:a  org:employeeName   &quot;Alice&quot; .
-_:a  org:employeeId     12345 .
-
-_:b  org:employeeName   &quot;Bob&quot; .
-_:b  org:employeeId     67890 . 
-
-</code></pre><p>查询语句:  </p>
-<pre><code>PREFIX foaf:   &lt;http://xmlns.com/foaf/0.1/&gt;
-PREFIX org:    &lt;http://example.com/ns#&gt;
-
-CONSTRUCT { ?x foaf:name ?name }
-WHERE  { ?x org:employeeName ?name }
-
-</code></pre><p>result:  </p>
-<pre><code>@prefix org: &lt;http://example.com/ns#&gt; .
-
-_:x foaf:name &quot;Alice&quot; .
-_:y foaf:name &quot;Bob&quot; .
-
-</code></pre><p><strong> ORDER BY 关键字</strong><br>该<code>ORDER BY</code>字句之后是一系列顺序比较器，有表达式和可选的顺序修饰符组成，每个排序比较器是升序(<code>由ASC()</code>修饰),降序(<code>由DESC()</code>修饰)  </p>
-<p><strong>SPARQL未定义所有可能的RDF术语的总排序</strong><br>example:  </p>
-<pre><code>PREFIX foaf:    &lt;http://xmlns.com/foaf/0.1/&gt;
-
-SELECT ?name
-WHERE { ?x foaf:name ?name }
-ORDER BY ?name  
-
-</code></pre>
-          
+          全程官方文档英文阅读理解。。  （有部分谷歌翻译辅助，不过大部分还是阅读理解，因为谷歌翻译的虽然很好，但是有些也会脱离本意）标题写着 “SPARQL Query Language for RDF”想必也是针对RDF设计的一种查询语言了  
+大多数形式的SPARQL查询包含一族成为基本图形模式的三重模
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/07/31/SparqlLearn/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1832,47 +1571,16 @@ ORDER BY ?name
       
         
           
-            <p>资源描述框架RDF是用于描述网络资源的W3C标准（网页的标题，作者，修改日期，内容和版权信息）<br>RDF使用XML编写，被RDF使用的XML语言被称为RDF/XML<br>RDF被设计为可被计算机阅读和理解<br>RDF语言是W3C语义网活动的组成部分  </p>
-<p>RDF使用Web标识符（URIs)来标识资源,使用属性值来描述资源<br>example:  </p>
-<pre><code>
-&lt;?xml version=&quot;1.0&quot;?&gt;
-&lt;RDF&gt;
-  &lt;Description about=&quot;https://www.runoob.com//rdf&quot;&gt;
-    &lt;author&gt;Jan Egil Refsnes&lt;/author&gt;
-    &lt;homepage&gt;https://www.runoob.com/&lt;/homepage&gt;
-  &lt;/Description&gt;
-&lt;/RDF&gt;
-
-</code></pre><p><strong>RDF陈述</strong><br>资源，属性和属性值的组合可以形成一个陈述（分别被称为陈述的<strong>主体，谓语和客体</strong>）<br>example(来源于菜鸟教程):<br>陈述：<br><code>&quot;The author of https://www.runoob.com//rdf is David.&quot;</code><br>陈述的主体是：<a href="https://www.runoob.com//rdf" target="_blank" rel="noopener">https://www.runoob.com//rdf</a><br>谓语是：author<br>客体是：David</p>
-<ul>
-<li><p>rdf:RDF 元素<br><code>&lt;rdf:RDF&gt;</code>是RDF文档的根元素，它把XML文档定义为一个RDF文档，<strong>也包含了对RDF命名空间的引用</strong><br><code>&lt;rdf:RDF
-xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;&gt;</code>  </p>
-</li>
-<li><p>rdf:Description 元素<br>该元素可通过about属性标识一个资源<br>可包含描述资源的那些元素  </p>
-</li>
-</ul>
-<p><strong>RDF容器</strong></p>
-<ul>
-<li>rdf:Bag 元素<br><code>&lt;rdf:Bag&gt;</code>元素用于描述一个规定为无序的值的列表，可包含重复的值<br>example:   </li>
-</ul>
-<pre><code>
-&lt;rdf:Bag&gt;
-      &lt;rdf:li&gt;John&lt;/rdf:li&gt;
-      &lt;rdf:li&gt;Paul&lt;/rdf:li&gt;
-      &lt;rdf:li&gt;George&lt;/rdf:li&gt;
-      &lt;rdf:li&gt;Ringo&lt;/rdf:li&gt;
-    &lt;/rdf:Bag&gt;
-
-</code></pre><ul>
-<li><p>rdf:Seq 元素<br><code>&lt;rdf:Seq&gt;</code>元素用于描述一个<strong>规定为有序</strong>的列表（比如一个字母顺序的排序），可包含重复的值  </p>
-</li>
-<li><p>rdf:Alt 元素<br><code>&lt;rdf:Alt&gt;</code>元素用于一个可替换的值得列表(用户仅可选择这些值得其中之一)  </p>
-</li>
-</ul>
-<p><strong>RDF集合</strong><br><code>rdf:parseType=&quot;Collection&quot;</code><br>RDF集合用于描述仅包含制定成员的组  </p>
-<p>RDF都柏林核心表:<a href="https://www.runoob.com/rdf/rdf-dublin.html" target="_blank" rel="noopener">https://www.runoob.com/rdf/rdf-dublin.html</a><br>RDF参考手册: <a href="https://www.runoob.com/rdf/rdf-reference.html" target="_blank" rel="noopener">https://www.runoob.com/rdf/rdf-reference.html</a><br>RDF在线验证器:<a href="http://www.w3.org/RDF/Validator/" target="_blank" rel="noopener">http://www.w3.org/RDF/Validator/</a></p>
-
-          
+          资源描述框架RDF是用于描述网络资源的W3C标准（网页的标题，作者，修改日期，内容和版权信息）RDF使用XML编写，被RDF使用的XML语言被称为RDF/XMLRDF被设计为可被计算机阅读和理解RDF语言是W3C语义网活动的组成部分  
+RDF使用Web标识符（URIs)来标识资源,使用属性值来描述
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/07/31/RDFLearn/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -2012,15 +1720,18 @@ xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;&gt;</code>  </
       
         
           
-            <p>在某网站上学习前端之后按照一个界面（单单看着界面一个个元素敲出来的界面）搞出来的第一个实践作品<br>介绍的是我最佩服的图灵先辈（一说到图灵就想到那部卷福演的电影，泪目）<br>实践中的部分笔记与收获: </p>
-<ul>
-<li><code>&lt;hr&gt;</code>可以在界面中定义一条水平实线，可以用于页面的分割 </li>
-<li>字体的粗细可以用<code>font-weight</code>来定义，400px相当于<code>font-style</code>的normal,700px相当于bold  </li>
-<li>此次作品中运用到了Bootstrap的两个类，一个是让图片自动适应界面的<code>img-responsive</code>,还有一个就是让文本居中的<code>text-center</code><br>感受:第一次实践，虽说整体来讲没有什么难度，但是也是本人第一次在页面上进行实践，对照着模板网页，没有查看源代码的情况下用HTML和css一个个尝试和调整，也是一次相当宝贵的实践了</li>
-</ul>
-<p>实践工具:  codepen<br>作品网址: <a href="https://codepen.io/hfuter7712/pen/pMeXOz" target="_blank" rel="noopener">https://codepen.io/hfuter7712/pen/pMeXOz</a></p>
+          在某网站上学习前端之后按照一个界面（单单看着界面一个个元素敲出来的界面）搞出来的第一个实践作品介绍的是我最佩服的图灵先辈（一说到图灵就想到那部卷福演的电影，泪目）实践中的部分笔记与收获: 
 
-          
+&lt;hr&gt;可以在界面中定义一条水平实线，可以用于页面的分割 
+字体的粗细可以用font-weigh
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/07/30/firstHTML+CSS project/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
