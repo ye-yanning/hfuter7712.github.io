@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="superQ">
 <meta property="og:description" content="官方文档: Jena推理子系统旨在将一系列推理引擎或者推理器插入Jena，这些引擎用于导出额外的RDF断言（RDF assertions）这些RDF断言来自某些基本RDF以及任何可选的本体信息以及与推理器相关联的公理和规则支持使用RDF和OWL语言这些语言允许从实例数据和类描述中推理出其他事实这个机制（machinery）设计的非常通用，它包括一个通用规则引擎，可用于许多RDF处理或转换任务">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-06T03:16:25.075Z">
+<meta property="og:updated_time" content="2019-08-06T12:20:31.521Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Jena推理学习（一）">
 <meta name="twitter:description" content="官方文档: Jena推理子系统旨在将一系列推理引擎或者推理器插入Jena，这些引擎用于导出额外的RDF断言（RDF assertions）这些RDF断言来自某些基本RDF以及任何可选的本体信息以及与推理器相关联的公理和规则支持使用RDF和OWL语言这些语言允许从实例数据和类描述中推理出其他事实这个机制（machinery）设计的非常通用，它包括一个通用规则引擎，可用于许多RDF处理或转换任务">
@@ -361,7 +361,7 @@
 <p>在Jena中，可以通过将包含空白节点的图形转换为包含变量代替空白节点的等效查询来实现简单包含，这样的查询可以直接匹配文字节点，<strong>RDF API可以用于提取文字的数据类型</strong><br>分为三种配置<br>—Full(完整)—<br>实现了所有的RDFS公理和闭包规则， 除了<code>exception of bNode entailments and datatypes (rdfD 1)</code>  ，是极其昂贵的模式，因为需要检查数据图中所有语句是否可以使用容器成员资格属性  </p>
 <p>—Default(默认)—<br>省略了对容器成员资格属性的昂贵检查，使用“一切都是资源”以及“用作属性的所有东西都是一个”规则，该模式仍然包含所有公里规则  </p>
 <p>—Simple(简单)—<br>省略了所有公理，实现了<code>SubPropertyOf</code>和<code>subClassOf</code>关系的传递闭包，域和范围蕴涵（the domain and range entailments）以及<code>SubPropertyOf</code>和<code>subClassOf</code>的含义  </p>
-<p>Jena RDFS实现尚未通过数据库模型进行测试和评估，Jena架构使构建此类模型变得容易，但是在没有缓存的情况下，预计性能会很差</p>
+<p><strong>Jena RDFS实现尚未通过数据库模型进行测试和评估，Jena架构使构建此类模型变得容易，但是在没有缓存的情况下，预计性能会很差</strong></p>
 
       
     </div>
