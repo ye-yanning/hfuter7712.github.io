@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Jena,知识推理,知识图谱,">
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
@@ -79,18 +79,19 @@
 
 
 
-<meta name="description" content="官方文档: Jena推理子系统旨在将一系列推理引擎或者推理器插入Jena，这些引擎用于导出额外的RDF断言（RDF assertions）这些RDF断言来自某些基本RDF以及任何可选的本体信息以及与推理器相关联的公理和规则支持使用RDF和OWL语言这些语言允许从实例数据和类描述中推理出其他事实这个机制（machinery）设计的非常通用，它包括一个通用规则引擎，可用于许多RDF处理或转换任务">
-<meta name="keywords" content="Jena,知识推理,知识图谱">
+<meta name="description" content="title: D2RQ数据导出-从数据库到RDF mapping language学习(一)date: 2019-08-06 20:44:26categories:    codingtags:   D2RQ   RDF   数据库     官方文档:R2RQ的映射结构:;模板:以下实例D2RQ映射将数据库中的表会议与本体中的类会议相关联，可以使用地图作为模板来编写自己的地图   # D2RQ">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Jena推理学习（一）">
-<meta property="og:url" content="http://yoursite.com/2019/08/05/JenaInterface/index.html">
+<meta property="og:title" content="superQ">
+<meta property="og:url" content="http://yoursite.com/2019/08/06/D2RQLearn1/index.html">
 <meta property="og:site_name" content="superQ">
-<meta property="og:description" content="官方文档: Jena推理子系统旨在将一系列推理引擎或者推理器插入Jena，这些引擎用于导出额外的RDF断言（RDF assertions）这些RDF断言来自某些基本RDF以及任何可选的本体信息以及与推理器相关联的公理和规则支持使用RDF和OWL语言这些语言允许从实例数据和类描述中推理出其他事实这个机制（machinery）设计的非常通用，它包括一个通用规则引擎，可用于许多RDF处理或转换任务">
+<meta property="og:description" content="title: D2RQ数据导出-从数据库到RDF mapping language学习(一)date: 2019-08-06 20:44:26categories:    codingtags:   D2RQ   RDF   数据库     官方文档:R2RQ的映射结构:;模板:以下实例D2RQ映射将数据库中的表会议与本体中的类会议相关联，可以使用地图作为模板来编写自己的地图   # D2RQ">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-06T12:20:31.521Z">
+<meta property="og:image" content="http://yoursite.com/2019/08/06/D2RQLearn1/mapping.png">
+<meta property="og:updated_time" content="2019-08-06T14:39:52.001Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jena推理学习（一）">
-<meta name="twitter:description" content="官方文档: Jena推理子系统旨在将一系列推理引擎或者推理器插入Jena，这些引擎用于导出额外的RDF断言（RDF assertions）这些RDF断言来自某些基本RDF以及任何可选的本体信息以及与推理器相关联的公理和规则支持使用RDF和OWL语言这些语言允许从实例数据和类描述中推理出其他事实这个机制（machinery）设计的非常通用，它包括一个通用规则引擎，可用于许多RDF处理或转换任务">
+<meta name="twitter:title" content="superQ">
+<meta name="twitter:description" content="title: D2RQ数据导出-从数据库到RDF mapping language学习(一)date: 2019-08-06 20:44:26categories:    codingtags:   D2RQ   RDF   数据库     官方文档:R2RQ的映射结构:;模板:以下实例D2RQ映射将数据库中的表会议与本体中的类会议相关联，可以使用地图作为模板来编写自己的地图   # D2RQ">
+<meta name="twitter:image" content="http://yoursite.com/2019/08/06/D2RQLearn1/mapping.png">
 
 
 
@@ -120,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/08/05/JenaInterface/">
+  <link rel="canonical" href="http://yoursite.com/2019/08/06/D2RQLearn1/">
 
 
 
 
 
-  <title>Jena推理学习（一） | superQ</title>
+  <title> | superQ</title>
   
 
 
@@ -264,7 +265,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/05/JenaInterface/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/06/D2RQLearn1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="leaf rock quiet">
@@ -281,7 +282,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Jena推理学习（一）</h1>
+          <h1 class="post-title" itemprop="name headline"></h1>
         
 
         <div class="post-meta">
@@ -293,8 +294,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-05T21:50:44+08:00">
-                2019-08-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-06T20:44:26+08:00">
+                2019-08-06
               </time>
             
 
@@ -303,28 +304,6 @@
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/大创/" itemprop="url" rel="index">
-                    <span itemprop="name">大创</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -353,15 +332,103 @@
       
 
       
-        <p>官方文档: Jena推理子系统旨在将一系列推理引擎或者推理器插入Jena，这些引擎用于导出额外的RDF断言（RDF assertions）<br>这些RDF断言来自某些基本RDF以及任何可选的本体信息以及与推理器相关联的公理和规则<br>支持使用RDF和OWL语言<br>这些语言允许从实例数据和类描述中推理出其他事实<br>这个机制（machinery）设计的非常通用，它包括一个通用规则引擎，可用于许多RDF处理或转换任务  </p>
-<p>在RDF中，模式（schema，也称为Ontology AKA tbox）数据和实例（instance，也称为AKA abox)之间没有强烈分离(strongly)，因此任何数据无论是类相关还是实例相关，都可包含在<code>bind</code>或者在<code>bindSchema</code>中  </p>
-<p><strong>通用推理器</strong><br>对于每种类型的推理器，都有一个工厂类(factory class)，其实例可以用来创建关联实例<code>Reasoner</code>，可以通过直接转到已知工厂类并使用<code>theInstance()</code>静态方法或者从全局检索来定位<code>ReasonerRegistry</code>工厂实例，该全局存储着由分配给推理的URI索引的工厂实例(存储实例）<br>构建reasoners的工厂对象就是为了简化注册表服务的设计和扩展，一旦有了一个推理器实例，同一个实例可以在不同的数据集起作用并多次重复使用，而不会互相影响<br><strong>个人总结：定义了一个推理器实例便可以通用，多用</strong><br>一旦有了推理器实例，就可以将其附加到一组RDF数据上创建<strong>推理模型</strong>，可以通过将所有RDF数据放入一个模型中或分成两个组件（模式schema与实例数据instance）来完成,<strong>官方PS：一些外部reasoners可能需要硬分离</strong>，对于所有内置reasoners，分离是任意的<br>这种分离的主要价值是  <strong>允许从一组数据中的一些推论有效的应用在几个辅助数据集中（一般是实例数据集）</strong>  </p>
-<p>—–推理模型的操作—–<br>对于大部分应用程序，只需要创建一个包含一些推理步骤的模型，使用<code>ModelFactory</code>方法然后运行在标准Jena Model API中所包含的语句即可，但是有时候需要获得虚拟三元组所没有的更多控制处理以及额外的推理器性能（sometimes it is necessary to gain more control over the processing or to access additional reasoner features not available as virtual triples.）<br>为了使用推理器测试数据集的不一致性，使用<code>InfModel.validate</code>接口，该接口将对架构和实例数据进行全局检查，查找不一致性<br>它包括一个简单的通过/失败标志<code>ValidityReport.isValid()</code>和一个特定报告列表<code>ValidityReport.Report</code> 接口的实例,详细说明任何检测到的不一致  </p>
-<p><strong>RDFS推理器</strong><br>Jena包含一个RDFS推理器，它支持RDF核心工作组（RDF Semantics）描述的几乎所有RDFS蕴含<br>要访问该推理器可以使用<code>ModelFactory.createRDFSModel</code>或者手动访问<code>ReasonerRegistery.getRDFSReasoner()</code>  </p>
-<p>在Jena中，可以通过将包含空白节点的图形转换为包含变量代替空白节点的等效查询来实现简单包含，这样的查询可以直接匹配文字节点，<strong>RDF API可以用于提取文字的数据类型</strong><br>分为三种配置<br>—Full(完整)—<br>实现了所有的RDFS公理和闭包规则， 除了<code>exception of bNode entailments and datatypes (rdfD 1)</code>  ，是极其昂贵的模式，因为需要检查数据图中所有语句是否可以使用容器成员资格属性  </p>
-<p>—Default(默认)—<br>省略了对容器成员资格属性的昂贵检查，使用“一切都是资源”以及“用作属性的所有东西都是一个”规则，该模式仍然包含所有公里规则  </p>
-<p>—Simple(简单)—<br>省略了所有公理，实现了<code>SubPropertyOf</code>和<code>subClassOf</code>关系的传递闭包，域和范围蕴涵（the domain and range entailments）以及<code>SubPropertyOf</code>和<code>subClassOf</code>的含义  </p>
-<p><strong>Jena RDFS实现尚未通过数据库模型进行测试和评估，Jena架构使构建此类模型变得容易，但是在没有缓存的情况下，预计性能会很差</strong></p>
+        <hr>
+<p>title: D2RQ数据导出-从数据库到RDF mapping language学习(一)<br>date: 2019-08-06 20:44:26<br>categories:  </p>
+<ul>
+<li>coding<br>tags:  </li>
+<li>D2RQ  </li>
+<li>RDF  </li>
+<li>数据库  </li>
+</ul>
+<hr>
+<p>官方文档:<br>R2RQ的映射结构:<br><img src="/2019/08/06/D2RQLearn1/mapping.png" alt="R2RQ映射结构">;<br>模板:以下实例D2RQ映射将数据库中的表会议与本体中的类会议相关联，可以使用地图作为模板来编写自己的地图  </p>
+<pre><code># D2RQ Namespace  
+@prefix d2rq:        &lt;http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#&gt; .
+# Namespace of the ontology
+@prefix : &lt;http://annotation.semanticweb.org/iswc/iswc.daml#&gt; .
+
+# Namespace of the mapping file; does not appear in mapped data
+@prefix map: &lt;file:///Users/d2r/example.ttl#&gt; .
+
+# Other namespaces
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; . 
+
+map:Database1 a d2rq:Database;
+    d2rq:jdbcDSN &quot;jdbc:mysql://localhost/iswc&quot;;
+    d2rq:jdbcDriver &quot;com.mysql.jdbc.Driver&quot;;
+    d2rq:username &quot;user&quot;;
+    d2rq:password &quot;password&quot;;
+    .
+# -----------------------------------------------
+# CREATE TABLE Conferences (ConfID int, Name text, Location text);
+
+map:Conference a d2rq:ClassMap;
+    d2rq:dataStorage map:Database1;
+    d2rq:class :Conference;
+    d2rq:uriPattern &quot;http://conferences.org/comp/confno@@Conferences.ConfID@@&quot;;
+    .
+map:eventTitle a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:Conference;
+    d2rq:property :eventTitle;
+    d2rq:column &quot;Conferences.Name&quot;;
+    d2rq:datatype xsd:string;
+    .
+map:location a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:Conference;
+    d2rq:property :location;
+    d2rq:column &quot;Conferences.Location&quot;; 
+    d2rq:datatype xsd:string;
+    .  
+</code></pre><p>属性:<br><code>D2RQ : jdbcDSN</code>      JDBC数据库URL，是一个表单的字符串<br><code>D2RQ : jdbcDriver</code>   数据库的JDBC驱动程序类名称<br><code>D2RQ : username</code>     若数据库有要求，用户名<br><code>D2RQ : password</code>     若数据库有要求，密码<br><code>D2RQ : resultSizeLimit</code>  整数值，作为LIMIT添加到所有SQL查询中，设置从大型数据库返回结果数的上限<br><code>D2RQ : FETCHSIZE</code>  整数值，指定每个数据库请求要求检索的行数<br><code>D2RQ : startupSQLScript</code>  启动的时候要执行的SQL脚本的URL，用于初始化连接与测试  </p>
+<p><strong>示例一：连接mysql数据库</strong>    </p>
+<pre><code>map:Database1 a d2rq:Database;
+    d2rq:jdbcDSN &quot;jdbc:mysql://localhost/iswc&quot;;
+    d2rq:jdbcDriver &quot;com.mysql.jdbc.Driver&quot;;
+    d2rq:username &quot;user&quot;;
+    d2rq:password &quot;password&quot;;
+    .
+</code></pre><p><strong>保持长期的连接</strong><br>某些数据库服务器可能会在一段时间后关闭客户端连接（如mysql，为8小时），为了保持长期的连接（可能是为了转换数据），可以将D2R配置为定期运行“noop”查询，可以使用特殊属性启用该功能<code>jdbc:keepAlive</code><br>example:  </p>
+<pre><code>@prefix jdbc: &lt;http://d2rq.org/terms/jdbc/&gt; .
+
+map:database a d2rq:Database;
+    # ... other database configuration ...
+    jdbc:keepAlive &quot;3600&quot;; # value in seconds
+    jdbc:keepAliveQuery &quot;SELECT 1&quot;; # (optionally to override default noop query)
+    .  
+</code></pre><p><strong>映射引擎的全局配置</strong><br><code>d2rq : Configuration</code>控制D2RQ的全局行为<br><code>D2RQ : serveVocabulary</code>  是否提供推断和用户提供的词汇数据<br><code>D2RQ : useAllOptimizations</code>  是否使用出血边缘优化(bleeding edge optimizations)  </p>
+<p> <strong>创建RDF资源</strong><br><code>d2rq :ClassMap</code> 表示OWL本体或者RDFS模式的类或一组类似类，类映射定义了如何识别类的实例，它连接到<code>a d2rq : Database</code> 并且具有一组<code>d2rq:PropertyBridges</code>附加属性的实例  </p>
+<p><strong>d2rq:ClassMap属性</strong>    </p>
+<p>example:  </p>
+<p>—–使用URI模式标识类映射实例—–   </p>
+<pre><code>map:PaperClassMap a d2rq:ClassMap;
+    d2rq:uriPattern &quot;http://www.conference.org/conf02004/paper#Paper@@Papers.PaperID@@&quot;;
+    d2rq:class :Paper;
+    d2rq:classDefinitionLabel &quot;paper&quot;@en;
+    d2rq:classDefinitionComment &quot;A conference paper.&quot;@en;
+    d2rq:dataStorage map:Database1;
+    .  
+</code></pre><p>涉及到的<br><code>d2rq:uriPattern</code>             指定将用于标识此类映射实例的URI模式<br><code>d2rq:class</code>                  RDFS或者OWL类，该ClassMap生成的所有资源都是此类的实例<br><code>d2rq:classDefinitionLabel</code>   指定将rdfs:label用于所有关联类定义的标签，支持多个标签<br><code>d2rq:classDefinitionComment</code> 指定将作为rdfs:comment所有关联类定义的标签<br><code>d2rq:dataStorage</code>            引用d2rq:Database存储实例数据的位置  </p>
+<p>—–具有空白节点的类映射实例—–  </p>
+<pre><code>map:Topic a d2rq:ClassMap;
+    d2rq:bNodeIdColumns &quot;Topics.TopicID&quot;;
+    d2rq:class :Topic;
+    d2rq:classDefinitionLabel &quot;topic&quot;@en;
+    d2rq:classDefinitionComment &quot;A topic.&quot;@en;
+    d2rq:dataStorage map:Database1;
+    .
+</code></pre><p><code>d2rq:bNodeIdColumns</code><br>用”TableName.ColumnName”符号表示的逗号分隔的列名列表 ,此类映射的实例将是空白节点，这些列的每个不同元组有一个不同的空白节点</p>
+<p><strong>d2rq:PropertyBridge属性</strong><br>用途，向资源添加属性<br>example:  </p>
+<pre><code>map:PaperTitle a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:Paper;
+    d2rq:property :title;
+    d2rq:column &quot;Papers.Title&quot;;
+    d2rq:lang &quot;en&quot;;
+    d2rq:propertyDefinitionLabel &quot;title&quot;@en;
+    d2rq:propertyDefinitionComment &quot;A paper&apos;s title.&quot;@en;
+    .  
+</code></pre><p>一个简单的property bridge<br>该例子将<code>:title</code>属性添加到所有由<code>map:Paper</code>类映射产生的资源<br><code>d2rq:column</code>对于具有文字值的属性，包含文字值的数据库列，列名必须在表单中给出”TableName.ColumnName”<br><code>d2rq:property</code> 连接ClassMap与桥创建的对象或者文字的RDF属性，必须为每个属性桥指定  </p>
+<p>d2rq 映射语言官方文档：<a href="http://d2rq.org/d2rq-language" target="_blank" rel="noopener">http://d2rq.org/d2rq-language</a></p>
 
       
     </div>
@@ -376,16 +443,6 @@
     
 
     <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/Jena/" rel="tag"># Jena</a>
-          
-            <a href="/tags/知识推理/" rel="tag"># 知识推理</a>
-          
-            <a href="/tags/知识图谱/" rel="tag"># 知识图谱</a>
-          
-        </div>
       
 
       
@@ -411,8 +468,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/05/Javascript4/" rel="next" title="Javascript+jQuery+API">
-                <i class="fa fa-chevron-left"></i> Javascript+jQuery+API
+              <a href="/2019/08/06/imageTest/" rel="next" title="hexo博文图片添加测试">
+                <i class="fa fa-chevron-left"></i> hexo博文图片添加测试
               </a>
             
           </div>
@@ -420,10 +477,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/08/06/imageTest/" rel="prev" title="hexo博文图片添加测试">
-                hexo博文图片添加测试 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
