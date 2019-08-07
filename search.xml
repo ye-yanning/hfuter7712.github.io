@@ -8,8 +8,8 @@
         <category>coding</category>
       </categories>
       <tags>
-        <tag>Sparql</tag>
         <tag>D2RQ</tag>
+        <tag>Sparql</tag>
         <tag>mysql</tag>
         <tag>D2R</tag>
       </tags>
@@ -34,9 +34,9 @@
         <category>coding</category>
       </categories>
       <tags>
+        <tag>D2RQ</tag>
         <tag>RDF</tag>
         <tag>数据库</tag>
-        <tag>D2RQ</tag>
       </tags>
   </entry>
   <entry>
@@ -59,8 +59,8 @@
       </categories>
       <tags>
         <tag>Jena</tag>
-        <tag>知识图谱</tag>
         <tag>知识推理</tag>
+        <tag>知识图谱</tag>
       </tags>
   </entry>
   <entry>
@@ -403,8 +403,8 @@
         <category>大创</category>
       </categories>
       <tags>
-        <tag>本体</tag>
         <tag>知识图谱</tag>
+        <tag>本体</tag>
         <tag>XML</tag>
       </tags>
   </entry>
