@@ -100,7 +100,7 @@
 <meta property="og:image" content="http://yoursite.com/2019/08/07/mysql1/11.png">
 <meta property="og:image" content="http://yoursite.com/2019/08/07/mysql1/12.png">
 <meta property="og:image" content="http://yoursite.com/2019/08/07/mysql1/13.png">
-<meta property="og:updated_time" content="2019-08-07T04:35:53.683Z">
+<meta property="og:updated_time" content="2019-08-07T04:38:23.552Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mysql数据库基础学习（一）">
 <meta name="twitter:description" content="启动mysql数据库以管理员身份打开cmd命令行工具,切换目录到mysql根目录的bin文件夹下初始化数据库mysqld --initialize --console执行完毕后，会输出root用户的默认密码输入安装命令mysqld install   —启动mysql命令—net start mysql   —登录本机的mysql数据库—mysql -u root -p之后会要求输入密码，输入即可">
@@ -415,8 +415,8 @@ WHERE field1 LIKE condition1 [AND [OR]] filed2 = &apos;somevalue&apos;
 &apos;a%&apos;    以a开头  
 &apos;%a%&apos;   含有a  
 &apos;_a_&apos;   三位字符串且a位于中间位置  
-`_a`    两位字符串且a位于末尾  
-`a_`    两位字符串且a位于开头
+&apos;_a&apos;    两位字符串且a位于末尾  
+&apos;a_&apos;    两位字符串且a位于开头
 
 </code></pre><p><strong>UNION</strong><br>用于连接两个以上的<code>SELECT</code>语句的结果到一个结果集合中，多个SELECT语句会删除重复的数据  </p>
 <pre><code>SELECT expression1, expression2, ... expression_n
