@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next muse use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -56,10 +56,10 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/hfuter7712.github.io/images/apple-touch-icon-next.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/hfuter7712.github.io/images/favicon.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/hfuter7712.github.io/images/favicon-32x32-next.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/hfuter7712.github.io/images/favicon.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="16x16" href="/hfuter7712.github.io/images/favicon-16x16-next.png?v=5.1.4">
 
 
   <link rel="mask-icon" href="/hfuter7712.github.io/images/logo.svg?v=5.1.4" color="#222">
@@ -96,7 +96,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/hfuter7712.github.io/',
-    scheme: 'Pisces',
+    scheme: 'Muse',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -191,36 +191,6 @@
         </li>
       
         
-        <li class="menu-item menu-item-about">
-          <a href="/hfuter7712.github.io/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
-            
-            关于
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/hfuter7712.github.io/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
-            
-            标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/hfuter7712.github.io/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
-            
-            分类
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-archives">
           <a href="/hfuter7712.github.io/archives/" rel="section">
             
@@ -232,41 +202,9 @@
       
 
       
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
-            
-            搜索
-          </a>
-        </li>
-      
     </ul>
   
 
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
-
-
-
-    </div>
   
 </nav>
 
@@ -300,7 +238,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="leaf rock quiet">
       <meta itemprop="description" content>
-      <meta itemprop="image" content="/hfuter7712.github.io/images/avatar.png">
+      <meta itemprop="image" content="/hfuter7712.github.io/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -388,15 +326,10 @@
       
         
           
-          因为大创需求，需要将数据库中的内容转换成rdf然后给Apache Jena进行推理，因此对一系列的知识进行了学习，今天终于迎来了第一次综合实践首先我在mysql中构建了一个叫做test的数据库，然后建立了一个叫做metal的表随随便便输入了几个数据如下然后开始运用D2RQ处理进入D2RQ根目录打开c
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/hfuter7712.github.io/2019/08/07/mysqlD2RQ1/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+            <p>因为大创需求，需要将数据库中的内容转换成rdf然后给Apache Jena进行推理，因此对一系列的知识进行了学习，今天终于迎来了第一次综合实践<br>首先我在mysql中构建了一个叫做test的数据库，然后建立了一个叫做metal的表<br>随随便便输入了几个数据如下<br><img src="/hfuter7712.github.io/2019/08/07/mysqlD2RQ1/1.png" alt="数据库内容"><br>然后开始运用D2RQ处理<br>进入D2RQ根目录打开cmd<br>输入以下语句<br><code>.\generate-mapping -u root -p yyn321 -o test.ttl jdbc:mysql:///test?useSSL=false</code><br><code>yyn321</code>是数据库密码<br><code>test.ttl</code>是要生成的ttl文件的名字<br><code>mysql:///</code>后面跟的是需要进行处理的数据库的名字<br>比如你的数据库名字是test,就这样写:<code>jdbc:mysql:///test?</code><br>是metro的话就<code>jdbc:mysql:///metro?</code><br><img src="/hfuter7712.github.io/2019/08/07/mysqlD2RQ1/2.png" alt="语句1"><br>回车之后没有任何提示直接进入下一个语句<br>在根目录下生成了对应的ttl文件，这个就是默认的mapping language映射文件<br><img src="/hfuter7712.github.io/2019/08/07/mysqlD2RQ1/3.png" alt="结果1"><br>打开可以看到一系列代码<br>可以选择手工修改，本人这里暂时不动（先熟悉操作）<br>再在刚刚的cmd中继续输入下列代码<br><code>dump-rdf -o test.nt test.ttl</code><br><img src="/hfuter7712.github.io/2019/08/07/mysqlD2RQ1/4.png" alt="语句2"><br>和第一条语句一样，并没有提示任何东西，在根目录下生成了一个同名nt文件<br><img src="/hfuter7712.github.io/2019/08/07/mysqlD2RQ1/5.png" alt="结果2"><br>打开看到大量代码，这个就是所谓的RDF文件了，仔细观察都是三个一组<br>接下来的操作便是通过这个文件打开D2R服务器<br>在cmd中输入<br><code>d2r-server test.ttl</code><br>显示在服务器在2020端口 打开<br> <img src="/hfuter7712.github.io/2019/08/07/mysqlD2RQ1/6.png" alt="结果2"><br>在浏览器上进入2020端口<br>显示页面如下<br><img src="/hfuter7712.github.io/2019/08/07/mysqlD2RQ1/7.png" alt="服务器界面1"><br>单击metal,进入界面如下<br><img src="/hfuter7712.github.io/2019/08/07/mysqlD2RQ1/8.png" alt="服务器界面2"><br>单击metal#1界面如下<br> <img src="/hfuter7712.github.io/2019/08/07/mysqlD2RQ1/9.png" alt="服务器界面3"><br>返回主界面，点击最下列sparql窗口的链接<br>即可进入sparql查询界面<br> <img src="/hfuter7712.github.io/2019/08/07/mysqlD2RQ1/10.png" alt="服务器查询界面1"><br>在其中输入sparql语句即可进行查询  </p>
+<p>查询人数大于4的乐队<br><img src="/hfuter7712.github.io/2019/08/07/mysqlD2RQ1/11.png" alt="服务器查询界面2"><br>查询乐队nightwish的歌曲<br><img src="/hfuter7712.github.io/2019/08/07/mysqlD2RQ1/12.png" alt="服务器查询界面3">   </p>
+
+          
         
       
     </div>
@@ -448,7 +381,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="leaf rock quiet">
       <meta itemprop="description" content>
-      <meta itemprop="image" content="/hfuter7712.github.io/images/avatar.png">
+      <meta itemprop="image" content="/hfuter7712.github.io/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -536,16 +469,79 @@
       
         
           
-          启动mysql数据库以管理员身份打开cmd命令行工具,切换目录到mysql根目录的bin文件夹下初始化数据库mysqld --initialize --console执行完毕后，会输出root用户的默认密码输入安装命令mysqld install  
-—启动mysql命令—net start mys
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/hfuter7712.github.io/2019/08/07/mysql1/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+            <p>启动mysql数据库<br><strong>以管理员身份</strong>打开cmd命令行工具,切换目录到mysql根目录的bin文件夹下<br>初始化数据库<br><code>mysqld --initialize --console</code><br>执行完毕后，会输出root用户的默认密码<br>输入安装命令<br><code>mysqld install</code>  </p>
+<p><strong>—启动mysql命令—</strong><br><code>net start mysql</code>  </p>
+<p><strong>—登录本机的mysql数据库—</strong><br><code>mysql -u root -p</code><br>之后会要求输入密码，输入即可<br><img src="/hfuter7712.github.io/2019/08/07/mysql1/1.png" alt="输入密码成功后的窗口"><br>输入exit或者quit退出登录  </p>
+<p>—-数据库操作—-  </p>
+<p><strong>USE 数据库名</strong><br>选择要操作的Mysql数据库，使用该命令后所有命令都只针对该数据库<br><img src="/hfuter7712.github.io/2019/08/07/mysql1/2.png" alt="use语句实现">  </p>
+<p><strong>SHOW DATABASES</strong><br>列出mysql数据库管理系统的数据库列表<br><img src="/hfuter7712.github.io/2019/08/07/mysql1/3.png" alt="列出数据库列表">  </p>
+<p><strong>SHOW TABLES</strong><br>列出指定数据库的所有表<br><img src="/hfuter7712.github.io/2019/08/07/mysql1/4.png" alt="列出指定数据库的表">  </p>
+<p><strong>CREATE 数据库</strong><br>可在登陆MySQL服务后使用create创建数据库<br><code>CREATE DATEBASE 数据库名;</code><br>如 <code>CREATE DATEBASE TEST;</code>  </p>
+<p><strong>DROP 数据库</strong><br>用drop命令删除数据库<br><code>drop database 数据库名;</code><br>以下是创建并删除一个数据库的实践<br><img src="/hfuter7712.github.io/2019/08/07/mysql1/5.png" alt="创建与删除数据库">  </p>
+<p><strong>CREATE 数据表</strong><br><code>CREATE TABLE table_name(column_name column_type);</code><br><code>column_name</code>是表单名字，<code>column_type</code>是内容的数据类型<br>example(来自菜鸟教程):  </p>
+<pre><code>CREATE TABLE IF NOT EXISTS `runoob_tbl`(
+   `runoob_id` INT UNSIGNED AUTO_INCREMENT,
+   `runoob_title` VARCHAR(100) NOT NULL,
+   `runoob_author` VARCHAR(40) NOT NULL,
+   `submission_date` DATE,
+   PRIMARY KEY ( `runoob_id` )
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;  
+</code></pre><p><strong>DROP 数据表</strong><br><code>DROP TABLE table_name</code><br>在进行删除表操作的时候要非常小心，因为执行删除命令后所有数据都会消失  </p>
+<p><strong>INSERT INTO</strong><br>使用该语句向数据表中插入数据  </p>
+<pre><code>INSERT INTO table_name(field1,field2,...fieldN)
+                      VALUES
+                      (value1,value2,...valueN);  
+</code></pre><p>example(亲自实践):<br><img src="/hfuter7712.github.io/2019/08/07/mysql1/6.png" alt="向数据库中添加数据"><br>该操作向数据库中添加了一组数据，结果显示成功  </p>
+<p><strong>SELECT 查询数据</strong><br>语法:  </p>
+<pre><code>SELECT column_name,column_name
+FROM table_name
+[WHERE Clause]
+[LIMIT N][ OFFSET M]  
+</code></pre><p>example:<br><img src="/hfuter7712.github.io/2019/08/07/mysql1/7.png" alt="查询数据"><br>该查询选择了曲目名字和乐队名字，乐队成员大于5且限制输出2条匹配  </p>
+<p><strong>WHERE 提供条件查询</strong>  </p>
+<pre><code>SELECT field1, field2,...fieldN FROM table_name1, table_name2...
+[WHERE condition1 [AND [OR]] condition2.....  
+</code></pre><p>可以用<code>AND</code> 或者<code>OR</code>制定一个或多个条件  </p>
+<p><strong>UPDATE 更新</strong><br>用于更新也就是修改MySQL中的数据  </p>
+<pre><code>UPDATE table_name SET field1=new-value1, field2=new-value2
+[WHERE Clause]  
+</code></pre><p>注意，必须谨慎操作，因为如果少了WHERE条件语句，<strong>你的所有相应数据都会被修改</strong><br><img src="/hfuter7712.github.io/2019/08/07/mysql1/8.png" alt="更新数据"><br>将id为8的曲目submission_data更新为1999-08-04  </p>
+<p><strong>DELETE 删除</strong><br>用于删除MySQL中的数据<br><code>DELETE FROM table_name [WHERE Clause]</code><br>和update一样，这两个语句必须谨慎操作，没有where语句的情况下，<strong>所有相应数据都会被删除</strong>  </p>
+<p><strong>LIKE 字符串匹配</strong><br>用于WHERE语句中，主要适用于字符串类型的数据的选择  </p>
+<pre><code>SELECT field1, field2,...fieldN 
+FROM table_name
+WHERE field1 LIKE condition1 [AND [OR]] filed2 = &apos;somevalue&apos;  
+</code></pre><p>example:  </p>
+<pre><code>
+&apos;%a&apos;    以a结尾  
+&apos;a%&apos;    以a开头  
+&apos;%a%&apos;   含有a  
+&apos;_a_&apos;   三位字符串且a位于中间位置  
+&apos;_a&apos;    两位字符串且a位于末尾  
+&apos;a_&apos;    两位字符串且a位于开头
+
+</code></pre><p><strong>UNION</strong><br>用于连接两个以上的<code>SELECT</code>语句的结果到一个结果集合中，多个SELECT语句会删除重复的数据  </p>
+<pre><code>SELECT expression1, expression2, ... expression_n
+FROM tables
+[WHERE conditions]
+UNION [ALL | DISTINCT]
+SELECT expression1, expression2, ... expression_n
+FROM tables
+[WHERE conditions];  
+</code></pre><p><code>DISTINCT</code>:删除结果集中重复的数据<br><code>ALL</code>:返回所有数据集，包括重复的数据  </p>
+<p><strong>ORDER BY 排序</strong>  </p>
+<pre><code>SELECT field1, field2,...fieldN FROM table_name1, table_name2...
+ORDER BY field1 [ASC [DESC][默认 ASC]], [field2...] [ASC [DESC][默认 ASC]]  
+</code></pre><p>默认是ASC 升序排列，可以使用<code>DESC</code>修饰符来进行降序排列<br>example:<br>按照乐队名字降序排序<br><img src="/hfuter7712.github.io/2019/08/07/mysql1/9.png" alt="排序示范1"><br>按照乐队成员升序排序<br><img src="/hfuter7712.github.io/2019/08/07/mysql1/10.png" alt="排序示范2">  </p>
+<p><strong>GROUP BY 分组</strong><br>该语句根据一个或者多个列对结果进行分组  </p>
+<pre><code>SELECT column_name, function(column_name)
+FROM table_name
+WHERE column_name operator value
+GROUP BY column_name;   
+</code></pre><p>使用<code>WITH ROLLUP</code>可以实现在分组统计数据基础上再进行相同的统计（SUM,AVG,COUNT…)<br>example:<br> 按照出现过的数字总和，并在最后求和<br><img src="/hfuter7712.github.io/2019/08/07/mysql1/11.png" alt="分组示范2"><br>按照出现过的数组求平均值<br><img src="/hfuter7712.github.io/2019/08/07/mysql1/12.png" alt="分组示范2"><br>按照每个乐队出现过的次数<br><img src="/hfuter7712.github.io/2019/08/07/mysql1/13.png" alt="分组示范2">  </p>
+<p>MySQL菜鸟教程：<a href="https://www.runoob.com/mysql/mysql-tutorial.html" target="_blank" rel="noopener">https://www.runoob.com/mysql/mysql-tutorial.html</a></p>
+
+          
         
       
     </div>
@@ -597,7 +593,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="leaf rock quiet">
       <meta itemprop="description" content>
-      <meta itemprop="image" content="/hfuter7712.github.io/images/avatar.png">
+      <meta itemprop="image" content="/hfuter7712.github.io/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -685,17 +681,96 @@
       
         
           
-          官方文档:R2RQ的映射结构:;模板:以下实例D2RQ映射将数据库中的表会议与本体中的类会议相关联，可以使用地图作为模板来编写自己的地图  
-# D2RQ Namespace  
-@prefix d2rq:        &lt;http://www.wiwiss.fu-berlin.de/suhl
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/hfuter7712.github.io/2019/08/06/D2RQLearn1/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+            <p>官方文档:<br>R2RQ的映射结构:<br><img src="/hfuter7712.github.io/2019/08/06/D2RQLearn1/mapping.png" alt="R2RQ映射结构">;<br>模板:以下实例D2RQ映射将数据库中的表会议与本体中的类会议相关联，可以使用地图作为模板来编写自己的地图  </p>
+<pre><code># D2RQ Namespace  
+@prefix d2rq:        &lt;http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#&gt; .
+# Namespace of the ontology
+@prefix : &lt;http://annotation.semanticweb.org/iswc/iswc.daml#&gt; .
+
+# Namespace of the mapping file; does not appear in mapped data
+@prefix map: &lt;file:///Users/d2r/example.ttl#&gt; .
+
+# Other namespaces
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; . 
+
+map:Database1 a d2rq:Database;
+    d2rq:jdbcDSN &quot;jdbc:mysql://localhost/iswc&quot;;
+    d2rq:jdbcDriver &quot;com.mysql.jdbc.Driver&quot;;
+    d2rq:username &quot;user&quot;;
+    d2rq:password &quot;password&quot;;
+    .
+# -----------------------------------------------
+# CREATE TABLE Conferences (ConfID int, Name text, Location text);
+
+map:Conference a d2rq:ClassMap;
+    d2rq:dataStorage map:Database1;
+    d2rq:class :Conference;
+    d2rq:uriPattern &quot;http://conferences.org/comp/confno@@Conferences.ConfID@@&quot;;
+    .
+map:eventTitle a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:Conference;
+    d2rq:property :eventTitle;
+    d2rq:column &quot;Conferences.Name&quot;;
+    d2rq:datatype xsd:string;
+    .
+map:location a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:Conference;
+    d2rq:property :location;
+    d2rq:column &quot;Conferences.Location&quot;; 
+    d2rq:datatype xsd:string;
+    .  
+</code></pre><p>属性:<br><code>D2RQ : jdbcDSN</code>      JDBC数据库URL，是一个表单的字符串<br><code>D2RQ : jdbcDriver</code>   数据库的JDBC驱动程序类名称<br><code>D2RQ : username</code>     若数据库有要求，用户名<br><code>D2RQ : password</code>     若数据库有要求，密码<br><code>D2RQ : resultSizeLimit</code>  整数值，作为LIMIT添加到所有SQL查询中，设置从大型数据库返回结果数的上限<br><code>D2RQ : FETCHSIZE</code>  整数值，指定每个数据库请求要求检索的行数<br><code>D2RQ : startupSQLScript</code>  启动的时候要执行的SQL脚本的URL，用于初始化连接与测试  </p>
+<p><strong>示例一：连接mysql数据库</strong>    </p>
+<pre><code>map:Database1 a d2rq:Database;
+    d2rq:jdbcDSN &quot;jdbc:mysql://localhost/iswc&quot;;
+    d2rq:jdbcDriver &quot;com.mysql.jdbc.Driver&quot;;
+    d2rq:username &quot;user&quot;;
+    d2rq:password &quot;password&quot;;
+    .
+</code></pre><p><strong>保持长期的连接</strong><br>某些数据库服务器可能会在一段时间后关闭客户端连接（如mysql，为8小时），为了保持长期的连接（可能是为了转换数据），可以将D2R配置为定期运行“noop”查询，可以使用特殊属性启用该功能<code>jdbc:keepAlive</code><br>example:  </p>
+<pre><code>@prefix jdbc: &lt;http://d2rq.org/terms/jdbc/&gt; .
+
+map:database a d2rq:Database;
+    # ... other database configuration ...
+    jdbc:keepAlive &quot;3600&quot;; # value in seconds
+    jdbc:keepAliveQuery &quot;SELECT 1&quot;; # (optionally to override default noop query)
+    .  
+</code></pre><p><strong>映射引擎的全局配置</strong><br><code>d2rq : Configuration</code>控制D2RQ的全局行为<br><code>D2RQ : serveVocabulary</code>  是否提供推断和用户提供的词汇数据<br><code>D2RQ : useAllOptimizations</code>  是否使用出血边缘优化(bleeding edge optimizations)  </p>
+<p> <strong>创建RDF资源</strong><br><code>d2rq :ClassMap</code> 表示OWL本体或者RDFS模式的类或一组类似类，类映射定义了如何识别类的实例，它连接到<code>a d2rq : Database</code> 并且具有一组<code>d2rq:PropertyBridges</code>附加属性的实例  </p>
+<p><strong>d2rq:ClassMap属性</strong>    </p>
+<p>example:  </p>
+<p>—–使用URI模式标识类映射实例—–   </p>
+<pre><code>map:PaperClassMap a d2rq:ClassMap;
+    d2rq:uriPattern &quot;http://www.conference.org/conf02004/paper#Paper@@Papers.PaperID@@&quot;;
+    d2rq:class :Paper;
+    d2rq:classDefinitionLabel &quot;paper&quot;@en;
+    d2rq:classDefinitionComment &quot;A conference paper.&quot;@en;
+    d2rq:dataStorage map:Database1;
+    .  
+</code></pre><p>涉及到的<br><code>d2rq:uriPattern</code>             指定将用于标识此类映射实例的URI模式<br><code>d2rq:class</code>                  RDFS或者OWL类，该ClassMap生成的所有资源都是此类的实例<br><code>d2rq:classDefinitionLabel</code>   指定将rdfs:label用于所有关联类定义的标签，支持多个标签<br><code>d2rq:classDefinitionComment</code> 指定将作为rdfs:comment所有关联类定义的标签<br><code>d2rq:dataStorage</code>            引用d2rq:Database存储实例数据的位置  </p>
+<p>—–具有空白节点的类映射实例—–  </p>
+<pre><code>map:Topic a d2rq:ClassMap;
+    d2rq:bNodeIdColumns &quot;Topics.TopicID&quot;;
+    d2rq:class :Topic;
+    d2rq:classDefinitionLabel &quot;topic&quot;@en;
+    d2rq:classDefinitionComment &quot;A topic.&quot;@en;
+    d2rq:dataStorage map:Database1;
+    .
+</code></pre><p><code>d2rq:bNodeIdColumns</code><br>用”TableName.ColumnName”符号表示的逗号分隔的列名列表 ,此类映射的实例将是空白节点，这些列的每个不同元组有一个不同的空白节点</p>
+<p><strong>d2rq:PropertyBridge属性</strong><br>用途，向资源添加属性<br>example:  </p>
+<pre><code>map:PaperTitle a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:Paper;
+    d2rq:property :title;
+    d2rq:column &quot;Papers.Title&quot;;
+    d2rq:lang &quot;en&quot;;
+    d2rq:propertyDefinitionLabel &quot;title&quot;@en;
+    d2rq:propertyDefinitionComment &quot;A paper&apos;s title.&quot;@en;
+    .  
+</code></pre><p>一个简单的property bridge<br>该例子将<code>:title</code>属性添加到所有由<code>map:Paper</code>类映射产生的资源<br><code>d2rq:column</code>对于具有文字值的属性，包含文字值的数据库列，列名必须在表单中给出”TableName.ColumnName”<br><code>d2rq:property</code> 连接ClassMap与桥创建的对象或者文字的RDF属性，必须为每个属性桥指定  </p>
+<p>d2rq 映射语言官方文档：<a href="http://d2rq.org/d2rq-language" target="_blank" rel="noopener">http://d2rq.org/d2rq-language</a></p>
+
+          
         
       
     </div>
@@ -747,7 +822,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="leaf rock quiet">
       <meta itemprop="description" content>
-      <meta itemprop="image" content="/hfuter7712.github.io/images/avatar.png">
+      <meta itemprop="image" content="/hfuter7712.github.io/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -835,20 +910,13 @@
       
         
           
-          .PNG格式  
-    
-.JPG格式 
- 
-.CR2格式结果：加载失败，233，果然相机导出的raw格式确实很难搞，连adobe pr也不支持  
+            <p>.PNG格式  </p>
+<p><img src="/hfuter7712.github.io/2019/08/06/imageTest/45.png" alt="PNG格式">    </p>
+<p>.JPG格式 </p>
+<p><img src="/hfuter7712.github.io/2019/08/06/imageTest/12.jpg" alt="JPG格式"> </p>
+<p>.CR2格式<br><img src="/hfuter7712.github.io/2019/08/06/imageTest/IMG_8732.CR2" alt="CR2格式"><br>结果：加载失败，233，果然相机导出的raw格式确实很难搞，连adobe pr也不支持  </p>
 
           
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/hfuter7712.github.io/2019/08/06/imageTest/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
         
       
     </div>
@@ -900,7 +968,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="leaf rock quiet">
       <meta itemprop="description" content>
-      <meta itemprop="image" content="/hfuter7712.github.io/images/avatar.png">
+      <meta itemprop="image" content="/hfuter7712.github.io/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -988,15 +1056,17 @@
       
         
           
-          官方文档: Jena推理子系统旨在将一系列推理引擎或者推理器插入Jena，这些引擎用于导出额外的RDF断言（RDF assertions）这些RDF断言来自某些基本RDF以及任何可选的本体信息以及与推理器相关联的公理和规则支持使用RDF和OWL语言这些语言允许从实例数据和类描述中推理出其他事实这个机
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/hfuter7712.github.io/2019/08/05/JenaInterface/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+            <p>官方文档: Jena推理子系统旨在将一系列推理引擎或者推理器插入Jena，这些引擎用于导出额外的RDF断言（RDF assertions）<br>这些RDF断言来自某些基本RDF以及任何可选的本体信息以及与推理器相关联的公理和规则<br>支持使用RDF和OWL语言<br>这些语言允许从实例数据和类描述中推理出其他事实<br>这个机制（machinery）设计的非常通用，它包括一个通用规则引擎，可用于许多RDF处理或转换任务  </p>
+<p>在RDF中，模式（schema，也称为Ontology AKA tbox）数据和实例（instance，也称为AKA abox)之间没有强烈分离(strongly)，因此任何数据无论是类相关还是实例相关，都可包含在<code>bind</code>或者在<code>bindSchema</code>中  </p>
+<p><strong>通用推理器</strong><br>对于每种类型的推理器，都有一个工厂类(factory class)，其实例可以用来创建关联实例<code>Reasoner</code>，可以通过直接转到已知工厂类并使用<code>theInstance()</code>静态方法或者从全局检索来定位<code>ReasonerRegistry</code>工厂实例，该全局存储着由分配给推理的URI索引的工厂实例(存储实例）<br>构建reasoners的工厂对象就是为了简化注册表服务的设计和扩展，一旦有了一个推理器实例，同一个实例可以在不同的数据集起作用并多次重复使用，而不会互相影响<br><strong>个人总结：定义了一个推理器实例便可以通用，多用</strong><br>一旦有了推理器实例，就可以将其附加到一组RDF数据上创建<strong>推理模型</strong>，可以通过将所有RDF数据放入一个模型中或分成两个组件（模式schema与实例数据instance）来完成,<strong>官方PS：一些外部reasoners可能需要硬分离</strong>，对于所有内置reasoners，分离是任意的<br>这种分离的主要价值是  <strong>允许从一组数据中的一些推论有效的应用在几个辅助数据集中（一般是实例数据集）</strong>  </p>
+<p>—–推理模型的操作—–<br>对于大部分应用程序，只需要创建一个包含一些推理步骤的模型，使用<code>ModelFactory</code>方法然后运行在标准Jena Model API中所包含的语句即可，但是有时候需要获得虚拟三元组所没有的更多控制处理以及额外的推理器性能（sometimes it is necessary to gain more control over the processing or to access additional reasoner features not available as virtual triples.）<br>为了使用推理器测试数据集的不一致性，使用<code>InfModel.validate</code>接口，该接口将对架构和实例数据进行全局检查，查找不一致性<br>它包括一个简单的通过/失败标志<code>ValidityReport.isValid()</code>和一个特定报告列表<code>ValidityReport.Report</code> 接口的实例,详细说明任何检测到的不一致  </p>
+<p><strong>RDFS推理器</strong><br>Jena包含一个RDFS推理器，它支持RDF核心工作组（RDF Semantics）描述的几乎所有RDFS蕴含<br>要访问该推理器可以使用<code>ModelFactory.createRDFSModel</code>或者手动访问<code>ReasonerRegistery.getRDFSReasoner()</code>  </p>
+<p>在Jena中，可以通过将包含空白节点的图形转换为包含变量代替空白节点的等效查询来实现简单包含，这样的查询可以直接匹配文字节点，<strong>RDF API可以用于提取文字的数据类型</strong><br>分为三种配置<br>—Full(完整)—<br>实现了所有的RDFS公理和闭包规则， 除了<code>exception of bNode entailments and datatypes (rdfD 1)</code>  ，是极其昂贵的模式，因为需要检查数据图中所有语句是否可以使用容器成员资格属性  </p>
+<p>—Default(默认)—<br>省略了对容器成员资格属性的昂贵检查，使用“一切都是资源”以及“用作属性的所有东西都是一个”规则，该模式仍然包含所有公里规则  </p>
+<p>—Simple(简单)—<br>省略了所有公理，实现了<code>SubPropertyOf</code>和<code>subClassOf</code>关系的传递闭包，域和范围蕴涵（the domain and range entailments）以及<code>SubPropertyOf</code>和<code>subClassOf</code>的含义  </p>
+<p><strong>Jena RDFS实现尚未通过数据库模型进行测试和评估，Jena架构使构建此类模型变得容易，但是在没有缓存的情况下，预计性能会很差</strong></p>
+
+          
         
       
     </div>
@@ -1048,7 +1118,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="leaf rock quiet">
       <meta itemprop="description" content>
-      <meta itemprop="image" content="/hfuter7712.github.io/images/avatar.png">
+      <meta itemprop="image" content="/hfuter7712.github.io/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1136,17 +1206,16 @@
       
         
           
-          $(document).ready()该函数中的代码只会在页面加载的时候运行一次   
-API(Application Programming Interface) 应用程序接口  
-可以通过浏览器navigator获取我们当前所在的位置 geolocation位置的信息包括longitude和la
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/hfuter7712.github.io/2019/08/05/Javascript4/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+            <p><code>$(document).ready()</code><br>该函数中的代码只会在页面加载的时候运行一次   </p>
+<p>API(Application Programming Interface) 应用程序接口  </p>
+<p>可以通过浏览器<code>navigator</code>获取我们当前所在的位置 geolocation<br>位置的信息包括<code>longitude</code>和<code>latitude</code><br>样例代码如下，将会看到一个是否允许获取当前位置的提示，如果允许，输出的将是当前位置所在的经纬度 </p>
+<pre><code>if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(function(position) {
+    $(&quot;#data&quot;).html(&quot;latitude: &quot; + position.coords.latitude + &quot;&lt;br&gt;longitude: &quot; + position.coords.longitude);
+  });
+}  
+</code></pre>
+          
         
       
     </div>
@@ -1198,7 +1267,7 @@ API(Application Programming Interface) 应用程序接口
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="leaf rock quiet">
       <meta itemprop="description" content>
-      <meta itemprop="image" content="/hfuter7712.github.io/images/avatar.png">
+      <meta itemprop="image" content="/hfuter7712.github.io/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1286,16 +1355,13 @@ API(Application Programming Interface) 应用程序接口
       
         
           
-          JS中用于数组的sort()函数，咋一看是排序数组，但是和C中的sort()函数不同，sort（）若没有生命参数，是默认按照字符编码的顺序进行排序的，并不是按照从大到小或从小到大，如果要按照顺序排序的话，需要另外定义一个函数用于实现功能从小到大排序:  
-function sortNumber(a,
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/hfuter7712.github.io/2019/08/05/JSsort/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+            <p>JS中用于数组的sort()函数，咋一看是排序数组，但是和C中的sort()函数不同，sort（）若没有生命参数，是默认按照<strong>字符编码的顺序进行排序的</strong>，并不是按照从大到小或从小到大，如果要按照顺序排序的话，需要另外定义一个函数用于实现功能<br>从小到大排序:  </p>
+<pre><code>function sortNumber(a,b)
+{
+    return a-b;
+}
+</code></pre>
+          
         
       
     </div>
@@ -1347,7 +1413,7 @@ function sortNumber(a,
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="leaf rock quiet">
       <meta itemprop="description" content>
-      <meta itemprop="image" content="/hfuter7712.github.io/images/avatar.png">
+      <meta itemprop="image" content="/hfuter7712.github.io/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1435,15 +1501,9 @@ function sortNumber(a,
       
         
           
-          刚刚在网上做一个题目，实则感慨就是题目很简单，就是要剔除一个数组中所有假值包括false、null、0、&quot;&quot;、undefined 和 NaN打算用.filter()外加过滤check函数做的一开始写的check函数如下return !(member === false || me
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/hfuter7712.github.io/2019/08/05/JSArrayN/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+            <p>刚刚在网上做一个题目，实则感慨<br>就是题目很简单，就是要剔除一个数组中所有假值<br>包括<code>false、null、0、&quot;&quot;、undefined 和 NaN</code><br>打算用<code>.filter()</code>外加过滤check函数做的<br>一开始写的check函数如下<br><code>return !(member === false || member === null || member === 0 || member === undefined || isNaN(member));</code><br>很复杂，而且还有bug<br>就是当正常的字符串成员出现的时候也会被滤掉<br>后来发现是<code>isNaN()</code>这个地方有问题，上网查阅发现只要不是数字的一律都会被这个函数判定为true刷掉<br>这下坏了，玩意isNaN和正常字符串一起出现呢。。<br>NaN这玩意可是连自己本身都不相等的呢<br>后来想了想，假值，，，emmmmm…<br>做点小修改<br><code>return member;</code><br>成功AC<br>只要member是假值，return的就会是false,因此可以顺利剔除所有假值</p>
+
+          
         
       
     </div>
@@ -1495,7 +1555,7 @@ function sortNumber(a,
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="leaf rock quiet">
       <meta itemprop="description" content>
-      <meta itemprop="image" content="/hfuter7712.github.io/images/avatar.png">
+      <meta itemprop="image" content="/hfuter7712.github.io/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1583,15 +1643,9 @@ function sortNumber(a,
       
         
           
-          当在处理字符串的时候要对其中的标点符号进行处理时，用if==&amp;&amp;肯定是行不通的，因为太麻烦了，这时候正则表达式就派上用场了正则表达式以/开始，以/结尾[]表示匹配其中所有内容记住标点符号要用转义符号，之间用|间隔/[\-|\_|\(|\)|\+|\=|\{|\[|\]|\}|\;|\
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/hfuter7712.github.io/2019/08/05/JSreg/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+            <p>当在处理字符串的时候要对其中的标点符号进行处理时，用<code>if==&amp;&amp;</code>肯定是行不通的，因为太麻烦了，这时候正则表达式就派上用场了<br>正则表达式以<code>/</code>开始，以<code>/</code>结尾<br><code>[]</code>表示匹配其中所有内容<br>记住标点符号要用转义符号，之间用<code>|</code>间隔<br><code>/[\-|\_|\(|\)|\+|\=|\{|\[|\]|\}|\;|\:|\&#39;|\&quot;|\,|\.|\/|\?]/g</code><br>g代表全局模式，运用于所有字符串，即匹配所有符合条件的字符</p>
+
+          
         
       
     </div>
@@ -1643,7 +1697,7 @@ function sortNumber(a,
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="leaf rock quiet">
       <meta itemprop="description" content>
-      <meta itemprop="image" content="/hfuter7712.github.io/images/avatar.png">
+      <meta itemprop="image" content="/hfuter7712.github.io/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1731,15 +1785,9 @@ function sortNumber(a,
       
         
           
-          结果显而易见的失败了！虽然本人努力的查阅资料和尝试首先先把魔灯最新版下了（很有野心），然后查看相关文档需要佳能2.02固件，进相机一看，1.10，不行啊就去官网查阅了一下，M系列！记住这个系列固件已经升级到2.03了，作为M10，肯定是要下的啊按照操作，格式化了一张64G的存储卡将固件文件放入其中，
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/hfuter7712.github.io/2019/08/03/CanonM10-tecdee/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+            <p>结果显而易见的失败了！<br>虽然本人努力的查阅资料和尝试<br>首先先把魔灯最新版下了（很有野心），然后查看相关文档<br>需要佳能2.02固件，进相机一看，1.10，不行啊<br>就去官网查阅了一下，M系列！记住这个系列<br>固件已经升级到2.03了，作为M10，肯定是要下的啊<br>按照操作，格式化了一张64G的存储卡<br>将固件文件放入其中，然后，，，点击升级没反应<br>怎么可能，M系列啊！<br>以为是存储卡的问题，换了一张16G的存储卡，也进行了格式化<br>没反应、、<br>后来在晚上继续查阅，在官网M10介绍下看到了一条消息<br><code>如果固件为1.10则不用继续升级</code><br>what?<br>于是临时又去官网搜了搜，最后终于发现了一个很现实的事实<br>佳能有一个M系列的2.03固件升级，同时还有一个M10的1.10升级！<br>也就是说M10被孤立了、、、好吧，入门中的入门机果然是没人权的<br>也不用折腾了，233，还是等以后有钱了换机子吧，醉了</p>
+
+          
         
       
     </div>
@@ -1812,8 +1860,6 @@ function sortNumber(a,
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="/hfuter7712.github.io/images/avatar.png" alt="leaf rock quiet">
-            
               <p class="site-author-name" itemprop="name">leaf rock quiet</p>
               <p class="site-description motion-element" itemprop="description">ambitious and modest</p>
           </div>
@@ -1864,52 +1910,6 @@ function sortNumber(a,
 
           
           
-            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
-              <div class="links-of-blogroll-title">
-                <i class="fa  fa-fw fa-link"></i>
-                Links
-              </div>
-              <ul class="links-of-blogroll-list">
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://github.com/" title="GitHub" target="_blank">GitHub</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://www.runoob.com/" title="菜鸟教程" target="_blank">菜鸟教程</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="http://www.w3school.com.cn/" title="W3school" target="_blank">W3school</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://www.baidu.com/" title="百度" target="_blank">百度</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://www.csdn.net/" title="CSDN" target="_blank">CSDN</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://www.luogu.org/" title="洛谷" target="_blank">洛谷</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://www.nowcoder.com/" title="牛客网" target="_blank">牛客网</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://www.freecodecamp.cn/" title="freecodecamp" target="_blank">freecodecamp</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="http://www.tableblog.xyz/" title="table" target="_blank">table</a>
-                  </li>
-                
-              </ul>
-            </div>
-          
 
           
 
@@ -1954,7 +1954,7 @@ function sortNumber(a,
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
 
 
 
@@ -2058,13 +2058,6 @@ function sortNumber(a,
   
   
 
-
-  <script type="text/javascript" src="/hfuter7712.github.io/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/hfuter7712.github.io/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
-
   
 
   
@@ -2109,323 +2102,6 @@ function sortNumber(a,
 
   
 
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/hfuter7712.github.io/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
 
 
 
@@ -2437,31 +2113,6 @@ function sortNumber(a,
   
 
   
-  
-  
-  <link rel="stylesheet" href="/hfuter7712.github.io/lib/needsharebutton/needsharebutton.css">
-
-  
-  
-  <script src="/hfuter7712.github.io/lib/needsharebutton/needsharebutton.js"></script>
-
-  <script>
-    
-      pbOptions = {};
-      
-          pbOptions.iconStyle = "box";
-      
-          pbOptions.boxForm = "horizontal";
-      
-          pbOptions.position = "bottomCenter";
-      
-          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
-      
-      new needShareButton('#needsharebutton-postbottom', pbOptions);
-    
-    
-  </script>
-
   
 
   
