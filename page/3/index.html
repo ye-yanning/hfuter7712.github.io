@@ -345,47 +345,16 @@
       
         
           
-            <p>资源描述框架RDF是用于描述网络资源的W3C标准（网页的标题，作者，修改日期，内容和版权信息）<br>RDF使用XML编写，被RDF使用的XML语言被称为RDF/XML<br>RDF被设计为可被计算机阅读和理解<br>RDF语言是W3C语义网活动的组成部分  </p>
-<p>RDF使用Web标识符（URIs)来标识资源,使用属性值来描述资源<br>example:  </p>
-<pre><code>
-&lt;?xml version=&quot;1.0&quot;?&gt;
-&lt;RDF&gt;
-  &lt;Description about=&quot;https://www.runoob.com//rdf&quot;&gt;
-    &lt;author&gt;Jan Egil Refsnes&lt;/author&gt;
-    &lt;homepage&gt;https://www.runoob.com/&lt;/homepage&gt;
-  &lt;/Description&gt;
-&lt;/RDF&gt;
-
-</code></pre><p><strong>RDF陈述</strong><br>资源，属性和属性值的组合可以形成一个陈述（分别被称为陈述的<strong>主体，谓语和客体</strong>）<br>example(来源于菜鸟教程):<br>陈述：<br><code>&quot;The author of https://www.runoob.com//rdf is David.&quot;</code><br>陈述的主体是：<a href="https://www.runoob.com//rdf" target="_blank" rel="noopener">https://www.runoob.com//rdf</a><br>谓语是：author<br>客体是：David</p>
-<ul>
-<li><p>rdf:RDF 元素<br><code>&lt;rdf:RDF&gt;</code>是RDF文档的根元素，它把XML文档定义为一个RDF文档，<strong>也包含了对RDF命名空间的引用</strong><br><code>&lt;rdf:RDF
-xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;&gt;</code>  </p>
-</li>
-<li><p>rdf:Description 元素<br>该元素可通过about属性标识一个资源<br>可包含描述资源的那些元素  </p>
-</li>
-</ul>
-<p><strong>RDF容器</strong></p>
-<ul>
-<li>rdf:Bag 元素<br><code>&lt;rdf:Bag&gt;</code>元素用于描述一个规定为无序的值的列表，可包含重复的值<br>example:   </li>
-</ul>
-<pre><code>
-&lt;rdf:Bag&gt;
-      &lt;rdf:li&gt;John&lt;/rdf:li&gt;
-      &lt;rdf:li&gt;Paul&lt;/rdf:li&gt;
-      &lt;rdf:li&gt;George&lt;/rdf:li&gt;
-      &lt;rdf:li&gt;Ringo&lt;/rdf:li&gt;
-    &lt;/rdf:Bag&gt;
-
-</code></pre><ul>
-<li><p>rdf:Seq 元素<br><code>&lt;rdf:Seq&gt;</code>元素用于描述一个<strong>规定为有序</strong>的列表（比如一个字母顺序的排序），可包含重复的值  </p>
-</li>
-<li><p>rdf:Alt 元素<br><code>&lt;rdf:Alt&gt;</code>元素用于一个可替换的值得列表(用户仅可选择这些值得其中之一)  </p>
-</li>
-</ul>
-<p><strong>RDF集合</strong><br><code>rdf:parseType=&quot;Collection&quot;</code><br>RDF集合用于描述仅包含制定成员的组  </p>
-<p>RDF都柏林核心表:<a href="https://www.runoob.com/rdf/rdf-dublin.html" target="_blank" rel="noopener">https://www.runoob.com/rdf/rdf-dublin.html</a><br>RDF参考手册: <a href="https://www.runoob.com/rdf/rdf-reference.html" target="_blank" rel="noopener">https://www.runoob.com/rdf/rdf-reference.html</a><br>RDF在线验证器:<a href="http://www.w3.org/RDF/Validator/" target="_blank" rel="noopener">http://www.w3.org/RDF/Validator/</a></p>
-
-          
+          资源描述框架RDF是用于描述网络资源的W3C标准（网页的标题，作者，修改日期，内容和版权信息）RDF使用XML编写，被RDF使用的XML语言被称为RDF/XMLRDF被设计为可被计算机阅读和理解RDF语言是W3C语义网活动的组成部分  
+RDF使用Web标识符（URIs)来标识资源,使用属性值来描述
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/hfuter7712.github.io/2019/07/31/RDFLearn/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -525,15 +494,18 @@ xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;&gt;</code>  </
       
         
           
-            <p>在某网站上学习前端之后按照一个界面（单单看着界面一个个元素敲出来的界面）搞出来的第一个实践作品<br>介绍的是我最佩服的图灵先辈（一说到图灵就想到那部卷福演的电影，泪目）<br>实践中的部分笔记与收获: </p>
-<ul>
-<li><code>&lt;hr&gt;</code>可以在界面中定义一条水平实线，可以用于页面的分割 </li>
-<li>字体的粗细可以用<code>font-weight</code>来定义，400px相当于<code>font-style</code>的normal,700px相当于bold  </li>
-<li>此次作品中运用到了Bootstrap的两个类，一个是让图片自动适应界面的<code>img-responsive</code>,还有一个就是让文本居中的<code>text-center</code><br>感受:第一次实践，虽说整体来讲没有什么难度，但是也是本人第一次在页面上进行实践，对照着模板网页，没有查看源代码的情况下用HTML和css一个个尝试和调整，也是一次相当宝贵的实践了</li>
-</ul>
-<p>实践工具:  codepen<br>作品网址: <a href="https://codepen.io/hfuter7712/pen/pMeXOz" target="_blank" rel="noopener">https://codepen.io/hfuter7712/pen/pMeXOz</a></p>
+          在某网站上学习前端之后按照一个界面（单单看着界面一个个元素敲出来的界面）搞出来的第一个实践作品介绍的是我最佩服的图灵先辈（一说到图灵就想到那部卷福演的电影，泪目）实践中的部分笔记与收获: 
 
-          
+&lt;hr&gt;可以在界面中定义一条水平实线，可以用于页面的分割 
+字体的粗细可以用font-weigh
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/hfuter7712.github.io/2019/07/30/firstHTML+CSS project/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -673,27 +645,22 @@ xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;&gt;</code>  </
       
         
           
-            <ul>
-<li>script元素  </li>
-<li>内含JavaScript语句，浏览器会执行script里面的所有语句，包括jQuery  </li>
-</ul>
-<p><strong>jQuery</strong><br>所有jQuery方法都是由$开始的,通常称为美元符号或者简称为bling  </p>
-<ul>
-<li>使用jQuery的 <code>.address()</code> 方法，就可以给元素添加class了  </li>
-<li>使用jQuery的<code>.removeClass()</code>方法去掉元素上的class了  </li>
-<li>使用<code>.css()</code>可以改变元素的CSS样式<br>example: <code>$(&quot;#target&quot;).css(&quot;color&quot;,&quot;blue&quot;);</code>  </li>
-<li>使用<code>.prop()</code>来调整元素的属性<br>example: <code>$(&quot;button&quot;).prop(&quot;disabled&quot;,true);</code>  </li>
-<li>使用<code>.remove()</code> 来移除HTML元素  </li>
-<li>使用<code>appendTo()</code> 方法可以把选中的元素加到其他元素中<br>example:<br>假设id为one的元素在id为first的区块中，有另外一个区块id为second<br>要想把该元素移动到区块second中,可以这么操作<br><code>$(&quot;#one&quot;).appendTo(&quot;#second&quot;);</code>  </li>
-<li>使用clone()可以拷贝元素<br>假设id为one的元素在id为first的区块中，有另外一个区块id为second<br>要想把该元素复制到区块second中，可以这么操作<br><code>$(&quot;#one&quot;).clone().appendTo(&quot;#second&quot;);</code><br><strong>可以这么理解,移动元素就是剪切，拷贝元素就是复制</strong>   </li>
-<li>使用<code>parent()</code>可以访问当前元素的父元素<br>example:一个id为first的h2元素的父元素是div，可以通过以下代码让div区块的背景颜色变蓝<br><code>$(&quot;first&quot;).parent().css(&quot;background-color&quot;,&quot;blue&quot;);</code></li>
-<li>使用<code>children()</code>可以访问当前元素的子元素     </li>
-<li>使用<code>$(&quot;button&quot;)</code>来选中按钮,使用<code>$(&quot;.well&quot;)</code>来获取所有class为well的对象，使用<code>$(&quot;#fist&quot;)</code>来获取所有id为first的对象</li>
-</ul>
-<p>部分class<br>animated bounce 所应用部分有弹跳效果<br>animated shake 所应用部分有摇摆效果  </p>
-<p><strong>在线编辑器:CodePen</strong><br><strong>程序员的Read-Search-Ask大法，加油!</strong></p>
-
           
+script元素  
+内含JavaScript语句，浏览器会执行script里面的所有语句，包括jQuery  
+
+jQuery所有jQuery方法都是由$开始的,通常称为美元符号或者简称为bling  
+
+使用jQuery的 .address() 方法，就可以给元素添加class了  
+使用jQ
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/hfuter7712.github.io/2019/07/30/HTML combine with jQuery/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -833,48 +800,16 @@ xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;&gt;</code>  </
       
         
           
-            <p>Bootstrap将会根据你的屏幕大小来调整HTML元素的大小–<strong>强调响应式概念</strong><br>使用Bootstrap需要添加下列代码 </p>
-<pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;//cdn.bootcss.com/bootstrap/3.3.1/css/bootstrap.min.css&quot;/&gt;
-
-</code></pre><ul>
-<li>img-responsive类  </li>
-</ul>
-<p>当导入一张图片时，给图片添加该类，这样图片的宽度就能完美的适配页面宽度了<br><code>&lt;img src=&quot;&quot; class=&quot;img-responsive&quot;&gt;</code>  </p>
-<ul>
-<li>text-center类  </li>
-</ul>
-<p>运用于文本，可以将文本居中<br><code>&lt;h2 class=&quot;text-center&quot;&gt;title&lt;/h2&gt;</code>  </p>
-<ul>
-<li>btn类  </li>
-</ul>
-<p>是Bootstrap的按钮风格<br><code>&lt;button class=&quot;btn&quot;&gt;press&lt;/button&gt;</code>  </p>
-<ul>
-<li>btn-block类  </li>
-</ul>
-<p>使按钮成为块级元素，按钮将会伸展并填满页面整个水平空间，任何在它之下的元素都会跟着浮动到该区块的下一行<br><strong>（注:该属性仍需要有 btn 属性)</strong>  </p>
-<ul>
-<li>btn-primary类  </li>
-</ul>
-<p>使按钮呈现深蓝色，更加美观，是主要操作按钮的颜色<br><strong>（注:该属性仍需要有 btn 与btn-block属性)</strong>    </p>
-<ul>
-<li>btn-info类  </li>
-</ul>
-<p>使按钮呈现浅蓝色，更加美观，是用户可能采取操作按钮的颜色  </p>
-<ul>
-<li>btn-danger类  </li>
-</ul>
-<p>使按钮呈现红色，通常用于一些“破坏性”的操作，比如删除图片  </p>
-<ul>
-<li>well类  </li>
-<li>它的作用视为设定的列创造出一种<strong>视觉上的深度感</strong></li>
-</ul>
-<p><strong>Font Awesome图标库</strong> </p>
-<p>是一个非常方便的图标库，这些图标都是矢量图形，被保存在.svg的文件格式中<br>可以添加如下代码来使用该库  </p>
-<pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;//cdn.bootcss.com/font-awesome/4.2.0/css/font-awesome.min.css&quot;/&gt; 
-
-</code></pre><p>i元素起初一般是让它的元素变成斜体，现在一般用来指代图标,用它来实现图标库的使用<br><code>&lt;i class=&quot;fa fa-info-circle&gt;&lt;/i&gt;</code><br>fa-thumbs-up 一个大拇指形状的图标<br>fa-info-circle 一个圆圈里面带一个字母i，代表information<br>fa-trash 一个垃圾桶的标志<br>fa-paper-plane 一个纸飞机的标志</p>
-
-          
+          Bootstrap将会根据你的屏幕大小来调整HTML元素的大小–强调响应式概念使用Bootstrap需要添加下列代码 
+&lt;link rel=&quot;stylesheet&quot; href=&quot;//cdn.bootcss.com/bootstrap/3.3.1/css/boots
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/hfuter7712.github.io/2019/07/30/HTMLReview+bootstrap/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1014,22 +949,16 @@ xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;&gt;</code>  </
       
         
           
-            <p>marign:外边距<br>如果一个元素的margin为负值，元素将会变大  </p>
-<p>border:边框<br>padding:内边距<br>可以根据padding-top,padding-right,padding-left,padding-bottom四个属性来控制上下左右四个内边距的属性<br>margin同理<br>如果按照如下格式<br><code>padding: 10px 20px 10px 20px</code><br>按照顺时针方式排列依次是<strong>顶部，右侧，底部，左侧（上右下左）</strong>  </p>
-<ul>
-<li>关于class的优先权问题  </li>
-</ul>
-<p>在HTML中，class=”类A 类B 类C”  排序是无所谓的<br>但是在style元素中，class的声明顺序却非常重要，<strong>第二个声明总是比第一个具有优先权</strong><br><strong>但是有一点很重要：id属性总是具有更高的优先权</strong><br>更重要的一点：行内样式可以覆盖id（优先权更大）<br>example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">  body &#123;</span><br><span class="line">    background-color: black;</span><br><span class="line">    font-family: Monospace;</span><br><span class="line">    color: green;</span><br><span class="line">  &#125;</span><br><span class="line">  #orange-text &#123;</span><br><span class="line">    color: orange;</span><br><span class="line">  &#125;</span><br><span class="line">  .pink-text &#123;</span><br><span class="line">    color: pink;</span><br><span class="line">  &#125;</span><br><span class="line">  .blue-text &#123;</span><br><span class="line">    color: blue;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;h1 id=&quot;orange-text&quot; class=&quot;pink-text blue-text&quot; style=&quot;color:white&quot;&gt;Hello World!&lt;/h1&gt;</span><br></pre></td></tr></table></figure></p>
-<p>最终文本显示为白色  </p>
-<p>by the way,还有最强大的一种方法，在某些元素的属性后面加上<br><code>!important</code><br>可以使得该属性覆盖其他任何相同的属性  </p>
-<ul>
-<li><p>用十六进制表示颜色<br>说到颜色，颜色在CSS中还可以用十六进制表示，格式是#XXXXXX<br>例如#000000是黑色<br>0是hex code中最小的一个，F是hex code中最大的一个<br>#000000白色<br>#FFFFFF黑色<br>#111111 深灰色<br>不过也可以用三位数来表示，比如<br><code>#F00</code><br>它等同于<br><code>#FF0000</code>  </p>
-</li>
-<li><p>用rgb值表示<br><code>rgb(0,0,0)</code><br>取值范围从0~255</p>
-</li>
-</ul>
-
-          
+          marign:外边距如果一个元素的margin为负值，元素将会变大  
+border:边框padding:内边距可以根据padding-top,padding-right,padding-left,padding-bottom四个属性来控制上下左右四个内边距的属性margin同理如果按照如下格式pa
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/hfuter7712.github.io/2019/07/29/HTMLReview2/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1169,14 +1098,18 @@ xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;&gt;</code>  </
       
         
           
-            <p>今天在搞博客的时候又踩了一些markdown的坑，不得不说emmmm..<br>首先还是关于代码块的问题<br>在上次的基础上，如果你要在一个文档中插入多个代码块  </p>
-<p>记住<br><strong>将代码行的第一行文本backspace直到和前三个引号连在一块，敲一次空格键，然后回车即可(2019-7-30更新)</strong></p>
-<p>还有一个就是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">文本</span><br><span class="line">-</span><br></pre></td></tr></table></figure></p>
-<p>并不能使这个文本成为一个帅气的大标题，即使markdown里面是这样显示的，在博客上显示为<br>文本<br>-</p>
-<p>…<br>还有一个（这都什么鬼）<br>markdown中的大标题h1也就是#文本#在博客上并没有效果  </p>
-<p>不知道是本人hexo的问题还是就是这个样子，总之markdown预览器里的东西跟博客上呈现的样子真的有很多差别</p>
-
-          
+          今天在搞博客的时候又踩了一些markdown的坑，不得不说emmmm..首先还是关于代码块的问题在上次的基础上，如果你要在一个文档中插入多个代码块  
+记住将代码行的第一行文本backspace直到和前三个引号连在一块，敲一次空格键，然后回车即可(2019-7-30更新)
+还有一个就是12文本-
+并
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/hfuter7712.github.io/2019/07/29/hexo2/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1316,40 +1249,15 @@ xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;&gt;</code>  </
       
         
           
-            <p>标题分6个等级，从&lt;h1&gt;到&lt;h6&gt;<br><code>&lt;h1&gt;这是一个一级标题&lt;h1&gt;</code><br>如何让你的标题变红<br><code>&lt;h1 style=&quot;color:red&quot;&gt;title&lt;/h1&gt;</code><br>即使用style属性中的color，这是style的内联样式<br>如果需要配置的属性过多，可以使用&lt;style&gt;结合css</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;  </span><br><span class="line">选择器&#123;属性名称:属性值;&#125;</span><br><span class="line">example: h2&#123;color:red;&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
-<p>注：一定要在属性值的后面加上分号  </p>
-<p><strong>类选择器</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">   .类名&#123;</span><br><span class="line">     &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;h2 class=&quot;类名&quot;&gt;title2&lt;/h2&gt;</span><br></pre></td></tr></table></figure></p>
-<p>class=”类A 类B 类C…”<br>可以应用多个类，但是必须用空格隔开</p>
-<p>改变文章的字体大小可以用<em>font-size</em>属性<br>改变文章的字体可以用<em>font-family</em>属性<br>当某种字体不可用时，可以让它自动降级到另一种字体<br>example:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p&#123;</span><br><span class="line">   font-family: Helvetica,Sans-Serif;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>当Helvetica字体不可用时，字体会自动降级到San-Serif  </p>
-<ul>
-<li><p>img元素<br><strong>img是自关闭元素，不需要结束标记</strong><br><code>&lt;img src=图片的具体地址&gt;</code><br>若要设置图片宽度，可用CSS中的<em>width</em>属性<br>给图片添加边框，可以用border-width,border-tstyle与border-color三个属性<br>若想要添加圆角边框，则可以用属性border-radius,参数可以是像素，也可以是百分比<br>alt属性：当图片因为各种原因无法加载时显示的替代文本  </p>
-</li>
-<li><p>a元素<br>anchor元素，可以用来连接到外部地址实现页面跳转功能,也可连接到当前页面的某部分实现内部导航功能<br><code>&lt;a href=&quot;URL&quot;&gt;anchor text&lt;/a&gt;</code><br>但是如果你暂时不知道要跳转到哪里的时候，可以用#代替，别名哈希符号<br><code>href=&quot;#&quot;</code><br>想把一张图片作为一个连接，直接将图片嵌套进a元素即可<br><code>&lt;a&gt;&lt;img&gt;&lt;/img&gt;&lt;/a&gt;</code>  </p>
-</li>
-<li><p>ul元素<br>创意一个无序列表,包含多个li元素</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt; </span><br><span class="line">  &lt;li&gt;&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>ol元素<br>与无序表用法类似，在ol中嵌套多个li元素  </p>
-</li>
-<li><p>input元素<br><strong>input元素是自关闭的</strong><br>其中初始化方框的文本为属性placeholder<br><code>&lt;input type=&quot;text&quot; placeholder=&quot;预定义文本&quot;&gt;</code><br>如果要设置必填，则添加上required属性即可<br><code>&lt;imput type=&quot;text&quot; required&gt;</code>  </p>
-</li>
-<li><p>button元素<br>定义一个按钮   </p>
-</li>
-</ul>
-<p><strong>单选按钮(type=”radio”)</strong><br>用来定义单选按钮，在多个选项中只能选一个，嵌套在自己的label元素中,<strong>所有关联的单选按钮要使用相同的name属性</strong><br>example:  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;indoor/outdoor&quot;&gt;indoor&lt;/label&gt;</span><br><span class="line">&lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;indoor/outdoor&quot;&gt;outdoor&lt;/label&gt;</span><br></pre></td></tr></table></figure>
-<p><strong>多选按钮(type=”checkbox”)</strong><br>可以被多选  </p>
-<p>多选按钮和单选按钮都可以用checked属性来表明默认被选中  </p>
-<p>背景颜色可以用background-color属性来设置  </p>
-<p><strong>设置id会对以后的jQuery有好处（小本本记下来）</strong><br><code>&lt;div id=&quot;id号&quot;&gt;</code><br>在style元素中的表示方法为  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#&#123;</span><br><span class="line">属性;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
-          
+          标题分6个等级，从&lt;h1&gt;到&lt;h6&gt;&lt;h1&gt;这是一个一级标题&lt;h1&gt;如何让你的标题变红&lt;h1 style=&quot;color:red&quot;&gt;title&lt;/h1&gt;即使用style属性中的color，这是style的内联样
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/hfuter7712.github.io/2019/07/29/HTMLReview/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1489,29 +1397,16 @@ xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;&gt;</code>  </
       
         
           
-            <p>命名空间是为了防止不同文档使用相同的元素名时引发命名冲突<br>比如A文档使用了&lt;name&gt;标签,B文档也使用了&lt;name&gt;标签，这个就会产生命名冲突<br>这个时候可以使用前缀来避免这种情况  </p>
-<p><code>&lt;前缀名:标签名&gt;</code><br><code>&lt;h:table&gt;</code><br><code>&lt;i:table&gt;</code><br><code>&lt;g:address&gt;</code><br><code>&lt;j:address&gt;</code></p>
-<p><strong>XML命名空间 xmlns属性</strong><br>当在XML中使用前缀时，一个所谓的用于前缀的命名空间必须定义<br><code>xmlns:前缀=&quot;URI&quot;</code><br>当命名空间被定义在元素的开始标签中时，所有带有相同前缀的子元素都会与同一个命名空间相关联</p>
-<p>example:  </p>
-<pre><code> &lt;root&gt;
-    &lt;h:table xmlns:h=&quot;http://www.w3.org/TR/html4/&quot;&gt;
-    &lt;h:tr&gt;
-    &lt;h:td&gt;Apples&lt;/h:td&gt;
-    &lt;h:td&gt;Bananas&lt;/h:td&gt;
-    &lt;/h:tr&gt;
-    &lt;/h:table&gt;
-
-    &lt;f:table xmlns:f=&quot;http://www.w3cschool.cc/furniture&quot;&gt;
-    &lt;f:name&gt;African Coffee Table&lt;/f:name&gt;
-    &lt;f:width&gt;80&lt;/f:width&gt;
-    &lt;f:length&gt;120&lt;/f:length&gt;
-    &lt;/f:table&gt;
-&lt;/root&gt; 
-
-</code></pre><p>默认的命名空间<br><code>xmlne=:namespaceURI</code></p>
-<p><strong>注：URI(Uniform Resource Identifier)统一资源标识符<br>最常用的URI是用来标识因特网域名地址的统一资源定位器(URL)</strong></p>
-
-          
+          命名空间是为了防止不同文档使用相同的元素名时引发命名冲突比如A文档使用了&lt;name&gt;标签,B文档也使用了&lt;name&gt;标签，这个就会产生命名冲突这个时候可以使用前缀来避免这种情况  
+&lt;前缀名:标签名&gt;&lt;h:table&gt;&lt;i:table&gt;&l
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/hfuter7712.github.io/2019/07/29/xmlNamespace/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1651,12 +1546,16 @@ xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;&gt;</code>  </
       
         
           
-            <p>刚刚在折腾博客的时候，写日志嘛，然后有一段代码块需要放进来，用过markdown的人都知道代码块是用三个连续的引号来搞定的<br>但是我刚刚就遇到一个问题<br>就是markdown预览器中的界面和博客界面不一定是相同的<br>在经过一系列尝试之后，这样的格式是正确的<br>引号引号引号  </p>
-<pre><code>在这一片空白区域输入你的代码块，该怎么缩进怎么缩进
-</code></pre><p>引号引号引号  </p>
-<p>引号不需要tab的，我那个只要一tab在markdown预览里面就像是一行代码块，但是gds操作后在上网去看博客却发现是一团糟<br>所以还是那句老话，请以实物为准<br>发完博客记得去博客上看看效果</p>
-
-          
+          刚刚在折腾博客的时候，写日志嘛，然后有一段代码块需要放进来，用过markdown的人都知道代码块是用三个连续的引号来搞定的但是我刚刚就遇到一个问题就是markdown预览器中的界面和博客界面不一定是相同的在经过一系列尝试之后，这样的格式是正确的引号引号引号  
+在这一片空白区域输入你的代码块，该怎么
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/hfuter7712.github.io/2019/07/29/markdownCodeBlock/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1796,28 +1695,15 @@ xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;&gt;</code>  </
       
         
           
-            <p>XML(EXtensible Markup Language)<br>XML的设计宗旨是传输数据而不是显示数据<br>XML标签没有被预定义，需要自行定义标签<br>XML是W3C的推荐标准<br>一般来说XML用于传输数据，HTML用于格式化并显示数据<br>一个XML文档的第一行是一个XML声明,定义XML的版本和所使用的编码<br><code>&lt;?xml version=&quot;1.0&quot; encoding = &quot;UTF-8&quot;?&gt;</code><br>下一行描述文档的根元素<br><code>&lt;note&gt;</code><br>接下来描述子元素  ，并在最后一行定义根元素的结尾<br>由于具有根元素以及其子元素的特征，因此XML文档形成一种树结构  </p>
-<p>XML必须包含根元素<br>所有的元素都必须有关闭标签（这里提到一点，HTML的部分标签可以没有关闭标签，如<br>,但是XML中都必须有关闭标签）<br>XML标签对大小写敏感<br>XML属性值必须加引号<br><code>&lt;note date=&quot;12/11/2018&quot;&gt;</code>  </p>
-<p>实体引用<br>理解:因为XML本身语法的原因，在XML中的部分符号需要用特定的字段代替，就好比在某些语言里引号”要用”/代替一样<br><code>&amp;lt;     &lt;     大于号</code><br><code>&amp;gt;     &gt;     小于号</code><br><code>&amp;amp;    &amp;     连接号</code><br><code>&amp;apos;   &#39;     单引号</code><br><code>&amp;quat;   &quot;     双引号</code>  </p>
-<p>XML中的注释（和HTML一样）<br><code>&lt;!-- This is a comment --&gt;</code><br><strong>在XML中，空格会被保留（在HTML中，多个连续的空格字符会被裁剪为1个）</strong></p>
-<p><strong>XML命名规则</strong>  </p>
-<ul>
-<li>名称可以字母，数字以及其他字符  </li>
-<li>名称不能以数字或者标点符号开始  </li>
-<li>名称不能以xml,XML,Xml等一系列字段开始  </li>
-<li>名称不能包含空格  </li>
-</ul>
-<p><strong>XML是可扩展的</strong></p>
-<p>XML中的属性值必须被引号保卫，不过可以单引号双引号都能使用<br><strong>suggestion:</strong>XML中应避免使用属性，尽量使用标签<br><strong>reason:</strong>  </p>
-<ul>
-<li>属性不能包含多个值  </li>
-<li>属性不能包含树结构  </li>
-<li>属性不容易扩展<br>example:  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line"> </span><br><span class="line">	 &lt;note&gt;    </span><br><span class="line"></span><br><span class="line"> 	   &lt;to&gt;Tove&lt;/to&gt;  </span><br><span class="line"></span><br><span class="line"> 	   &lt;from&gt;Jani&lt;/from&gt;  </span><br><span class="line"></span><br><span class="line"> 	   &lt;heading&gt;Reminder&lt;/heading&gt;  </span><br><span class="line"></span><br><span class="line"> 	   &lt;body&gt;Don&apos;t forget me this weekend!&lt;/body&gt; </span><br><span class="line"></span><br><span class="line"> 	 &lt;/note&gt;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>XML验证器链接: <a href="https://www.runoob.com/xml/xml-validator.html" target="_blank" rel="noopener">https://www.runoob.com/xml/xml-validator.html</a><br>教程链接:<a href="https://www.runoob.com/xml/xml-tutorial.html" target="_blank" rel="noopener">https://www.runoob.com/xml/xml-tutorial.html</a></p>
-
-          
+          XML(EXtensible Markup Language)XML的设计宗旨是传输数据而不是显示数据XML标签没有被预定义，需要自行定义标签XML是W3C的推荐标准一般来说XML用于传输数据，HTML用于格式化并显示数据一个XML文档的第一行是一个XML声明,定义XML的版本和所使用的编码&lt;
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/hfuter7712.github.io/2019/07/29/xmlLearn1/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
