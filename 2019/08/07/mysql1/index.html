@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="数据库,mysql,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="启动mysql数据库以管理员身份打开cmd命令行工具,切换目录到mysql根目录的bin文件夹下初始化数据库mysqld --initialize --console执行完毕后，会输出root用户的默认密码输入安装命令mysqld install   —启动mysql命令—net start mysql   —登录本机的mysql数据库—mysql -u root -p之后会要求输入密码，输入即可">
+<meta name="keywords" content="数据库,mysql">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mysql数据库基础学习（一）">
+<meta property="og:url" content="http://yoursite.com/2019/08/07/mysql1/index.html">
+<meta property="og:site_name" content="superQ">
+<meta property="og:description" content="启动mysql数据库以管理员身份打开cmd命令行工具,切换目录到mysql根目录的bin文件夹下初始化数据库mysqld --initialize --console执行完毕后，会输出root用户的默认密码输入安装命令mysqld install   —启动mysql命令—net start mysql   —登录本机的mysql数据库—mysql -u root -p之后会要求输入密码，输入即可">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2019/08/07/mysql1/1.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/07/mysql1/2.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/07/mysql1/3.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/07/mysql1/4.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/07/mysql1/5.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/07/mysql1/6.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/07/mysql1/7.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/07/mysql1/8.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/07/mysql1/9.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/07/mysql1/10.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/07/mysql1/11.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/07/mysql1/12.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/07/mysql1/13.png">
+<meta property="og:updated_time" content="2019-08-07T04:35:53.683Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="mysql数据库基础学习（一）">
+<meta name="twitter:description" content="启动mysql数据库以管理员身份打开cmd命令行工具,切换目录到mysql根目录的bin文件夹下初始化数据库mysqld --initialize --console执行完毕后，会输出root用户的默认密码输入安装命令mysqld install   —启动mysql命令—net start mysql   —登录本机的mysql数据库—mysql -u root -p之后会要求输入密码，输入即可">
+<meta name="twitter:image" content="http://yoursite.com/2019/08/07/mysql1/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/08/07/mysql1/">
+
+
+
+
+
+  <title>mysql数据库基础学习（一） | superQ</title>
+  
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="/js/src/love.js"></script>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">superQ</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">time is money</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/07/mysql1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="leaf rock quiet">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="superQ">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">mysql数据库基础学习（一）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-07T09:59:52+08:00">
+                2019-08-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/coding/" itemprop="url" rel="index">
+                    <span itemprop="name">coding</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>启动mysql数据库<br><strong>以管理员身份</strong>打开cmd命令行工具,切换目录到mysql根目录的bin文件夹下<br>初始化数据库<br><code>mysqld --initialize --console</code><br>执行完毕后，会输出root用户的默认密码<br>输入安装命令<br><code>mysqld install</code>  </p>
+<p><strong>—启动mysql命令—</strong><br><code>net start mysql</code>  </p>
+<p><strong>—登录本机的mysql数据库—</strong><br><code>mysql -u root -p</code><br>之后会要求输入密码，输入即可<br><img src="/2019/08/07/mysql1/1.png" alt="输入密码成功后的窗口"><br>输入exit或者quit退出登录  </p>
+<p>—-数据库操作—-  </p>
+<p><strong>USE 数据库名</strong><br>选择要操作的Mysql数据库，使用该命令后所有命令都只针对该数据库<br><img src="/2019/08/07/mysql1/2.png" alt="use语句实现">  </p>
+<p><strong>SHOW DATABASES</strong><br>列出mysql数据库管理系统的数据库列表<br><img src="/2019/08/07/mysql1/3.png" alt="列出数据库列表">  </p>
+<p><strong>SHOW TABLES</strong><br>列出指定数据库的所有表<br><img src="/2019/08/07/mysql1/4.png" alt="列出指定数据库的表">  </p>
+<p><strong>CREATE 数据库</strong><br>可在登陆MySQL服务后使用create创建数据库<br><code>CREATE DATEBASE 数据库名;</code><br>如 <code>CREATE DATEBASE TEST;</code>  </p>
+<p><strong>DROP 数据库</strong><br>用drop命令删除数据库<br><code>drop database 数据库名;</code><br>以下是创建并删除一个数据库的实践<br><img src="/2019/08/07/mysql1/5.png" alt="创建与删除数据库">  </p>
+<p><strong>CREATE 数据表</strong><br><code>CREATE TABLE table_name(column_name column_type);</code><br><code>column_name</code>是表单名字，<code>column_type</code>是内容的数据类型<br>example(来自菜鸟教程):  </p>
+<pre><code>CREATE TABLE IF NOT EXISTS `runoob_tbl`(
+   `runoob_id` INT UNSIGNED AUTO_INCREMENT,
+   `runoob_title` VARCHAR(100) NOT NULL,
+   `runoob_author` VARCHAR(40) NOT NULL,
+   `submission_date` DATE,
+   PRIMARY KEY ( `runoob_id` )
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;  
+</code></pre><p><strong>DROP 数据表</strong><br><code>DROP TABLE table_name</code><br>在进行删除表操作的时候要非常小心，因为执行删除命令后所有数据都会消失  </p>
+<p><strong>INSERT INTO</strong><br>使用该语句向数据表中插入数据  </p>
+<pre><code>INSERT INTO table_name(field1,field2,...fieldN)
+                      VALUES
+                      (value1,value2,...valueN);  
+</code></pre><p>example(亲自实践):<br><img src="/2019/08/07/mysql1/6.png" alt="向数据库中添加数据"><br>该操作向数据库中添加了一组数据，结果显示成功  </p>
+<p><strong>SELECT 查询数据</strong><br>语法:  </p>
+<pre><code>SELECT column_name,column_name
+FROM table_name
+[WHERE Clause]
+[LIMIT N][ OFFSET M]  
+</code></pre><p>example:<br><img src="/2019/08/07/mysql1/7.png" alt="查询数据"><br>该查询选择了曲目名字和乐队名字，乐队成员大于5且限制输出2条匹配  </p>
+<p><strong>WHERE 提供条件查询</strong>  </p>
+<pre><code>SELECT field1, field2,...fieldN FROM table_name1, table_name2...
+[WHERE condition1 [AND [OR]] condition2.....  
+</code></pre><p>可以用<code>AND</code> 或者<code>OR</code>制定一个或多个条件  </p>
+<p><strong>UPDATE 更新</strong><br>用于更新也就是修改MySQL中的数据  </p>
+<pre><code>UPDATE table_name SET field1=new-value1, field2=new-value2
+[WHERE Clause]  
+</code></pre><p>注意，必须谨慎操作，因为如果少了WHERE条件语句，<strong>你的所有相应数据都会被修改</strong><br><img src="/2019/08/07/mysql1/8.png" alt="更新数据"><br>将id为8的曲目submission_data更新为1999-08-04  </p>
+<p><strong>DELETE 删除</strong><br>用于删除MySQL中的数据<br><code>DELETE FROM table_name [WHERE Clause]</code><br>和update一样，这两个语句必须谨慎操作，没有where语句的情况下，<strong>所有相应数据都会被删除</strong>  </p>
+<p><strong>LIKE 字符串匹配</strong><br>用于WHERE语句中，主要适用于字符串类型的数据的选择  </p>
+<pre><code>SELECT field1, field2,...fieldN 
+FROM table_name
+WHERE field1 LIKE condition1 [AND [OR]] filed2 = &apos;somevalue&apos;  
+</code></pre><p>example:  </p>
+<pre><code>
+&apos;%a&apos;    以a结尾  
+&apos;a%&apos;    以a开头  
+&apos;%a%&apos;   含有a  
+&apos;_a_&apos;   三位字符串且a位于中间位置  
+`_a`    两位字符串且a位于末尾  
+`a_`    两位字符串且a位于开头
+
+</code></pre><p><strong>UNION</strong><br>用于连接两个以上的<code>SELECT</code>语句的结果到一个结果集合中，多个SELECT语句会删除重复的数据  </p>
+<pre><code>SELECT expression1, expression2, ... expression_n
+FROM tables
+[WHERE conditions]
+UNION [ALL | DISTINCT]
+SELECT expression1, expression2, ... expression_n
+FROM tables
+[WHERE conditions];  
+</code></pre><p><code>DISTINCT</code>:删除结果集中重复的数据<br><code>ALL</code>:返回所有数据集，包括重复的数据  </p>
+<p><strong>ORDER BY 排序</strong>  </p>
+<pre><code>SELECT field1, field2,...fieldN FROM table_name1, table_name2...
+ORDER BY field1 [ASC [DESC][默认 ASC]], [field2...] [ASC [DESC][默认 ASC]]  
+</code></pre><p>默认是ASC 升序排列，可以使用<code>DESC</code>修饰符来进行降序排列<br>example:<br>按照乐队名字降序排序<br><img src="/2019/08/07/mysql1/9.png" alt="排序示范1"><br>按照乐队成员升序排序<br><img src="/2019/08/07/mysql1/10.png" alt="排序示范2">  </p>
+<p><strong>GROUP BY 分组</strong><br>该语句根据一个或者多个列对结果进行分组  </p>
+<pre><code>SELECT column_name, function(column_name)
+FROM table_name
+WHERE column_name operator value
+GROUP BY column_name;   
+</code></pre><p>使用<code>WITH ROLLUP</code>可以实现在分组统计数据基础上再进行相同的统计（SUM,AVG,COUNT…)<br>example:<br> 按照出现过的数字总和，并在最后求和<br><img src="/2019/08/07/mysql1/11.png" alt="分组示范2"><br>按照出现过的数组求平均值<br><img src="/2019/08/07/mysql1/12.png" alt="分组示范2"><br>按照每个乐队出现过的次数<br><img src="/2019/08/07/mysql1/13.png" alt="分组示范2">  </p>
+<p>MySQL菜鸟教程：<a href="https://www.runoob.com/mysql/mysql-tutorial.html" target="_blank" rel="noopener">https://www.runoob.com/mysql/mysql-tutorial.html</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/数据库/" rel="tag"># 数据库</a>
+          
+            <a href="/tags/mysql/" rel="tag"># mysql</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/06/D2RQLearn1/" rel="next" title="D2RQ数据导出-从数据库到RDF mapping language学习(一)">
+                <i class="fa fa-chevron-left"></i> D2RQ数据导出-从数据库到RDF mapping language学习(一)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="leaf rock quiet">
+            
+              <p class="site-author-name" itemprop="name">leaf rock quiet</p>
+              <p class="site-description motion-element" itemprop="description">ambitious and modest</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">37</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://github.com/" title="GitHub" target="_blank">GitHub</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.runoob.com/" title="菜鸟教程" target="_blank">菜鸟教程</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.w3school.com.cn/" title="W3school" target="_blank">W3school</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.baidu.com/" title="百度" target="_blank">百度</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.csdn.net/" title="CSDN" target="_blank">CSDN</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.luogu.org/" title="洛谷" target="_blank">洛谷</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.nowcoder.com/" title="牛客网" target="_blank">牛客网</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.freecodecamp.cn/" title="freecodecamp" target="_blank">freecodecamp</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.tableblog.xyz/" title="table" target="_blank">table</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">leaf rock quiet</span>
+
+  
+</div>
+
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+ visitors:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">there are 18.8k words in the whole site</span>
+</div>
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
