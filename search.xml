@@ -1,6 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[.org--互联网的通用顶级域之一]]></title>
+    <url>%2Fhfuter7712.github.io%2F2019%2F08%2F30%2Forg%2F</url>
+    <content type="text"><![CDATA[.org域名是互联网的通用顶级域之一，适用于各类组织机构，全称为Origanizations.ORG任何人（包括盈利组织，个人，非营利组织等）都可以注册 规则(来自百度百科):1.只提供英文字母（大小写皆可），数字以及连接符-2.-不能用作开头和结尾3.长度不能超过63个字符]]></content>
+      <categories>
+        <category>coding</category>
+      </categories>
+      <tags>
+        <tag>术语</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Jena全面学习+小细节]]></title>
+    <url>%2Fhfuter7712.github.io%2F2019%2F08%2F29%2FJenaL%2F</url>
+    <content type="text"><![CDATA[Jena实例代码二中有一个VCARD类，去官方javadoc看了也没解释是干啥的，后来在网上查了原来是电子名片的意思]]></content>
+      <categories>
+        <category>coding</category>
+      </categories>
+      <tags>
+        <tag>Jena</tag>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[前端页面设计时的那些乱七八糟的注意事项]]></title>
+    <url>%2Fhfuter7712.github.io%2F2019%2F08%2F26%2Ffront-end%20first%20notice%2F</url>
+    <content type="text"><![CDATA[各种RGB颜色:https://www.runoob.com/html/html-colornames.htmlHTML速查表:https://www.runoob.com/html/html-quicklist.htmlHTML标签列表:https://www.runoob.com/tags/html-reference.htmlHTML事件列表:https://www.runoob.com/tags/ref-eventattributes.htmlHTML拾色器:https://www.runoob.com/tags/html-colorpicker.html CSS参考手册:https://www.runoob.com/cssref/css-reference.htmlCSS Web安全字体:https://www.runoob.com/cssref/css-websafe-fonts.html XHTML是以XML格式编写的HTML注意:在XHTML中空元素必须包含关闭标签example: 不能写&lt;br&gt;,而是&lt;br /&gt;]]></content>
+      <categories>
+        <category>coding</category>
+      </categories>
+      <tags>
+        <tag>HTML</tag>
+        <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Jena2]]></title>
+    <url>%2Fhfuter7712.github.io%2F2019%2F08%2F11%2FJena2%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[mysql+D2RQ+D2R+sparql第一次实践]]></title>
     <url>%2Fhfuter7712.github.io%2F2019%2F08%2F07%2FmysqlD2RQ1%2F</url>
     <content type="text"><![CDATA[因为大创需求，需要将数据库中的内容转换成rdf然后给Apache Jena进行推理，因此对一系列的知识进行了学习，今天终于迎来了第一次综合实践首先我在mysql中构建了一个叫做test的数据库，然后建立了一个叫做metal的表随随便便输入了几个数据如下然后开始运用D2RQ处理进入D2RQ根目录打开cmd输入以下语句.\generate-mapping -u root -p yyn321 -o test.ttl jdbc:mysql:///test?useSSL=falseyyn321是数据库密码test.ttl是要生成的ttl文件的名字mysql:///后面跟的是需要进行处理的数据库的名字比如你的数据库名字是test,就这样写:jdbc:mysql:///test?是metro的话就jdbc:mysql:///metro?回车之后没有任何提示直接进入下一个语句在根目录下生成了对应的ttl文件，这个就是默认的mapping language映射文件打开可以看到一系列代码可以选择手工修改，本人这里暂时不动（先熟悉操作）再在刚刚的cmd中继续输入下列代码dump-rdf -o test.nt test.ttl和第一条语句一样，并没有提示任何东西，在根目录下生成了一个同名nt文件打开看到大量代码，这个就是所谓的RDF文件了，仔细观察都是三个一组接下来的操作便是通过这个文件打开D2R服务器在cmd中输入d2r-server test.ttl显示在服务器在2020端口 打开 在浏览器上进入2020端口显示页面如下单击metal,进入界面如下单击metal#1界面如下 返回主界面，点击最下列sparql窗口的链接即可进入sparql查询界面 在其中输入sparql语句即可进行查询 查询人数大于4的乐队查询乐队nightwish的歌曲]]></content>
