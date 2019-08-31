@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/hfuter7712.github.io/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/hfuter7712.github.io/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/hfuter7712.github.io/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/hfuter7712.github.io/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/hfuter7712.github.io/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/hfuter7712.github.io/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/hfuter7712.github.io/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="HTML,Bootstrap,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="网格系统example:   &amp;lt;div class=&amp;quot;row&amp;quot;&amp;gt;   &amp;lt;div class=&amp;quot;col-sm-3&amp;quot;&amp;gt;.col-sm-3&amp;lt;/div&amp;gt;   &amp;lt;div class=&amp;quot;col-sm-3&amp;quot;&amp;gt;.col-sm-3&amp;lt;/div&amp;gt;   &amp;lt;div class=&amp;quot;col-s">
+<meta name="keywords" content="HTML,Bootstrap">
+<meta property="og:type" content="article">
+<meta property="og:title" content="bootstrap学习">
+<meta property="og:url" content="http://yoursite.com/2019/08/30/bootstrap1/index.html">
+<meta property="og:site_name" content="superQ">
+<meta property="og:description" content="网格系统example:   &amp;lt;div class=&amp;quot;row&amp;quot;&amp;gt;   &amp;lt;div class=&amp;quot;col-sm-3&amp;quot;&amp;gt;.col-sm-3&amp;lt;/div&amp;gt;   &amp;lt;div class=&amp;quot;col-sm-3&amp;quot;&amp;gt;.col-sm-3&amp;lt;/div&amp;gt;   &amp;lt;div class=&amp;quot;col-s">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/hfuter7712.github.io/2019/08/30/bootstrap1/1.png">
+<meta property="og:image" content="http://yoursite.com/hfuter7712.github.io/2019/08/30/bootstrap1/2.png">
+<meta property="og:image" content="http://yoursite.com/hfuter7712.github.io/2019/08/30/bootstrap1/2-1.png">
+<meta property="og:image" content="http://yoursite.com/hfuter7712.github.io/2019/08/30/bootstrap1/2-2.png">
+<meta property="og:image" content="http://yoursite.com/hfuter7712.github.io/2019/08/30/bootstrap1/3.png">
+<meta property="og:image" content="http://yoursite.com/hfuter7712.github.io/2019/08/30/bootstrap1/4.png">
+<meta property="og:image" content="http://yoursite.com/hfuter7712.github.io/2019/08/30/bootstrap1/5.png">
+<meta property="og:image" content="http://yoursite.com/hfuter7712.github.io/2019/08/30/bootstrap1/6.png">
+<meta property="og:image" content="http://yoursite.com/hfuter7712.github.io/2019/08/30/bootstrap1/7.png">
+<meta property="og:image" content="http://yoursite.com/hfuter7712.github.io/2019/08/30/bootstrap1/8.png">
+<meta property="og:image" content="http://yoursite.com/hfuter7712.github.io/2019/08/30/bootstrap1/9.png">
+<meta property="og:image" content="http://yoursite.com/hfuter7712.github.io/2019/08/30/bootstrap1/10.png">
+<meta property="og:updated_time" content="2019-08-31T08:53:11.056Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="bootstrap学习">
+<meta name="twitter:description" content="网格系统example:   &amp;lt;div class=&amp;quot;row&amp;quot;&amp;gt;   &amp;lt;div class=&amp;quot;col-sm-3&amp;quot;&amp;gt;.col-sm-3&amp;lt;/div&amp;gt;   &amp;lt;div class=&amp;quot;col-sm-3&amp;quot;&amp;gt;.col-sm-3&amp;lt;/div&amp;gt;   &amp;lt;div class=&amp;quot;col-s">
+<meta name="twitter:image" content="http://yoursite.com/hfuter7712.github.io/2019/08/30/bootstrap1/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/hfuter7712.github.io/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/08/30/bootstrap1/">
+
+
+
+
+
+  <title>bootstrap学习 | superQ</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/hfuter7712.github.io/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">superQ</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">time is money</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/hfuter7712.github.io/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/hfuter7712.github.io/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/hfuter7712.github.io/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/hfuter7712.github.io/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/hfuter7712.github.io/2019/08/30/bootstrap1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="leaf rock quiet">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/hfuter7712.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="superQ">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">bootstrap学习</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-30T23:22:59+08:00">
+                2019-08-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/hfuter7712.github.io/categories/coding/" itemprop="url" rel="index">
+                    <span itemprop="name">coding</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>网格系统</strong><br>example:  </p>
+<pre><code>&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-sm-3&quot;&gt;.col-sm-3&lt;/div&gt;
+  &lt;div class=&quot;col-sm-3&quot;&gt;.col-sm-3&lt;/div&gt;
+  &lt;div class=&quot;col-sm-3&quot;&gt;.col-sm-3&lt;/div&gt;
+  &lt;div class=&quot;col-sm-3&quot;&gt;.col-sm-3&lt;/div&gt;  
+&lt;/div&gt;
+</code></pre><p>效果（每个div都赋予了不同颜色以分辨）:<br><img src="/hfuter7712.github.io/2019/08/30/bootstrap1/1.png" alt="图1"><br>超小设备 <code>.col-</code><br>平板    <code>.col-sm-</code><br>桌面显示器  <code>col-md-</code>  </p>
+<pre><code>&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-sm-3 first&quot;&gt;.col-sm-3&lt;/div&gt;
+  &lt;div class=&quot;col-sm-3 offset-sm-3 second&quot;&gt;.col-sm-3&lt;/div&gt;
+&lt;/div&gt;  
+</code></pre><p><code>offset-sm-3</code>相当于偏移一个<code>col-sm-3</code><br>效果:<br><img src="/hfuter7712.github.io/2019/08/30/bootstrap1/2.png" alt="图2">  </p>
+<p><strong>颜色</strong><br>文本颜色(个人感觉可用于连接)  </p>
+<pre><code>&lt;p class=&quot;text-muted&quot;&gt;柔和的文本。&lt;/p&gt;
+  &lt;p class=&quot;text-primary&quot;&gt;重要的文本。&lt;/p&gt;
+  &lt;p class=&quot;text-success&quot;&gt;执行成功的文本。&lt;/p&gt;
+  &lt;p class=&quot;text-info&quot;&gt;代表一些提示信息的文本。&lt;/p&gt;
+  &lt;p class=&quot;text-warning&quot;&gt;警告文本。&lt;/p&gt;
+  &lt;p class=&quot;text-danger&quot;&gt;危险操作文本。&lt;/p&gt;
+  &lt;p class=&quot;text-secondary&quot;&gt;副标题。&lt;/p&gt;
+  &lt;p class=&quot;text-dark&quot;&gt;深灰色文字。&lt;/p&gt;
+  &lt;p class=&quot;text-light&quot;&gt;浅灰色文本（白色背景上看不清楚）。&lt;/p&gt;
+  &lt;p class=&quot;text-white&quot;&gt;白色文本（白色背景上看不清楚）。&lt;/p&gt;  
+</code></pre><p><strong>表格</strong><br>提供了特色表格，通过定义<code>&lt;table class=&quot;table&quot;&gt;</code>  来设置<br>设置前:<br><img src="/hfuter7712.github.io/2019/08/30/bootstrap1/2-1.png" alt="图3"><br>设置后:<br><img src="/hfuter7712.github.io/2019/08/30/bootstrap1/2-2.png" alt="图4"><br>设置带条纹的表格:在table类的基础上再添加一个<code>.table-striped</code><br><img src="/hfuter7712.github.io/2019/08/30/bootstrap1/3.png" alt="图5"><br>黑色的表格（逼格)  添加类<code>table-dark</code><br><img src="/hfuter7712.github.io/2019/08/30/bootstrap1/4.png" alt="图4"><br>将上述两个合起来得到本人认为最霸气的表格<br><img src="/hfuter7712.github.io/2019/08/30/bootstrap1/5.png" alt="图4"><br>可以通过设定其中不同的<code>tr</code>来实现在一个表格中有不同的效果  </p>
+<p><strong>响应式图片</strong><br>图片的大小需要根据屏幕的大小自动适应<br>添加类<code>.img-fluid</code>即可<br>（本质是将图片的max-width设置为100%，height设为auto)  </p>
+<p><strong>按钮</strong><br>来自菜鸟教程  </p>
+<pre><code>&lt;button type=&quot;button&quot; class=&quot;btn&quot;&gt;基本按钮&lt;/button&gt;
+ &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot;&gt;主要按钮&lt;/button&gt;
+ &lt;button type=&quot;button&quot; class=&quot;btn btn-secondary&quot;&gt;次要按钮&lt;/button&gt;
+ &lt;button type=&quot;button&quot; class=&quot;btn btn-success&quot;&gt;成功&lt;/button&gt;
+ &lt;button type=&quot;button&quot; class=&quot;btn btn-info&quot;&gt;信息&lt;/button&gt;
+ &lt;button type=&quot;button&quot; class=&quot;btn btn-warning&quot;&gt;警告&lt;/button&gt;
+ &lt;button type=&quot;button&quot; class=&quot;btn btn-danger&quot;&gt;危险&lt;/button&gt;
+ &lt;button type=&quot;button&quot; class=&quot;btn btn-dark&quot;&gt;黑色&lt;/button&gt;
+ &lt;button type=&quot;button&quot; class=&quot;btn btn-light&quot;&gt;浅色&lt;/button&gt;
+ &lt;button type=&quot;button&quot; class=&quot;btn btn-link&quot;&gt;链接&lt;/button&gt;  
+</code></pre><p>这些按钮的类还可以用于<code>&lt;a&gt;</code>和<code>&lt;input&gt;</code>中  </p>
+<p>禁用按钮(个人感觉以后可以用于特定条件下的按钮设定，通过JS改变按钮的可用性，比如说要输入用户名才能点击下一步，否则禁用)<br>添加类<code>.disabled</code><br><strong>徽章</strong><br>我觉得这个可以有  </p>
+<pre><code>&lt;p class=&quot;badge badge-danger&quot;&gt;警告&lt;/p&gt;
+    &lt;p class=&quot;badge badge-dark&quot;&gt;失效&lt;/p&gt;  
+    &lt;p class=&quot;badge badge-info&quot;&gt;新消息&lt;/p&gt; 
+    &lt;p class=&quot;badge badge-light&quot;&gt;温馨提示&lt;/p&gt; 
+    &lt;p class=&quot;badge badge-primary&quot;&gt;主要&lt;/p&gt; 
+    &lt;p class=&quot;badge-secondary badge&quot;&gt;次要&lt;/p&gt;
+    &lt;p class=&quot;badge-success badge&quot;&gt;注册成功&lt;/p&gt;
+    &lt;p class=&quot;badge badge-warning&quot;&gt;warning&lt;/p&gt;   
+</code></pre><p> 效果:<br> <img src="/hfuter7712.github.io/2019/08/30/bootstrap1/6.png" alt="图6">  </p>
+<p><strong>分页</strong><br>在<code>&lt;ul&gt;</code>标签中添加<code>.pagination</code>类，然后在下属<code>&lt;li&gt;</code>中添加<code>.page-item</code>类，然后在li下属的<code>&lt;a&gt;</code>中添加<code>.page-link</code>类 </p>
+<pre><code>&lt;ul class=&quot;pagination&quot;&gt;
+    &lt;li class=&quot;page-item&quot;&gt;&lt;a class=&quot;page-link&quot;&gt;Previous&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&quot;page-item&quot;&gt;&lt;a class=&quot;page-link&quot;&gt;1&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&quot;page-item&quot;&gt;&lt;a class=&quot;page-link&quot;&gt;2&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&quot;page-item&quot;&gt;&lt;a class=&quot;page-link&quot;&gt;3&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&quot;page-item&quot;&gt;&lt;a class=&quot;page-link&quot;&gt;4&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&quot;page-item&quot;&gt;&lt;a class=&quot;page-link&quot;&gt;next&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;  
+</code></pre><p>效果:<br> <img src="/hfuter7712.github.io/2019/08/30/bootstrap1/7.png" alt="图7"><br>同样的道理，如果想要设置链接不可点击，只要在li的class添加<code>.disabled</code>类即可  </p>
+<p>———-分割线———-<br> 以下内容需要添加下属语句  </p>
+<pre><code>&lt;script src=&quot;https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+ &lt;script src=&quot;https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js&quot;&gt;&lt;/script&gt;
+ &lt;script src=&quot;https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;  
+</code></pre><p>在原先bootstrap link添加即可<br><strong>折叠内容</strong>  </p>
+<pre><code>    &lt;div class=&quot;container&quot;&gt;
+ &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; data-toggle=&quot;collapse&quot; data-target=&quot;#demo&quot;&gt;简单的折叠&lt;/button&gt;
+        &lt;div id=&quot;demo&quot; class=&quot;collapse&quot;&gt;
+        this is a card which can hide
+            yeah this is second paragraph 
+            third
+            fourth
+        &lt;/div&gt;
+&lt;/div&gt;   
+</code></pre><p>一开始进入的时候内容会隐藏，点击按钮后有一个下滑动画，显示出内容  </p>
+<p><strong>下拉列表</strong><br>初始状态是一个带着下三角的按钮，点击会下拉一个列表<br>example:  </p>
+<pre><code>&lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;dropdown&quot;&gt;
+ &lt;button type=&quot;button&quot; class=&quot;btn btn-primary dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;省份&lt;/button&gt;
+        &lt;div class=&quot;dropdown-menu&quot;&gt;
+        &lt;a class=&quot;dropdown-item&quot; href=&quot;#&quot;&gt;福建&lt;/a&gt;
+            &lt;a class=&quot;dropdown-item&quot; href=&quot;#&quot;&gt;湖北&lt;/a&gt;
+            &lt;a class=&quot;dropdown-item&quot; href=&quot;#&quot;&gt;安徽&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+&lt;/div&gt;  
+</code></pre><p>效果:<br> <img src="/hfuter7712.github.io/2019/08/30/bootstrap1/8.png" alt="图8">  </p>
+<p><strong>导航(个人偏好的一种)</strong>  </p>
+<p>大体代码:  </p>
+<pre><code>&lt;div class=&quot;container&quot;&gt;
+&lt;ul class=&quot;nav nav-tabs&quot;&gt;
+        &lt;li class=&quot;nav-item&quot;&gt;
+    &lt;a class=&quot;nav-link&quot; data-toggle=&quot;tab&quot; href=&quot;#WH&quot;&gt;武汉&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;nav-item&quot;&gt;
+    &lt;a class=&quot;nav-link&quot; data-toggle=&quot;tab&quot; href=&quot;#QZ&quot;&gt;泉州&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;nav-item&quot;&gt;
+    &lt;a class=&quot;nav-link&quot; data-toggle=&quot;tab&quot; href=&quot;#XC&quot;&gt;宣城&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;nav-item&quot;&gt;
+    &lt;a class=&quot;nav-link&quot; data-toggle=&quot;tab&quot; href=&quot;#SH&quot;&gt;上海&lt;/a&gt;
+    &lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;div class=&quot;tab-content&quot;&gt;
+        &lt;div class=&quot;container tab-pane active&quot; id=&quot;QZ&quot;&gt;
+        泉州市隶属于福建，地级市
+        &lt;/div&gt;
+        &lt;div class=&quot;container tab-pane fade&quot; id=&quot;WH&quot;&gt;
+        武汉市隶属于湖北，省会
+        &lt;/div&gt;
+        &lt;div class=&quot;container tab-pane fade&quot; id=&quot;XC&quot;&gt;
+        宣城市隶属于安徽，地级市
+        &lt;/div&gt;
+            &lt;div class=&quot;container tab-pane fade&quot; id=&quot;SH&quot;&gt;
+        上海，直辖市
+        &lt;/div&gt;
+        &lt;/div&gt;
+&lt;/div&gt;  
+</code></pre><p>效果图:<br>  <img src="/hfuter7712.github.io/2019/08/30/bootstrap1/9.png" alt="图9"></p>
+<p><strong>面包屑导航</strong><br>是一种基于网络层次信息的显示方式<br>代码如下:   </p>
+<pre><code>&lt;div class=&quot;container&quot;&gt;
+    &lt;ol class=&quot;breadcrumb&quot;&gt;
+    &lt;li class=&quot;breadcrumb-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;文档&lt;/a&gt;&lt;/li&gt;
+        &lt;li class=&quot;breadcrumb-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;功能性文档&lt;/a&gt;&lt;/li&gt;
+        &lt;li class=&quot;breadcrumb-item active&quot;&gt;C++&lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;/div&gt;  
+</code></pre><p>效果图:<br> <img src="/hfuter7712.github.io/2019/08/30/bootstrap1/10.png" alt="图10">  </p>
+<p><strong>幻灯片切换效果</strong><br>链接:<a href="https://www.runoob.com/bootstrap4/bootstrap4-carousel.html" target="_blank" rel="noopener">https://www.runoob.com/bootstrap4/bootstrap4-carousel.html</a>  </p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/hfuter7712.github.io/tags/HTML/" rel="tag"># HTML</a>
+          
+            <a href="/hfuter7712.github.io/tags/Bootstrap/" rel="tag"># Bootstrap</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/hfuter7712.github.io/2019/08/30/org/" rel="next" title=".org--互联网的通用顶级域之一">
+                <i class="fa fa-chevron-left"></i> .org--互联网的通用顶级域之一
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/hfuter7712.github.io/2019/08/31/502/" rel="prev" title="502 Bad Gateway">
+                502 Bad Gateway <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">leaf rock quiet</p>
+              <p class="site-description motion-element" itemprop="description">ambitious and modest</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/hfuter7712.github.io/archives/">
+              
+                  <span class="site-state-item-count">44</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/hfuter7712.github.io/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/hfuter7712.github.io/tags/index.html">
+                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">leaf rock quiet</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/hfuter7712.github.io/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/hfuter7712.github.io/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/hfuter7712.github.io/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/hfuter7712.github.io/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/hfuter7712.github.io/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/hfuter7712.github.io/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/hfuter7712.github.io/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/hfuter7712.github.io/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/hfuter7712.github.io/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/hfuter7712.github.io/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/hfuter7712.github.io/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/hfuter7712.github.io/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/hfuter7712.github.io/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
