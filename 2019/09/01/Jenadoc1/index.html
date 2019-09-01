@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Jena,Java,javadoc,">
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="title: Jena javadoc 探索(一)date: 2019-09-01 11:20:34categories:    codingtags:   Jena   Java   javadoc     官方javadoc:http://jena.apache.org/documentation/javadoc/jena/   (PS:谷歌翻译在这里面无效，全都是阅读理解得来的) Mode">
+<meta name="description" content="官方javadoc:http://jena.apache.org/documentation/javadoc/jena/   (PS:谷歌翻译在这里面无效，全都是阅读理解得来的) ModelFactory   createDefaultModel具体用法:  Model model=ModelFactory.createDefaultModel();用于返回一个默认规格的新模型（fresh mod">
+<meta name="keywords" content="Jena,Java,javadoc">
 <meta property="og:type" content="article">
-<meta property="og:title" content="superQ">
+<meta property="og:title" content="Jena javadoc 探索(一)">
 <meta property="og:url" content="http://yoursite.com/2019/09/01/Jenadoc1/index.html">
 <meta property="og:site_name" content="superQ">
-<meta property="og:description" content="title: Jena javadoc 探索(一)date: 2019-09-01 11:20:34categories:    codingtags:   Jena   Java   javadoc     官方javadoc:http://jena.apache.org/documentation/javadoc/jena/   (PS:谷歌翻译在这里面无效，全都是阅读理解得来的) Mode">
+<meta property="og:description" content="官方javadoc:http://jena.apache.org/documentation/javadoc/jena/   (PS:谷歌翻译在这里面无效，全都是阅读理解得来的) ModelFactory   createDefaultModel具体用法:  Model model=ModelFactory.createDefaultModel();用于返回一个默认规格的新模型（fresh mod">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-01T06:17:31.803Z">
+<meta property="og:updated_time" content="2019-09-01T06:21:55.952Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="superQ">
-<meta name="twitter:description" content="title: Jena javadoc 探索(一)date: 2019-09-01 11:20:34categories:    codingtags:   Jena   Java   javadoc     官方javadoc:http://jena.apache.org/documentation/javadoc/jena/   (PS:谷歌翻译在这里面无效，全都是阅读理解得来的) Mode">
+<meta name="twitter:title" content="Jena javadoc 探索(一)">
+<meta name="twitter:description" content="官方javadoc:http://jena.apache.org/documentation/javadoc/jena/   (PS:谷歌翻译在这里面无效，全都是阅读理解得来的) ModelFactory   createDefaultModel具体用法:  Model model=ModelFactory.createDefaultModel();用于返回一个默认规格的新模型（fresh mod">
 
 
 
@@ -125,7 +126,7 @@
 
 
 
-  <title> | superQ</title>
+  <title>Jena javadoc 探索(一) | superQ</title>
   
 
 
@@ -269,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"></h1>
+          <h1 class="post-title" itemprop="name headline">Jena javadoc 探索(一)</h1>
         
 
         <div class="post-meta">
@@ -291,6 +292,28 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/hfuter7712.github.io/categories/coding/" itemprop="url" rel="index">
+                    <span itemprop="name">coding</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -319,16 +342,7 @@
       
 
       
-        <hr>
-<p>title: Jena javadoc 探索(一)<br>date: 2019-09-01 11:20:34<br>categories:  </p>
-<ul>
-<li>coding<br>tags:  </li>
-<li>Jena  </li>
-<li>Java  </li>
-<li>javadoc  </li>
-</ul>
-<hr>
-<p>官方javadoc:<a href="http://jena.apache.org/documentation/javadoc/jena/" target="_blank" rel="noopener">http://jena.apache.org/documentation/javadoc/jena/</a>  </p>
+        <p>官方javadoc:<a href="http://jena.apache.org/documentation/javadoc/jena/" target="_blank" rel="noopener">http://jena.apache.org/documentation/javadoc/jena/</a>  </p>
 <p>(PS:谷歌翻译在这里面无效，全都是阅读理解得来的)</p>
 <p><strong>ModelFactory</strong>  </p>
 <p><code>createDefaultModel</code><br>具体用法:  <code>Model model=ModelFactory.createDefaultModel();</code><br>用于返回一个默认规格的新模型（fresh model）  </p>
@@ -386,7 +400,11 @@
 <p><code>getOWLReasoner()</code><br>预建立一个标准配置的默认OWL推理器  </p>
 <p><code>getRDFSReasoner()</code><br>预建立一个标准配置的默认RDFS推理器  </p>
 <p><code>create(String uri, Resource configuration)</code><br>创建并返回一个被给定uri标记的reasoner  </p>
-
+<p>创建配置资源格式:  </p>
+<pre><code>Resource config = ModelFactory.createDefaultModel()
+                              .createResource()
+                              .addProperty(ReasonerVocabulary.PROPsetRDFSLevel, &quot;simple&quot;);  
+</code></pre>
       
     </div>
     
@@ -400,6 +418,16 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/hfuter7712.github.io/tags/Jena/" rel="tag"># Jena</a>
+          
+            <a href="/hfuter7712.github.io/tags/Java/" rel="tag"># Java</a>
+          
+            <a href="/hfuter7712.github.io/tags/javadoc/" rel="tag"># javadoc</a>
+          
+        </div>
       
 
       
@@ -508,7 +536,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/hfuter7712.github.io/tags/index.html">
-                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-count">37</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
