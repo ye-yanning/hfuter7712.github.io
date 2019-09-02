@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="superQ">
 <meta property="og:description" content="官方javadoc:http://jena.apache.org/documentation/javadoc/jena/   (PS:谷歌翻译在这里面无效，全都是阅读理解得来的) ModelFactory   createDefaultModel具体用法:  Model model=ModelFactory.createDefaultModel();用于返回一个默认规格的新模型（fresh mod">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-01T06:21:55.952Z">
+<meta property="og:updated_time" content="2019-09-02T05:09:37.903Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Jena javadoc 探索(一)">
 <meta name="twitter:description" content="官方javadoc:http://jena.apache.org/documentation/javadoc/jena/   (PS:谷歌翻译在这里面无效，全都是阅读理解得来的) ModelFactory   createDefaultModel具体用法:  Model model=ModelFactory.createDefaultModel();用于返回一个默认规格的新模型（fresh mod">
@@ -357,7 +357,11 @@
 <p><strong>Interface Reasoner</strong>  </p>
 <p><code>bindSchema(Graph tbox)</code><br>将一个本体(ontology)附加到一个推理器(reasoner)上的最普遍方法  </p>
 <p><code>bindSchema(Model tbox)</code><br>与上述函数同理<br>用法: <code>reasoner=reasoner.bindSchema(schema);</code>  </p>
-<p><strong>FileManager</strong>  </p>
+<p><code>setDerivationLogging(boolean logOn)</code><br> 设置drivation logging的开关  </p>
+<p><code>setParameter(Property parameterUri, Object value)</code><br>设置推理器的参数<br>比如设置RDFS推理器的等级  </p>
+<pre><code>reasoner.setParameter(ReasonerVocabulary.PROPsetRDFSLevel,
+                      ReasonerVocabulary.RDFS_SIMPLE);  
+</code></pre><p><strong>FileManager</strong>  </p>
 <p>可以从一个系统资源加载RDF数据到一个已经存在的模型或者新建立的模型<br>FileManage和LocationMapper一同工作  </p>
 <p><code>get()</code><br>获取全局文件管理者（global file manager）  </p>
 <p><code>loadModel(String filenameOrURI)</code><br><code>loadModel(String filenameOrURI, String rdfSyntax)</code><br><code>loadModel(String filenameOrURI, String baseURI, String rdfSyntax)</code>  </p>
@@ -381,7 +385,8 @@
 <p><code>createResource()</code><br>创建一个新的匿名Resource<br>具体用法(注:rdfsExample是一个Model实例):<br><code>rdfsExample.createResource(NS+&quot;a&quot;)</code>  </p>
 <p><code>createStatement(Resource s, Property p, RDFNode o)</code><br>创建一个新的statement  </p>
 <p><code>difference(Model model)</code><br>创建一个新的，独立的模型包含当前模型所有的而参数中模型中没有的statements  </p>
-<p><code>getProperty(Resource s, Property p)</code><br>返回一个resource为s，Property为p的statement（s,p,?o)  </p>
+<p><code>getProperty(Resource s, Property p)</code><br>返回一个resource为s，Property为p的statement（s,p,?o)</p>
+<p><code>getResource(String uri)</code><br>根据参数中的url返回对应的资源resource    </p>
 <p><code>independent()</code><br>布尔型函数，判断该模型是否独立  </p>
 <p><code>isEmpty()</code><br>布尔型函数，判断模型是否为空  </p>
 <p><code>listObjects()</code><br>列举出模型中所有的object（类型为NodeIterator)</p>
@@ -518,7 +523,7 @@
               
                 <a href="/hfuter7712.github.io/archives/">
               
-                  <span class="site-state-item-count">47</span>
+                  <span class="site-state-item-count">48</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
