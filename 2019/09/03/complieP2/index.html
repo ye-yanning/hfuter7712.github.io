@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="principle,">
 
 
 
@@ -79,16 +79,18 @@
 
 
 
-<meta name="description" content="ambitious and modest">
-<meta property="og:type" content="website">
-<meta property="og:title" content="superQ">
-<meta property="og:url" content="http://yoursite.com/tags/个人博客/index.html">
+<meta name="description" content="语法任何语言程序都可以看做是一定字符集（字母表）上的一个字符串（有限序列）语言的单词符号是由语法规则所确定的一个程序语言只使用一个有限字符集作为字母表单词符号是语言中具有独立意义的最基本结构词法规则是指单词符号的形成规则语法规则是语法单位的形成规则上下文无关文法是一种可取的有效工具语法单位比单词符号具有更丰富的意义   语义对于一个语言，不仅要给出他的词法，语法规则，还要定义它的单词符号和语法单位">
+<meta name="keywords" content="principle">
+<meta property="og:type" content="article">
+<meta property="og:title" content="编译原理预习笔记（二）--高级语言及其语法描述">
+<meta property="og:url" content="http://yoursite.com/2019/09/03/complieP2/index.html">
 <meta property="og:site_name" content="superQ">
-<meta property="og:description" content="ambitious and modest">
+<meta property="og:description" content="语法任何语言程序都可以看做是一定字符集（字母表）上的一个字符串（有限序列）语言的单词符号是由语法规则所确定的一个程序语言只使用一个有限字符集作为字母表单词符号是语言中具有独立意义的最基本结构词法规则是指单词符号的形成规则语法规则是语法单位的形成规则上下文无关文法是一种可取的有效工具语法单位比单词符号具有更丰富的意义   语义对于一个语言，不仅要给出他的词法，语法规则，还要定义它的单词符号和语法单位">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-09-03T11:51:26.022Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="superQ">
-<meta name="twitter:description" content="ambitious and modest">
+<meta name="twitter:title" content="编译原理预习笔记（二）--高级语言及其语法描述">
+<meta name="twitter:description" content="语法任何语言程序都可以看做是一定字符集（字母表）上的一个字符串（有限序列）语言的单词符号是由语法规则所确定的一个程序语言只使用一个有限字符集作为字母表单词符号是语言中具有独立意义的最基本结构词法规则是指单词符号的形成规则语法规则是语法单位的形成规则上下文无关文法是一种可取的有效工具语法单位比单词符号具有更丰富的意义   语义对于一个语言，不仅要给出他的词法，语法规则，还要定义它的单词符号和语法单位">
 
 
 
@@ -118,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/个人博客/">
+  <link rel="canonical" href="http://yoursite.com/2019/09/03/complieP2/">
 
 
 
 
 
-  <title>标签: 个人博客 | superQ</title>
+  <title>编译原理预习笔记（二）--高级语言及其语法描述 | superQ</title>
   
 
 
@@ -143,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -237,78 +239,172 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>个人博客<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/hfuter7712.github.io/2019/09/03/complieP2/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="leaf rock quiet">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/hfuter7712.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="superQ">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/hfuter7712.github.io/2019/07/27/summer return/" itemprop="url">
-              
-                <span itemprop="name">暑假回归+hexo:command no found解决</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">编译原理预习笔记（二）--高级语言及其语法描述</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-27T23:33:14+08:00" content="2019-07-27">
-          07-27
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-03T19:40:04+08:00">
+                2019-09-03
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/hfuter7712.github.io/categories/specialized-course/" itemprop="url" rel="index">
+                    <span itemprop="name">specialized-course</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
+      
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/hfuter7712.github.io/2019/04/27/experience1/" itemprop="url">
-              
-                <span itemprop="name">关于在进行generate以及d操作后仍然无法更新文章的解决</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-27T22:19:24+08:00" content="2019-04-27">
-          04-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
+        <p><strong>语法</strong><br>任何语言程序都可以看做是一定字符集（字母表）上的一个字符串（有限序列）<br>语言的单词符号是由语法规则所确定的<br>一个程序语言只使用一个有限字符集作为字母表<br>单词符号是语言中具有独立意义的最基本结构<br>词法规则是指单词符号的形成规则<br>语法规则是语法单位的形成规则<br><strong>上下文无关文法</strong>是一种可取的有效工具<br>语法单位比单词符号具有更丰富的意义  </p>
+<p><strong>语义</strong><br>对于一个语言，不仅要给出他的词法，语法规则，还要定义它的单词符号和语法单位的意义<br>一个程序的基本功能是<strong>描述数据和对数据的运算</strong> ，所谓一个程序，从本质上说是<strong>描述一定数据的处理过程</strong><br>程序语言的每个组成成分都有<strong>（抽象的）逻辑和计算机实现</strong> 两方面的意义  </p>
+<p><strong>数据类型与操作</strong><br>一个数据类型通常包括以下三种要素：<br>1.用于区别这种类型的数据对象的属性<br>2.这种类型的数据对象可以具有的值<br>3.可以作用于这种类型的数据对象的操作  </p>
+<p>一个程序语言必须提供一定的初等类型数据成分</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/hfuter7712.github.io/tags/principle/" rel="tag"># principle</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/hfuter7712.github.io/2019/09/03/complieL1/" rel="next" title="编译原理学习笔记（一）">
+                <i class="fa fa-chevron-left"></i> 编译原理学习笔记（一）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -316,6 +412,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -537,6 +637,10 @@
 
 
   
+  <script type="text/javascript" src="/hfuter7712.github.io/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/hfuter7712.github.io/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
