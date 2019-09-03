@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/hfuter7712.github.io/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/hfuter7712.github.io/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/hfuter7712.github.io/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/hfuter7712.github.io/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/hfuter7712.github.io/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/hfuter7712.github.io/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/hfuter7712.github.io/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Javascript,jQuery,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="在开头&amp;lt;head&amp;gt;标签中加入如下语句   &amp;lt;script src=&amp;quot;https://cdn.staticfile.org/jquery/2.0.0/jquery.min.js&amp;quot;&amp;gt;     &amp;lt;/script&amp;gt;   元素选择器https://www.runoob.com/jquery/jquery-selectors.html   对某个标签的所">
+<meta name="keywords" content="Javascript,jQuery">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery复习（一）">
+<meta property="og:url" content="http://yoursite.com/2019/09/02/jquery1/index.html">
+<meta property="og:site_name" content="superQ">
+<meta property="og:description" content="在开头&amp;lt;head&amp;gt;标签中加入如下语句   &amp;lt;script src=&amp;quot;https://cdn.staticfile.org/jquery/2.0.0/jquery.min.js&amp;quot;&amp;gt;     &amp;lt;/script&amp;gt;   元素选择器https://www.runoob.com/jquery/jquery-selectors.html   对某个标签的所">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/hfuter7712.github.io/2019/09/02/jquery1/1.png">
+<meta property="og:image" content="http://yoursite.com/hfuter7712.github.io/2019/09/02/jquery1/2-1.png">
+<meta property="og:image" content="http://yoursite.com/hfuter7712.github.io/2019/09/02/jquery1/2-2.png">
+<meta property="og:updated_time" content="2019-09-03T04:09:21.362Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jQuery复习（一）">
+<meta name="twitter:description" content="在开头&amp;lt;head&amp;gt;标签中加入如下语句   &amp;lt;script src=&amp;quot;https://cdn.staticfile.org/jquery/2.0.0/jquery.min.js&amp;quot;&amp;gt;     &amp;lt;/script&amp;gt;   元素选择器https://www.runoob.com/jquery/jquery-selectors.html   对某个标签的所">
+<meta name="twitter:image" content="http://yoursite.com/hfuter7712.github.io/2019/09/02/jquery1/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/hfuter7712.github.io/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/09/02/jquery1/">
+
+
+
+
+
+  <title>jQuery复习（一） | superQ</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/hfuter7712.github.io/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">superQ</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">time is money</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/hfuter7712.github.io/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/hfuter7712.github.io/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/hfuter7712.github.io/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/hfuter7712.github.io/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/hfuter7712.github.io/2019/09/02/jquery1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="leaf rock quiet">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/hfuter7712.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="superQ">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">jQuery复习（一）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-02T21:03:35+08:00">
+                2019-09-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/hfuter7712.github.io/categories/coding/" itemprop="url" rel="index">
+                    <span itemprop="name">coding</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>在开头<code>&lt;head&gt;</code>标签中加入如下语句  </p>
+<pre><code>&lt;script src=&quot;https://cdn.staticfile.org/jquery/2.0.0/jquery.min.js&quot;&gt;
+    &lt;/script&gt;  
+</code></pre><p><strong>元素选择器</strong><br><a href="https://www.runoob.com/jquery/jquery-selectors.html" target="_blank" rel="noopener">https://www.runoob.com/jquery/jquery-selectors.html</a>  </p>
+<p>对某个标签的所有元素进行选取:<br>example:<br>选取所有</p><p>元素<br><code>$(&quot;p&quot;)</code>  </p>
+<p>根据id来选取元素<br><code>$(&quot;#ident&quot;)</code><br>选取id为ident的元素  </p>
+<p>根据class选取元素<br><code>$(&quot;.classF&quot;)</code><br>选取class为classF的元素  </p>
+<p><strong>事件</strong><br>example:<br>点击p元素后触发某函数  </p>
+<pre><code>$(&quot;p&quot;).click(function(){
+    //要执行的代码
+});  
+</code></pre><p><code>$(document).ready()</code><br>该方法允许我们在文档完全加载完后执行函数  </p>
+<p><code>click()</code>  点击按钮触发<br><code>dblclick()</code>  双击触发<br><code>mouseenter()</code>  鼠标指针穿过元素时触发<br><code>mouseleave()</code>  鼠标指针从元素上移开时触发<br> <code>mousedown()</code>  当鼠标指针移动到元素上方并按下鼠标按键时触发<br><code>mouseup()</code>  在元素上松开鼠标按钮<br><code>hover()</code>  模拟光标悬停（分两个函数，一个是光标移到元素上，一个是从元素上移开)<br>example:  </p>
+<pre><code>$(&quot;#p1&quot;).hover(
+    function(){
+        alert(&quot;鼠标移入&quot;);
+    },
+    function(){
+        alert(&quot;鼠标移开&quot;);
+    }
+);  
+</code></pre><p><code>focus()</code><br>当元素获得焦点时触发（一般用于文本框输入，比如姓名，点击输入框，输入框变色)<br><code>blur()</code><br>和上一个相反，失去焦点时触发  </p>
+<p><strong>隐藏与显示</strong><br><code>hide()</code>将会隐藏一个元素<br><code>show()</code>将会显示一个隐藏的元素<br>可以详细设置参数<br><code>hide(speed,callback)</code><br>speed是隐藏或显示的速度，”slow”,”fast”或者毫秒<br>callback是隐藏或显示完成所执行的函数名称  </p>
+<p><code>toggle()</code><br>相当于一个开关，可以在<code>hide()</code>和<code>show()</code>之间切换，如果元素处于隐藏状态，触发之后会将元素显示，反之会隐藏  </p>
+<p><strong>淡入淡出</strong><br><code>fadeIn(speed,callback)</code> 淡入<br><code>fadeOut(speed,callback)</code> 淡出<br>speed同样是速度，取值同样是”slow”,”fast”或者毫秒<br>callback是淡入淡出后执行的函数  </p>
+<p><code>fadeToggle()</code><br>同样是起到开关的作用，在上述两种淡入淡出之间切换<br><code>fadeTo(speed,opacity,callback)</code><br>speed:规定效果的时长，”slow”,”fast”或毫秒<br>opacity:目标不透明度(0~1)<br>callback:执行完后的函数名称 </p>
+<p><strong>滑动</strong><br><code>slideDown(speed,callback)</code><br><code>slideUp(speed,callback)</code><br>向上滑动与向下滑动<br>speed与callback与淡入淡出的一样<br><code>slideToggle()</code><br>也是相当于开关，在上述两种效果间切换  </p>
+<p><strong>动画</strong><br><a href="https://www.runoob.com/jquery/jquery-animate.html" target="_blank" rel="noopener">https://www.runoob.com/jquery/jquery-animate.html</a>  </p>
+<p>停止动画: <code>stop(stopAll,gotoEnd)</code><br>stopAll参数规定是否应该清除动画队列，默认是false<br>goToEnd参数规定是否立即完成当前动画，默认是false<br>因此默认情况下stop()函数会清除在被选元素上指定的动画  </p>
+<p><strong>捕获</strong><br><code>text()</code>  设置或者返回所选元素的文本内容<br><code>html()</code>  设置货返回所选元素的内容（包括HTML标记)<br><code>val()</code>  设置或返回表单字段的值<br><code>attr()</code>  属性</p>
+<p>对比列子:<br><code>&lt;p id=&quot;as&quot;&gt;&lt;em&gt;啊啊啊&lt;/em&gt;&lt;span&gt;我的头&lt;/span&gt;&lt;/p&gt;</code><br>通过分别对id等于”as”获取其text以及html，结果为<br><img src="/hfuter7712.github.io/2019/09/02/jquery1/1.png" alt="结果1"><br>可以看出html还返回了内容中的html标签等  </p>
+<p><strong>修改</strong>  </p>
+<pre><code>$(document).ready(function(){
+  $(&quot;.text&quot;).click(function(){
+    $(&quot;#as&quot;).html(&quot;&lt;em&gt;疑是地上霜&lt;/em&gt;&quot;);
+  }); 
+</code></pre><p>修改id为”as”的html<br>效果图:<br> <img src="/hfuter7712.github.io/2019/09/02/jquery1/2-1.png" alt="结果2-1"><br><img src="/hfuter7712.github.io/2019/09/02/jquery1/2-2.png" alt="结果2-2">  </p>
+<p>本人最喜欢的还是接下来这个功能，修改属性值  </p>
+<pre><code>$(document).ready(function(){
+  $(&quot;.text&quot;).click(function(){
+    $(&quot;#as&quot;).attr({
+        &quot;href&quot;:&quot;https://www.bilibili.com/&quot;
+    });
+  });  
+</code></pre><p>点击class为text的按钮后id为as的链接href就从其他转变为B站网址了  </p>
+<p><strong>添加</strong><br><code>append()</code><br>在被选元素的结尾插入内容<br>比如<code>$(&quot;p&quot;).append(&quot;gkd&quot;);</code><br>是在p元素的末尾添加”gkd”  </p>
+<p><code>prepend()</code><br>在被选元素的开头插入内容<br>比如<code>$(&quot;p&quot;).prepend(&quot;yes&quot;);</code><br>是在p元素的开头添加”yes”  </p>
+<p><code>after()</code><br>在被选元素之后插入内容  </p>
+<p><code>before()</code><br>在被选元素之前插入内容<br>这四个函数都允许多参数<br>example:<br><code>$(&quot;#as&quot;).append(txt1,txt2,txt3);</code>  </p>
+<p> <strong>删除</strong><br><code>remove()</code><br>删除被选元素及其子元素  </p>
+<p><code>empty()</code><br>删除被选元素的子元素<br><code>remove()</code>和<code>empty()</code>的差别就是<code>remove()</code>删除被选元素，而<code>empty()</code>不删除  </p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/hfuter7712.github.io/tags/Javascript/" rel="tag"># Javascript</a>
+          
+            <a href="/hfuter7712.github.io/tags/jQuery/" rel="tag"># jQuery</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/hfuter7712.github.io/2019/09/02/complieP1/" rel="next" title="编译原理预习笔记（一）">
+                <i class="fa fa-chevron-left"></i> 编译原理预习笔记（一）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">leaf rock quiet</p>
+              <p class="site-description motion-element" itemprop="description">ambitious and modest</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/hfuter7712.github.io/archives/">
+              
+                  <span class="site-state-item-count">51</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/hfuter7712.github.io/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/hfuter7712.github.io/tags/index.html">
+                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">leaf rock quiet</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/hfuter7712.github.io/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/hfuter7712.github.io/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/hfuter7712.github.io/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/hfuter7712.github.io/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/hfuter7712.github.io/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/hfuter7712.github.io/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/hfuter7712.github.io/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/hfuter7712.github.io/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/hfuter7712.github.io/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/hfuter7712.github.io/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/hfuter7712.github.io/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/hfuter7712.github.io/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/hfuter7712.github.io/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

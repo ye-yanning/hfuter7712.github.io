@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[jQuery复习（一）]]></title>
+    <url>%2Fhfuter7712.github.io%2F2019%2F09%2F02%2Fjquery1%2F</url>
+    <content type="text"><![CDATA[在开头&lt;head&gt;标签中加入如下语句 &lt;script src=&quot;https://cdn.staticfile.org/jquery/2.0.0/jquery.min.js&quot;&gt; &lt;/script&gt; 元素选择器https://www.runoob.com/jquery/jquery-selectors.html 对某个标签的所有元素进行选取:example:选取所有元素$(&quot;p&quot;) 根据id来选取元素$(&quot;#ident&quot;)选取id为ident的元素 根据class选取元素$(&quot;.classF&quot;)选取class为classF的元素 事件example:点击p元素后触发某函数 $(&quot;p&quot;).click(function(){ //要执行的代码 }); $(document).ready()该方法允许我们在文档完全加载完后执行函数 click() 点击按钮触发dblclick() 双击触发mouseenter() 鼠标指针穿过元素时触发mouseleave() 鼠标指针从元素上移开时触发 mousedown() 当鼠标指针移动到元素上方并按下鼠标按键时触发mouseup() 在元素上松开鼠标按钮hover() 模拟光标悬停（分两个函数，一个是光标移到元素上，一个是从元素上移开)example: $(&quot;#p1&quot;).hover( function(){ alert(&quot;鼠标移入&quot;); }, function(){ alert(&quot;鼠标移开&quot;); } ); focus()当元素获得焦点时触发（一般用于文本框输入，比如姓名，点击输入框，输入框变色)blur()和上一个相反，失去焦点时触发 隐藏与显示hide()将会隐藏一个元素show()将会显示一个隐藏的元素可以详细设置参数hide(speed,callback)speed是隐藏或显示的速度，”slow”,”fast”或者毫秒callback是隐藏或显示完成所执行的函数名称 toggle()相当于一个开关，可以在hide()和show()之间切换，如果元素处于隐藏状态，触发之后会将元素显示，反之会隐藏 淡入淡出fadeIn(speed,callback) 淡入fadeOut(speed,callback) 淡出speed同样是速度，取值同样是”slow”,”fast”或者毫秒callback是淡入淡出后执行的函数 fadeToggle()同样是起到开关的作用，在上述两种淡入淡出之间切换fadeTo(speed,opacity,callback)speed:规定效果的时长，”slow”,”fast”或毫秒opacity:目标不透明度(0~1)callback:执行完后的函数名称 滑动slideDown(speed,callback)slideUp(speed,callback)向上滑动与向下滑动speed与callback与淡入淡出的一样slideToggle()也是相当于开关，在上述两种效果间切换 动画https://www.runoob.com/jquery/jquery-animate.html 停止动画: stop(stopAll,gotoEnd)stopAll参数规定是否应该清除动画队列，默认是falsegoToEnd参数规定是否立即完成当前动画，默认是false因此默认情况下stop()函数会清除在被选元素上指定的动画 捕获text() 设置或者返回所选元素的文本内容html() 设置货返回所选元素的内容（包括HTML标记)val() 设置或返回表单字段的值attr() 属性 对比列子:&lt;p id=&quot;as&quot;&gt;&lt;em&gt;啊啊啊&lt;/em&gt;&lt;span&gt;我的头&lt;/span&gt;&lt;/p&gt;通过分别对id等于”as”获取其text以及html，结果为可以看出html还返回了内容中的html标签等 修改 $(document).ready(function(){ $(&quot;.text&quot;).click(function(){ $(&quot;#as&quot;).html(&quot;&lt;em&gt;疑是地上霜&lt;/em&gt;&quot;); }); 修改id为”as”的html效果图: 本人最喜欢的还是接下来这个功能，修改属性值 $(document).ready(function(){ $(&quot;.text&quot;).click(function(){ $(&quot;#as&quot;).attr({ &quot;href&quot;:&quot;https://www.bilibili.com/&quot; }); }); 点击class为text的按钮后id为as的链接href就从其他转变为B站网址了 添加append()在被选元素的结尾插入内容比如$(&quot;p&quot;).append(&quot;gkd&quot;);是在p元素的末尾添加”gkd” prepend()在被选元素的开头插入内容比如$(&quot;p&quot;).prepend(&quot;yes&quot;);是在p元素的开头添加”yes” after()在被选元素之后插入内容 before()在被选元素之前插入内容这四个函数都允许多参数example:$(&quot;#as&quot;).append(txt1,txt2,txt3); 删除remove()删除被选元素及其子元素 empty()删除被选元素的子元素remove()和empty()的差别就是remove()删除被选元素，而empty()不删除]]></content>
+      <categories>
+        <category>coding</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+        <tag>jQuery</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[编译原理预习笔记（一）]]></title>
     <url>%2Fhfuter7712.github.io%2F2019%2F09%2F02%2FcomplieP1%2F</url>
     <content type="text"><![CDATA[世界上第一个编译程序：FORTRAN编译程序于20世纪50年代中期研制成功 编译程序的工作一般可划分为五个阶段（编译程序工作时的动态特征）：1.词法分析任务：输入源程序，对构成源程序的字符串进行扫描和分解 ，识别出单词 2.语法分析任务： 在词法分析的基础上，根据语言的语法规则，把单词符号串分解为各类语法单位通过语法分析：确定整个输入串是否构成语法上正确的“程序”语法分析依循的是语言的语法规则语法规则通常用上下文无关文法描述 3.语义分析与中间代码产生任务：对语法分析所识别出的各类语法范畴，分析其含义，并进行初步翻译（产生中间代码） 4.优化任务：对前端产生的中间代码进行加工变换，以期在最后阶段能产生吃醋更为高效的目标代码 5.目标代码生成任务：把中间代码变换成特定机器上的低级语言代码 注：并非所有编译程序都分为五阶段 编译程序的结构：1.词法分析器（扫描器）输入源程序，进行词法分析，输出单词符号 2.语法分析器（分析器）对单词符号串进行语法分析 3.语义分析与中间代码产生器按照语义规则对语法分析器归约出的语法单位进行语义分析后把它们翻译成一定形式的中间代码 4.优化器对中间代码进行优化处理 5.目标代码生成器把中间代码翻译成目标程序 表格编译程序在工作过程中需要保持一些列的表格，用于登记源程序的各类信息和编译各阶段的进展情况在编译程序使用的表格中，最重要的是符号表 出错处理源程序中的错误通常分为语法错误和语义错误两大类语法错误：源程序中不符合语法规则的错误语义错误：源程序中不符合语义规则的错误 遍对源程序或源程序的中间结果从头到尾扫描一次 ，并作有关的加工处理，生成新的中间结果或目标程序当一遍中包含若干阶段时，各阶段的工作是穿插进行的 要在某一台机器上为某种语言构造一个编译程序，必须掌握下述三方面内容：1.源语言深刻理解其结构和含义 2.目标语言 3.编译方法 任何语言实现的基础是语言定义一个程序语言只使用一个有限字符集作为字母表单词符号是语言中具有独立意义的最基本结构语法单位比单词符号具有更丰富的意义 高级语言分类:1.强制式语言（过程式语言）特点：命令驱动，面向语句 2.应用式语言更注重程序所表示的功能，开发过程：从前面已有的函数触发构造出更复杂的函数 3.基于规则的语言执行过程：检查一定的条件，当他满足值时，执行适当的动作 4.面向对象语言主要特征：封装性，多态性，继承性等]]></content>
@@ -205,8 +217,8 @@
         <category>coding</category>
       </categories>
       <tags>
-        <tag>jQuery</tag>
         <tag>Javascript</tag>
+        <tag>jQuery</tag>
       </tags>
   </entry>
   <entry>
@@ -406,8 +418,8 @@
       <tags>
         <tag>HTML</tag>
         <tag>css</tag>
-        <tag>jQuery</tag>
         <tag>Javascript</tag>
+        <tag>jQuery</tag>
       </tags>
   </entry>
   <entry>
