@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="superQ">
 <meta property="og:description" content="学习自菜鸟教程https://www.runoob.com/ajax/ajax-intro.html   AJAX(Asynchronous JavaScript and XML)翻译为“异步JS与XML”是一种用于创建快速动态网页的技术，通过在后台与服务器进行少量数据交换，AJAX可以使网页实现异步更新意味着可以在不重新加载整个网页的情况下，对网页的部分进行更新AJAX基于现有的Internet">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-04T07:56:52.817Z">
+<meta property="og:updated_time" content="2019-09-04T08:18:23.430Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Javascript AJAX 学习(一)">
 <meta name="twitter:description" content="学习自菜鸟教程https://www.runoob.com/ajax/ajax-intro.html   AJAX(Asynchronous JavaScript and XML)翻译为“异步JS与XML”是一种用于创建快速动态网页的技术，通过在后台与服务器进行少量数据交换，AJAX可以使网页实现异步更新意味着可以在不重新加载整个网页的情况下，对网页的部分进行更新AJAX基于现有的Internet">
@@ -362,6 +362,10 @@ else
 <p>通过AJAX，JS无需等待服务器的响应，而是<br>1.在等待服务器响应时执行其他脚本<br>2.当响应就绪后对响应进行处理  </p>
 <p>当Async=true时，需要规定在响应处于<code>onreadystatechange</code>事件中的就绪状态时执行的函数<br>当Async=false,不要编写<code>onreadystatechange</code>函数，把代码放到<code>send()</code>后即可  </p>
 <p><strong>服务器响应</strong><br><code>responseText</code><br>如果来自服务器的响应并非XML，使用该属性<br><code>document.getElementById(&quot;myDiv&quot;).innerHTML=xmlhttp.responseText;</code><br>本人拓展:<br>用jQuery书写为:<br><code>$(&quot;#myDiv&quot;).html(xmlhttp.responseText);</code>  </p>
+<p><code>responseXML</code><br>来自服务器的响应是XML，并且需要作为XML对象进行解析，就使用上述属性  </p>
+<p><strong>onreadystatechange 事件</strong><br>每当readyState改变时，就会触发该事件<br>readyState参数:<br>0:请求未初始化<br>1:服务器连接已建立<br>2：请求已接收<br>3：请求处理中<br>4：请求已完成，且响应已经就绪  </p>
+<p>status参数:<br>200:“OK”<br>404:未找到界面（万恶之源)<br>（其实status的值有好多好多,不全列举了)</p>
+<p>当readyState等于4且status等于200时，表示响应已经就绪<br><code>if(xmlhttp.readyState==4 &amp;&amp; xmlhttp.status==200)</code>  </p>
 
       
     </div>
