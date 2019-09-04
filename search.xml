@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Javascript AJAX 学习(一)]]></title>
+    <url>%2Fhfuter7712.github.io%2F2019%2F09%2F04%2Fajax1%2F</url>
+    <content type="text"><![CDATA[学习自菜鸟教程https://www.runoob.com/ajax/ajax-intro.html AJAX(Asynchronous JavaScript and XML)翻译为“异步JS与XML”是一种用于创建快速动态网页的技术，通过在后台与服务器进行少量数据交换，AJAX可以使网页实现异步更新意味着可以在不重新加载整个网页的情况下，对网页的部分进行更新AJAX基于现有的Internet标准 XMLHttpRequestXMLHttpRequest是AJAX的基础用于在后台与服务器交换数据，这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新（人类的本质） 创建XMLHttpRequest对象的方法:variable=new XMLHttpRequest();判断是否支持该对象: var xmlhttp; if(window.XMLHttpRequest) { xmlhttp=new XMLHttpRequest(); } else { xmlhttp=new ActiveXObjext(&quot;Microsoft.XMLHTTP&quot;); //这个大部分是IE6和IE5使用的对象 } 向服务器发送请求open(method,url,async)method:请求的类型;”GET”或者”POST”url:文件在服务器上的位置该文件可以是任何类型的文件，比如.txt和.xml,或者服务器脚本文件，.asp和.php文件async:true(异步),false(同步)example: xmlhttp.open(&quot;GET&quot;,&quot;ajax_info.txt&quot;,true);xmlhttp是XMLHttpRequest对象 send(string)将请求发送到服务器string:仅用于POST请求 GET相比于POST更简单，更快但是在以下情况下，使用POST：1.无法使用缓存文件(更新服务器上的文件或数据库)2.向服务器发送大量数据(POST无数据量限制)3.发送包含未知字符的用户输入时 通过AJAX，JS无需等待服务器的响应，而是1.在等待服务器响应时执行其他脚本2.当响应就绪后对响应进行处理 当Async=true时，需要规定在响应处于onreadystatechange事件中的就绪状态时执行的函数当Async=false,不要编写onreadystatechange函数，把代码放到send()后即可 服务器响应responseText如果来自服务器的响应并非XML，使用该属性document.getElementById(&quot;myDiv&quot;).innerHTML=xmlhttp.responseText;本人拓展:用jQuery书写为:$(&quot;#myDiv&quot;).html(xmlhttp.responseText);]]></content>
+      <categories>
+        <category>coding</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+        <tag>AJAX</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[jQuery复习+学习（二）]]></title>
     <url>%2Fhfuter7712.github.io%2F2019%2F09%2F03%2FjQuery2%2F</url>
     <content type="text"><![CDATA[css()要返回指定的CSS属性的值，使用如下语法即可css(&quot;propertyname&quot;);example:$(&quot;p&quot;).css(&quot;background-color&quot;); 设置属性，在先前的语法上加上第二个参数$(&quot;p&quot;).css(&quot;background-color&quot;,&quot;yellow&quot;);就将p元素的背景色设置为了黄色 同时设置多个属性$(&quot;p&quot;).css({&quot;background-color&quot;:&quot;yellow&quot;,&quot;font-size&quot;:&quot;200%&quot;});以设置属性名:属性值的格式，用逗号隔开，放在中括号中作为参数 遍历parent()通过这个方法取得当前选取的元素的直接父元素通俗的说就是当前元素的老爸 parents()通过这个方法获取当前选取元素的所有父元素 parentsUntil()返回介于两个给定元素之间的所有祖先元素$(&quot;#firstElement&quot;).parentsUntil(&quot;secondElement&quot;); children()返回被选元素的所有直接子元素通俗的说就是当前元素的儿子 find()返回被选元素的后代元素，一路向下直到最后一个后代可对find中进行参数定义来匹配特定元素$(&quot;#grandfather&quot;).find(&quot;*&quot;);所有后代元素$(&quot;#grandfather&quot;).find(&quot;span&quot;);所有后代span元素 siblings()返回被选元素的所有同胞元素同胞元素：拥有相同的父元素 next()返回被选元素的下一个同胞元素通俗的讲就是，同一个老爸，当前元素按顺序下一个儿子 nextAll()返回被选元素的所有跟随的同胞元素就是把当前元素之后的所有同胞元素都返回了 nextUntil()返回两个给定参数之间的所有跟随的同胞元素 prev()prevAll()prevUntil()和上述三个函数方向相反，方法类似 过滤first()选取被选元素的首个元素example:$(&quot;p&quot;).first();第一个p元素 last()选取被选元素的最后一个元素 eq()返回被选元素中带有指定索引号的元素注意:索引号和数组下标一样从0开始$(&quot;p&quot;).eq(2);返回索引号为2的，第三个p元素 filter()括号中规定一个标准，返回匹配的元素$(&quot;p&quot;).filter(&quot;.test&quot;);返回带有类名test的p元素 not()和filter()函数刚好相反，返回不与括号中条件匹配的元素上面那个换成not()函数就是返回不带有类名test的p元素 当jQuery典型的美元符号和其他框架冲突noConflict()这个方法可以将jQuery的美元前缀改成其他的 var yeah=$.noConflict(); yeah(document).ready(function(){ yeah(&quot;button&quot;).click(function(){ yeah(&quot;p&quot;).text(&quot;jQuery 还能yeah!&quot;); }); }); 前缀变成”yeah”了233]]></content>
