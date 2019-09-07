@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title></title>
+    <title><![CDATA[网页前端实践--弹幕墙]]></title>
     <url>%2Fhfuter7712.github.io%2F2019%2F09%2F07%2FdammuProject%2F</url>
-    <content type="text"><![CDATA[title: 网页前端实践–弹幕墙date: 2019-09-07 11:43:53categories: codingtags: HTML Javascript css Bootstrap jQuery 刚学完了Bootstrap和jQuery，二话不说马上来了一波实践，刚上手就放大招，这次的任务是搞一个弹幕墙，像B站的那种，弹幕从右边飘到左边，一开始还百思不得其解，那时候本人才刚学完前端三大件，后来有了jQuery和bootstrap的帮助，真的懂了很多 成品地址：https://codepen.io/hfuter7712/pen/xxKpKyM包含源代码首先讲讲前端页面的设计弹幕墙就是一个单纯的div，然后设置的width为auto以便适应各种屏幕的大小,本人还设置了弹幕墙的边框然后是弹幕输入框，一个单纯的input元素然后套上bootstrap的输入框风格，设置默认占位符playholder为你想说啥?其次是按钮的设计，运用了bootstrap的按钮样式btn btn-primary，还是挺方便的 最下方的信息div，背景色和文字就不多说了，这次尝试按钮链接+font-awesome图标库，成功搞了一套个人信息按钮出来，不得不说多了图标真的好看多了，包含github,codePen,freecodecamp和本人自己的博客 其次讲到弹幕的实现，这个思路是本人完全自主想到的一开始还不知道咋实现，但是一学完jQuery中的animate动画后，恍然大悟，其实原理很简单，只要在弹幕墙的右侧部位进行弹幕元素生成，然后设置动画即可，很简单的动画，直接left:&quot;-=2000px就可以了，弹幕元素如何生成呢首先用jQuery选择器获取输入框中的内容，然后存入一个数组中，再运用Math.random随机选取数组中的元素，然后再次用jQuery添加带有弹幕文本的p元素，如何创建，当然是.append大法，不过插入要严格按照HTML格式，这个还花费了本人一段时间来研究然后动画设置好了接下来就是实现完全自动生成弹幕的时候了setInterval()，请每隔一段时间就执行生成弹幕函数，这样就可以每隔一段时间产生弹幕 每隔代码的id设置成自己的数组下标，，不过这样会产生一个现象，如果在一个弹幕还在运动的时候（没被销毁时）随机选择又选到了这个弹幕，即两个弹幕id相同的话（因为销毁代码是按照id来销毁的），那个稍后的代码就会自动停留在初始位置，而不会被销毁，貌似再次被选中的时候才会飞出去被销毁，因此最后那边累积的弹幕会越来越多，这个问题本来想到是依照1~50递增的对id进行命名，但是那样又会出现重复的弹幕影响体验，这个到后面再研究 差不多就是这样，毕竟只是一个初级的前端设计实践，也没啥特别难的很高兴自己有了自己的想法，继续努力吧，冲冲冲！]]></content>
+    <content type="text"><![CDATA[刚学完了Bootstrap和jQuery，二话不说马上来了一波实践，刚上手就放大招，这次的任务是搞一个弹幕墙，像B站的那种，弹幕从右边飘到左边，一开始还百思不得其解，那时候本人才刚学完前端三大件，后来有了jQuery和bootstrap的帮助，真的懂了很多 成品地址：https://codepen.io/hfuter7712/pen/xxKpKyM包含源代码首先讲讲前端页面的设计弹幕墙就是一个单纯的div，然后设置的width为auto以便适应各种屏幕的大小,本人还设置了弹幕墙的边框然后是弹幕输入框，一个单纯的input元素然后套上bootstrap的输入框风格，设置默认占位符playholder为你想说啥?其次是按钮的设计，运用了bootstrap的按钮样式btn btn-primary，还是挺方便的 最下方的信息div，背景色和文字就不多说了，这次尝试按钮链接+font-awesome图标库，成功搞了一套个人信息按钮出来，不得不说多了图标真的好看多了，包含github,codePen,freecodecamp和本人自己的博客 其次讲到弹幕的实现，这个思路是本人完全自主想到的一开始还不知道咋实现，但是一学完jQuery中的animate动画后，恍然大悟，其实原理很简单，只要在弹幕墙的右侧部位进行弹幕元素生成，然后设置动画即可，很简单的动画，直接left:&quot;-=2000px就可以了，弹幕元素如何生成呢首先用jQuery选择器获取输入框中的内容，然后存入一个数组中，再运用Math.random随机选取数组中的元素，然后再次用jQuery添加带有弹幕文本的p元素，如何创建，当然是.append大法，不过插入要严格按照HTML格式，这个还花费了本人一段时间来研究然后动画设置好了接下来就是实现完全自动生成弹幕的时候了setInterval()，请每隔一段时间就执行生成弹幕函数，这样就可以每隔一段时间产生弹幕 每隔代码的id设置成自己的数组下标，，不过这样会产生一个现象，如果在一个弹幕还在运动的时候（没被销毁时）随机选择又选到了这个弹幕，即两个弹幕id相同的话（因为销毁代码是按照id来销毁的），那个稍后的代码就会自动停留在初始位置，而不会被销毁，貌似再次被选中的时候才会飞出去被销毁，因此最后那边累积的弹幕会越来越多，这个问题本来想到是依照1~50递增的对id进行命名，但是那样又会出现重复的弹幕影响体验，这个到后面再研究 差不多就是这样，毕竟只是一个初级的前端设计实践，也没啥特别难的很高兴自己有了自己的想法，继续努力吧，冲冲冲！]]></content>
+      <categories>
+        <category>coding</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+        <tag>HTML</tag>
+        <tag>Bootstrap</tag>
+        <tag>css</tag>
+        <tag>jQuery</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Javascript AJAX 学习(一)]]></title>
@@ -25,8 +35,8 @@
         <category>coding</category>
       </categories>
       <tags>
-        <tag>jQuery</tag>
         <tag>Javascript</tag>
+        <tag>jQuery</tag>
       </tags>
   </entry>
   <entry>
@@ -59,8 +69,8 @@
         <category>coding</category>
       </categories>
       <tags>
-        <tag>jQuery</tag>
         <tag>Javascript</tag>
+        <tag>jQuery</tag>
       </tags>
   </entry>
   <entry>
@@ -268,8 +278,8 @@
         <category>coding</category>
       </categories>
       <tags>
-        <tag>jQuery</tag>
         <tag>Javascript</tag>
+        <tag>jQuery</tag>
       </tags>
   </entry>
   <entry>
@@ -467,10 +477,10 @@
         <category>coding</category>
       </categories>
       <tags>
+        <tag>Javascript</tag>
         <tag>HTML</tag>
         <tag>css</tag>
         <tag>jQuery</tag>
-        <tag>Javascript</tag>
       </tags>
   </entry>
   <entry>
