@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="superQ">
 <meta property="og:description" content="来自谷歌教程https://developers.google.com/machine-learning/   标签和特征标签是指要预测的真实事物: y  ·基本线性回归中的y变量   特征是用于描述数据的输入变量     样本与模型样本：数据的特定实例有标签样本：用于训练模型无标签样本：用于对新数据做出预测模型：将样本映射到预测标签   训练与推断训练：创建或学习模型，向模型展示有标签样本，让模">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-07T08:02:18.319Z">
+<meta property="og:updated_time" content="2019-09-07T10:57:25.127Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习笔记(一)">
 <meta name="twitter:description" content="来自谷歌教程https://developers.google.com/machine-learning/   标签和特征标签是指要预测的真实事物: y  ·基本线性回归中的y变量   特征是用于描述数据的输入变量     样本与模型样本：数据的特定实例有标签样本：用于训练模型无标签样本：用于对新数据做出预测模型：将样本映射到预测标签   训练与推断训练：创建或学习模型，向模型展示有标签样本，让模">
@@ -361,7 +361,9 @@
 <p>方便变量<br><code>periods</code>:控制报告的粒度<br>example:若periods设为7，steps设为70，则每10步输出一次损失值<br>最好不要修改periods的值  </p>
 <p><strong>泛化</strong><br>指模型很好的拟合以前从未见过的新数据的能力<br>个人理解：就是能用现有模型很好的预测所给定的数据<br>————问题:过拟合————<br>过拟合模型在训练过程中产生的损失很低，但在预测新数据方面的表现非常糟糕  </p>
 <p>因此<br>模型应该尽可能简单  </p>
-<p>基本假设:<br>1.从分布中随机抽取独立同分布的样本<br>2.分布是平稳的，不随时间变化<br>3.始终从同一分布中抽取样本，包括<strong>训练集，验证集和测试集</strong>  </p>
+<p>基本假设:<br>1.从分布中随机抽取独立同分布的样本<br>2.分布是平稳的，不随时间变化<br>3.始终从同一分布中抽取样本，包括<strong>训练集，验证集和测试集</strong><br>倘若违背任何一项，就必须密切注意指标  </p>
+<p>将数据集拆分为用于训练模型的训练集和用于测试训练后模型的测试集<br><strong>绝对不要对测试数据进行训练</strong><br>reason:因为你用测试数据进行训练，得到的模型当然是最拟合测试数据的模型。。  </p>
+<p><strong>验证</strong><br>在训练集和测试集之外创建第三个集合即验证集  </p>
 
       
     </div>
