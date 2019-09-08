@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Node.js学习(一)]]></title>
+    <url>%2Fhfuter7712.github.io%2F2019%2F09%2F08%2FnodeJS%2F</url>
+    <content type="text"><![CDATA[教程链接:https://www.runoob.com/nodejs/nodejs-tutorial.htmlNode.js就是运行在服务端的Javascript 新建一个文件夹用于实践在文件夹中打开Git输入node -v可以查看目前Node.js的版本输入node可以进入命令交互模式在里面输入console.log(&quot;Hello World&quot;);可以输出“Hello World”想要运行某js文件，在Git中输入node xxx.js即可 使用Node.js时，不仅仅在实现一个应用，同时还实现了整个HTTP服务器 Node.js组成：1.引入required模块可以使用require指令来载入Node.js模块2.创建服务器3.接收请求与响应请求 使用require指令来载入http模块，并将实例化的HTTP赋值给变量httpvar http = require(&quot;http&quot;); http.createServer()创建服务器 代码来自菜鸟教程 var http = require(&apos;http&apos;); http.createServer(function (request, response) { // 发送 HTTP 头部 // HTTP 状态值: 200 : OK // 内容类型: text/plain response.writeHead(200, {&apos;Content-Type&apos;: &apos;text/plain&apos;}); // 发送响应数据 &quot;Hello World&quot; response.end(&apos;Hello World\n&apos;); }).listen(8888); // 终端打印如下信息 console.log(&apos;Server running at http://127.0.0.1:8888/&apos;); 分析:第一句引入require命令不说了，第二部通过http.createServer()创建服务器,.listen()用于绑定端口 效果:实现了一个在端口8888上的服务器，并且进入时页面上打印着Hello World NPM可以使用npm命令安装模块npm install &lt;Module Name&gt;example:用npm安装模块expressnpm install express安装过后的包在工程目录下的node_modules目录中]]></content>
+      <categories>
+        <category>coding</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+        <tag>Node.js</tag>
+        <tag>服务端</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[机器学习笔记(一)]]></title>
     <url>%2Fhfuter7712.github.io%2F2019%2F09%2F07%2FmachineLearn1%2F</url>
     <content type="text"><![CDATA[来自谷歌教程https://developers.google.com/machine-learning/ 标签和特征标签是指要预测的真实事物: y ·基本线性回归中的y变量 特征是用于描述数据的输入变量 样本与模型样本：数据的特定实例有标签样本：用于训练模型无标签样本：用于对新数据做出预测模型：将样本映射到预测标签 训练与推断训练：创建或学习模型，向模型展示有标签样本，让模型逐渐学习特征与标签之间的关系推断：将训练后的模型用于无标签样本 回归与分类回归模型可以预测连续值分类模型可以预测离散值 误差给定样本的L2损失也称为平方误差等于预测值和标签值 之差的平方等于观测值和预测值 之差的平方在监督式学习中，机器学习算法通过以下方式构建模型：检查多个样本并尝试找出可最大限度的减少损失的模型这一过程称为经验风险最小化 MSE均方误差指每个样本的平均平方损失等于各个样本的所有平方损失之和除以样本数量 ————降低损失————迭代方法是一个广泛用于降低损失的方法 梯度下降法回归问题产生的损失与权重图为凸形选取一个起始值并计算其梯度，然后沿着负梯度方向移动，以便降低损失 学习速率如果学习速率过小，步伐过小，则图标上的点密集，需要通过大量的计算来达到最小值（最小损失loss)如果学习速率过大，步伐大，可能会超过最小损失对应的点，甚至可能会比之前的loss还要大所以合理的定义学习速率是十分重要的 神经网络并不是凸型 随机梯度下降法：一次抽取一个样本小批量梯度下降法：每批包含10-1000个样本 基于大型数据集执行梯度下降法时，采用小批量甚至包含一个样本的批量（SGD）更为高效 机器学习练习中的常用超参数:steps:训练迭代的总次数batch size:单步的样本数量（随机选择） total number of trained examples = steps * batch size 方便变量periods:控制报告的粒度example:若periods设为7，steps设为70，则每10步输出一次损失值最好不要修改periods的值 泛化指模型很好的拟合以前从未见过的新数据的能力个人理解：就是能用现有模型很好的预测所给定的数据————问题:过拟合————过拟合模型在训练过程中产生的损失很低，但在预测新数据方面的表现非常糟糕 因此模型应该尽可能简单 基本假设:1.从分布中随机抽取独立同分布的样本2.分布是平稳的，不随时间变化3.始终从同一分布中抽取样本，包括训练集，验证集和测试集倘若违背任何一项，就必须密切注意指标 将数据集拆分为用于训练模型的训练集和用于测试训练后模型的测试集绝对不要对测试数据进行训练reason:因为你用测试数据进行训练，得到的模型当然是最拟合测试数据的模型。。 验证在训练集和测试集之外创建第三个集合即验证集]]></content>
