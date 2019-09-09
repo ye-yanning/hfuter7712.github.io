@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[HTML5 学习]]></title>
+    <url>%2Fhfuter7712.github.io%2F2019%2F09%2F09%2Fhtml5%2F</url>
+    <content type="text"><![CDATA[HTML5是下一代HTML标准HTML5必须在第一行声明&lt;!DOCTYPE html&gt;HTML5中定义了8个新的HTML语义元素&lt;header&gt;&lt;section&gt;&lt;footer&gt;&lt;aside&gt;&lt;nav&gt;&lt;main&gt;&lt;article&gt;&lt;figure&gt;将其定义为块级元素 header,section,footer,aside,nav,main,article,figure{ display: block; } canvas创建一个画布&lt;canvas id=&quot;myCanvas&quot; width=&quot;200&quot; height=&quot;100&quot;&gt;&lt;/canvas&gt;使用style来定义边框border: solid;效果: 需要借助JS来绘制图像 var c =document.getElementById(&quot;myCanvas&quot;); var ctx=c.getContext(&quot;2d&quot;); ctx.fillStyle=&quot;#123456&quot;; ctx.fillRect(0,0,150,75); 其中首先通过JS DOM得到画板元素1（不知道用jQuery能不能实现，研究ing），然后用getContext创建context对象绘制一个矩形fillStyle设置填充颜色fillRect(x,y,width,height) x,y是起始的坐标，width是宽度，height是高度 注意：canvas画布中的坐标轴是这样的 X —————————————————— | Y | | | X正方向是向屏幕右手方向，Y轴是屏幕正下方 ——画线——moveTo(x,y)定义线条开始坐标lineTo(x,y)定义线条结束坐标stroke()最终通过stroke函数来绘制线条example: var ctx=Can.getContext(&quot;2d&quot;); for(var i=0;i&lt;50;i++) { ctx.moveTo(0,2*i); ctx.lineTo(2*i,0); ctx.stroke(); } 绘制了一组连续的线条（连续到都快重叠到一起了，之前尝试过0,i和i,0的直接绘制了一个实心的三角形效果: arc(x,y,r,start,stop)x与y是圆心坐标r是圆的半径start是起始弧度stop是终止弧度因此start=0,stop=2*Math.PI自然画出了一个圆用于绘制圆形 var ctx=Can.getContext(&quot;2d&quot;); ctx.beginPath(); ctx.arc(95,50,40,0,2*Math.PI); ctx.stroke(); 这是一个圆，不过鄙人多加了点小改动于是就变成了这样 var ctx=Can.getContext(&quot;2d&quot;); for(var i=0;i&lt;50;i++) { ctx.beginPath(); ctx.arc(95,50,i,0,2*Math.PI); ctx.stroke(); } 画出来的一堆同心圆竟然还有点美感？效果图: 文本绘制文本 var ctx=c.getContext(&quot;2d&quot;); ctx.font=&quot;30px Arial&quot;; ctx.fillText(&quot;Hello World&quot;,10,50); ctx.font()用于定制字体的属性（大小字体等等）ctx.fillText(text,x,y)text指的是填充文本x,y是字体的位置ctx.strokeText(text,x,y)可以绘制空心的字体 个人感觉可以用canvas来绘制个人logo或者简单的图标 获取地理位置getCurrentPosition()用于获取用户的位置 设置函数: function getLocation() { if(navigator.geolocation) { navigator.geolocation.getCurrentPosition(showPosition); } else { alert(&quot;该浏览器不支持获取地址!&quot;); } } showPosition(position)是获取完成之后的操作函数,position应该是获取的坐标对象，position.coords.latitude是指经度position.coords.longtitude是指纬度结果:没获取到，可能是获取时间过长 视频使用&lt;video&gt;标签 &lt;video width=&quot;320&quot; height=&quot;240&quot; controls&gt; &lt;source src=&quot;movie.mp4&quot; type=&quot;video/mp4&quot;&gt; &lt;source src=&quot;movie.ogg&quot; type=&quot;video/ogg&quot;&gt; 您的浏览器不支持Video标签。 &lt;/video&gt; 可以在其中使用多个source元素，浏览器将使用第一个可以识别的格式 用DOM操作视频首先获取视频元素var myVideo=document.getElementById(&quot;&quot;); play()播放视频：myVideo.play() pause()暂停视频:myVideo.pause() 使用myVideo.paused可以判定视频是否暂停if(myVideo.paused) width()用于设置视频宽度myVideo.width()]]></content>
+      <categories>
+        <category>coding</category>
+      </categories>
+      <tags>
+        <tag>HTML</tag>
+        <tag>Javascript</tag>
+        <tag>HTML5</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[机器学习笔记(二)]]></title>
+    <url>%2Fhfuter7712.github.io%2F2019%2F09%2F09%2FmachineLearn2%2F</url>
+    <content type="text"><![CDATA[表示为了训练模型，必须选择最能代表数据的特征集特征值应以非零值的形式在数据集中出现良好特征具备的特性：1.应该具有清晰明确的定义2.特征不应该使用“神奇”值（避免很少使用的离散特征值)3.特征的定义不应随事件发生变化4.分布不应包含离谱的离群值 为模型中每个分类特征创建一个二元向量来表示这些值，对于适用于样本的值，将相应向量元素设为1，其他设为0当只有一个值为1时，称为独热编码当有多个值为1时，称为多热编码 稀疏表示法用于内容十分庞大的数据集稀疏表示法仅存储非零值但是仍然为每个特征值学习独立的模型权重 ——处理极端离群值——1.对每个值取对数，取完后离群值仍然存在，这时候将最大值限制为某个任意值，虽然会导致限制值的那个点有个小峰值，但仍然比原始数据好用2.分箱分箱后，可以为每个属性学习完全不同的权重 ——清查——1.遗漏值2.重复样本3.不良标签4.不良特征值检测到以上问题需要将其从数据集中移除]]></content>
+      <categories>
+        <category>coding</category>
+      </categories>
+      <tags>
+        <tag>machine-learning</tag>
+        <tag>python</tag>
+        <tag>tensorflow</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Node.js学习(一)]]></title>
     <url>%2Fhfuter7712.github.io%2F2019%2F09%2F08%2FnodeJS%2F</url>
     <content type="text"><![CDATA[教程链接:https://www.runoob.com/nodejs/nodejs-tutorial.htmlNode.js就是运行在服务端的Javascript 新建一个文件夹用于实践在文件夹中打开Git输入node -v可以查看目前Node.js的版本输入node可以进入命令交互模式在里面输入console.log(&quot;Hello World&quot;);可以输出“Hello World”想要运行某js文件，在Git中输入node xxx.js即可 使用Node.js时，不仅仅在实现一个应用，同时还实现了整个HTTP服务器 Node.js组成：1.引入required模块可以使用require指令来载入Node.js模块2.创建服务器3.接收请求与响应请求 使用require指令来载入http模块，并将实例化的HTTP赋值给变量httpvar http = require(&quot;http&quot;); http.createServer()创建服务器 代码来自菜鸟教程 var http = require(&apos;http&apos;); http.createServer(function (request, response) { // 发送 HTTP 头部 // HTTP 状态值: 200 : OK // 内容类型: text/plain response.writeHead(200, {&apos;Content-Type&apos;: &apos;text/plain&apos;}); // 发送响应数据 &quot;Hello World&quot; response.end(&apos;Hello World\n&apos;); }).listen(8888); // 终端打印如下信息 console.log(&apos;Server running at http://127.0.0.1:8888/&apos;); 分析:第一句引入require命令不说了，第二部通过http.createServer()创建服务器,.listen()用于绑定端口 效果:实现了一个在端口8888上的服务器，并且进入时页面上打印着Hello World NPM可以使用npm命令安装模块npm install &lt;Module Name&gt;example:用npm安装模块expressnpm install express安装过后的包在工程目录下的node_modules目录中]]></content>
