@@ -88,7 +88,7 @@
 <meta property="og:description" content="教程链接:https://www.runoob.com/nodejs/nodejs-tutorial.htmlNode.js就是运行在服务端的Javascript   新建一个文件夹用于实践在文件夹中打开Git输入node -v可以查看目前Node.js的版本输入node可以进入命令交互模式在里面输入console.log(&amp;quot;Hello World&amp;quot;);可以输出“Hello W">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/hfuter7712.github.io/2019/09/08/nodeJS/1.png">
-<meta property="og:updated_time" content="2019-09-08T14:01:03.737Z">
+<meta property="og:updated_time" content="2019-09-10T11:23:56.693Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Node.js学习(一)">
 <meta name="twitter:description" content="教程链接:https://www.runoob.com/nodejs/nodejs-tutorial.htmlNode.js就是运行在服务端的Javascript   新建一个文件夹用于实践在文件夹中打开Git输入node -v可以查看目前Node.js的版本输入node可以进入命令交互模式在里面输入console.log(&amp;quot;Hello World&amp;quot;);可以输出“Hello W">
@@ -369,6 +369,26 @@ console.log(&apos;Server running at http://127.0.0.1:8888/&apos;);
 </code></pre><p>分析:第一句引入require命令不说了，第二部通过<code>http.createServer()</code>创建服务器,<code>.listen()</code>用于绑定端口</p>
 <p>效果:<br>实现了一个在端口8888上的服务器，并且进入时页面上打印着Hello World<br><img src="/hfuter7712.github.io/2019/09/08/nodeJS/1.png" alt="服务器图片"></p>
 <p><strong>NPM</strong><br>可以使用npm命令安装模块<br><code>npm install &lt;Module Name&gt;</code><br>example:<br>用npm安装模块express<br><code>npm install express</code><br><strong>安装过后的包在工程目录下的node_modules目录中</strong>  </p>
+<p>卸载模块<br><code>npm uninstall express</code><br>更新模块<br><code>npm update express</code><br>搜索模块<br><code>npm search express</code>  </p>
+<p><strong>REPL(交互式解释器)</strong><br>在cmd或git中输入node即可开启RDPL<br>下划线变量<br>可以使用<code>_</code>下划线来获取上一个表达式的运算结果  </p>
+<pre><code>&gt; x + y
+30
+&gt; var sum = _
+undefined
+&gt; console.log(sum)
+30  
+</code></pre><p>可以看出sum从下划线中获取到了上一个表达式x+y的值30  </p>
+<p>按<code>^C</code>可以退出REPL  </p>
+<p><strong>回调函数</strong><br>Node.js异步编程的直接体现就是回调<br>回调函数一般作为函数的最后一个参数出现  </p>
+<p>回调函数在完成任务后就会被调用，Node使用大量的回调函数，其所有API都支持回调函数<br>作用(来自菜鸟教程)：可以一边读取文件一边执行其他命令，在文件读取完成后，将文件内容作为回调函数的参数返回，这样在执行代码时就没有阻塞或者等待文件I/0操作<br><strong>大大提高了Node.js的性能</strong><br>可以处理大量的并发请求  </p>
+<p><strong>事件循环</strong><br>Node.js是单进程单线程1应用程序<br>单线程进入类似一个while(true)的事件循环，知道没有事件观察者退出<br><strong>每个异步事件都生成一个时间观察者，若有事件发生，就调用该回调函数</strong>  </p>
+<p>事件驱动程序<br>Node.js使用事件驱动模型，当web server接收到请求，就把它关闭然后进行处理，去服务下一个web请求<br>当这个请求完成，它被放回处理队列，当到达队列开头，这个结果被返回给用户  </p>
+<p>引入events模块<br><code>var events = require(&#39;events&#39;);</code>  </p>
+<p>events模块只提供了一个对象  <code>events.EventEmitter</code><br>其核心就是事件触发与事件监听器功能的封装<br><strong>eventEmitter</strong>  </p>
+<p>创建eventEmitter对象<br><code>var eventEmitter = new events.EventEmitter();</code><br>当EventEmitter对象实例化发生错误会触发<code>error</code>事件<br>添加新的监视器的时候会触发<code>newListener</code>事件<br>监视器移除时，会触发<code>removeListener</code>事件</p>
+<p>绑定事件处理程序<br><code>eventEmitter.on(&#39;eventName&#39;,eventHandler);</code><br>其中的eventHandler是一个自定义函数，当事件被调用之后该函数被调用，如果你编写的函数是console.log(“某些东西”);的话，那么当事件被调用时，将会在控制台上输出你想要输出的某些东西<br>EvenEmitter的每个事件由一个事件名和若干个参数组成，当事件触发时，注册到这个事件的事件监听器被依次调用，时间参数作为回调函数参数传递  </p>
+<p>获取’connection’事件监听器个数<br><code>var eventListeners = evenEmitter.listenerCount(&#39;connection&#39;);</code>  </p>
+<p>触发事件<br><code>eventEmitter.emit(&#39;eventName&#39;);</code>  </p>
 
       
     </div>
