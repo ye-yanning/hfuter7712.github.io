@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[在hexo博客上尝试测试前端代码]]></title>
     <url>%2Fhfuter7712.github.io%2F2019%2F09%2F10%2FhexoFrontTest1%2F</url>
-    <content type="text"><![CDATA[测试1(单纯HTML代码) 这是一个p元素这是一个大标题这是一段强调文本这是一个div元素，背景色打了鸡血点击这里是一个可爱的按钮通往百度的大门链接这是一个输入框单选表单这是单选表单1这是单选表单2多选表单这是多选选项1这是多选选项2这是一段分割线测试2（完整前端代码)&lt;html&gt; &lt;head&gt; &lt;style&gt; .test{ width:20px; background-color:yellow; .no{ background-color:red; } &lt;/style&gt; &lt;/head&gt; &lt;body&gt; &lt;div class=&quot;test&quot;&gt; as &lt;div class=&quot;no&quot;&gt; shit &lt;/div&gt; &lt;/div&gt; &lt;/body&gt; &lt;/html&gt;测试出来div元素背景色没变没效果，不能加&lt;html&gt;标签(傻了)去掉&lt;html&gt;.test{height:100px;width:200px; background-color:yellow;.no{background-color:red;}as shit jQuery测试 $(document).ready(function(){ $(.jqTest).click(function(){ $(.target).text($(.targetT).text());});})目标文本点击此处获取文本]]></content>
+    <content type="text"><![CDATA[测试1(单纯HTML代码) 这是一个p元素这是一个大标题这是一段强调文本这是一个div元素，背景色打了鸡血点击这里是一个可爱的按钮通往百度的大门链接这是一个输入框单选表单这是单选表单1这是单选表单2多选表单这是多选选项1这是多选选项2这是一段分割线测试2（完整前端代码)&lt;html&gt; &lt;head&gt; &lt;style&gt; .test{ width:20px; background-color:yellow; .no{ background-color:red; } &lt;/style&gt; &lt;/head&gt; &lt;body&gt; &lt;div class=&quot;test&quot;&gt; as &lt;div class=&quot;no&quot;&gt; shit &lt;/div&gt; &lt;/div&gt; &lt;/body&gt; &lt;/html&gt;测试出来div元素背景色没变没效果，不能加&lt;html&gt;标签(傻了)去掉&lt;html&gt;.test{height:100px;width:200px; background-color:yellow;.no{background-color:red;}as shit jQuery测试 $(document).ready(function(){ $(.jqTest).click(function(){ $(.target).text($(.targetT).text());});});目标文本点击此处获取文本]]></content>
       <categories>
         <category>coding</category>
       </categories>
@@ -75,10 +75,10 @@
       </categories>
       <tags>
         <tag>HTML</tag>
+        <tag>Bootstrap</tag>
         <tag>css</tag>
         <tag>jQuery</tag>
         <tag>Javascript</tag>
-        <tag>Bootstrap</tag>
       </tags>
   </entry>
   <entry>
@@ -530,8 +530,8 @@
       </categories>
       <tags>
         <tag>HTML</tag>
-        <tag>css</tag>
         <tag>Bootstrap</tag>
+        <tag>css</tag>
         <tag>作品集</tag>
       </tags>
   </entry>
