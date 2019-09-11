@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="HTML,">
+  <meta name="keywords" content="algorithm,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="标题分6个等级，从&amp;lt;h1&amp;gt;到&amp;lt;h6&amp;gt;&amp;lt;h1&amp;gt;这是一个一级标题&amp;lt;h1&amp;gt;如何让你的标题变红&amp;lt;h1 style=&amp;quot;color:red&amp;quot;&amp;gt;title&amp;lt;/h1&amp;gt;即使用style属性中的color，这是style的内联样式如果需要配置的属性过多，可以使用&amp;lt;style&amp;gt;结合css 1234&amp;lt;style&amp;">
-<meta name="keywords" content="HTML">
+<meta name="description" content="给定一串无重复字符串的序列如[1,2,3,4,7,9]如何输出其全排列先从简单的例子开始[1,2,3]全排列依次为[1,2,3],[2,1,3],[3,2,1],[3,1,2],[1,3,2],[2,3,1]这个模板是用交换来实现的具体过程:    [2,3,1]   [2,1,3]   [1,2,3]  [3,2,1]  [3,1,2]    [1,3,2]  首先定义递归函数Perm(Arra">
+<meta name="keywords" content="algorithm">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HTML基础复习(一）">
-<meta property="og:url" content="http://yoursite.com/2019/07/29/HTMLReview/index.html">
+<meta property="og:title" content="算法——递归输出全排列(templete)">
+<meta property="og:url" content="http://yoursite.com/2019/09/11/Alg-Perm/index.html">
 <meta property="og:site_name" content="superQ">
-<meta property="og:description" content="标题分6个等级，从&amp;lt;h1&amp;gt;到&amp;lt;h6&amp;gt;&amp;lt;h1&amp;gt;这是一个一级标题&amp;lt;h1&amp;gt;如何让你的标题变红&amp;lt;h1 style=&amp;quot;color:red&amp;quot;&amp;gt;title&amp;lt;/h1&amp;gt;即使用style属性中的color，这是style的内联样式如果需要配置的属性过多，可以使用&amp;lt;style&amp;gt;结合css 1234&amp;lt;style&amp;">
+<meta property="og:description" content="给定一串无重复字符串的序列如[1,2,3,4,7,9]如何输出其全排列先从简单的例子开始[1,2,3]全排列依次为[1,2,3],[2,1,3],[3,2,1],[3,1,2],[1,3,2],[2,3,1]这个模板是用交换来实现的具体过程:    [2,3,1]   [2,1,3]   [1,2,3]  [3,2,1]  [3,1,2]    [1,3,2]  首先定义递归函数Perm(Arra">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-29T14:51:31.184Z">
+<meta property="og:updated_time" content="2019-09-11T03:51:03.919Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HTML基础复习(一）">
-<meta name="twitter:description" content="标题分6个等级，从&amp;lt;h1&amp;gt;到&amp;lt;h6&amp;gt;&amp;lt;h1&amp;gt;这是一个一级标题&amp;lt;h1&amp;gt;如何让你的标题变红&amp;lt;h1 style=&amp;quot;color:red&amp;quot;&amp;gt;title&amp;lt;/h1&amp;gt;即使用style属性中的color，这是style的内联样式如果需要配置的属性过多，可以使用&amp;lt;style&amp;gt;结合css 1234&amp;lt;style&amp;">
+<meta name="twitter:title" content="算法——递归输出全排列(templete)">
+<meta name="twitter:description" content="给定一串无重复字符串的序列如[1,2,3,4,7,9]如何输出其全排列先从简单的例子开始[1,2,3]全排列依次为[1,2,3],[2,1,3],[3,2,1],[3,1,2],[1,3,2],[2,3,1]这个模板是用交换来实现的具体过程:    [2,3,1]   [2,1,3]   [1,2,3]  [3,2,1]  [3,1,2]    [1,3,2]  首先定义递归函数Perm(Arra">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/07/29/HTMLReview/">
+  <link rel="canonical" href="http://yoursite.com/2019/09/11/Alg-Perm/">
 
 
 
 
 
-  <title>HTML基础复习(一） | superQ</title>
+  <title>算法——递归输出全排列(templete) | superQ</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/hfuter7712.github.io/2019/07/29/HTMLReview/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/hfuter7712.github.io/2019/09/11/Alg-Perm/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="leaf rock quiet">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">HTML基础复习(一）</h1>
+          <h1 class="post-title" itemprop="name headline">算法——递归输出全排列(templete)</h1>
         
 
         <div class="post-meta">
@@ -282,8 +282,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-29T16:43:46+08:00">
-                2019-07-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-11T11:19:28+08:00">
+                2019-09-11
               </time>
             
 
@@ -342,38 +342,12 @@
       
 
       
-        <p>标题分6个等级，从&lt;h1&gt;到&lt;h6&gt;<br><code>&lt;h1&gt;这是一个一级标题&lt;h1&gt;</code><br>如何让你的标题变红<br><code>&lt;h1 style=&quot;color:red&quot;&gt;title&lt;/h1&gt;</code><br>即使用style属性中的color，这是style的内联样式<br>如果需要配置的属性过多，可以使用&lt;style&gt;结合css</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;  </span><br><span class="line">选择器&#123;属性名称:属性值;&#125;</span><br><span class="line">example: h2&#123;color:red;&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
-<p>注：一定要在属性值的后面加上分号  </p>
-<p><strong>类选择器</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">   .类名&#123;</span><br><span class="line">     &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;h2 class=&quot;类名&quot;&gt;title2&lt;/h2&gt;</span><br></pre></td></tr></table></figure></p>
-<p>class=”类A 类B 类C…”<br>可以应用多个类，但是必须用空格隔开</p>
-<p>改变文章的字体大小可以用<em>font-size</em>属性<br>改变文章的字体可以用<em>font-family</em>属性<br>当某种字体不可用时，可以让它自动降级到另一种字体<br>example:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p&#123;</span><br><span class="line">   font-family: Helvetica,Sans-Serif;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>当Helvetica字体不可用时，字体会自动降级到San-Serif  </p>
-<ul>
-<li><p>img元素<br><strong>img是自关闭元素，不需要结束标记</strong><br><code>&lt;img src=图片的具体地址&gt;</code><br>若要设置图片宽度，可用CSS中的<em>width</em>属性<br>给图片添加边框，可以用border-width,border-tstyle与border-color三个属性<br>若想要添加圆角边框，则可以用属性border-radius,参数可以是像素，也可以是百分比<br>alt属性：当图片因为各种原因无法加载时显示的替代文本  </p>
-</li>
-<li><p>a元素<br>anchor元素，可以用来连接到外部地址实现页面跳转功能,也可连接到当前页面的某部分实现内部导航功能<br><code>&lt;a href=&quot;URL&quot;&gt;anchor text&lt;/a&gt;</code><br>但是如果你暂时不知道要跳转到哪里的时候，可以用#代替，别名哈希符号<br><code>href=&quot;#&quot;</code><br>想把一张图片作为一个连接，直接将图片嵌套进a元素即可<br><code>&lt;a&gt;&lt;img&gt;&lt;/img&gt;&lt;/a&gt;</code>  </p>
-</li>
-<li><p>ul元素<br>创意一个无序列表,包含多个li元素</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt; </span><br><span class="line">  &lt;li&gt;&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>ol元素<br>与无序表用法类似，在ol中嵌套多个li元素  </p>
-</li>
-<li><p>input元素<br><strong>input元素是自关闭的</strong><br>其中初始化方框的文本为属性placeholder<br><code>&lt;input type=&quot;text&quot; placeholder=&quot;预定义文本&quot;&gt;</code><br>如果要设置必填，则添加上required属性即可<br><code>&lt;imput type=&quot;text&quot; required&gt;</code>  </p>
-</li>
-<li><p>button元素<br>定义一个按钮   </p>
-</li>
-</ul>
-<p><strong>单选按钮(type=”radio”)</strong><br>用来定义单选按钮，在多个选项中只能选一个，嵌套在自己的label元素中,<strong>所有关联的单选按钮要使用相同的name属性</strong><br>example:  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;indoor/outdoor&quot;&gt;indoor&lt;/label&gt;</span><br><span class="line">&lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;indoor/outdoor&quot;&gt;outdoor&lt;/label&gt;</span><br></pre></td></tr></table></figure>
-<p><strong>多选按钮(type=”checkbox”)</strong><br>可以被多选  </p>
-<p>多选按钮和单选按钮都可以用checked属性来表明默认被选中  </p>
-<p>背景颜色可以用background-color属性来设置  </p>
-<p><strong>设置id会对以后的jQuery有好处（小本本记下来）</strong><br><code>&lt;div id=&quot;id号&quot;&gt;</code><br>在style元素中的表示方法为  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#&#123;</span><br><span class="line">属性;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+        <p>给定一串无重复字符串的序列如[1,2,3,4,7,9]<br>如何输出其全排列<br>先从简单的例子开始[1,2,3]<br>全排列依次为<br>[1,2,3],[2,1,3],[3,2,1],[3,1,2],[1,3,2],[2,3,1]<br>这个模板是用交换来实现的<br>具体过程:  </p>
+<p><link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css"></p>
+<div style="text-align:center"><br><p>[2,3,1] <span class="fa fa-arrow-left"> </span> [2,1,3] <span class="fa fa-arrow-left"> </span> [1,2,3] <span class="fa fa-arrow-right"> [3,2,1] <span class="fa fa-arrow-right"> [3,1,2]</span></span></p><br>   <p> <span class="fa fa-arrow-down"></span></p><p><br></p><p>[1,3,2]</p><br></div>
+
+<p>首先定义递归函数<br><code>Perm(Array,m,n)</code><br>m是起始index,n是终止index<br>然后开始循环交换递归<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">for(int i=m;i&lt;=n;i++)</span><br><span class="line">   &#123;</span><br><span class="line">      Swap(Array,m,i);   </span><br><span class="line">      Perm(Array,m+1,n);</span><br><span class="line">      Swap(Array,m,i);</span><br><span class="line">   &#125;</span><br><span class="line">```  </span><br><span class="line">也就是依次将index为m的元素与它之后的元素进行交换，然后再对剩下的部分进行递归操作  </span><br><span class="line">例子:[2,3,4,1]的得来</span><br><span class="line">```  </span><br><span class="line">        Swap       Perm(1,3)                      Swap      Perm(2,3)        Swap</span><br><span class="line">[1,2,3,4]-&gt;[2,1,3,4]-&gt;对剩下的序列[1,3,4]进行递归操作-&gt; [3,1,4]-&gt; 对序列[1,4]操作-&gt;[4,1]</span><br><span class="line">[1,2,3,4]  [2,1,3,4]                                [2,3,1,4]               [2,3,4,1]  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">```  </span><br><span class="line">但是在递归完之后还要再把数列换回来  </span><br><span class="line">因为只有这样才能有效的进行其他序列的交换  </span><br><span class="line">```   Swap(0,1)     没有Swap回来 for循环进行下一个Swap(0,2)</span><br><span class="line">[1,2,3,4]-&gt;[2,1,3,4]-&gt;递归-&gt;[2,1,3,4]-&gt;[3,1,2,4]      无法得到[3,2,1,4]序列</span><br><span class="line">      Swap(0,1)       Swap(0,1) for循环进行下一个Swap(0,2)</span><br><span class="line">[1,2,3,4]-&gt;[2,1,3,4]-&gt;递归-&gt;[1,2,3,4]-&gt;[3,2,1,4]       得到[3,2,1,4]序列 </span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line">当起始index等于终止index时，就表明一个新的排列已经生成，此时进行输出或者储存即可  </span><br><span class="line">完整代码:</span><br></pre></td></tr></table></figure></p>
+<p>void Perm(int nums[100],int s,int e)<br>  {<br>    if(s==e)<br>     {//相关操作}<br>    else{<br>     for(int i=s,i&lt;=e;i++)<br>       {<br>          Swap(s,i);<br>          Perm(nums,s+1,e);<br>          Swap(s,i);<br>       }<br>  }<br><code>`</code>  </p>
 
       
     </div>
@@ -391,7 +365,7 @@
       
         <div class="post-tags">
           
-            <a href="/hfuter7712.github.io/tags/HTML/" rel="tag"># HTML</a>
+            <a href="/hfuter7712.github.io/tags/algorithm/" rel="tag"># algorithm</a>
           
         </div>
       
@@ -404,8 +378,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/hfuter7712.github.io/2019/07/29/xmlNamespace/" rel="next" title="XML命名空间学习">
-                <i class="fa fa-chevron-left"></i> XML命名空间学习
+              <a href="/hfuter7712.github.io/2019/09/10/hexoFrontTest1/" rel="next" title="(打开会引发界面变化，关闭即可）在hexo博客上测试前端代码">
+                <i class="fa fa-chevron-left"></i> (打开会引发界面变化，关闭即可）在hexo博客上测试前端代码
               </a>
             
           </div>
@@ -413,10 +387,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/hfuter7712.github.io/2019/07/29/hexo2/" rel="prev" title="关于hexo博客以及markdown的一些坑">
-                关于hexo博客以及markdown的一些坑 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>

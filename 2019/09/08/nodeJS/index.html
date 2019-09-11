@@ -88,7 +88,7 @@
 <meta property="og:description" content="教程链接:https://www.runoob.com/nodejs/nodejs-tutorial.htmlNode.js就是运行在服务端的Javascript   新建一个文件夹用于实践在文件夹中打开Git输入node -v可以查看目前Node.js的版本输入node可以进入命令交互模式在里面输入console.log(&amp;quot;Hello World&amp;quot;);可以输出“Hello W">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/hfuter7712.github.io/2019/09/08/nodeJS/1.png">
-<meta property="og:updated_time" content="2019-09-10T11:23:56.693Z">
+<meta property="og:updated_time" content="2019-09-11T03:17:23.080Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Node.js学习(一)">
 <meta name="twitter:description" content="教程链接:https://www.runoob.com/nodejs/nodejs-tutorial.htmlNode.js就是运行在服务端的Javascript   新建一个文件夹用于实践在文件夹中打开Git输入node -v可以查看目前Node.js的版本输入node可以进入命令交互模式在里面输入console.log(&amp;quot;Hello World&amp;quot;);可以输出“Hello W">
@@ -388,6 +388,7 @@ undefined
 <p>创建eventEmitter对象<br><code>var eventEmitter = new events.EventEmitter();</code><br>当EventEmitter对象实例化发生错误会触发<code>error</code>事件<br>添加新的监视器的时候会触发<code>newListener</code>事件<br>监视器移除时，会触发<code>removeListener</code>事件</p>
 <p>绑定事件处理程序<br><code>eventEmitter.on(&#39;eventName&#39;,eventHandler);</code><br>其中的eventHandler是一个自定义函数，当事件被调用之后该函数被调用，如果你编写的函数是console.log(“某些东西”);的话，那么当事件被调用时，将会在控制台上输出你想要输出的某些东西<br>EvenEmitter的每个事件由一个事件名和若干个参数组成，当事件触发时，注册到这个事件的事件监听器被依次调用，时间参数作为回调函数参数传递  </p>
 <p>获取’connection’事件监听器个数<br><code>var eventListeners = evenEmitter.listenerCount(&#39;connection&#39;);</code>  </p>
+<p>移除绑定的函数<br><code>eventEmitter.removeListener(&#39;connection&#39;,listener1);</code>  </p>
 <p>触发事件<br><code>eventEmitter.emit(&#39;eventName&#39;);</code>  </p>
 
       
@@ -503,7 +504,7 @@ undefined
               
                 <a href="/hfuter7712.github.io/archives/">
               
-                  <span class="site-state-item-count">61</span>
+                  <span class="site-state-item-count">62</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -525,7 +526,7 @@ undefined
               
               <div class="site-state-item site-state-tags">
                 <a href="/hfuter7712.github.io/tags/index.html">
-                  <span class="site-state-item-count">45</span>
+                  <span class="site-state-item-count">46</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
