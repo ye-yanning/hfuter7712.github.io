@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[python数组中的那些骚操作]]></title>
+    <url>%2Fhfuter7712.github.io%2F2019%2F09%2F11%2FpythonArray%2F</url>
+    <content type="text"><![CDATA[建立一个新数组，以另外一个二维数组中每行第一个元素组成newArray = [x[0] for x in matrix]example: matrix=[[1,2,3], [4,5,6], [7,8,9]] newArray=[1,4,7]]]></content>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[算法——递归输出全排列(templete)]]></title>
     <url>%2Fhfuter7712.github.io%2F2019%2F09%2F11%2FAlg-Perm%2F</url>
     <content type="text"><![CDATA[给定一串无重复字符串的序列如[1,2,3,4,7,9]如何输出其全排列先从简单的例子开始[1,2,3]全排列依次为[1,2,3],[2,1,3],[3,2,1],[3,1,2],[1,3,2],[2,3,1]这个模板是用交换来实现的具体过程: [2,3,1] [2,1,3] [1,2,3] [3,2,1] [3,1,2] [1,3,2] 首先定义递归函数Perm(Array,m,n)m是起始index,n是终止index然后开始循环交换递归 for(int i=m;i&lt;=n;i++) { Swap(Array,m,i); Perm(Array,m+1,n); Swap(Array,m,i); } 也就是依次将index为m的元素与它之后的元素进行交换，然后再对剩下的部分进行递归操作例子:[2,3,4,1]的得来 Swap Perm(1,3) Swap Perm(2,3) Swap [1,2,3,4]-&gt;[2,1,3,4]-&gt;对剩下的序列[1,3,4]进行递归操作-&gt; [3,1,4]-&gt; 对序列[1,4]操作-&gt;[4,1] [1,2,3,4] [2,1,3,4] [2,3,1,4] [2,3,4,1] 但是在递归完之后还要再把数列换回来因为只有这样才能有效的进行其他序列的交换 Swap(0,1) 没有Swap回来 for循环进行下一个Swap(0,2) [1,2,3,4]-&gt;[2,1,3,4]-&gt;递归-&gt;[2,1,3,4]-&gt;[3,1,2,4] 无法得到[3,2,1,4]序列 Swap(0,1) Swap(0,1) for循环进行下一个Swap(0,2) [1,2,3,4]-&gt;[2,1,3,4]-&gt;递归-&gt;[1,2,3,4]-&gt;[3,2,1,4] 得到[3,2,1,4]序列 当起始index等于终止index时，就表明一个新的排列已经生成，此时进行输出或者储存即可完整代码: void Perm(int nums[100],int s,int e) { if(s==e) {//相关操作} else{ for(int i=s,i&lt;=e;i++) { Swap(s,i); Perm(nums,s+1,e); Swap(s,i); } }]]></content>
