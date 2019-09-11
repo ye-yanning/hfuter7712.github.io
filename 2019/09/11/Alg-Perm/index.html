@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="superQ">
 <meta property="og:description" content="给定一串无重复字符串的序列如[1,2,3,4,7,9]如何输出其全排列先从简单的例子开始[1,2,3]全排列依次为[1,2,3],[2,1,3],[3,2,1],[3,1,2],[1,3,2],[2,3,1]这个模板是用交换来实现的具体过程:    [2,3,1]   [2,1,3]   [1,2,3]  [3,2,1]  [3,1,2]    [1,3,2]  首先定义递归函数Perm(Arra">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-11T03:51:03.919Z">
+<meta property="og:updated_time" content="2019-09-11T03:53:02.745Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="算法——递归输出全排列(templete)">
 <meta name="twitter:description" content="给定一串无重复字符串的序列如[1,2,3,4,7,9]如何输出其全排列先从简单的例子开始[1,2,3]全排列依次为[1,2,3],[2,1,3],[3,2,1],[3,1,2],[1,3,2],[2,3,1]这个模板是用交换来实现的具体过程:    [2,3,1]   [2,1,3]   [1,2,3]  [3,2,1]  [3,1,2]    [1,3,2]  首先定义递归函数Perm(Arra">
@@ -346,9 +346,38 @@
 <p><link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css"></p>
 <div style="text-align:center"><br><p>[2,3,1] <span class="fa fa-arrow-left"> </span> [2,1,3] <span class="fa fa-arrow-left"> </span> [1,2,3] <span class="fa fa-arrow-right"> [3,2,1] <span class="fa fa-arrow-right"> [3,1,2]</span></span></p><br>   <p> <span class="fa fa-arrow-down"></span></p><p><br></p><p>[1,3,2]</p><br></div>
 
-<p>首先定义递归函数<br><code>Perm(Array,m,n)</code><br>m是起始index,n是终止index<br>然后开始循环交换递归<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">for(int i=m;i&lt;=n;i++)</span><br><span class="line">   &#123;</span><br><span class="line">      Swap(Array,m,i);   </span><br><span class="line">      Perm(Array,m+1,n);</span><br><span class="line">      Swap(Array,m,i);</span><br><span class="line">   &#125;</span><br><span class="line">```  </span><br><span class="line">也就是依次将index为m的元素与它之后的元素进行交换，然后再对剩下的部分进行递归操作  </span><br><span class="line">例子:[2,3,4,1]的得来</span><br><span class="line">```  </span><br><span class="line">        Swap       Perm(1,3)                      Swap      Perm(2,3)        Swap</span><br><span class="line">[1,2,3,4]-&gt;[2,1,3,4]-&gt;对剩下的序列[1,3,4]进行递归操作-&gt; [3,1,4]-&gt; 对序列[1,4]操作-&gt;[4,1]</span><br><span class="line">[1,2,3,4]  [2,1,3,4]                                [2,3,1,4]               [2,3,4,1]  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">```  </span><br><span class="line">但是在递归完之后还要再把数列换回来  </span><br><span class="line">因为只有这样才能有效的进行其他序列的交换  </span><br><span class="line">```   Swap(0,1)     没有Swap回来 for循环进行下一个Swap(0,2)</span><br><span class="line">[1,2,3,4]-&gt;[2,1,3,4]-&gt;递归-&gt;[2,1,3,4]-&gt;[3,1,2,4]      无法得到[3,2,1,4]序列</span><br><span class="line">      Swap(0,1)       Swap(0,1) for循环进行下一个Swap(0,2)</span><br><span class="line">[1,2,3,4]-&gt;[2,1,3,4]-&gt;递归-&gt;[1,2,3,4]-&gt;[3,2,1,4]       得到[3,2,1,4]序列 </span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line">当起始index等于终止index时，就表明一个新的排列已经生成，此时进行输出或者储存即可  </span><br><span class="line">完整代码:</span><br></pre></td></tr></table></figure></p>
-<p>void Perm(int nums[100],int s,int e)<br>  {<br>    if(s==e)<br>     {//相关操作}<br>    else{<br>     for(int i=s,i&lt;=e;i++)<br>       {<br>          Swap(s,i);<br>          Perm(nums,s+1,e);<br>          Swap(s,i);<br>       }<br>  }<br><code>`</code>  </p>
+<p>首先定义递归函数<br><code>Perm(Array,m,n)</code><br>m是起始index,n是终止index<br>然后开始循环交换递归  </p>
+<pre><code>for(int i=m;i&lt;=n;i++)
+   {
+      Swap(Array,m,i);   
+      Perm(Array,m+1,n);
+      Swap(Array,m,i);
+   }
+</code></pre><p>也就是依次将index为m的元素与它之后的元素进行交换，然后再对剩下的部分进行递归操作<br>例子:[2,3,4,1]的得来</p>
+<pre><code>        Swap       Perm(1,3)                      Swap      Perm(2,3)        Swap
+[1,2,3,4]-&gt;[2,1,3,4]-&gt;对剩下的序列[1,3,4]进行递归操作-&gt; [3,1,4]-&gt; 对序列[1,4]操作-&gt;[4,1]
+[1,2,3,4]  [2,1,3,4]                                [2,3,1,4]               [2,3,4,1]  
 
+
+</code></pre><p>但是在递归完之后还要再把数列换回来<br>因为只有这样才能有效的进行其他序列的交换  </p>
+<pre><code>   Swap(0,1)     没有Swap回来 for循环进行下一个Swap(0,2)
+[1,2,3,4]-&gt;[2,1,3,4]-&gt;递归-&gt;[2,1,3,4]-&gt;[3,1,2,4]      无法得到[3,2,1,4]序列
+      Swap(0,1)       Swap(0,1) for循环进行下一个Swap(0,2)
+[1,2,3,4]-&gt;[2,1,3,4]-&gt;递归-&gt;[1,2,3,4]-&gt;[3,2,1,4]       得到[3,2,1,4]序列 
+</code></pre><p>当起始index等于终止index时，就表明一个新的排列已经生成，此时进行输出或者储存即可<br>完整代码:  </p>
+<pre><code>void Perm(int nums[100],int s,int e)  
+  {
+    if(s==e)
+     {//相关操作}
+    else{
+     for(int i=s,i&lt;=e;i++)
+       {
+          Swap(s,i);
+          Perm(nums,s+1,e);
+          Swap(s,i);
+       }
+  }
+</code></pre>
       
     </div>
     
