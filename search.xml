@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[微信小程序开发复习(一)]]></title>
+    <url>%2Fhfuter7712.github.io%2F2019%2F09%2F17%2FwechatApp%2F</url>
+    <content type="text"><![CDATA[App.js作用： 小程序逻辑撰写App.json作用:小程序公共设置&quot;pages&quot;:[]配置页面路径每个自定义页面都必须在pages页面被注册，否则访问未注册页面会报错 &quot;window&quot;:{}配置窗口表现navigationBarBackgroundColor 导航条背景色navigationBarTitleText 导航条文字navigationBarTextStyle 导航条文字颜色 &quot;tabBar&quot;:{}配置标签导航 &quot;tabBar&quot;: { &quot;selectedColor&quot;: //标签导航选中时文字颜色 &quot;backgroundColor&quot;: //标签导航背景色 &quot;borderStyle&quot;: //标签导航上边框色 &quot;list&quot;:[{ &quot;pagePath&quot;: //跳转页面路径 &quot;text&quot;: //标签导航名称 &quot;iconPath&quot;: //默认时图标 &quot;selectedIconPath&quot;: //选中后的图标 }, { &quot;pagePath&quot;: &quot;text&quot;: &quot;iconPath&quot;: &quot;selectedIconPath&quot;: }] } &quot;networkTimeout&quot;:{}配置网络超时 &quot;debug&quot;:true/false配置debug模式，是否开启 App.wxss作用:小程序公共样式表 utils文件夹存放工具栏的js函数定义完函数之后需要通过module.exports将定义的函数名称注册出来，才能在其他页面使用 App.js 生命周期函数onLaunch函数当小程序初始化完成时，会触发，全局只触发一次 onShow函数当小程序启动，或者从后台进入前台显示时触发 onHide函数当小程序从前台进入后台触发该函数 onError函数用来监听小程序脚本或者API是否发生错误，发生错误时返回错误信息 页面 Page生命周期函数onLoad函数一个页面只会调用一次 onShow函数页面显示，每次打开页面都会调用一次 onReady函数页面初次渲染完成，一个页面只会调用一次，代表页面已经准备妥当 onHide函数页面隐藏,当navigateTo或者底部Tab切换时调用 onUnload函数页面卸载，当redirectTo或者navigateBack时调用 onPullDownRefresh函数监听用户下拉刷新事件 onShareAppMessage用户分享，只有定义了此事件处理函数，右上角才会显示“分享”按钮，用户点击“分享”按钮的时候会调用 自定义函数example: Fun: function() { //函数内容 } 绑定数据用双大括号表示example: 条件渲染wx:if=&quot;&quot;判断是否需要渲染改代码 &lt;block wx:if=&quot;{{true}}&quot;&gt; 内容 &lt;/block&gt; 区块条件渲染 wx:for=&quot;用wx:for绑定一个数组，就可以使用数组中的各项数据重复渲染该组件 &lt;view wx:for=&quot;{{array}}&quot;&gt; {{index}}: {{item.message}} &lt;/view&gt; 区块列表渲染 &lt;block wx:for=&quot;{{[1,1,5,4,1,4]}}&quot;&gt; &lt;view&gt;{{index}}:&lt;/view&gt; &lt;view&gt;{{item}}&lt;/view&gt; &lt;/block&gt; 使用wx:for-index可以指定数组当前下标的变量名使用wx:for-item可以指定数组当前元素的变量名wx:for-index=&quot;idx&quot; wx:for-item=&quot;itemName&quot; wx:key指定唯一标识符 import 和 includeimport引用模板文件include将整个文件除了&lt;/template&gt;之外的进行引用 view视图容器是WXML界面布局的基础组件,和HTML里面的div功能类似 scroll-view可滚动视图允许视图区域内容横向滚动或者纵向滚动 swiper滑块视图容器用来在指定区域内切换内容的显示]]></content>
+      <categories>
+        <category>coding</category>
+      </categories>
+      <tags>
+        <tag>微信小程序</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Node.js学习（二）through腾讯网课（一）]]></title>
+    <url>%2Fhfuter7712.github.io%2F2019%2F09%2F17%2FnodeJS2%2F</url>
+    <content type="text"><![CDATA[特点：可以用Javascript来搞后端速度很快可以读文件 JS分为两块1.客户端JS，执行在浏览器上2.服务器端JS，执行在服务器 Node.js的包管理工具npm，是全球最大的开源库生态系统Node.js是一个基于Chrome V8引擎 Node.js薪资高，人才少 主流模块规范AMD 异步模块定义CMD(Common Module Definition)Commonjs：采用同步加载文件方式，适用于服务端 ——NodeJs模块基础——nodeJS中所有的功能都是以模块形式存在的，每一个文件就是一个模块模块与模块之间相互独立，若在一个模块中使用另一个模块的内容，就要引入模块，这也会导致那个模块的数据暴露 exports. exports是暴露对象，可以将模块内部的数据暴露到引用出]]></content>
+      <categories>
+        <category>coding</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+        <tag>Node.js</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[机器学习笔记(三)]]></title>
     <url>%2Fhfuter7712.github.io%2F2019%2F09%2F11%2FmachineLearn3%2F</url>
     <content type="text"><![CDATA[非线性规律要解决非线性问题，可以创建一个特征组合，特征组合是指通过将两个或多个输入特征相乘来对特征空间中的非线性规律进行编码的合成特性可以将x1与x2组合来创建提个名为x3的特征组合x3=x1x2 在实践中机器学习模型很少会组合连续特征，但是机器学习经常组合独热特征矢量 组合特征矢量所获得的预测能力将远远超过任一特征单独的预测能力 简化正则化可以通过降低复杂模型的复杂度来防止过拟合，这种原则称为正则化 并不是以最小化损失为目标，而是以最小化损失和复杂度为目标，称为结构风险最小化 我们的训练算法是一个由两项内容组成的函数：一个是损失项，用于衡量模型与数据的拟合度一个是正则化项，用于衡量模型复杂度 若模型复杂度是权重的函数，则特征权重的绝对值越高，对模型复杂度的贡献越大 ——L2正则化公式——该公式将正则化项定义为所有特征权重的平方和接近于0的权重对模型复杂度几乎没有影响，而离群值权重则可能会产生巨大的影响 ——lambda——模型开发者通过以下方式来调整正则化项的整体影响用正则化项的值乘以名为lanbda(正则化率)的标量 增加lambda值将增强正则化效果降低lambda的值往往会得出比较平缓的直方图 lambda值过高，模型会很简单，但是将面临数据欠拟合的风险，模型将无法从训练数据中获得足够的信息来做出有用的预测lambda过低，模型比较复杂，将会有过拟合的风险，模型因为获得过多训练数据特点而无法泛化到新数据 理想的lambda值生成的模型具有很好的泛化能力 逻辑回归是一种极其高效的概率计算机制——S型函数——S型函数生成的输出值正好具有输出值始终落在0和1之间的特性 线性回归的损失函数是平方损失逻辑回归的损失函数是对数损失函数 ——正则化——大多数逻辑回归模型会使用以下两个策略之一来降低模型复杂性: L2正则化 早停法 分类为了将逻辑回归值映射到二元类别，必须指定分类阈值（判定阈值） 真正例指模型将正类别样本正确的预测为正类别真负例指模型将负类别样本正确的预测为负类别假正例指模型将负类别样本错误的预测为正类别假负例指模型将正类别样本错误的预测为负类别 ——准确率——准确率是指我们的模型预测正确的结果所占比例Accuracy=(TP+TN)/(TP+TN+FP+FN) TP:真正例TN:真负例FP:假正例FN:假负例 当使用分类不平衡的数据集时，单单准确率一项并不能反映全面情况 ——精确率——精确率=TP/(TP+FP) ——召回率——从数学上来讲召回率=TP/(TP+FN) 要全面评估模型的有效性，必须同时检查精确率和召回率，但是精确率和召回率是此消彼长的情况 一般来说，提高分类阈值会减少假正例，从而提高精确率同时导致真正例的数量减少或者保持不变以及假负例的数量增加或保持不变，因此召回率会保持不变或者下降 ——ROC曲线——又称为接收者操作特征曲线该去线绘制了以下两个参数1.真正例率（TPR）是召回率的同义词TPR = TP/(TP+FN)2.假正例率(FPR)FPR=FP/(FP+TN) ROC曲线用于绘制采用不同分类阈值时的TPR与FPR ——曲线下面积（AUC）——表示“ROC曲线下面积”,就是从(0,0)点到(1.1)点之间整个ROC曲线以下的整个二维面积曲线下面积的取值范围为0-1，预测结果100%错误的模型的曲线下面积为0.0，预测结果百分之100正确的模型的下曲线面积为1.0 AUC以相对预测为依据，因此保持相对排名的任何预测变化都不会对AUC产生影响 ——预测偏差——预测平均值 应当约等于 观察平均值预测偏差就是这两个平均值之间的差值预测偏差= 预测平均值-数据集中相应标签的平均值 添加校验层并非良策，因为修复的是症状，而不是原因，并且会使系统更加脆弱，必须持续更新]]></content>
