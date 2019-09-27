@@ -1,6 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[JavaSwingUI1]]></title>
+    <url>%2Fhfuter7712.github.io%2F2019%2F09%2F27%2FJavaSwingUI1%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Node.js学习（三）through腾讯网课（二）]]></title>
+    <url>%2Fhfuter7712.github.io%2F2019%2F09%2F27%2FnodeJS3%2F</url>
+    <content type="text"><![CDATA[section2 回调函数回调函数称为回调，将一个函数a作为参数传入另外一个函数b中，根据时机或者条件决定是否调用a函数 同步与异步同步:上一行执行完以后，下一行才能得到执行异步:将比较复杂的任务以任务线程实现，不用等上一个执行完，下一个也能执行 setTimeout最小时间在Windows上该函数最小执行时间为15ms，因此即便设置setTimeout(fn,0);在windows上也会设置为15ms,苹果系统上为10ms 异步事件轮询机制 异步的实现:1.回调函数2.事件 事件源.on(&#39;事件名称&#39;,回调函数) 3.promise是ES6中新增的承诺对象，用于对异步的操作进行消息的传递状态：Pending 等待中Resolved 成功Rejected 失败 Pending =&gt; ResolvedPending =&gt; Rejected由于异步的时间不可控，所以要用promise来同一控制输出结果example：定义promise对象 var pro1 = new Promise(function(resolve,reject){ fs.readFile(&apos;文件名&apos;,function(err,data){ if(err){ reject(&apos;数据找不到&apos;); }else{ resolve(data.toString()); } }); }); 调用promise对象 p1.then(function(data){ console.log(&apos;数据&apos;,data); }.function(err){ console.log(&apos;error&apos;,err); }); 回调函数不一定是异步，异步一定是回调函数 缓存区在内存中开辟一个临时区域用于存储需要运算的字节码 创建缓存区var buf=new Buffer([]);]]></content>
+      <categories>
+        <category>coding</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+        <tag>Node.js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[visual studio使用win32学习GUI中的一些小细节]]></title>
+    <url>%2Fhfuter7712.github.io%2F2019%2F09%2F25%2Fwin32F%2F</url>
+    <content type="text"><![CDATA[WinMain与wWinMainWinMain对应的是多字节字符集（ANSI)wWinMain对应Unicode字符集编译时字符集为ASSI就等同于WinMain,为Unicode时就等同于wWinMain倘若程序中包含中文的话，用wWinMain来源：https://www.cnblogs.com/JettTang/archive/2015/08/21/4748323.html WINAPI与APIENTRY在windef.h头文件中有以下定义#define WINAPI __stdcall#define APIENTRY WINAPI因此WINAPI和APIENTRY实际上是一样的来源:https://blog.csdn.net/VonSdite/article/details/81165308 创建新画笔形式 hp=CreatePen ( int nPenStyle, //画笔样式 int nWidth, //画笔宽度 COLORREF rgbColor //画笔颜色 ); example:hp=CreatePen(PS_SOLID,2,RGB(255,0,0)); 创建画笔后，要用SelectObject函数将其选入设备环境SelectObject(hDC,hp); Polyline从当前位置开始依次用线段链接lpPoints中指定的各点Polyline(hDC,points,6); Arc绘制椭圆弧线 BOOL Arc (HDC hdc, int X1,int Y1, //边框矩形在左上角的逻辑坐标 int X2,int Y2, //边框矩形右上角的逻辑坐标 int X3,int Y3, //椭圆弧起始点坐标 int X4,int Y4 //椭圆弧终止点坐标 ) 文本HFONT为字体的句柄HFONT hF; CreateFont用于自定义字体HFont=CreateFont(...); 设置字体颜色SetTextColor(hdc,crColor);设置背景颜色SetBkColor(hdc,crColor); 获取当前字体信息GetTextMetrics(hdc,&amp;tm);tm是TEXTMETRIC结构，调用该函数时，系统将当前字体的信息拷贝到tm标识的TEXTMETRIC结构中 键盘操作一个汉字占用2个字符，一个英文字母占用一个字节]]></content>
+      <categories>
+        <category>coding</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>win32</tag>
+        <tag>GUI</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[微信小程序开发复习(一)]]></title>
     <url>%2Fhfuter7712.github.io%2F2019%2F09%2F17%2FwechatApp%2F</url>
     <content type="text"><![CDATA[App.js作用： 小程序逻辑撰写App.json作用:小程序公共设置&quot;pages&quot;:[]配置页面路径每个自定义页面都必须在pages页面被注册，否则访问未注册页面会报错 &quot;window&quot;:{}配置窗口表现navigationBarBackgroundColor 导航条背景色navigationBarTitleText 导航条文字navigationBarTextStyle 导航条文字颜色 &quot;tabBar&quot;:{}配置标签导航 &quot;tabBar&quot;: { &quot;selectedColor&quot;: //标签导航选中时文字颜色 &quot;backgroundColor&quot;: //标签导航背景色 &quot;borderStyle&quot;: //标签导航上边框色 &quot;list&quot;:[{ &quot;pagePath&quot;: //跳转页面路径 &quot;text&quot;: //标签导航名称 &quot;iconPath&quot;: //默认时图标 &quot;selectedIconPath&quot;: //选中后的图标 }, { &quot;pagePath&quot;: &quot;text&quot;: &quot;iconPath&quot;: &quot;selectedIconPath&quot;: }] } &quot;networkTimeout&quot;:{}配置网络超时 &quot;debug&quot;:true/false配置debug模式，是否开启 App.wxss作用:小程序公共样式表 utils文件夹存放工具栏的js函数定义完函数之后需要通过module.exports将定义的函数名称注册出来，才能在其他页面使用 App.js 生命周期函数onLaunch函数当小程序初始化完成时，会触发，全局只触发一次 onShow函数当小程序启动，或者从后台进入前台显示时触发 onHide函数当小程序从前台进入后台触发该函数 onError函数用来监听小程序脚本或者API是否发生错误，发生错误时返回错误信息 页面 Page生命周期函数onLoad函数一个页面只会调用一次 onShow函数页面显示，每次打开页面都会调用一次 onReady函数页面初次渲染完成，一个页面只会调用一次，代表页面已经准备妥当 onHide函数页面隐藏,当navigateTo或者底部Tab切换时调用 onUnload函数页面卸载，当redirectTo或者navigateBack时调用 onPullDownRefresh函数监听用户下拉刷新事件 onShareAppMessage用户分享，只有定义了此事件处理函数，右上角才会显示“分享”按钮，用户点击“分享”按钮的时候会调用 自定义函数example: Fun: function() { //函数内容 } 绑定数据用双大括号表示example: 条件渲染wx:if=&quot;&quot;判断是否需要渲染改代码 &lt;block wx:if=&quot;{{true}}&quot;&gt; 内容 &lt;/block&gt; 区块条件渲染 wx:for=&quot;用wx:for绑定一个数组，就可以使用数组中的各项数据重复渲染该组件 &lt;view wx:for=&quot;{{array}}&quot;&gt; {{index}}: {{item.message}} &lt;/view&gt; 区块列表渲染 &lt;block wx:for=&quot;{{[1,1,5,4,1,4]}}&quot;&gt; &lt;view&gt;{{index}}:&lt;/view&gt; &lt;view&gt;{{item}}&lt;/view&gt; &lt;/block&gt; 使用wx:for-index可以指定数组当前下标的变量名使用wx:for-item可以指定数组当前元素的变量名wx:for-index=&quot;idx&quot; wx:for-item=&quot;itemName&quot; wx:key指定唯一标识符 import 和 includeimport引用模板文件include将整个文件除了&lt;/template&gt;之外的进行引用 view视图容器是WXML界面布局的基础组件,和HTML里面的div功能类似 scroll-view可滚动视图允许视图区域内容横向滚动或者纵向滚动 swiper滑块视图容器用来在指定区域内切换内容的显示]]></content>
@@ -14,7 +44,7 @@
   <entry>
     <title><![CDATA[Node.js学习（二）through腾讯网课（一）]]></title>
     <url>%2Fhfuter7712.github.io%2F2019%2F09%2F17%2FnodeJS2%2F</url>
-    <content type="text"><![CDATA[特点：可以用Javascript来搞后端速度很快可以读文件 JS分为两块1.客户端JS，执行在浏览器上2.服务器端JS，执行在服务器 Node.js的包管理工具npm，是全球最大的开源库生态系统Node.js是一个基于Chrome V8引擎 Node.js薪资高，人才少 主流模块规范AMD 异步模块定义CMD(Common Module Definition)Commonjs：采用同步加载文件方式，适用于服务端 ——NodeJs模块基础——nodeJS中所有的功能都是以模块形式存在的，每一个文件就是一个模块模块与模块之间相互独立，若在一个模块中使用另一个模块的内容，就要引入模块，这也会导致那个模块的数据暴露 exports. exports是暴露对象，可以将模块内部的数据暴露到引用出]]></content>
+    <content type="text"><![CDATA[section1：入门 特点：可以用Javascript来搞后端速度很快可以读文件 JS分为两块1.客户端JS，执行在浏览器上2.服务器端JS，执行在服务器 Node.js的包管理工具npm，是全球最大的开源库生态系统Node.js是一个基于Chrome V8引擎 Node.js薪资高，人才少 主流模块规范AMD 异步模块定义CMD(Common Module Definition)Commonjs：采用同步加载文件方式，适用于服务端 ——NodeJs模块基础——nodeJS中所有的功能都是以模块形式存在的，每一个文件就是一个模块模块与模块之间相互独立，若在一个模块中使用另一个模块的内容，就要引入模块，这也会导致那个模块的数据暴露 exports. exports是暴露对象，可以将模块内部的数据暴露到引用出 主模块一个项目只允许有一个主模块，该项目通常命名为main.js index.js app.js package.json是整个项目的启动模块，主模块对整个项目的其他模块进行统筹调度 所有用户编写的代码都自动封装在一个函数中通过console.log(arguments.callee.toString())可以看出用户编写的代码都会封装成一个函数function $ node 01 function (exports, require, module, __filename, __dirname) { // JavaScript Docu ent console.log(arguments.callee.toString()) var obj = require(&apos;./str.js&apos;); console.log(obj); obj.show(); } { str: &apos;asc&apos;, show: [Function] } this is a show 同时可以发现该函数有五个参数exports: 暴露对象，可将模块中的数据暴露给引入的地方require: 引入模块的函数module: 模块对象_filename: 当前模块的文件名_dirname: 当前模块所在的路径 require函数作用：在当前模块里加载另外一个模块 引入模块分类:1.自定义模块2.第三方模块 require的默认路径不在当前目录查找模块的默认路径在node_modules文件夹目录中因此require(&#39;./str.js&#39;);中的./不能省略 https://www.npmjs.com上面包含大量第三方包，也可以在上面上传自己的包 当模块被多次执行时，模块只执行一次，但是返回值赋给每个执行的变量 exports函数暴露，将模块中需要共享给其他模块的数据暴露到引入处exports.属性名=值exports.方法名=函数 exports是module.exports对象的一个引用,不能改指向，只能添加属性和方法 package 包package.json是package的包描述文件s ——如何创建package文件——在命令行中输入npm init将会逐步引导创建版本 x.y.zx:大版本y:中版本z:小版本 package name包名称version版本description描述entry point 入口文件（主文件）dependencies依赖devDependencies开发依赖(开发的时候依赖，使用的时候不依赖，比如某些打包工具)scriptsauthor作者 npm i &lt;包的名称&gt; -g //全局安装 cnpm是一个淘宝NPM镜像,只能下载，不能上传（只读），下载会更快安装npm install -g cnpm --registry=https://registry.npm.taobao.org使用方法:cnpm install &lt;包名称&gt; Node.js作用域模块中使用var 定义的变量为局部作用域，只能在该模块中使用，要在其他模块中使用就要用exports暴露或者使用globalglobal.name=&quot;&quot;即global全局对象]]></content>
       <categories>
         <category>coding</category>
       </categories>

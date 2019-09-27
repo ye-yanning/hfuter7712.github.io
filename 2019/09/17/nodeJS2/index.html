@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="特点：可以用Javascript来搞后端速度很快可以读文件   JS分为两块1.客户端JS，执行在浏览器上2.服务器端JS，执行在服务器   Node.js的包管理工具npm，是全球最大的开源库生态系统Node.js是一个基于Chrome V8引擎   Node.js薪资高，人才少 主流模块规范AMD 异步模块定义CMD(Common Module Definition)Commonjs：采用同步">
+<meta name="description" content="section1：入门 特点：可以用Javascript来搞后端速度很快可以读文件   JS分为两块1.客户端JS，执行在浏览器上2.服务器端JS，执行在服务器   Node.js的包管理工具npm，是全球最大的开源库生态系统Node.js是一个基于Chrome V8引擎   Node.js薪资高，人才少 主流模块规范AMD 异步模块定义CMD(Common Module Definition)C">
 <meta name="keywords" content="Javascript,Node.js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Node.js学习（二）through腾讯网课（一）">
 <meta property="og:url" content="http://yoursite.com/2019/09/17/nodeJS2/index.html">
 <meta property="og:site_name" content="superQ">
-<meta property="og:description" content="特点：可以用Javascript来搞后端速度很快可以读文件   JS分为两块1.客户端JS，执行在浏览器上2.服务器端JS，执行在服务器   Node.js的包管理工具npm，是全球最大的开源库生态系统Node.js是一个基于Chrome V8引擎   Node.js薪资高，人才少 主流模块规范AMD 异步模块定义CMD(Common Module Definition)Commonjs：采用同步">
+<meta property="og:description" content="section1：入门 特点：可以用Javascript来搞后端速度很快可以读文件   JS分为两块1.客户端JS，执行在浏览器上2.服务器端JS，执行在服务器   Node.js的包管理工具npm，是全球最大的开源库生态系统Node.js是一个基于Chrome V8引擎   Node.js薪资高，人才少 主流模块规范AMD 异步模块定义CMD(Common Module Definition)C">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-17T12:08:43.654Z">
+<meta property="og:updated_time" content="2019-09-27T03:29:50.355Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Node.js学习（二）through腾讯网课（一）">
-<meta name="twitter:description" content="特点：可以用Javascript来搞后端速度很快可以读文件   JS分为两块1.客户端JS，执行在浏览器上2.服务器端JS，执行在服务器   Node.js的包管理工具npm，是全球最大的开源库生态系统Node.js是一个基于Chrome V8引擎   Node.js薪资高，人才少 主流模块规范AMD 异步模块定义CMD(Common Module Definition)Commonjs：采用同步">
+<meta name="twitter:description" content="section1：入门 特点：可以用Javascript来搞后端速度很快可以读文件   JS分为两块1.客户端JS，执行在浏览器上2.服务器端JS，执行在服务器   Node.js的包管理工具npm，是全球最大的开源库生态系统Node.js是一个基于Chrome V8引擎   Node.js薪资高，人才少 主流模块规范AMD 异步模块定义CMD(Common Module Definition)C">
 
 
 
@@ -342,13 +342,40 @@
       
 
       
-        <p>特点：<br>可以用Javascript来搞后端<br>速度很快<br>可以读文件  </p>
+        <p>section1：入门</p>
+<p>特点：<br>可以用Javascript来搞后端<br>速度很快<br>可以读文件  </p>
 <p>JS分为两块<br>1.客户端JS，执行在浏览器上<br>2.服务器端JS，执行在服务器  </p>
 <p>Node.js的包管理工具npm，是全球最大的开源库生态系统<br>Node.js是一个基于Chrome V8引擎  </p>
 <p><strong>Node.js薪资高，人才少</strong></p>
 <p>主流模块规范<br>AMD 异步模块定义<br>CMD(Common Module Definition)<br>Commonjs：采用同步加载文件方式，适用于服务端  </p>
 <p><strong>——NodeJs模块基础——</strong><br>nodeJS中所有的功能都是以模块形式存在的，每一个文件就是一个模块<br>模块与模块之间相互独立，若在一个模块中使用另一个模块的内容，就要引入模块，这也会导致那个模块的数据暴露  </p>
-<p><code>exports.</code><br> exports是暴露对象，可以将模块内部的数据暴露到引用出   </p>
+<p><code>exports.</code><br> exports是暴露对象，可以将模块内部的数据暴露到引用出 </p>
+<p><strong>主模块</strong><br>一个项目只允许有一个主模块，该项目通常命名为main.js  index.js  app.js  package.json<br>是整个项目的启动模块，主模块对整个项目的其他模块进行统筹调度  </p>
+<p>所有用户编写的代码都自动封装在一个函数中<br>通过<br><code>console.log(arguments.callee.toString())</code><br>可以看出用户编写的代码都会封装成一个函数function  </p>
+<pre><code>$ node 01
+function (exports, require, module, __filename, __dirname) { // JavaScript Docu
+ent
+console.log(arguments.callee.toString())
+var obj = require(&apos;./str.js&apos;);
+console.log(obj);
+obj.show();
+}
+{ str: &apos;asc&apos;, show: [Function] }
+this is a show
+</code></pre><p>同时可以发现该函数有五个参数<br>exports: 暴露对象，可将模块中的数据暴露给引入的地方<br>require: 引入模块的函数<br>module: 模块对象<br>_filename: 当前模块的文件名<br>_dirname: 当前模块所在的路径</p>
+<p><strong>require函数</strong><br>作用：在当前模块里加载另外一个模块  </p>
+<p>引入模块分类:<br>1.自定义模块<br>2.第三方模块  </p>
+<p>require的默认路径不在当前目录<br>查找模块的默认路径在node_modules文件夹目录中<br>因此<code>require(&#39;./str.js&#39;);</code><br>中的<code>./</code>不能省略  </p>
+<p><code>https://www.npmjs.com</code><br>上面包含大量第三方包，也可以在上面上传自己的包  </p>
+<p>当模块被多次执行时，模块只执行一次，但是返回值赋给每个执行的变量</p>
+<p><strong>exports函数</strong><br>暴露，将模块中需要共享给其他模块的数据暴露到引入处<br><code>exports.属性名=值</code><br><code>exports.方法名=函数</code></p>
+<p>exports是module.exports对象的一个引用,不能改指向，只能添加属性和方法  </p>
+<p><strong>package 包</strong><br>package.json是package的包描述文件s</p>
+<p>——如何创建package文件——<br>在命令行中输入<code>npm init</code><br>将会逐步引导创建<br>版本 x.y.z<br>x:大版本<br>y:中版本<br>z:小版本  </p>
+<p><code>package name</code>包名称<br><code>version</code>版本<br><code>description</code>描述<br><code>entry point</code> 入口文件（主文件）<br><code>dependencies</code>依赖<br><code>devDependencies</code>开发依赖(开发的时候依赖，使用的时候不依赖，比如某些打包工具)<br><code>scripts</code><br><code>author</code>作者</p>
+<p><code>npm i &lt;包的名称&gt; -g  //全局安装</code>  </p>
+<p><strong>cnpm</strong><br>是一个淘宝NPM镜像,只能下载，不能上传（只读），下载会更快<br>安装<br><code>npm install -g cnpm --registry=https://registry.npm.taobao.org</code><br>使用方法:<br><code>cnpm install &lt;包名称&gt;</code>  </p>
+<p><strong>Node.js作用域</strong><br>模块中使用var 定义的变量为局部作用域，只能在该模块中使用，要在其他模块中使用就要用<code>exports</code>暴露<br>或者使用global<br><code>global.name=&quot;&quot;</code><br>即global全局对象  </p>
 
       
     </div>
@@ -461,7 +488,7 @@
               
                 <a href="/hfuter7712.github.io/archives/">
               
-                  <span class="site-state-item-count">66</span>
+                  <span class="site-state-item-count">69</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -483,7 +510,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/hfuter7712.github.io/tags/index.html">
-                  <span class="site-state-item-count">47</span>
+                  <span class="site-state-item-count">49</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
