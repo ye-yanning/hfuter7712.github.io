@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Java,GUI,Swing,">
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="ambitious and modest">
+<meta name="description" content="1.GUI组件的左上角坐标默认为(0,0)2.从左上角到右下角，水平坐标x与垂直坐标y增加也就是说其坐标系如下  ——————————————————————&amp;gt;x||||||||y 3.坐标的单位是像素   在执行paint方法时，系统会传递一个指向特定平台的Graphics子类的图形对象g   Graphics2D是Graphics的抽象子类   Swing组件实在原来AWT组件上扩展而来">
+<meta name="keywords" content="Java,GUI,Swing">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaSwingUI1">
+<meta property="og:title" content="Java Swing GUI学习(一)">
 <meta property="og:url" content="http://yoursite.com/2019/09/27/JavaSwingUI1/index.html">
 <meta property="og:site_name" content="superQ">
-<meta property="og:description" content="ambitious and modest">
+<meta property="og:description" content="1.GUI组件的左上角坐标默认为(0,0)2.从左上角到右下角，水平坐标x与垂直坐标y增加也就是说其坐标系如下  ——————————————————————&amp;gt;x||||||||y 3.坐标的单位是像素   在执行paint方法时，系统会传递一个指向特定平台的Graphics子类的图形对象g   Graphics2D是Graphics的抽象子类   Swing组件实在原来AWT组件上扩展而来">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-27T08:10:47.628Z">
+<meta property="og:updated_time" content="2019-09-27T13:53:45.140Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaSwingUI1">
-<meta name="twitter:description" content="ambitious and modest">
+<meta name="twitter:title" content="Java Swing GUI学习(一)">
+<meta name="twitter:description" content="1.GUI组件的左上角坐标默认为(0,0)2.从左上角到右下角，水平坐标x与垂直坐标y增加也就是说其坐标系如下  ——————————————————————&amp;gt;x||||||||y 3.坐标的单位是像素   在执行paint方法时，系统会传递一个指向特定平台的Graphics子类的图形对象g   Graphics2D是Graphics的抽象子类   Swing组件实在原来AWT组件上扩展而来">
 
 
 
@@ -125,7 +126,7 @@
 
 
 
-  <title>JavaSwingUI1 | superQ</title>
+  <title>Java Swing GUI学习(一) | superQ</title>
   
 
 
@@ -269,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JavaSwingUI1</h1>
+          <h1 class="post-title" itemprop="name headline">Java Swing GUI学习(一)</h1>
         
 
         <div class="post-meta">
@@ -291,6 +292,28 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/hfuter7712.github.io/categories/coding/" itemprop="url" rel="index">
+                    <span itemprop="name">coding</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -319,7 +342,46 @@
       
 
       
-        
+        <p>1.GUI组件的左上角坐标默认为(0,0)<br>2.从左上角到右下角，水平坐标x与垂直坐标y增加<br>也就是说其坐标系如下 </p>
+<p>——————————————————————&gt;x<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>y</p>
+<p>3.坐标的单位是像素  </p>
+<p>在执行paint方法时，系统会传递一个指向特定平台的Graphics子类的图形对象g  </p>
+<p>Graphics2D是Graphics的抽象子类  </p>
+<p>Swing组件实在原来AWT组件上扩展而来的<br><code>JButton</code><br><code>JCheckBox</code><br><code>JScrollbar</code><br>都是<code>JComponent</code>类的子类  </p>
+<p><strong>Component类</strong><br>包含paint,repaint类，可以在屏幕上绘制组件  </p>
+<p><strong>Container类</strong><br>容纳相关组件<br>包括add方法，用来添加组件<br>包括<code>setLayout</code>方法，用来设置布局  </p>
+<p>顶层容器(JFrame,JDialog,JApplet)<br><strong>JFrame</strong><br>主窗口  </p>
+<p><strong>JDialog</strong>  </p>
+<p><strong>JApplet</strong>  </p>
+<p>————————————————————————————————————  </p>
+<p>中间层容器(一般用途，特殊用途)<br><strong>一般用途</strong><br>JPanel<br>JScrollPane<br>JSplitPane等  </p>
+<p><strong>特殊用途</strong>  </p>
+<p><strong>JPanel</strong><br><code>JPanel j1=new JPanel();</code><br>默认使用FlowLayout布局  </p>
+<p>———————————————————————————————————— </p>
+<p>原子组件<br><strong>JButton</strong><br>按钮组件<br><code>JButton button = new JButton(&quot;按钮名称&quot;);</code>  </p>
+<p><strong>JLabel</strong><br>显示文本的组件<br><code>JLabel label = new JLabel(&quot;文本标签显示内容&quot;);</code>  </p>
+<p><strong>TextArea</strong><br><code>TextArea ta=new TextArea(&quot;输入区域默认内容&quot;);</code>  </p>
+<p><strong>JTextField</strong><br>用于输入的文本域<br><code>JTextField useText = new JTextField(20);</code><br>参数为column数  </p>
+<p><strong>JPasswordField</strong><br>和输入文本域类似，，但是输入的信息会以<code>.</code>代替，保证密码(password)的安全性  </p>
+<p>————————————————————————————————————  </p>
+<p>布局<br>example:<br><code>setLayout(new FlowLayout());</code><br><code>f.setLayout(new FlowLayout());</code>   </p>
+<p><strong>BorderLayout</strong><br><strong>FlowLayout</strong><br>JPanel默认使用的布局管理器，只是简单地把组件放在一行，若容器不足够容纳所有组件，则新起一行<br><strong>GridLayout</strong><br>按照指定的行数和列数将界面分成格子    </p>
+<p><strong>BoxLayout</strong><br>将组件放在单一的列或行中  </p>
+<p><strong>SpringLayout</strong><br>能够精确指定组件之间的间距  </p>
+<p><strong>CardLayout</strong>  </p>
+<p>内部类可以非常方便的编写事件驱动程序  </p>
+<p>————————————————————————————————————  </p>
+<p>事件处理<br>鼠标移动，单双击鼠标各个按钮，单击按钮等等<br>Swing通过事件对象来包装事件  </p>
+<p><strong>事件源</strong><br>与用户进行交互的GUI组件，表示事件来自于哪个组件或者对象  </p>
+<p><strong>事件监听器</strong><br>负责监听事件并作出响应<br>一个事件源可以注册多个事件监听器，每个监听器又可以对多种事件进行响应<br>通过事件源的<code>addxxxListener</code>方法被注册到某个事件源上<br>要实现事件监听器接口就要实现接口中所有的方法，即便是一对空的花括号也要写,即空方法体也要写<br>如果有Adapter适配器类，那就不需要写空方法体，因为空方法体已经提前实现好了</p>
+<p><strong>事件对象</strong><br>封装了有关已发生的事件的信息<br>ActionEvent<br>发生在按下按钮，选择了一个项目，在文本框中按下回车键  </p>
+<p>ItemEvent  </p>
+<p>ChangeEvent  </p>
+<p>————————————————————————————————————   </p>
+<p>零散实用<br><code>f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</code><br>设置程序默认关闭操作  </p>
+<p><code>f.setSize(350,200);</code><br>第一个参数为宽度width,第二个参数为高度height  </p>
+<p><code>f.setVisible(true);</code><br>设置界面可见  </p>
+
       
     </div>
     
@@ -333,6 +395,16 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/hfuter7712.github.io/tags/Java/" rel="tag"># Java</a>
+          
+            <a href="/hfuter7712.github.io/tags/GUI/" rel="tag"># GUI</a>
+          
+            <a href="/hfuter7712.github.io/tags/Swing/" rel="tag"># Swing</a>
+          
+        </div>
       
 
       
@@ -441,7 +513,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/hfuter7712.github.io/tags/index.html">
-                  <span class="site-state-item-count">49</span>
+                  <span class="site-state-item-count">50</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
