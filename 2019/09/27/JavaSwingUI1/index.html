@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Java,GUI,Swing,">
+  <meta name="keywords" content="Java,Swing,GUI,">
 
 
 
@@ -80,14 +80,14 @@
 
 
 <meta name="description" content="1.GUI组件的左上角坐标默认为(0,0)2.从左上角到右下角，水平坐标x与垂直坐标y增加也就是说其坐标系如下  ——————————————————————&amp;gt;x||||||||y 3.坐标的单位是像素   在执行paint方法时，系统会传递一个指向特定平台的Graphics子类的图形对象g   Graphics2D是Graphics的抽象子类   Swing组件实在原来AWT组件上扩展而来">
-<meta name="keywords" content="Java,GUI,Swing">
+<meta name="keywords" content="Java,Swing,GUI">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java Swing GUI学习(一)">
 <meta property="og:url" content="http://yoursite.com/2019/09/27/JavaSwingUI1/index.html">
 <meta property="og:site_name" content="superQ">
 <meta property="og:description" content="1.GUI组件的左上角坐标默认为(0,0)2.从左上角到右下角，水平坐标x与垂直坐标y增加也就是说其坐标系如下  ——————————————————————&amp;gt;x||||||||y 3.坐标的单位是像素   在执行paint方法时，系统会传递一个指向特定平台的Graphics子类的图形对象g   Graphics2D是Graphics的抽象子类   Swing组件实在原来AWT组件上扩展而来">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-27T13:53:45.140Z">
+<meta property="og:updated_time" content="2019-09-28T02:20:58.765Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java Swing GUI学习(一)">
 <meta name="twitter:description" content="1.GUI组件的左上角坐标默认为(0,0)2.从左上角到右下角，水平坐标x与垂直坐标y增加也就是说其坐标系如下  ——————————————————————&amp;gt;x||||||||y 3.坐标的单位是像素   在执行paint方法时，系统会传递一个指向特定平台的Graphics子类的图形对象g   Graphics2D是Graphics的抽象子类   Swing组件实在原来AWT组件上扩展而来">
@@ -350,19 +350,22 @@
 <p>Swing组件实在原来AWT组件上扩展而来的<br><code>JButton</code><br><code>JCheckBox</code><br><code>JScrollbar</code><br>都是<code>JComponent</code>类的子类  </p>
 <p><strong>Component类</strong><br>包含paint,repaint类，可以在屏幕上绘制组件  </p>
 <p><strong>Container类</strong><br>容纳相关组件<br>包括add方法，用来添加组件<br>包括<code>setLayout</code>方法，用来设置布局  </p>
-<p>顶层容器(JFrame,JDialog,JApplet)<br><strong>JFrame</strong><br>主窗口  </p>
+<p>顶层容器(JFrame,JDialog,JApplet)<br><strong>JFrame</strong><br>主窗口<br><code>JFrame(String title);</code><br><code>JFrame f1=new JFrame(String title);</code><br>创建一个标题为title的主窗口  </p>
 <p><strong>JDialog</strong>  </p>
 <p><strong>JApplet</strong>  </p>
 <p>————————————————————————————————————  </p>
 <p>中间层容器(一般用途，特殊用途)<br><strong>一般用途</strong><br>JPanel<br>JScrollPane<br>JSplitPane等  </p>
 <p><strong>特殊用途</strong>  </p>
 <p><strong>JPanel</strong><br><code>JPanel j1=new JPanel();</code><br>默认使用FlowLayout布局  </p>
+<p><strong>JScrollPane</strong>  </p>
+<p><strong>JToolBar</strong><br>工具栏  </p>
 <p>———————————————————————————————————— </p>
 <p>原子组件<br><strong>JButton</strong><br>按钮组件<br><code>JButton button = new JButton(&quot;按钮名称&quot;);</code>  </p>
 <p><strong>JLabel</strong><br>显示文本的组件<br><code>JLabel label = new JLabel(&quot;文本标签显示内容&quot;);</code>  </p>
 <p><strong>TextArea</strong><br><code>TextArea ta=new TextArea(&quot;输入区域默认内容&quot;);</code>  </p>
 <p><strong>JTextField</strong><br>用于输入的文本域<br><code>JTextField useText = new JTextField(20);</code><br>参数为column数  </p>
 <p><strong>JPasswordField</strong><br>和输入文本域类似，，但是输入的信息会以<code>.</code>代替，保证密码(password)的安全性  </p>
+<p><strong>JMenuBar</strong><br>菜单条<br><code>JMenuBar jb=new JMenuBar();</code>  </p>
 <p>————————————————————————————————————  </p>
 <p>布局<br>example:<br><code>setLayout(new FlowLayout());</code><br><code>f.setLayout(new FlowLayout());</code>   </p>
 <p><strong>BorderLayout</strong><br><strong>FlowLayout</strong><br>JPanel默认使用的布局管理器，只是简单地把组件放在一行，若容器不足够容纳所有组件，则新起一行<br><strong>GridLayout</strong><br>按照指定的行数和列数将界面分成格子    </p>
@@ -378,7 +381,7 @@
 <p>ItemEvent  </p>
 <p>ChangeEvent  </p>
 <p>————————————————————————————————————   </p>
-<p>零散实用<br><code>f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</code><br>设置程序默认关闭操作  </p>
+<p>零散实用<br><code>f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</code><br>设置程序默认关闭功能  </p>
 <p><code>f.setSize(350,200);</code><br>第一个参数为宽度width,第二个参数为高度height  </p>
 <p><code>f.setVisible(true);</code><br>设置界面可见  </p>
 
@@ -400,9 +403,9 @@
           
             <a href="/hfuter7712.github.io/tags/Java/" rel="tag"># Java</a>
           
-            <a href="/hfuter7712.github.io/tags/GUI/" rel="tag"># GUI</a>
-          
             <a href="/hfuter7712.github.io/tags/Swing/" rel="tag"># Swing</a>
+          
+            <a href="/hfuter7712.github.io/tags/GUI/" rel="tag"># GUI</a>
           
         </div>
       
@@ -424,6 +427,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/hfuter7712.github.io/2019/09/29/nodeJS4/" rel="prev" title="Node.js学习（四）through腾讯网课（三）">
+                Node.js学习（四）through腾讯网课（三） <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -491,7 +498,7 @@
               
                 <a href="/hfuter7712.github.io/archives/">
               
-                  <span class="site-state-item-count">69</span>
+                  <span class="site-state-item-count">70</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -513,7 +520,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/hfuter7712.github.io/tags/index.html">
-                  <span class="site-state-item-count">50</span>
+                  <span class="site-state-item-count">51</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
