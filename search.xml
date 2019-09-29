@@ -1,19 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Node.js学习（四）through腾讯网课（三）]]></title>
-    <url>%2Fhfuter7712.github.io%2F2019%2F09%2F29%2FnodeJS4%2F</url>
-    <content type="text"><![CDATA[23]]></content>
-      <categories>
-        <category>coding</category>
-      </categories>
-      <tags>
-        <tag>Javascript</tag>
-        <tag>Node.js</tag>
-        <tag>http</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Java Swing GUI学习(一)]]></title>
     <url>%2Fhfuter7712.github.io%2F2019%2F09%2F27%2FJavaSwingUI1%2F</url>
     <content type="text"><![CDATA[1.GUI组件的左上角坐标默认为(0,0)2.从左上角到右下角，水平坐标x与垂直坐标y增加也就是说其坐标系如下 ——————————————————————&gt;x||||||||y 3.坐标的单位是像素 在执行paint方法时，系统会传递一个指向特定平台的Graphics子类的图形对象g Graphics2D是Graphics的抽象子类 Swing组件实在原来AWT组件上扩展而来的JButtonJCheckBoxJScrollbar都是JComponent类的子类 Component类包含paint,repaint类，可以在屏幕上绘制组件 Container类容纳相关组件包括add方法，用来添加组件包括setLayout方法，用来设置布局 顶层容器(JFrame,JDialog,JApplet)JFrame主窗口JFrame(String title);JFrame f1=new JFrame(String title);创建一个标题为title的主窗口 JDialog JApplet ———————————————————————————————————— 中间层容器(一般用途，特殊用途)一般用途JPanelJScrollPaneJSplitPane等 特殊用途 JPanelJPanel j1=new JPanel();默认使用FlowLayout布局 JScrollPane JToolBar工具栏 ———————————————————————————————————— 原子组件JButton按钮组件JButton button = new JButton(&quot;按钮名称&quot;); JLabel显示文本的组件JLabel label = new JLabel(&quot;文本标签显示内容&quot;); TextAreaTextArea ta=new TextArea(&quot;输入区域默认内容&quot;); JTextField用于输入的文本域JTextField useText = new JTextField(20);参数为column数 JPasswordField和输入文本域类似，，但是输入的信息会以.代替，保证密码(password)的安全性 JMenuBar菜单条JMenuBar jb=new JMenuBar(); ———————————————————————————————————— 布局example:setLayout(new FlowLayout());f.setLayout(new FlowLayout()); BorderLayoutFlowLayoutJPanel默认使用的布局管理器，只是简单地把组件放在一行，若容器不足够容纳所有组件，则新起一行GridLayout按照指定的行数和列数将界面分成格子 BoxLayout将组件放在单一的列或行中 SpringLayout能够精确指定组件之间的间距 CardLayout 内部类可以非常方便的编写事件驱动程序 ———————————————————————————————————— 事件处理鼠标移动，单双击鼠标各个按钮，单击按钮等等Swing通过事件对象来包装事件 事件源与用户进行交互的GUI组件，表示事件来自于哪个组件或者对象 事件监听器负责监听事件并作出响应一个事件源可以注册多个事件监听器，每个监听器又可以对多种事件进行响应通过事件源的addxxxListener方法被注册到某个事件源上要实现事件监听器接口就要实现接口中所有的方法，即便是一对空的花括号也要写,即空方法体也要写如果有Adapter适配器类，那就不需要写空方法体，因为空方法体已经提前实现好了 事件对象封装了有关已发生的事件的信息ActionEvent发生在按下按钮，选择了一个项目，在文本框中按下回车键 ItemEvent ChangeEvent ———————————————————————————————————— 零散实用f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);设置程序默认关闭功能 f.setSize(350,200);第一个参数为宽度width,第二个参数为高度height f.setVisible(true);设置界面可见]]></content>
