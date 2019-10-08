@@ -1,6 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title></title>
+    <url>%2Fhfuter7712.github.io%2F2019%2F10%2F04%2FVue1%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Node.js学习（五）through腾讯网课（五）]]></title>
+    <url>%2Fhfuter7712.github.io%2F2019%2F10%2F04%2FnodeJS5%2F</url>
+    <content type="text"><![CDATA[网络基础TCP/IP协议七层网络协议 DNS服务器IP地址很重要，可以访问一个虚假的IP地址，也可已改变现有域名指向的IP地址，比如将百度改为一个Hello World的界面 服务器首先引入http模块var http=require(&#39;http&#39;); 创建服务器var server=http.createServer(); 监听request请求事件 server.on(&apos;request&apos;,function(req,res){ //req:请求对象，包含了所有客户端请求的数据，请求头和请求主体 //res:响应对象，包含所有服务器端发送给客户端的数据，响应头和响应主题 res.write(&apos;&lt;h1&gt;Woc&lt;/h1&gt;&apos;); }); 监听端口 server.listen(80,function(){ console.log(&apos;服务器正在运行&apos;); }); 上述是监听80端口 在cmd中输入netstat -a可以查看当前电脑中的所有活动接口 netstat -ab可以查看是谁占用了哪些端口（需要管理员权限） req.url可以根据不同的请求来获取不同的html数据与页面 HTTP响应状态码http协议规定的服务器响应数据时的状态编码1xx 普通消息，无特殊含义2xx 表示服务器响应成功200 OK3xx 表示重定向301 永久重定向302 临时重定向304 使用缓存4xx 无法访问403 服务器理解请求，但是拒绝执行404 资源找不到5,6字头 服务器执行有错500 服务器端代码有错502 网关错误503 服务器已崩溃 状态码的使用res.writeHead(200,{&quot;Content-Type&quot;:&quot;text/html;charset=utf-8&quot;);res.writeHead(状态码，响应头对象); 响应头Content-Type 响应的文件类型text-html默认编码:系统编码，GBK编码然而Node.js里面写的中文都是utf-8编码，因此未声明编码的话就会产生乱码Content-Length 响应内容的长度如果响应内容长度和指定响应内容长度相同的话，就没有问题，加入内容长度为52字节，设定Length为53的话，将会不停的等待（浏览器上面会有转圈圈的标志） MIME类型MIME类型可以认为是文件类型的表述 常见的MIME类型.html text/html.css text/css.js text/javascript.jpg image/jpeg.png image/png.gif image/gif.json text/json application/json.xml text/xml.mp3.mp4 video/mpeg.pdf application/pdf.zip application/x-zip 后端可以生成任意规格的文件]]></content>
+      <categories>
+        <category>coding</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+        <tag>Node.js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Node.js学习（四）through腾讯网课（三）]]></title>
+    <url>%2Fhfuter7712.github.io%2F2019%2F10%2F03%2FnodeJS4%2F</url>
+    <content type="text"><![CDATA[网络网址与http模块 path路径模块是node.js中提供的一个系统模块，用于格式化或拼接一个完整的模块var path=require(&#39;path&#39;); 路径格式化path.normalize(路径);比如说路径中出现诸如./path../相当于进入该文件夹又退出，相当于多余操作，就会进行省略 将多个字符串拼接成一个完整的路径path.join() example: p2=&apos;./day02/hello/zs.html&apos;; console.log(path.join(&apos;code&apos;,p2); 结果显示code/day02/hello/zs.html path.dirname()返回路径中的文件夹部分example:原路径: as/example/1.html文件夹部分:as/example path.basename()返回路径中的文件部分example:原路径:as/example/1.html文件部分:1.html path.extname()返回路径中的扩展名部分原路径:as/example/1.html扩展名部分:.html path.parse()解析路径,返回一个对象包含路径中的每一个对象 { root: &apos;&apos;, dir: &apos;&apos;, base: &apos;c.html&apos;, ext: &apos;.html&apos;, name: &apos;c&apos; } URL统一资源定位符,对网络资源的一种简洁表达式是一个结构字符串 协议://用户名:密码@主机名.名.域:端口号/目录名/文件名.扩展名?参数名=参数值&amp;参数名2=参数值2#hash .gov.cn政府机关 默认端口:80端口 单页面应用http://music.163.com/#/discover/playlist 端口号范围：0~65535所有的网络程序都会占用一个端口1000以下的端口最好不要随便用 node.js的URL模块在node.js中提供了两套对于url进行处理的API功能1.老的node.js url模块2.新的url模块(WHATWG URL标准模块)var url=require(&#39;url&#39;); 对url进行解析url.parse(&#39;要解析的url值&#39;);上述是老模式 新模式会把url看作一个类var obj=new url.URL(u);新模式可以查询传递的参数更好地获取数据 http协议超文本传输协议，是TCP/IP协议之上的一个应用层是一种请求应答形式的协议，一次请求对应一次应答 细节:定义了浏览器以什么格式向服务器发送请求定义了服务器以什么样式解析浏览器发送过来的数据定义了服务器以什么格式响应数据给浏览器定义了浏览器以什么格式解析服务器响应的数据 软件开发模式1.单机模式打开电脑即可使用，不需要通过网络 2.C/S模式Client / Server需要下载安装以后才能连接网络使用，比如QQ和微信 3.B/S模式浏览器Browser / Server打开网址直接使用，比如谷歌，淘宝 Web客户端使用HTTP协议就可以访问Web服务器上面的内容，Web服务器响应相关的内容 http模块设计成支持协议的许多特性HTTP消息头由一个对象表示 http.get(&#39;url&#39;,function(res){//res为返回对象，接收到服务器响应的所有内容});因为大多数请求都是GET请求而且不带请求主体，所以Node.js提供了该便捷方法用于模仿客户端从服务器获取数据 将网络中的html代码保存到本地res.pipe(fs.createWriteStream(&#39;文件路径&#39;);]]></content>
+      <categories>
+        <category>coding</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+        <tag>Node.js</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Java Swing GUI学习(一)]]></title>
     <url>%2Fhfuter7712.github.io%2F2019%2F09%2F27%2FJavaSwingUI1%2F</url>
     <content type="text"><![CDATA[1.GUI组件的左上角坐标默认为(0,0)2.从左上角到右下角，水平坐标x与垂直坐标y增加也就是说其坐标系如下 ——————————————————————&gt;x||||||||y 3.坐标的单位是像素 在执行paint方法时，系统会传递一个指向特定平台的Graphics子类的图形对象g Graphics2D是Graphics的抽象子类 Swing组件实在原来AWT组件上扩展而来的JButtonJCheckBoxJScrollbar都是JComponent类的子类 Component类包含paint,repaint类，可以在屏幕上绘制组件 Container类容纳相关组件包括add方法，用来添加组件包括setLayout方法，用来设置布局 顶层容器(JFrame,JDialog,JApplet)JFrame主窗口JFrame(String title);JFrame f1=new JFrame(String title);创建一个标题为title的主窗口 JDialog JApplet ———————————————————————————————————— 中间层容器(一般用途，特殊用途)一般用途JPanelJScrollPaneJSplitPane等 特殊用途 JPanelJPanel j1=new JPanel();默认使用FlowLayout布局 JScrollPane JToolBar工具栏 ———————————————————————————————————— 原子组件JButton按钮组件JButton button = new JButton(&quot;按钮名称&quot;); JLabel显示文本的组件JLabel label = new JLabel(&quot;文本标签显示内容&quot;); TextAreaTextArea ta=new TextArea(&quot;输入区域默认内容&quot;); JTextField用于输入的文本域JTextField useText = new JTextField(20);参数为column数 JPasswordField和输入文本域类似，，但是输入的信息会以.代替，保证密码(password)的安全性 JMenuBar菜单条JMenuBar jb=new JMenuBar(); ———————————————————————————————————— 布局example:setLayout(new FlowLayout());f.setLayout(new FlowLayout()); BorderLayoutFlowLayoutJPanel默认使用的布局管理器，只是简单地把组件放在一行，若容器不足够容纳所有组件，则新起一行GridLayout按照指定的行数和列数将界面分成格子 BoxLayout将组件放在单一的列或行中 SpringLayout能够精确指定组件之间的间距 CardLayout 内部类可以非常方便的编写事件驱动程序 ———————————————————————————————————— 事件处理鼠标移动，单双击鼠标各个按钮，单击按钮等等Swing通过事件对象来包装事件 事件源与用户进行交互的GUI组件，表示事件来自于哪个组件或者对象 事件监听器负责监听事件并作出响应一个事件源可以注册多个事件监听器，每个监听器又可以对多种事件进行响应通过事件源的addxxxListener方法被注册到某个事件源上要实现事件监听器接口就要实现接口中所有的方法，即便是一对空的花括号也要写,即空方法体也要写如果有Adapter适配器类，那就不需要写空方法体，因为空方法体已经提前实现好了 事件对象封装了有关已发生的事件的信息ActionEvent发生在按下按钮，选择了一个项目，在文本框中按下回车键 ItemEvent ChangeEvent ———————————————————————————————————— 零散实用f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);设置程序默认关闭功能 f.setSize(350,200);第一个参数为宽度width,第二个参数为高度height f.setVisible(true);设置界面可见]]></content>
@@ -168,10 +197,10 @@
       </categories>
       <tags>
         <tag>HTML</tag>
+        <tag>Bootstrap</tag>
         <tag>css</tag>
         <tag>jQuery</tag>
         <tag>Javascript</tag>
-        <tag>Bootstrap</tag>
       </tags>
   </entry>
   <entry>
@@ -623,8 +652,8 @@
       </categories>
       <tags>
         <tag>HTML</tag>
-        <tag>css</tag>
         <tag>Bootstrap</tag>
+        <tag>css</tag>
         <tag>作品集</tag>
       </tags>
   </entry>
