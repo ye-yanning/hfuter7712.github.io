@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title></title>
+    <title><![CDATA[Vue.js学习（一）]]></title>
     <url>%2Fhfuter7712.github.io%2F2019%2F10%2F04%2FVue1%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[来自菜鸟教程https://www.runoob.com/vue2/vue-tutorial.html是一套构建用户界面的渐进式框架 CDN如下https://cdn.staticfile.org/vue/2.2.2/vue.min.js 首先需要通过实例化Vue var vm=new Vue({ //选项 }) elVue构造器中的一个参数，是DOM元素中的idexample:el: &#39;#my_id&#39;data用于定义属性 data:{ site:&quot;google&quot;, url&quot;www.google.com&quot; }, method用于定义函数，可用return来返回函数值 method:{ detail:function(){ return this.site+&quot;添加文本内容&quot;; } }]]></content>
+      <categories>
+        <category>coding</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+        <tag>Javascript</tag>
+        <tag>html</tag>
+        <tag>Vue.js</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Node.js学习（五）through腾讯网课（五）]]></title>
