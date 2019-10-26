@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="superQ">
 <meta property="og:description" content="来自菜鸟教程https://www.runoob.com/vue2/vue-tutorial.html是一套构建用户界面的渐进式框架   CDN如下https://cdn.staticfile.org/vue/2.2.2/vue.min.js   首先需要通过实例化Vue   var vm=new Vue({    //选项   })   elVue构造器中的一个参数，是DOM元素中的idexam">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-08T11:24:27.817Z">
+<meta property="og:updated_time" content="2019-10-26T03:03:05.151Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue.js学习（一）">
 <meta name="twitter:description" content="来自菜鸟教程https://www.runoob.com/vue2/vue-tutorial.html是一套构建用户界面的渐进式框架   CDN如下https://cdn.staticfile.org/vue/2.2.2/vue.min.js   首先需要通过实例化Vue   var vm=new Vue({    //选项   })   elVue构造器中的一个参数，是DOM元素中的idexam">
@@ -305,8 +305,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/hfuter7712.github.io/categories/coding/" itemprop="url" rel="index">
-                    <span itemprop="name">coding</span>
+                  <a href="/hfuter7712.github.io/categories/Coding-Front-End/" itemprop="url" rel="index">
+                    <span itemprop="name">Coding(Front End)</span>
                   </a>
                 </span>
 
@@ -432,7 +432,36 @@ sites:[
    }
 }
 </code></pre><p>与method的区别（来自菜鸟教程）:效果是一样的，但是computed是基于它的依赖缓存，只有相关依赖发生改变的时候才重新取值，而methods在重新渲染的时候函数会重新调用执行  </p>
-<p><strong>监听属性watch</strong>  </p>
+<p><strong>监听属性watch</strong><br>可以通过watch来响应数据变化  </p>
+<pre><code>vm.$watch(&apos;v-model所绑定的变量&apos;,function(before,after){
+   console.log(&quot;之前的值为:&quot;+before+&quot; 之后的值为:&quot;+after);  
+});  
+</code></pre><p><strong>样式绑定</strong><br><code>&lt;div v-bind:class=&quot;{active: isActive}&quot;&gt;&lt;/div&gt;</code><br>在Vue实例data中定义isActive为true或者false可以将该div的类设置为active或者解除设定，若isActive为true，则相当于如下<br><code>&lt;div class=&quot;active&quot;&gt;&lt;/div&gt;</code>  </p>
+<p><strong>表单</strong><br>复选框<br><code>&lt;input v-model=&quot;checkbox&quot; v-model=&quot;checked&quot;&gt;</code>  </p>
+<pre><code>&lt;input type=&quot;checkbox&quot; id=&quot;google&quot; value=&quot;google&quot; v-model=&quot;selectNames&quot;&gt;  
+&lt;input type=&quot;checkbox&quot; id=&quot;baidu&quot; value=&quot;baidu&quot; v-model=&quot;selectNames&quot;&gt;  
+&lt;input type=&quot;checkbox&quot; id=&quot;yahoo&quot; value=&quot;yahoo&quot; v-model=&quot;selectNames&quot;&gt; 
+</code></pre><p>在Vue实例中定义data selectNames:[],然后在前面表单后方键入如下代码<br><code>&lt;p&gt;&lt;/p&gt;</code><br>即可看到其中显示自己已经选中的值<br>比如选中google与百度<br>显示如下<br><code>[google,baidu]</code>  </p>
+<p><strong>Vue最强大功能:组件</strong><br>组件可以扩展HTML元素，封装可以重复使用的代码<br>注册一个全局组件语法格式如下:<br><code>Vue.component(tagName,option)</code><br>注册完成后可以用以下方式来调用组件<br><code>&lt;tagName&gt;&lt;/tagName&gt;</code>  </p>
+<p>局部组件  </p>
+<pre><code>&lt;script&gt;
+var Target={
+  template:&apos;&lt;h1&gt;模板组件1&lt;/h1&gt;  
+};
+new Vue({
+  el:&apos;#app&apos;,
+  components:{
+   &apos;test&apos;:Target
+}
+});  
+</code></pre><p>这样<code>&lt;test&gt;&lt;/test&gt;</code>组件就只能在id为app的Vue实例里使用了  </p>
+<p><strong>自定义指令</strong><br>注册一个全局自定义指令  </p>
+<pre><code>Vue.directive(&apos;focus,{
+ inserted:function(el){
+ el.focus()
+}
+})  
+</code></pre><p>这样当页面载入时，标签上有<code>v-focus</code>的元素自动获得焦点  </p>
 
       
     </div>
@@ -478,6 +507,10 @@ sites:[
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/hfuter7712.github.io/2019/10/26/NLP1/" rel="prev" title="NLP自然语言处理学习(一)">
+                NLP自然语言处理学习(一) <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -554,7 +587,7 @@ sites:[
               
                 <a href="/hfuter7712.github.io/archives/">
               
-                  <span class="site-state-item-count">72</span>
+                  <span class="site-state-item-count">73</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -565,7 +598,7 @@ sites:[
               
               <div class="site-state-item site-state-categories">
                 <a href="/hfuter7712.github.io/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -576,7 +609,7 @@ sites:[
               
               <div class="site-state-item site-state-tags">
                 <a href="/hfuter7712.github.io/tags/index.html">
-                  <span class="site-state-item-count">52</span>
+                  <span class="site-state-item-count">53</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
