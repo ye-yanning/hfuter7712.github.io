@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Verilog语言学习（二）]]></title>
     <url>%2Fhfuter7712.github.io%2F2019%2F11%2F21%2Fverilog2%2F</url>
-    <content type="text"><![CDATA[wire表示Verilog之间的物理连线,一般使用持续赋值assign赋值 reg只能在always语句和initial语句中被赋值 数组reg[15:0] reg_file[0:31]表示32个16位的寄存器构成的寄存器堆 always与initial只有reg类型数据可以在这两种语句中进行赋值 always@* begin表示所有的输入中任意一个值改变，就执行下列begin开始end结束的程序段]]></content>
+    <content type="text"><![CDATA[wire表示Verilog之间的物理连线,一般使用持续赋值assign赋值 reg只能在always语句和initial语句中被赋值 数组reg[15:0] reg_file[0:31]表示32个16位的寄存器构成的寄存器堆 always与initial只有reg类型数据可以在这两种语句中进行赋值 always@* begin表示所有的输入中任意一个值改变，就执行下列begin开始end结束的程序段 赋值语句1.阻塞型过程2.非阻塞型过程3.连续赋值语句 测试模块非常重要包括以下内容:1.测试模块中要调用设计块2.测试模块中要包含测试的激励信号激励信号（输入到待测试模块的信号）必须是reg类型输出信号要定义成wire类型 3.]]></content>
       <categories>
         <category>Coding(hardware)</category>
       </categories>

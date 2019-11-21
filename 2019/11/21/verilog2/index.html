@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="superQ">
 <meta property="og:description" content="wire表示Verilog之间的物理连线,一般使用持续赋值assign赋值   reg只能在always语句和initial语句中被赋值   数组reg[15:0] reg_file[0:31]表示32个16位的寄存器构成的寄存器堆   always与initial只有reg类型数据可以在这两种语句中进行赋值   always@* begin表示所有的输入中任意一个值改变，就执行下列begin开始">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-21T02:26:40.505Z">
+<meta property="og:updated_time" content="2019-11-21T02:41:39.069Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Verilog语言学习（二）">
 <meta name="twitter:description" content="wire表示Verilog之间的物理连线,一般使用持续赋值assign赋值   reg只能在always语句和initial语句中被赋值   数组reg[15:0] reg_file[0:31]表示32个16位的寄存器构成的寄存器堆   always与initial只有reg类型数据可以在这两种语句中进行赋值   always@* begin表示所有的输入中任意一个值改变，就执行下列begin开始">
@@ -347,6 +347,9 @@
 <p><strong>数组</strong><br><code>reg[15:0] reg_file[0:31]</code><br>表示32个16位的寄存器构成的寄存器堆  </p>
 <p><strong>always与initial</strong><br>只有reg类型数据可以在这两种语句中进行赋值  </p>
 <p><code>always@* begin</code><br>表示所有的输入中任意一个值改变，就执行下列begin开始end结束的程序段  </p>
+<p><strong>赋值语句</strong><br>1.阻塞型过程<br>2.非阻塞型过程<br>3.连续赋值语句  </p>
+<p><strong>测试模块</strong><br>非常重要<br>包括以下内容:<br>1.测试模块中要调用设计块<br>2.测试模块中要包含测试的激励信号<br><strong>激励信号（输入到待测试模块的信号）必须是reg类型</strong><br>输出信号要定义成wire类型 </p>
+<p>3.</p>
 
       
     </div>
