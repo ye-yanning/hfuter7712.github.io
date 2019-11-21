@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/hfuter7712.github.io/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/hfuter7712.github.io/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/hfuter7712.github.io/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/hfuter7712.github.io/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/hfuter7712.github.io/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/hfuter7712.github.io/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/hfuter7712.github.io/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Verilog,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="模块是Verilog的基本描述单位说明部分用于定义不同的项，例如模块描述中使用的寄存器和参数语句定义设计的功能和结构，说明部分和语句可以散步在模块中的任何地方   input 定义输入端口input A,B;   output 定义输出端口output C,D;   如果没有数据类型说明的话，端口默认为线网数据类型   initial语句initial语句只执行一次   always语句该语句总是">
+<meta name="keywords" content="Verilog">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Verilog语言学习">
+<meta property="og:url" content="http://yoursite.com/2019/11/12/verilog1/index.html">
+<meta property="og:site_name" content="superQ">
+<meta property="og:description" content="模块是Verilog的基本描述单位说明部分用于定义不同的项，例如模块描述中使用的寄存器和参数语句定义设计的功能和结构，说明部分和语句可以散步在模块中的任何地方   input 定义输入端口input A,B;   output 定义输出端口output C,D;   如果没有数据类型说明的话，端口默认为线网数据类型   initial语句initial语句只执行一次   always语句该语句总是">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-11-12T12:33:13.315Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Verilog语言学习">
+<meta name="twitter:description" content="模块是Verilog的基本描述单位说明部分用于定义不同的项，例如模块描述中使用的寄存器和参数语句定义设计的功能和结构，说明部分和语句可以散步在模块中的任何地方   input 定义输入端口input A,B;   output 定义输出端口output C,D;   如果没有数据类型说明的话，端口默认为线网数据类型   initial语句initial语句只执行一次   always语句该语句总是">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/hfuter7712.github.io/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/11/12/verilog1/">
+
+
+
+
+
+  <title>Verilog语言学习 | superQ</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/hfuter7712.github.io/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">superQ</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">time is money</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/hfuter7712.github.io/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/hfuter7712.github.io/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/hfuter7712.github.io/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/hfuter7712.github.io/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/hfuter7712.github.io/2019/11/12/verilog1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="leaf rock quiet">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/hfuter7712.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="superQ">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Verilog语言学习</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-12T19:46:19+08:00">
+                2019-11-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/hfuter7712.github.io/categories/Coding-hardware/" itemprop="url" rel="index">
+                    <span itemprop="name">Coding(hardware)</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>模块是Verilog的基本描述单位<br>说明部分用于定义不同的项，例如模块描述中使用的寄存器和参数<br>语句定义设计的功能和结构，说明部分和语句可以散步在模块中的任何地方  </p>
+<p><strong>input</strong> 定义输入端口<br><code>input A,B;</code>  </p>
+<p><strong>output</strong> 定义输出端口<br><code>output C,D;</code>  </p>
+<p>如果没有数据类型说明的话，端口默认为<strong>线网数据类型</strong>  </p>
+<p><strong>initial语句</strong><br>initial语句只执行一次  </p>
+<p><strong>always语句</strong><br>该语句总是反复执行/重复执行<br>上述两种语句中只有寄存器类型的数据能够被赋值<br>寄存器类型数据在被赋新值前保持原有值不变，所有的初始化语句与always语句在0时刻并发执行  </p>
+<p><strong>case语句</strong><br>在Verilog中没有switch,只有case<br>example:  </p>
+<pre><code>case(target)
+   8&apos; d0: result = 3&apos; b001 ;
+   8&apos; d1: result = 3&apos; b010 ;
+   8&apos; d2: result = 3&apos; b100 ;
+   default: result = 3&apos; b000 ;
+endcase  
+</code></pre><p>不需要break,每执行完一个case分项后的语句就会跳出该case语句的执行  </p>
+<p><strong>wire</strong><br>wire型数据常用来表示以assign关键字指定的组合逻辑信号，模块的输入输出端口类型都默认为wire型<br>wire相当于物理连线,无逻辑连线，不带逻辑性<br>默认初始值为z  </p>
+<p>assign语句中必须定义为wire不能是reg  </p>
+<pre><code>reg a,b;
+wire test_result;  
+
+assign test_result = a&amp;&amp;b;  
+</code></pre><p>如果将test_result定义为reg,则会报错  </p>
+<p><strong>reg</strong><br>表示寄存器类型，用于always模块内被复制的信号，必须定义为reg型，代表触发器<br>常用于时许逻辑电路，reg相当于存储单元<br>默认初始值为x</p>
+<p>参考:<br><a href="https://blog.csdn.net/u010549444/article/details/50993274?utm_source=copy" target="_blank" rel="noopener">https://blog.csdn.net/u010549444/article/details/50993274?utm_source=copy</a><br><a href="https://max.book118.com/html/2018/0220/153942558.shtm" target="_blank" rel="noopener">https://max.book118.com/html/2018/0220/153942558.shtm</a>  </p>
+<p><strong>如何进行仿真</strong><br>点击Window中的Library,点击其中的work,点击要进行模拟的文件，右键选择”Simulate”<br>进入界面选自需要的Objects右键选择“Add to”随后选择“Wave”随后选择“Selected Signals”<br>随后在上面的按钮组中选择”Run All”,点击Wave即可看到结果  </p>
+<p>随后在Transcript中输入<br><code>quit -sim</code><br>退出仿真</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/hfuter7712.github.io/tags/Verilog/" rel="tag"># Verilog</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/hfuter7712.github.io/2019/11/09/pat1/" rel="next" title="C++程序设计——如何将一个整数转化为字符串">
+                <i class="fa fa-chevron-left"></i> C++程序设计——如何将一个整数转化为字符串
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/hfuter7712.github.io/2019/11/21/verilog2/" rel="prev" title="Verilog语言学习（二）">
+                Verilog语言学习（二） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">leaf rock quiet</p>
+              <p class="site-description motion-element" itemprop="description">ambitious and modest</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/hfuter7712.github.io/archives/">
+              
+                  <span class="site-state-item-count">77</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/hfuter7712.github.io/categories/index.html">
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/hfuter7712.github.io/tags/index.html">
+                  <span class="site-state-item-count">55</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">leaf rock quiet</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/hfuter7712.github.io/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/hfuter7712.github.io/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/hfuter7712.github.io/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/hfuter7712.github.io/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/hfuter7712.github.io/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/hfuter7712.github.io/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/hfuter7712.github.io/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/hfuter7712.github.io/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/hfuter7712.github.io/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/hfuter7712.github.io/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/hfuter7712.github.io/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/hfuter7712.github.io/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/hfuter7712.github.io/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
