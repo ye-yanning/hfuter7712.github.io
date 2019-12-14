@@ -4,6 +4,9 @@
     <title><![CDATA[计算机组成原理期末复习（一）]]></title>
     <url>%2Fhfuter7712.github.io%2F2019%2F12%2F05%2Freview1%2F</url>
     <content type="text"><![CDATA[——————————总线——————————总线如何传输信息总线是共享的，如何判优总线的两种传输方式同步，异步，半同步，分离式通信 ——————————存储器————————————计算机最重要的两个部件:主存和半导体存储器?磁表面存储器?不关注材料存储单元为什么计算机会把存储器分成多个层次结构？主存RAM 随机访问存储器如何进行编址按字节编址或按字编址存储矩阵动态RAM：刷新Cache原理Cache出现的理论依据程序访问的局部性原理 三种映射方式直接映射，组相联映射，全相联映射 如何提高访问速度高位交叉，低位交叉 如何校验海明码分组的奇偶校验检错一位，矫正一位检错两位，矫正一位 磁道如何解决磁道扇区如何把主存中的01序列转化为磁盘中的01序列通过电流产生磁场来进行磁化 虚拟存储器主要原理解决的主要是容量问题 ——————————输入输出系统——————————软件涉及到IO指令的编址硬件涉及到接口 接口与端口的区别 DMA跟中断有很多似乎相似又不相似的地方 ——————————计算机的运算方法————————————操作数无符号数和有符号数机器数原码，反码，补码，移码 浮点数和定点数阶码浮点数的规格化定点数的移位运算，加法运算乘法运算，除法运算 补码乘法补码一位乘 浮点运算对阶规格化 IEEE 754标准 ——————————指令系统——————————操作码扩展操作码技术地址码零地址，一地址，二地址，三地址 寻址方式数据寻址方式如果采用某种寻址方式询问有效地址和操作数？8020规律 ——————————CPU的结构和功能——————————四大结构五大功能中断系统设计一个中断系统需要考虑哪些问题如何寻找中断的入口如何写中断服务程序在中断中出现新的中断该怎么办 ——————————控制单元的控制和设计——————————输入输出是什么根据输出发出输出命令需要发出那些命令 组合逻辑控制器和微程序控制器微程序控制器的设计不考，但是要理解概念 讲完了？不就这点东西，如有遗漏，考试考了概不负责但是实验相关的内容也会考单周期CPU多周期CPU]]></content>
+      <categories>
+        <category>specialized-course</category>
+      </categories>
   </entry>
   <entry>
     <title><![CDATA[Verilog语言学习（二）]]></title>
@@ -363,8 +366,8 @@
         <category>Coding(Project)</category>
       </categories>
       <tags>
-        <tag>Jena</tag>
         <tag>Java</tag>
+        <tag>Jena</tag>
         <tag>javadoc</tag>
       </tags>
   </entry>
@@ -388,8 +391,8 @@
         <category>Coding(Project)</category>
       </categories>
       <tags>
-        <tag>Jena</tag>
         <tag>Java</tag>
+        <tag>Jena</tag>
         <tag>javadoc</tag>
       </tags>
   </entry>
@@ -446,8 +449,8 @@
         <category>Coding(Project)</category>
       </categories>
       <tags>
-        <tag>Jena</tag>
         <tag>Java</tag>
+        <tag>Jena</tag>
       </tags>
   </entry>
   <entry>
@@ -597,8 +600,8 @@
       </categories>
       <tags>
         <tag>RDF</tag>
-        <tag>Jena</tag>
         <tag>Java</tag>
+        <tag>Jena</tag>
       </tags>
   </entry>
   <entry>
